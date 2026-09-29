@@ -1,0 +1,61 @@
+ingestion:
+  lookback_weeks: 10
+  sources:
+    - app_store
+    - play_store
+  min_reviews_required: 30
+  max_reviews_to_process: 1000
+  raw_data_dir: data/raw
+  column_mappings:
+    app_store:
+      id: "Review ID"
+      rating: "Rating"
+      title: "Title"
+      text: "Review Text"
+      date: "Review Date"
+      drop_fields:
+        - Reviewer Name
+        - reviewer_name
+        - display_name
+        - user_id
+        - reviewer_id
+    play_store:
+      id: "Review ID"
+      rating: "Star Rating"
+      title: null
+      text: "Review"
+      date: "Review Submit Date and Time"
+      drop_fields:
+        - Reviewer Name
+        - reviewer_name
+        - display_name
+        - user_id
+        - reviewer_id
+
+themes:
+  allowed:
+    - onboarding
+    - KYC
+    - payments
+    - statements
+    - withdrawals
+  max_themes: 5
+  top_n_to_surface: 3
+
+llm:
+  model: gemini-3.5-flash-lite
+  temperature: 0.3
+  max_output_tokens: 2048
+  batch_size: 25
+  request_delay_seconds: 2.5
+  max_retries: 3
+
+pulse:
+  max_words: 250
+  quotes_required: 3
+  actions_required: 3
+
+delivery:
+  recipient_email: "you@example.com"
+  doc_title_format: "Weekly Pulse - Groww App | {year}-W{week}"
+  draft_subject_format: "Weekly Pulse - Groww App | Week of {week_date}"
