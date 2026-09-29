@@ -9,8 +9,9 @@ An automated AI customer feedback intelligence engine and executive dashboard fo
 | Resource | URL |
 | :--- | :--- |
 | **🌐 Live Production Application (Vercel)** | **[https://groww-weekly-pulse-review.vercel.app](https://groww-weekly-pulse-review.vercel.app)** |
+| **🐍 Live Python Backend API (Render)** | **[https://groww-weekly-pulse-api.onrender.com/api/live-reviews](https://groww-weekly-pulse-api.onrender.com/api/live-reviews)** |
+| **🩺 Render Backend Health Check** | **[https://groww-weekly-pulse-api.onrender.com/health](https://groww-weekly-pulse-api.onrender.com/health)** |
 | **⚡ Live Serverless Review API (Vercel)** | **[https://groww-weekly-pulse-review.vercel.app/api/live-reviews](https://groww-weekly-pulse-review.vercel.app/api/live-reviews)** |
-| **🚀 1-Click Render Backend Deploy (`render.yaml`)** | **[https://dashboard.render.com/blueprint/new?repo=https://github.com/prathmeshmdeshmane001/groww-weekly-pulse-review](https://dashboard.render.com/blueprint/new?repo=https://github.com/prathmeshmdeshmane001/groww-weekly-pulse-review)** |
 | **📝 Live Google Doc Deliverable** | **[https://docs.google.com/document/d/1EBODRQUvYK5oBVDrdKmIhqGB9EOwIz0qCFLQNdpPh3s/edit](https://docs.google.com/document/d/1EBODRQUvYK5oBVDrdKmIhqGB9EOwIz0qCFLQNdpPh3s/edit)** |
 | **💻 GitHub Repository** | **[https://github.com/prathmeshmdeshmane001/groww-weekly-pulse-review](https://github.com/prathmeshmdeshmane001/groww-weekly-pulse-review)** |
 | **📄 Problem Statement** | [docs/ProblemStatement.md](./docs/ProblemStatement.md) |
@@ -286,13 +287,12 @@ Deployed on **Vercel** and connected to GitHub for automatic deployments on ever
 * **Output Directory**: `frontend/dist`
 
 ### 2. Dedicated Python Backend Server on Render (`render.yaml`)
-The repository includes a complete **Render Blueprint (`render.yaml`)** that deploys `src/server.py` as a Python Web Service:
-* **1-Click Render Blueprint Deploy**: [**Deploy to Render**](https://dashboard.render.com/blueprint/new?repo=https://github.com/prathmeshmdeshmane001/groww-weekly-pulse-review)
-* **Service Name**: `groww-weekly-pulse-api`
+Deployed on **Render** using `render.yaml` (`src/server.py` as a Python Web Service):
+* **Live Render Backend Base URL**: [https://groww-weekly-pulse-api.onrender.com](https://groww-weekly-pulse-api.onrender.com)
+* **Live Reviews Endpoint**: [https://groww-weekly-pulse-api.onrender.com/api/live-reviews](https://groww-weekly-pulse-api.onrender.com/api/live-reviews)
+* **Health Check Endpoint**: [https://groww-weekly-pulse-api.onrender.com/health](https://groww-weekly-pulse-api.onrender.com/health)
 * **Build Command**: `pip install -r requirements.txt`
 * **Start Command**: `python src/server.py`
-* **Health Check Endpoint**: `GET /health`
-* **Live Reviews Endpoint**: `GET /api/live-reviews?weeks=10&batches=2`
 
 ---
 

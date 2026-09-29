@@ -119,23 +119,25 @@ export function resolveWindowBounds(
   };
 }
 
+const RENDER_BACKEND_URL = 'https://groww-weekly-pulse-api.onrender.com';
 const CONFIGURED_API_BASE_URL = (
-  import.meta.env.VITE_API_BASE_URL || ''
+  import.meta.env.VITE_API_BASE_URL || RENDER_BACKEND_URL
 ).replace(/\/$/, '');
 
 export async function fetchLiveReviewsFromStores(
   batches = 3
 ): Promise<{ reviews: Review[]; playCount: number; appCount: number }> {
-  const endpoints = CONFIGURED_API_BASE_URL
-    ? [
-        `${CONFIGURED_API_BASE_URL}/api/live-reviews?batches=${batches}`,
-        `/api/live-reviews?batches=${batches}`,
-      ]
-    : [`/api/live-reviews?batches=${batches}`];
+  const endpoints = [
+    `${CONFIGURED_API_BASE_URL}/api/live-reviews?batches=${batches}`,
+    `/api/live-reviews?batches=${batches}`,
+  ];
 
   for (const endpoint of endpoints) {
     try {
-      const resp = await fetch(endpoint);
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 12000);
+      const resp = await fetch(endpoint, { signal: controller.signal });
+      clearTimeout(timeoutId);
       if (!resp.ok) continue;
       const data = await resp.json();
       if (data?.success && Array.isArray(data.reviews)) {
