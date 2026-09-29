@@ -8,8 +8,21 @@ interface TrendChartProps {
 export const TrendChart: React.FC<TrendChartProps> = ({ data }) => {
   const [hoverIndex, setHoverIndex] = useState<number | null>(null);
 
-  const maxReviews = 2000;
-  const maxNegPct = 40;
+  const highestReviews = Math.max(...data.map((d) => d.totalReviews), 10);
+  const rawMaxReviews = highestReviews * 1.25;
+  const reviewStep =
+    rawMaxReviews <= 80
+      ? 20
+      : rawMaxReviews <= 200
+      ? 40
+      : rawMaxReviews <= 600
+      ? 100
+      : 200;
+  const maxReviews = Math.max(40, Math.ceil(rawMaxReviews / reviewStep) * reviewStep);
+
+  const highestNegPct = Math.max(...data.map((d) => d.negativePct), 20);
+  const maxNegPct =
+    highestNegPct <= 36 ? 40 : highestNegPct <= 56 ? 60 : highestNegPct <= 76 ? 80 : 100;
 
   const chartHeight = 160;
   const chartWidth = 500;
@@ -21,11 +34,12 @@ export const TrendChart: React.FC<TrendChartProps> = ({ data }) => {
   const usableWidth = chartWidth - paddingLeft - paddingRight;
   const usableHeight = chartHeight - paddingTop - paddingBottom;
 
-  const stepX = usableWidth / (data.length - 1);
+  const stepX = data.length > 1 ? usableWidth / (data.length - 1) : usableWidth / 2;
 
   const linePoints = data.map((item, idx) => {
     const x = paddingLeft + idx * stepX;
-    const y = paddingTop + usableHeight - (item.negativePct / maxNegPct) * usableHeight;
+    const clampedPct = Math.min(maxNegPct, Math.max(0, item.negativePct));
+    const y = paddingTop + usableHeight - (clampedPct / maxNegPct) * usableHeight;
     return { x, y, ...item };
   });
 

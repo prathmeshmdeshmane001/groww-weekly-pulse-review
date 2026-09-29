@@ -368,33 +368,38 @@ export function computeFilteredAnalytics(
     draftId: 'draft-live-190b2984',
   };
 
-  // 8. Weekly Trends (chunk by week)
-  const weeklyBuckets: Record<string, Review[]> = {};
-  filteredReviews.forEach((r) => {
-    const d = parseReviewDate(r.date);
-    const wkKey = `${d.toLocaleString('en-US', { month: 'short' })} ${d.getDate() - (d.getDay() % 7)}`;
-    if (!weeklyBuckets[wkKey]) weeklyBuckets[wkKey] = [];
-    weeklyBuckets[wkKey].push(r);
-  });
+  // 8. Weekly Trends (6 chronological intervals ending at the latest review date in window)
+  const endAnchor = new Date(maxDateObj);
+  endAnchor.setHours(23, 59, 59, 999);
+  const startAnchor = new Date(minDateObj);
+  startAnchor.setHours(0, 0, 0, 0);
 
-  const bucketKeys = Object.keys(weeklyBuckets);
-  const weeklyTrends: WeeklyTrendItem[] =
-    bucketKeys.length >= 2
-      ? bucketKeys.slice(-6).map((k) => {
-          const revs = weeklyBuckets[k];
-          const neg = revs.filter((r) => r.rating <= 2).length;
-          return {
-            week: k,
-            totalReviews: revs.length,
-            negativePct: roundNum((neg / revs.length) * 100, 1),
-          };
-        })
-      : [
-          { week: 'W-4', totalReviews: Math.round(totalCount * 0.2), negativePct: negPct },
-          { week: 'W-3', totalReviews: Math.round(totalCount * 0.25), negativePct: negPct },
-          { week: 'W-2', totalReviews: Math.round(totalCount * 0.28), negativePct: negPct },
-          { week: 'Current', totalReviews: totalCount, negativePct: negPct },
-        ];
+  const totalSpanDays = Math.max(
+    1,
+    Math.round((endAnchor.getTime() - startAnchor.getTime()) / 86400000)
+  );
+  // Use 7-day weekly buckets when window spans >= 28 days; otherwise divide window into 6 equal buckets
+  const bucketSpanMs =
+    totalSpanDays >= 28
+      ? 7 * 86400000
+      : Math.max(86400000, Math.floor((endAnchor.getTime() - startAnchor.getTime()) / 6));
+
+  const weeklyTrends: WeeklyTrendItem[] = [];
+  for (let i = 5; i >= 0; i--) {
+    const bucketEndMs = endAnchor.getTime() - i * bucketSpanMs;
+    const bucketStartMs = bucketEndMs - bucketSpanMs + 1;
+    const bucketEndDate = new Date(bucketEndMs);
+    const bucketRevs = filteredReviews.filter((r) => {
+      const t = parseReviewDate(r.date).getTime();
+      return t >= bucketStartMs && t <= bucketEndMs;
+    });
+    const neg = bucketRevs.filter((r) => r.rating <= 2).length;
+    weeklyTrends.push({
+      week: formatShortDate(bucketEndDate),
+      totalReviews: bucketRevs.length,
+      negativePct: bucketRevs.length > 0 ? roundNum((neg / bucketRevs.length) * 100, 1) : 0,
+    });
+  }
 
   // 9. Primary Metrics
   const metrics: Metric[] = [
