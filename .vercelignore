@@ -1,13 +1,4 @@
-/.venv/
-/venv/
-/__pycache__/
-/.pytest_cache/
-/pyproject.toml
-/requirements.txt
-/src/
-/tests/
-/scripts/
-/data/
-/prompts/
-/config/
-/docs/
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
