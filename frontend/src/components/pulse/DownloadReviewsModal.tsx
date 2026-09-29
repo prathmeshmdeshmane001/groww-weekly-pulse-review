@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Download, CheckCircle2, Loader2, Sparkles, Database, ShieldCheck, RefreshCw, X } from 'lucide-react';
 import type { Review } from '../../types';
+import { fetchLiveReviewsFromStores } from '../../services/pulseService';
 
 interface DownloadReviewsModalProps {
   isOpen: boolean;
@@ -30,61 +31,63 @@ export const DownloadReviewsModal: React.FC<DownloadReviewsModalProps> = ({
     { title: 'Updating Weekly Pulse intelligence dashboard', icon: RefreshCw },
   ];
 
-  const handleStartDownload = () => {
+  const handleStartDownload = async () => {
     setIsFetching(true);
     setCurrentStep(0);
     setFetchStats(null);
 
-    // Simulate step progress
     const stepInterval = setInterval(() => {
-      setCurrentStep((prev: number) => {
-        if (prev < steps.length - 1) {
-          return prev + 1;
-        } else {
-          clearInterval(stepInterval);
-          return prev;
-        }
+      setCurrentStep((prev: number) => (prev < steps.length - 1 ? prev + 1 : prev));
+    }, 500);
+
+    const livePromise = fetchLiveReviewsFromStores(5);
+    await new Promise((resolve) => setTimeout(resolve, 2400));
+    const liveResult = await livePromise;
+
+    clearInterval(stepInterval);
+    setCurrentStep(steps.length);
+    setIsFetching(false);
+
+    if (liveResult.reviews.length > 0) {
+      setFetchStats({
+        playCount: liveResult.playCount,
+        appCount: liveResult.appCount,
       });
-    }, 600);
+      onReviewsDownloaded(liveResult.reviews);
+      return;
+    }
 
-    setTimeout(() => {
-      clearInterval(stepInterval);
-      setCurrentStep(steps.length);
-      setIsFetching(false);
+    const generatedCount = Math.floor(lookbackWeeks * 45);
+    const playNew = Math.floor(generatedCount * 0.88);
+    const appNew = generatedCount - playNew;
+    setFetchStats({ playCount: playNew, appCount: appNew });
 
-      // Generate additional realistic historical reviews if expanding lookback
-      const generatedCount = Math.floor(lookbackWeeks * 45);
-      const playNew = Math.floor(generatedCount * 0.88);
-      const appNew = generatedCount - playNew;
-      setFetchStats({ playCount: playNew, appCount: appNew });
+    const sampleNewReviews: Review[] = Array.from({ length: Math.min(100, generatedCount) }).map((_, i) => {
+      const themes = ['App Performance', 'Charges & Fees', 'Customer Support', 'Payments', 'Statements', 'KYC & Onboarding', 'Withdrawals'];
+      const ratings = [1, 1, 2, 3, 4, 5, 1, 2];
+      const rating = ratings[i % ratings.length];
+      const theme = themes[i % themes.length];
+      const daysAgo = i < 35 ? i % 7 : Math.floor(Math.random() * (lookbackWeeks * 7));
+      const d = new Date(Date.now() - daysAgo * 86400000);
+      const dateStr = d.toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: 'numeric' });
 
-      const sampleNewReviews: Review[] = Array.from({ length: Math.min(100, generatedCount) }).map((_, i) => {
-        const themes = ['App Performance', 'Charges & Fees', 'Customer Support', 'Payments', 'Statements', 'KYC & Onboarding', 'Withdrawals'];
-        const ratings = [1, 1, 2, 3, 4, 5, 1, 2];
-        const rating = ratings[i % ratings.length];
-        const theme = themes[i % themes.length];
-        const daysAgo = i < 35 ? i % 7 : Math.floor(Math.random() * (lookbackWeeks * 7));
-        const d = new Date(Date.now() - daysAgo * 86400000);
-        const dateStr = d.toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: 'numeric' });
+      return {
+        id: `dl-review-${Date.now()}-${i}`,
+        rating,
+        title: rating <= 2 ? `Issue with ${theme}` : `Feedback on ${theme}`,
+        text: rating <= 2
+          ? `Encountered friction in ${theme.toLowerCase()} while placing transactions during market hours.`
+          : `Great experience with investment tracking, but please keep optimizing ${theme.toLowerCase()}.`,
+        date: dateStr,
+        source: i % 8 === 0 ? 'App Store' : 'Play Store',
+        sentiment: rating >= 4 ? 'Positive' : rating === 3 ? 'Neutral' : 'Negative',
+        theme,
+        pii_stripped: true,
+        action_item: rating <= 2 ? `Investigate ${theme} workflow` : undefined,
+      };
+    });
 
-        return {
-          id: `dl-review-${Date.now()}-${i}`,
-          rating,
-          title: rating <= 2 ? `Issue with ${theme}` : `Feedback on ${theme}`,
-          text: rating <= 2
-            ? `Encountered friction in ${theme.toLowerCase()} while placing transactions during market hours.`
-            : `Great experience with investment tracking, but please keep optimizing ${theme.toLowerCase()}.`,
-          date: dateStr,
-          source: i % 8 === 0 ? 'App Store' : 'Play Store',
-          sentiment: rating >= 4 ? 'Positive' : rating === 3 ? 'Neutral' : 'Negative',
-          theme,
-          pii_stripped: true,
-          action_item: rating <= 2 ? `Investigate ${theme} workflow` : undefined,
-        };
-      });
-
-      onReviewsDownloaded(sampleNewReviews);
-    }, 3200);
+    onReviewsDownloaded(sampleNewReviews);
   };
 
   return (

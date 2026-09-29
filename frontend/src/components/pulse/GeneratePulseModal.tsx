@@ -12,6 +12,7 @@ interface GeneratePulseModalProps {
   onClose: () => void;
   onPulseGenerated: (pulse: Pulse) => void;
   reviews?: Review[];
+  onLiveReviewsMerged?: (mergedReviews: Review[]) => void;
 }
 
 const WINDOW_OPTIONS: { id: PulseWindowOption; title: string; subtitle: string }[] = [
@@ -28,6 +29,7 @@ export const GeneratePulseModal: React.FC<GeneratePulseModalProps> = ({
   onClose,
   onPulseGenerated,
   reviews = mockReviewsList,
+  onLiveReviewsMerged,
 }) => {
   const [selectedWindow, setSelectedWindow] = useState<PulseWindowOption>('current_week');
   const [isGenerating, setIsGenerating] = useState(false);
@@ -57,7 +59,8 @@ export const GeneratePulseModal: React.FC<GeneratePulseModalProps> = ({
           setProgress(p);
         },
         reviews,
-        selectedWindow
+        selectedWindow,
+        onLiveReviewsMerged
       );
       setGeneratedPulse(pulse);
     } catch (err) {

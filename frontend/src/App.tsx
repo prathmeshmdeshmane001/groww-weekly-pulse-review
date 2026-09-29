@@ -29,6 +29,10 @@ import {
 } from './data/mockData';
 import { filterReviews, computeFilteredAnalytics } from './utils/analytics';
 import type { DateRangeFilter } from './utils/analytics';
+import {
+  fetchLiveReviewsFromStores,
+  mergeDeduplicatedReviews,
+} from './services/pulseService';
 import type { Pulse, HistoricalPulseItem, Review, Theme, SourceType } from './types';
 
 export function App() {
@@ -167,13 +171,33 @@ export function App() {
   };
 
   const handleReviewsDownloaded = (newReviews: Review[]) => {
-    setReviewsList((prev) => [...newReviews, ...prev]);
-    addToast({
-      type: 'success',
-      title: 'Reviews Ingested Successfully',
-      message: `Downloaded and classified ${newReviews.length} new reviews. Dataset now has ${(reviewsList.length + newReviews.length).toLocaleString()} total reviews.`,
+    setReviewsList((prev) => {
+      const merged = mergeDeduplicatedReviews(newReviews, prev);
+      const addedCount = Math.max(0, merged.length - prev.length);
+      addToast({
+        type: 'success',
+        title: 'Live Reviews Ingested',
+        message:
+          addedCount > 0
+            ? `Fetched ${newReviews.length} live store reviews (${addedCount} new). Workspace now has ${merged.length.toLocaleString()} reviews.`
+            : `Verified ${newReviews.length} latest live reviews from Play Store & App Store (${merged.length.toLocaleString()} total in workspace).`,
+      });
+      return merged;
     });
   };
+
+  // Automatically sync latest live reviews from /api/live-reviews on startup
+  useEffect(() => {
+    let mounted = true;
+    fetchLiveReviewsFromStores(2).then((res) => {
+      if (mounted && res.reviews.length > 0) {
+        setReviewsList((prev) => mergeDeduplicatedReviews(res.reviews, prev));
+      }
+    });
+    return () => {
+      mounted = false;
+    };
+  }, []);
 
   // Keyboard shortcut Ctrl+K
   useEffect(() => {
@@ -357,6 +381,7 @@ export function App() {
         onClose={() => setIsGenerateModalOpen(false)}
         onPulseGenerated={handlePulseGenerated}
         reviews={reviewsList}
+        onLiveReviewsMerged={setReviewsList}
       />
 
       <DownloadReviewsModal

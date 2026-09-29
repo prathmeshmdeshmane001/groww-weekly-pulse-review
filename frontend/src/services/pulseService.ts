@@ -119,44 +119,97 @@ export function resolveWindowBounds(
   };
 }
 
+export async function fetchLiveReviewsFromStores(
+  batches = 3
+): Promise<{ reviews: Review[]; playCount: number; appCount: number }> {
+  try {
+    const resp = await fetch(`/api/live-reviews?batches=${batches}`);
+    if (!resp.ok) {
+      return { reviews: [], playCount: 0, appCount: 0 };
+    }
+    const data = await resp.json();
+    if (data?.success && Array.isArray(data.reviews)) {
+      return {
+        reviews: data.reviews as Review[],
+        playCount: Number(data.playCount || 0),
+        appCount: Number(data.appCount || 0),
+      };
+    }
+  } catch {
+    // Fallback to existing dataset if offline or running without serverless API
+  }
+  return { reviews: [], playCount: 0, appCount: 0 };
+}
+
+export function mergeDeduplicatedReviews(
+  liveReviews: Review[],
+  existingReviews: Review[]
+): Review[] {
+  if (!liveReviews.length) return existingReviews;
+  const seen = new Set<string>();
+  const merged: Review[] = [];
+  for (const r of [...liveReviews, ...existingReviews]) {
+    if (!seen.has(r.id)) {
+      seen.add(r.id);
+      merged.push(r);
+    }
+  }
+  return merged.sort(
+    (a, b) => parseReviewDate(b.date).getTime() - parseReviewDate(a.date).getTime()
+  );
+}
+
 export async function generateNewPulse(
   onProgress?: (p: GenerationProgress) => void,
   reviews: Review[] = mockReviewsList,
-  windowId: PulseWindowOption = 'current_week'
+  windowId: PulseWindowOption = 'current_week',
+  onLiveReviewsMerged?: (mergedReviews: Review[]) => void
 ): Promise<Pulse> {
-  const { startDate, endDate, label, filtered } = resolveWindowBounds(reviews, windowId);
+  onProgress?.({
+    step: 'ingestion',
+    message: 'Fetching live reviews from Google Play Store & Apple App Store...',
+    progressPercent: 20,
+  });
+
+  const liveResult = await fetchLiveReviewsFromStores(3);
+  const activeDataset = mergeDeduplicatedReviews(liveResult.reviews, reviews);
+  if (liveResult.reviews.length > 0) {
+    onLiveReviewsMerged?.(activeDataset);
+  }
+
+  const { startDate, endDate, label, filtered } = resolveWindowBounds(activeDataset, windowId);
   const startIso = formatIsoDate(startDate);
   const endIso = formatIsoDate(endDate);
 
   onProgress?.({
     step: 'ingestion',
-    message: `Ingesting ${filtered.length.toLocaleString()} reviews (${startIso} to ${endIso})...`,
-    progressPercent: 25,
+    message: `Ingested & PII-scrubbed ${filtered.length.toLocaleString()} reviews (${startIso} to ${endIso})...`,
+    progressPercent: 40,
   });
-  await new Promise((resolve) => setTimeout(resolve, 500));
+  await new Promise((resolve) => setTimeout(resolve, 350));
 
   onProgress?.({
     step: 'clustering',
     message: 'Clustering themes & sentiment with Gemini AI engine...',
-    progressPercent: 55,
+    progressPercent: 65,
   });
-  await new Promise((resolve) => setTimeout(resolve, 650));
+  await new Promise((resolve) => setTimeout(resolve, 500));
 
   onProgress?.({
     step: 'ranking',
     message: 'Selecting verbatim user quotes and verifying PII redaction...',
-    progressPercent: 80,
+    progressPercent: 85,
   });
-  await new Promise((resolve) => setTimeout(resolve, 500));
+  await new Promise((resolve) => setTimeout(resolve, 400));
 
   onProgress?.({
     step: 'assembly',
     message: 'Enforcing 250-word constraint and assembling Markdown report...',
     progressPercent: 95,
   });
-  await new Promise((resolve) => setTimeout(resolve, 350));
+  await new Promise((resolve) => setTimeout(resolve, 300));
 
-  const computed = computeFilteredAnalytics(filtered, reviews, {
+  const computed = computeFilteredAnalytics(filtered, activeDataset, {
     type: 'custom',
     label,
     startDate,
