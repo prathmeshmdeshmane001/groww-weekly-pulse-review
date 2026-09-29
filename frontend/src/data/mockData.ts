@@ -11,15 +11,15 @@ import type {
 
 // ==========================================
 // REAL INGESTED DATA FROM APP STORE & PLAY STORE
-// Total reviews loaded: 1,810
-// Date range: 2026-07-13 to 2026-09-12 (Last 8-10 weeks)
+// Total reviews loaded: 2,041
+// Date range: 2026-07-21 to 2026-09-28
 // ==========================================
 
 export const mockMetrics: Metric[] = [
   {
     "id": "reviews",
     "label": "Reviews analyzed",
-    "value": "1,810",
+    "value": "2,041",
     "change": "14%",
     "changeText": "vs. previous cycle",
     "trendDirection": "up",
@@ -57,7 +57,7 @@ export const mockMetrics: Metric[] = [
   {
     "id": "negative",
     "label": "Negative reviews",
-    "value": "40.4%",
+    "value": "41.6%",
     "change": "2.4%",
     "changeText": "vs. previous cycle",
     "trendDirection": "up",
@@ -96,33 +96,13 @@ export const mockMetrics: Metric[] = [
 
 export const mockThemes: Theme[] = [
   {
-    "id": "charges-and-fees",
-    "name": "Charges & Fees",
-    "reviewCount": 657,
-    "percentage": 36,
-    "severity": "High",
-    "trend": 14,
-    "rank": 1,
-    "description": "User dissatisfaction regarding new platform fees, \u20b95 order charges, DP charges, and auto-square off penalties.",
-    "commonComplaints": [
-      "Unannounced \u20b95 extra fee on stock purchases",
-      "High account maintenance and auto-square off fees",
-      "Unclear brokerage and hidden transaction charges"
-    ],
-    "relatedActions": [
-      "Improve charge breakdown transparency on the order confirmation screen",
-      "Add clear in-app tooltip explaining regulatory vs platform fees",
-      "Send proactive notifications before auto-square off penalty triggers"
-    ]
-  },
-  {
     "id": "app-performance",
     "name": "App Performance",
-    "reviewCount": 224,
-    "percentage": 12,
+    "reviewCount": 367,
+    "percentage": 18,
     "severity": "High",
     "trend": 8,
-    "rank": 2,
+    "rank": 1,
     "description": "Chart rendering latency, app crashes during market volatility hours, and frequent update prompts.",
     "commonComplaints": [
       "App demands updates almost every other day",
@@ -136,10 +116,30 @@ export const mockThemes: Theme[] = [
     ]
   },
   {
+    "id": "charges-and-fees",
+    "name": "Charges & Fees",
+    "reviewCount": 282,
+    "percentage": 14,
+    "severity": "High",
+    "trend": 14,
+    "rank": 2,
+    "description": "User dissatisfaction regarding new platform fees, \u20b95 order charges, DP charges, and auto-square off penalties.",
+    "commonComplaints": [
+      "Unannounced \u20b95 extra fee on stock purchases",
+      "High account maintenance and auto-square off fees",
+      "Unclear brokerage and hidden transaction charges"
+    ],
+    "relatedActions": [
+      "Improve charge breakdown transparency on the order confirmation screen",
+      "Add clear in-app tooltip explaining regulatory vs platform fees",
+      "Send proactive notifications before auto-square off penalty triggers"
+    ]
+  },
+  {
     "id": "customer-support",
     "name": "Customer Support",
-    "reviewCount": 102,
-    "percentage": 6,
+    "reviewCount": 232,
+    "percentage": 11,
     "severity": "Medium",
     "trend": -3,
     "rank": 3,
@@ -158,8 +158,8 @@ export const mockThemes: Theme[] = [
   {
     "id": "statements",
     "name": "Statements",
-    "reviewCount": 55,
-    "percentage": 3,
+    "reviewCount": 119,
+    "percentage": 6,
     "severity": "Medium",
     "trend": -5,
     "rank": 4,
@@ -178,8 +178,8 @@ export const mockThemes: Theme[] = [
   {
     "id": "payments",
     "name": "Payments",
-    "reviewCount": 22,
-    "percentage": 1,
+    "reviewCount": 77,
+    "percentage": 4,
     "severity": "High",
     "trend": 11,
     "rank": 5,
@@ -200,112 +200,92 @@ export const mockThemes: Theme[] = [
 export const mockRatingBreakdown: RatingBreakdownItem[] = [
   {
     "stars": 5,
-    "percentage": 44,
-    "count": 791
+    "percentage": 43,
+    "count": 876
   },
   {
     "stars": 4,
     "percentage": 8,
-    "count": 143
+    "count": 162
   },
   {
     "stars": 3,
     "percentage": 8,
-    "count": 144
+    "count": 154
   },
   {
     "stars": 2,
-    "percentage": 6,
-    "count": 100
+    "percentage": 5,
+    "count": 111
   },
   {
     "stars": 1,
-    "percentage": 35,
-    "count": 632
+    "percentage": 36,
+    "count": 738
   }
 ];
 
 export const mockSourceBreakdown: SourceBreakdownItem[] = [
   {
     "source": "Play Store",
-    "percentage": 92,
-    "count": 1658
+    "percentage": 91,
+    "count": 1859
   },
   {
     "source": "App Store",
-    "percentage": 8,
-    "count": 152
+    "percentage": 9,
+    "count": 182
   }
 ];
 
 export const mockWeeklyTrends: WeeklyTrendItem[] = [
   {
-    "week": "Jul 27",
-    "totalReviews": 213,
-    "negativePct": 43.7
+    "week": "Aug 18",
+    "totalReviews": 176,
+    "negativePct": 45.5
   },
   {
-    "week": "Aug 3",
-    "totalReviews": 185,
-    "negativePct": 44.9
+    "week": "Aug 25",
+    "totalReviews": 309,
+    "negativePct": 42.1
   },
   {
-    "week": "Aug 10",
-    "totalReviews": 165,
-    "negativePct": 44.2
+    "week": "Sep 1",
+    "totalReviews": 288,
+    "negativePct": 29.9
   },
   {
-    "week": "Aug 17",
-    "totalReviews": 276,
-    "negativePct": 43.5
+    "week": "Sep 8",
+    "totalReviews": 210,
+    "negativePct": 36.2
   },
   {
-    "week": "Aug 24",
-    "totalReviews": 323,
-    "negativePct": 31.0
+    "week": "Sep 15",
+    "totalReviews": 225,
+    "negativePct": 51.6
   },
   {
-    "week": "Aug 31",
-    "totalReviews": 196,
-    "negativePct": 37.2
+    "week": "Sep 22",
+    "totalReviews": 169,
+    "negativePct": 46.7
   }
 ];
 
 export const mockCurrentPulse: Pulse = {
-  "id": "pulse-2026-w37-real",
-  "weekStart": "2026-09-06",
-  "weekEnd": "2026-09-12",
-  "weekLabel": "Sep 6 \u2013 Sep 12, 2026",
+  "id": "pulse-2026-09-28-real",
+  "weekStart": "2026-09-22",
+  "weekEnd": "2026-09-28",
+  "weekLabel": "Sep 22 \u2013 Sep 28, 2026",
   "status": "Ready to publish",
   "themes": [
     {
-      "id": "charges-and-fees",
-      "name": "Charges & Fees",
-      "reviewCount": 657,
-      "percentage": 36,
-      "severity": "High",
-      "trend": 14,
-      "rank": 1,
-      "description": "User dissatisfaction regarding new platform fees, \u20b95 order charges, DP charges, and auto-square off penalties.",
-      "commonComplaints": [
-        "Unannounced \u20b95 extra fee on stock purchases",
-        "High account maintenance and auto-square off fees",
-        "Unclear brokerage and hidden transaction charges"
-      ],
-      "relatedActions": [
-        "Improve charge breakdown transparency on the order confirmation screen",
-        "Add clear in-app tooltip explaining regulatory vs platform fees",
-        "Send proactive notifications before auto-square off penalty triggers"
-      ]
-    },
-    {
       "id": "app-performance",
       "name": "App Performance",
-      "reviewCount": 224,
-      "percentage": 12,
+      "reviewCount": 367,
+      "percentage": 18,
       "severity": "High",
       "trend": 8,
-      "rank": 2,
+      "rank": 1,
       "description": "Chart rendering latency, app crashes during market volatility hours, and frequent update prompts.",
       "commonComplaints": [
         "App demands updates almost every other day",
@@ -319,10 +299,30 @@ export const mockCurrentPulse: Pulse = {
       ]
     },
     {
+      "id": "charges-and-fees",
+      "name": "Charges & Fees",
+      "reviewCount": 282,
+      "percentage": 14,
+      "severity": "High",
+      "trend": 14,
+      "rank": 2,
+      "description": "User dissatisfaction regarding new platform fees, \u20b95 order charges, DP charges, and auto-square off penalties.",
+      "commonComplaints": [
+        "Unannounced \u20b95 extra fee on stock purchases",
+        "High account maintenance and auto-square off fees",
+        "Unclear brokerage and hidden transaction charges"
+      ],
+      "relatedActions": [
+        "Improve charge breakdown transparency on the order confirmation screen",
+        "Add clear in-app tooltip explaining regulatory vs platform fees",
+        "Send proactive notifications before auto-square off penalty triggers"
+      ]
+    },
+    {
       "id": "customer-support",
       "name": "Customer Support",
-      "reviewCount": 102,
-      "percentage": 6,
+      "reviewCount": 232,
+      "percentage": 11,
       "severity": "Medium",
       "trend": -3,
       "rank": 3,
@@ -341,29 +341,29 @@ export const mockCurrentPulse: Pulse = {
   ],
   "quotes": [
     {
-      "id": "q-afc3c524-54fe-4d87-8699-033ca3b084bc",
-      "text": "There are lots of bugs in your app or server, sometimes IPO dates change, Sometimes the pre-apply option appears and disappears. Fix those things.",
-      "rating": 2,
+      "id": "q-738c8e18-3b31-4a37-a61c-beec70fb2f50",
+      "text": "other trading app now brokerage charges Rs 10 per order Groww now Rs 20.",
+      "rating": 1,
       "source": "Play Store",
-      "date": "Sep 12, 2026",
+      "date": "Sep 28, 2026",
       "pii_stripped": true,
       "theme": "Charges & Fees"
     },
     {
-      "id": "q-24607b05-ee98-499a-bf09-acbeecdb83a4",
-      "text": "groww app F and O always struck, glitches,slow moments very bad",
+      "id": "q-f13a013c-bfb0-4ec7-b042-ea14199181e1",
+      "text": "the app has become very very slow",
       "rating": 1,
       "source": "Play Store",
-      "date": "Sep 12, 2026",
+      "date": "Sep 28, 2026",
       "pii_stripped": true,
       "theme": "App Performance"
     },
     {
-      "id": "q-68108801-bc2c-4417-9b70-ea9c63c33aac",
-      "text": "i deposit money but I can't buy it",
+      "id": "q-2c3d3e9c-7ff7-4806-a566-36ebe731aff5",
+      "text": "Absolute garbage experience. Active SIP and IPO UPI mandates just vanish from the Live section for no reason. A finance app handling people\u2019s money should not be this unreliable. Groww is very quick to charge users, but apparently fixing basic bugs is too much to ask.",
       "rating": 1,
       "source": "Play Store",
-      "date": "Sep 12, 2026",
+      "date": "Sep 25, 2026",
       "pii_stripped": true,
       "theme": "Payments"
     }
@@ -375,72 +375,4945 @@ export const mockCurrentPulse: Pulse = {
   ],
   "wordCount": 192,
   "maxWords": 250,
-  "reviewCount": 1810,
+  "reviewCount": 2041,
   "averageRating": 3.2,
-  "negativePercentage": 40.4,
+  "negativePercentage": 41.6,
   "docUrl": "https://docs.google.com/document/d/1EBODRQUvYK5oBVDrdKmIhqGB9EOwIz0qCFLQNdpPh3s/edit",
   "draftId": "draft-real-190b2984ac32e70"
 };
 
 export const mockHistoricalPulses: HistoricalPulseItem[] = [
   {
-    "id": "pulse-2026-w37-real",
-    "week": "Sep 6 \u2013 Sep 12",
-    "dateRange": "2026-09-06 to 2026-09-12",
-    "reviews": 1810,
-    "topTheme": "Charges & Fees",
-    "sentiment": "Mixed",
+    "id": "pulse-2026-09-22-to-2026-09-28",
+    "week": "Sep 22 \u2013 Sep 28",
+    "dateRange": "2026-09-22 to 2026-09-28",
+    "reviews": 169,
+    "topTheme": "App Performance",
+    "sentiment": "Negative",
     "status": "Ready to publish",
-    "publishedDate": "Sep 13, 2026",
+    "publishedDate": "Sep 29, 2026",
     "docUrl": "https://docs.google.com/document/d/1EBODRQUvYK5oBVDrdKmIhqGB9EOwIz0qCFLQNdpPh3s/edit"
   },
   {
-    "id": "pulse-2026-w36",
-    "week": "Aug 30 \u2013 Sep 5",
-    "dateRange": "2026-08-30 to 2026-09-05",
-    "reviews": 320,
-    "topTheme": "Charges & Fees",
+    "id": "pulse-2026-09-15-to-2026-09-21",
+    "week": "Sep 15 \u2013 Sep 21",
+    "dateRange": "2026-09-15 to 2026-09-21",
+    "reviews": 225,
+    "topTheme": "Customer Support",
+    "sentiment": "Negative",
+    "status": "Published",
+    "publishedDate": "Sep 22, 2026",
+    "docUrl": "https://docs.google.com/document/d/1EBODRQUvYK5oBVDrdKmIhqGB9EOwIz0qCFLQNdpPh3s/edit"
+  },
+  {
+    "id": "pulse-2026-09-08-to-2026-09-14",
+    "week": "Sep 8 \u2013 Sep 14",
+    "dateRange": "2026-09-08 to 2026-09-14",
+    "reviews": 210,
+    "topTheme": "App Performance",
     "sentiment": "Mixed",
     "status": "Published",
-    "publishedDate": "Sep 6, 2026",
+    "publishedDate": "Sep 15, 2026",
     "docUrl": "https://docs.google.com/document/d/1EBODRQUvYK5oBVDrdKmIhqGB9EOwIz0qCFLQNdpPh3s/edit"
   },
   {
-    "id": "pulse-2026-w35",
-    "week": "Aug 23 \u2013 Aug 29",
-    "dateRange": "2026-08-23 to 2026-08-29",
-    "reviews": 345,
+    "id": "pulse-2026-09-01-to-2026-09-07",
+    "week": "Sep 1 \u2013 Sep 7",
+    "dateRange": "2026-09-01 to 2026-09-07",
+    "reviews": 288,
+    "topTheme": "App Performance",
+    "sentiment": "Positive",
+    "status": "Published",
+    "publishedDate": "Sep 8, 2026",
+    "docUrl": "https://docs.google.com/document/d/1EBODRQUvYK5oBVDrdKmIhqGB9EOwIz0qCFLQNdpPh3s/edit"
+  },
+  {
+    "id": "pulse-2026-08-25-to-2026-08-31",
+    "week": "Aug 25 \u2013 Aug 31",
+    "dateRange": "2026-08-25 to 2026-08-31",
+    "reviews": 309,
     "topTheme": "App Performance",
     "sentiment": "Negative",
     "status": "Published",
-    "publishedDate": "Aug 30, 2026",
+    "publishedDate": "Sep 1, 2026",
     "docUrl": "https://docs.google.com/document/d/1EBODRQUvYK5oBVDrdKmIhqGB9EOwIz0qCFLQNdpPh3s/edit"
   },
   {
-    "id": "pulse-2026-w34",
-    "week": "Aug 16 \u2013 Aug 22",
-    "dateRange": "2026-08-16 to 2026-08-22",
-    "reviews": 290,
-    "topTheme": "Payments",
-    "sentiment": "Mixed",
+    "id": "pulse-2026-08-18-to-2026-08-24",
+    "week": "Aug 18 \u2013 Aug 24",
+    "dateRange": "2026-08-18 to 2026-08-24",
+    "reviews": 176,
+    "topTheme": "App Performance",
+    "sentiment": "Negative",
     "status": "Published",
-    "publishedDate": "Aug 23, 2026",
-    "docUrl": "https://docs.google.com/document/d/1EBODRQUvYK5oBVDrdKmIhqGB9EOwIz0qCFLQNdpPh3s/edit"
-  },
-  {
-    "id": "pulse-2026-w33",
-    "week": "Aug 9 \u2013 Aug 15",
-    "dateRange": "2026-08-09 to 2026-08-15",
-    "reviews": 310,
-    "topTheme": "Statements",
-    "sentiment": "Positive",
-    "status": "Published",
-    "publishedDate": "Aug 16, 2026",
+    "publishedDate": "Aug 25, 2026",
     "docUrl": "https://docs.google.com/document/d/1EBODRQUvYK5oBVDrdKmIhqGB9EOwIz0qCFLQNdpPh3s/edit"
   }
 ];
 
 export const mockReviewsList: Review[] = [
+  {
+    "id": "fbca366d-f54c-461c-9684-d040505c3eeb",
+    "rating": 1,
+    "title": null,
+    "text": "Groww is worst among all broker due to customer care support is so bakwas. Customer care team se koi issue hi resolve nahi hota hai. create tickets more then 10 times in 15 days but nothing resolved. contact no 94178-24739 . 15 days complete to initiate account open process but unable to proceeds due to nothing support to issue resolve.",
+    "date": "Sep 28, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "97b49eaa-0628-4725-a93b-763b179fd5d6",
+    "rating": 1,
+    "title": null,
+    "text": "I am using app since 2021, recently I have enabled add family feature and now I am unable to switch back to primary account. Raised support request, no answer so far. Ticket number is 27954064",
+    "date": "Sep 28, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "7b895e51-1746-4395-8ebe-42cca3f3ccf4",
+    "rating": 2,
+    "title": null,
+    "text": "g isv sign up to t t shirt qki me to ol ok vwna yo",
+    "date": "Sep 28, 2026",
+    "source": "Play Store",
+    "theme": "KYC & Onboarding",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "dc0827b4-4f5d-4d8f-a856-de1b4ecfb327",
+    "rating": 1,
+    "title": null,
+    "text": "bakavas hea , loss time only loss money",
+    "date": "Sep 28, 2026",
+    "source": "Play Store",
+    "theme": "Statements",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "f13a013c-bfb0-4ec7-b042-ea14199181e1",
+    "rating": 1,
+    "title": null,
+    "text": "the app has become very very slow",
+    "date": "Sep 28, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "c13f4536-70e4-48a6-b1b6-4889637a4766",
+    "rating": 5,
+    "title": null,
+    "text": "app is all are working but heat map is missing I want heat map",
+    "date": "Sep 28, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "a54b145b-8f54-475f-a124-9cc94a4835eb",
+    "rating": 4,
+    "title": null,
+    "text": "Chart mein Dragging option Layie, Dragging system option ya intra day mein rahe to aur bhi bohot achha hoga...",
+    "date": "Sep 28, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "850dfae6-c3ce-47bb-9cfa-019dd7e332fb",
+    "rating": 1,
+    "title": null,
+    "text": "this app is not working properly i had taken the stoploss at 1243.00 but it had triggered at 1243.60 , how is it possible that means this app is not satisfied so many times I am facing this issue.Please don't install this app....",
+    "date": "Sep 28, 2026",
+    "source": "Play Store",
+    "theme": "Statements",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "32d6ee9b-42fc-45eb-b0c5-51404322455b",
+    "rating": 1,
+    "title": null,
+    "text": "too many updates, within two days new update arrivals",
+    "date": "Sep 28, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "067e3d5a-c921-45bd-87e3-84bf005a548a",
+    "rating": 3,
+    "title": null,
+    "text": "In love with this app. Clean easy UI log in with fingerprints no compulsion of memorising useless numbers is so perfect that I am not bothered to spend extra than other platforms. However 1 thing I dislike is \"personal loan notifications\" as soon as my balance goes down they show me loan ad. This ad makes me uncomfortable about my financial position. I feel helpless, hopeless without money dependent upon loans.",
+    "date": "Sep 28, 2026",
+    "source": "Play Store",
+    "theme": "Charges & Fees",
+    "sentiment": "Neutral",
+    "pii_stripped": true
+  },
+  {
+    "id": "7ad3bfb5-9ec2-43c6-a140-d4717ed5da75",
+    "rating": 1,
+    "title": null,
+    "text": "my experience was not well I had placed order but not triggered still my money got debited on top of that app got stuck showing no candle bars and when I cancelled my order everything started functioning smoothly lookes like I have been scammed",
+    "date": "Sep 28, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "ea78baf0-877a-440f-b766-cc18bb1f6497",
+    "rating": 5,
+    "title": null,
+    "text": "Groww is a simple and user-friendly investment app. The interface is clean, investing in mutual funds and stocks is straightforward, and tracking investments is convenient. I especially like how easy it is to understand the portfolio and monitor returns. Overall, a smooth experience for both beginners and experienced investors.",
+    "date": "Sep 28, 2026",
+    "source": "Play Store",
+    "theme": "Charges & Fees",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "3ababd13-5f62-48ff-a91d-f9f423c4f9ea",
+    "rating": 3,
+    "title": null,
+    "text": "high charges on trade but in use perfect",
+    "date": "Sep 28, 2026",
+    "source": "Play Store",
+    "theme": "Charges & Fees",
+    "sentiment": "Neutral",
+    "pii_stripped": true
+  },
+  {
+    "id": "738c8e18-3b31-4a37-a61c-beec70fb2f50",
+    "rating": 1,
+    "title": null,
+    "text": "other trading app now brokerage charges Rs 10 per order Groww now Rs 20.",
+    "date": "Sep 28, 2026",
+    "source": "Play Store",
+    "theme": "Charges & Fees",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "5dbb3d05-e844-45e0-8f3e-f4818fe90db0",
+    "rating": 4,
+    "title": null,
+    "text": "good and beginners friendly app easy to use but some thing can be I more details ex ipo dates etc",
+    "date": "Sep 28, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "14602075154",
+    "rating": 2,
+    "title": "UI change",
+    "text": "Hi, I have been using this app for past 7 years, but the new chart view is not eye pleasing at all. Pls bring back the older version I guess from today morning u have rolled out new Groww Charts, pls bring back the old one Or make it exactly like the earlier one",
+    "date": "Sep 28, 2026",
+    "source": "App Store",
+    "theme": "App Performance",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "fbfbd369-64e2-4473-bf4f-7e534de13335",
+    "rating": 1,
+    "title": null,
+    "text": "Why this much good app hava hard procedure for SWP procedure ... just because of this i need to start another app...make this issue sorted pls",
+    "date": "Sep 27, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "c59dbf82-fd16-4445-908d-ab5e3cb10c61",
+    "rating": 5,
+    "title": null,
+    "text": "Dear team, Still charts are not refreshing Stucking even not switching From nifty to bnk nifty and other stocks",
+    "date": "Sep 27, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "8f892692-2ace-4bf2-87c5-01b992d9abd0",
+    "rating": 5,
+    "title": null,
+    "text": "Good Experience easy operating my favourite App Groww i love this App",
+    "date": "Sep 27, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "b9ad9774-1a49-4272-9ee3-895e70f4a1d9",
+    "rating": 5,
+    "title": null,
+    "text": "it's interface is very easy to understand",
+    "date": "Sep 27, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "fcb91e3e-2989-4694-ba7a-baec8ff82b93",
+    "rating": 3,
+    "title": null,
+    "text": "i love trrrrrrr ,, h u ii and officers posts",
+    "date": "Sep 27, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Neutral",
+    "pii_stripped": true
+  },
+  {
+    "id": "6c81f329-d99f-4e58-932c-22efd374e446",
+    "rating": 1,
+    "title": null,
+    "text": "No Experience. Please stop add for me",
+    "date": "Sep 27, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "d55dd5c9-a0e2-4bb3-a59b-0e9a9d438f6a",
+    "rating": 2,
+    "title": null,
+    "text": "app is goo but many important indicators are not available even in trading view charts please sole this isu and allow to put stop loss and target directly in chats as it is available with dhanand sahi app",
+    "date": "Sep 27, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "568ab9cb-733d-4f08-9c5b-5f6d8f70f517",
+    "rating": 1,
+    "title": null,
+    "text": "I am not registering in this app because it is asking me to sign. But how can I sign perfectly on a screen. There should have been a signature upload option.",
+    "date": "Sep 27, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "c3145013-9a60-4153-b75d-777eff6a1a55",
+    "rating": 4,
+    "title": null,
+    "text": "why there's no Groww Prime offer for existing subscribers/customers.",
+    "date": "Sep 27, 2026",
+    "source": "Play Store",
+    "theme": "Charges & Fees",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "b5f0db30-1bc0-4f21-9ed2-9db2c0d03cbf",
+    "rating": 5,
+    "title": null,
+    "text": "4.8 rating ..best app for stock market best broker no doubt. simple UI. improving day by day...",
+    "date": "Sep 27, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "de102bb7-e899-4111-9613-049947030222",
+    "rating": 1,
+    "title": null,
+    "text": "when tried to delete account it doesn't allow to do so and still notification and all keep coming",
+    "date": "Sep 27, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "117aebd5-0665-46ea-9e26-429890d5afc6",
+    "rating": 5,
+    "title": null,
+    "text": "right app hai par mere paise pas gye hai",
+    "date": "Sep 26, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "6ffd21d4-a616-4039-844a-2d22e2327917",
+    "rating": 1,
+    "title": null,
+    "text": "very bad aap hidden charges are included please save money and Don't install the aap",
+    "date": "Sep 26, 2026",
+    "source": "Play Store",
+    "theme": "Charges & Fees",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "5ab31b78-fe30-4a93-9521-3bd72de8a811",
+    "rating": 4,
+    "title": null,
+    "text": "Please bring scalping mode or otherwise Trailing SL and Target setup for commodity MCX market like gold, silver, crude oil and NG",
+    "date": "Sep 26, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "747ccf48-50ad-43ba-8764-6067e200319c",
+    "rating": 1,
+    "title": null,
+    "text": "PLEASE BE CAREFUL WITH THIS APP! This app is extremely bad. I had a very terrible experience and lost \u20b9500. It was NOT because the market went down. The app deducted a huge amount of money through brokerage and other charges I feel completely disappointed and frustrated with this app. There are too many charges, and the deductions can seriously affect your money. My advice: DO NOT DOWNLOAD OR USE THIS APP without checking every charge and fee carefully. Learn from my experience and be",
+    "date": "Sep 26, 2026",
+    "source": "Play Store",
+    "theme": "Charges & Fees",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "1b8d0795-4856-4110-8ca9-ef89bf18c6e1",
+    "rating": 1,
+    "title": null,
+    "text": "very Dissapointed service. Ther are making people fool only by the name of Free AMC. charging too much. EX- if you sold a holding stock of some unit with a multiple part order (one day with one same stock) they charges Heavily DP charge with cdsl charge and another charges according how many times you successfully executed. I am suffering from this. also I talked with their executive. very dissapointed service.",
+    "date": "Sep 26, 2026",
+    "source": "Play Store",
+    "theme": "Charges & Fees",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "852e64d6-cfb2-44c7-a2f6-0a27a258be46",
+    "rating": 5,
+    "title": null,
+    "text": "very nice application for on line share trading",
+    "date": "Sep 26, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "44a89de9-d423-48f0-baeb-b0245a650da0",
+    "rating": 5,
+    "title": null,
+    "text": "Hello team, Could you please provide option to buy US and other international stocks. Groww has already obtained permission for this but not sure when it will be made available.",
+    "date": "Sep 26, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "13c00889-cc39-4001-a1a4-d1083c695754",
+    "rating": 5,
+    "title": null,
+    "text": "nys app simple method easy to leaning",
+    "date": "Sep 26, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "b89a5594-a97f-43fd-8957-ecd202198e2e",
+    "rating": 5,
+    "title": null,
+    "text": "best is withdrawal option is the best real time settlement is price less keep innovating",
+    "date": "Sep 26, 2026",
+    "source": "Play Store",
+    "theme": "Withdrawals",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "7306a88b-4f63-4be9-81ad-c5841789aac3",
+    "rating": 5,
+    "title": null,
+    "text": "It is a very good app, I am using it and redemption is also done easily, I am very happy to use it.",
+    "date": "Sep 26, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "b8511d4e-2f81-4417-98b9-23a6ebd9c17d",
+    "rating": 5,
+    "title": null,
+    "text": "very nice experience with grow plate form",
+    "date": "Sep 26, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "0b13edc9-920c-4f85-8e8c-7c6272205b19",
+    "rating": 4,
+    "title": null,
+    "text": "installed the app nearly 6 years ago , and used it for the last 4 years almost every day. over the years the improvement is excellent, mutual fund and stock buy and selling is without any hassle , hardly i have ever faced any issue while in any transaction and the support team to quite responsive whenever any issues has raised. only CON which i have even after all the updates, the share tecnicals are not properly organised and Mutual fund screener option not good, foreign investment required",
+    "date": "Sep 26, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "33654aac-5b9d-469a-b4fa-f0d43d12f907",
+    "rating": 5,
+    "title": null,
+    "text": "Depart account will be secure times on",
+    "date": "Sep 26, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "cd8d7769-54fa-43c7-8ef3-aacc75ceffe0",
+    "rating": 1,
+    "title": null,
+    "text": "Enable Renting Stocks & Login Otp option - via Email also @ not only via mobile otp . Most sims ( networks) are not allowing otp if recharge expired and we are forced to recharge - and such times we are facing problem to login to groww on new devices. Other Apps like Dhann, Upstox etc providing both Mobile + Gmail Login otps too. Only Groww is troubling without any customer friendly improvement. If this continues - will close all groww accounts.",
+    "date": "Sep 25, 2026",
+    "source": "Play Store",
+    "theme": "KYC & Onboarding",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "4210a128-e917-46a0-a544-490b2781ac99",
+    "rating": 1,
+    "title": null,
+    "text": "sometime not screening very well and take more time browsing",
+    "date": "Sep 25, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "fd30ac43-463a-4afe-b7f0-21250208e962",
+    "rating": 1,
+    "title": null,
+    "text": "Very bad app customer not received call and account not delete so very bad app not using this app all of you",
+    "date": "Sep 25, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "92e9cd57-f8eb-4ae4-8d77-2dbb0f2a2d5f",
+    "rating": 1,
+    "title": null,
+    "text": "very poor interface. not a single menu is properly set. have to dig in to get the details.",
+    "date": "Sep 25, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "d91cec37-c708-4a3f-b68a-3631334e81ea",
+    "rating": 5,
+    "title": null,
+    "text": "Very nice App. Easy to invest and track portfolio.",
+    "date": "Sep 25, 2026",
+    "source": "Play Store",
+    "theme": "Statements",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "1ed99366-9e2f-4fab-a5b8-ad6b00ed5d11",
+    "rating": 5,
+    "title": null,
+    "text": "treading is very easy in it ,specially money deposit, withdrawal, mtf,etf in a single sentence superb",
+    "date": "Sep 25, 2026",
+    "source": "Play Store",
+    "theme": "Withdrawals",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "a6824f32-dedd-418a-9281-8b48ea441548",
+    "rating": 1,
+    "title": null,
+    "text": "Very poor service and total waste of time! (1 Star) Worst customer service I have ever experienced. My account setup has been pending for nearly two weeks, and there is no proper response or support from the team. They are just wasting people's valuable time. Highly irresponsible and pathetic service. Better to avoid this app and look for better alternatives!",
+    "date": "Sep 25, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "82de1649-67ef-40ed-b69a-945e8236ac45",
+    "rating": 4,
+    "title": null,
+    "text": "i am unable to add family members account.. it gets stuck on relationship part and says.. there seems to be an internet issue... which is totally untrue",
+    "date": "Sep 25, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "7d99200b-a18a-40d8-94d5-d7397a134fdb",
+    "rating": 5,
+    "title": null,
+    "text": "excellent share market app for beginners. easy to use.",
+    "date": "Sep 25, 2026",
+    "source": "Play Store",
+    "theme": "Charges & Fees",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "9ae00133-f860-44a1-9d0f-f7e4004e70fe",
+    "rating": 5,
+    "title": null,
+    "text": "easy to handle and smooth process,perfect platform for beginners",
+    "date": "Sep 25, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "2c3d3e9c-7ff7-4806-a566-36ebe731aff5",
+    "rating": 1,
+    "title": null,
+    "text": "Absolute garbage experience. Active SIP and IPO UPI mandates just vanish from the Live section for no reason. A finance app handling people\u2019s money should not be this unreliable. Groww is very quick to charge users, but apparently fixing basic bugs is too much to ask.",
+    "date": "Sep 25, 2026",
+    "source": "Play Store",
+    "theme": "Payments",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "31d802fa-957f-4d81-89e1-c949cf6bd82c",
+    "rating": 5,
+    "title": null,
+    "text": "very poor, not satisfied, slippage is more ..",
+    "date": "Sep 25, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "1d02d9e9-38f6-4ebf-b444-2795e1b8e1c7",
+    "rating": 2,
+    "title": null,
+    "text": "update is not getting better instead kinda scary with all the sudden lagging and network problems even when network is fine. Now biometric authentication has disappeared.",
+    "date": "Sep 25, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "f58a3909-d8ce-4f0b-a6e4-f8c7e0f4a226",
+    "rating": 2,
+    "title": null,
+    "text": "why graph is not available for 2 days after the update? graph of this day is not showing properly. 1 week, 1 month etc are fine. please make sure these things are working properly before releasing an update",
+    "date": "Sep 25, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "2f7e7e10-db4c-4530-822f-1fac09ad452e",
+    "rating": 1,
+    "title": null,
+    "text": "otp is not coming disgusting app why you even create if you don't want to create account to me you are waste",
+    "date": "Sep 25, 2026",
+    "source": "Play Store",
+    "theme": "KYC & Onboarding",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "e918d6c2-91f1-497e-bb80-97c4851f77e7",
+    "rating": 5,
+    "title": null,
+    "text": "but paise lose mai hai bar nhi rhe iss app mai.compny profit mai hai or hum lose m",
+    "date": "Sep 25, 2026",
+    "source": "Play Store",
+    "theme": "Statements",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "1d38ba6f-3a37-4d93-afe0-00c828b7e60e",
+    "rating": 1,
+    "title": null,
+    "text": "last 4 years iam using fist time I approach customer service I realized that one of the worst customer service 27936929",
+    "date": "Sep 25, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "c76ec023-42a1-4828-a096-979af808de1f",
+    "rating": 1,
+    "title": null,
+    "text": "worst experience, it's been a one week account not activated, customer care people instead of solving problems, they suggested that I should delete the account permanently.",
+    "date": "Sep 25, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "4d868e5d-961c-41fb-ad78-35c011a6074b",
+    "rating": 5,
+    "title": null,
+    "text": "Very Easy to operate, no any lag",
+    "date": "Sep 25, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "67df5619-cab4-42a5-b99f-bd997a719e4b",
+    "rating": 1,
+    "title": null,
+    "text": "very worst experience with this app.After filling up all the details in the app ,and allotment for some ipo is done,they just blocked my account and they telling me to do Re-Ekyc verification.i don't know --if there is a problem with my account --then why would they inform me before??? customer care support is also very bad and disgusting.",
+    "date": "Sep 25, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "38e077f5-d249-4aee-b0ab-388015f118cb",
+    "rating": 1,
+    "title": null,
+    "text": "this app bugs and sucks and will eat my money and our money be safe don't use this app",
+    "date": "Sep 25, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "42729d1f-098b-4469-bb92-603460265947",
+    "rating": 3,
+    "title": null,
+    "text": "After update , application closing itself, scrolling experience become poorer too.",
+    "date": "Sep 25, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Neutral",
+    "pii_stripped": true
+  },
+  {
+    "id": "ed4552f1-dc8e-4ff2-8a3b-bdc9b896f85f",
+    "rating": 1,
+    "title": null,
+    "text": "charges too high and no trust too much risky",
+    "date": "Sep 25, 2026",
+    "source": "Play Store",
+    "theme": "Charges & Fees",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "23002b89-a0fb-4662-9e57-485291dadb85",
+    "rating": 4,
+    "title": null,
+    "text": "The only thing irritating is when you delete any existing alert (price alert) on Manage Alerts screen of any stock page. The \"Alert Deleted Successfully\" message appears at the bottom which hides the \"Add Alert\" button or the \"Delete\" button on specific alert. The message stays there for some time. Shortcut is you go back to the stock info page and come again to the Alerts page. This is very irritating. It has been like this since last 2 years atleast.",
+    "date": "Sep 25, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "ea520e43-ba47-4845-ac9f-6ef3458d0f8f",
+    "rating": 3,
+    "title": null,
+    "text": "I asked them many times about a particular modification but they didn't make it let me clear this, if trigger orders can be sorted alphabetically (like zerodha),the app would be more useful and easy",
+    "date": "Sep 25, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Neutral",
+    "pii_stripped": true
+  },
+  {
+    "id": "d17d3503-0ad8-4738-a7bc-8767ad0d8f99",
+    "rating": 1,
+    "title": null,
+    "text": "very bad. my 2 fund missed in Groww App Dashboard",
+    "date": "Sep 25, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "2d8ee5d6-3c29-4c33-be6f-776b6b8233e9",
+    "rating": 5,
+    "title": null,
+    "text": "very nice and easy to use application. providing upto date details of market.",
+    "date": "Sep 25, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "14590916406",
+    "rating": 5,
+    "title": "Best app for trading",
+    "text": "Easy to use I have zero knowledge about trading but after using it am an expert in trading",
+    "date": "Sep 25, 2026",
+    "source": "App Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "cac2c7fc-7ef9-42d5-b531-31486b16b769",
+    "rating": 5,
+    "title": null,
+    "text": "ADD EASY NAME CHANGE OPTION AS PER PAN",
+    "date": "Sep 25, 2026",
+    "source": "Play Store",
+    "theme": "KYC & Onboarding",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "49f7b2af-b8bd-4c56-b0c7-c695df1a99bd",
+    "rating": 1,
+    "title": null,
+    "text": "If you apply for IPO-s using this Groww App, you won't get a single IPO.",
+    "date": "Sep 24, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "fe612529-6d5b-4cb0-91f1-a42553a57605",
+    "rating": 3,
+    "title": null,
+    "text": "add 2 hour time frame. or at least there should be an option for it. also an option should be there for hiding phone's status bar in chart landscape orientation so that we can see a larger chart area.",
+    "date": "Sep 24, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Neutral",
+    "pii_stripped": true
+  },
+  {
+    "id": "cb53caa7-c728-4ee1-99b3-96aba324fac5",
+    "rating": 5,
+    "title": null,
+    "text": "nice trading and mutual fund growth application",
+    "date": "Sep 24, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "a737f991-7ad0-4ccf-8f4e-f6caa14165f2",
+    "rating": 5,
+    "title": null,
+    "text": "at now it's going great let's see later",
+    "date": "Sep 24, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "809fad18-a208-4e9b-8558-3ec3cd36f7c8",
+    "rating": 1,
+    "title": null,
+    "text": "get ready to face recovery calls from their agents if your account balance remains in debit due to any reason for 4-5 months. worst broker who appoints recovery agents to collect debit balances from their customers. on one side they constantly keep on accruing delayed payment charges and on other side they also share your details to recovery agents to make calls directly to customers and ask them to clear debit balance on their account otherwise they will report it to CIBIL authorities.",
+    "date": "Sep 24, 2026",
+    "source": "Play Store",
+    "theme": "Charges & Fees",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "547c3222-f438-4a8c-ba52-f2192c2ac70b",
+    "rating": 4,
+    "title": null,
+    "text": "Thank you, Groww, for adding this fantastic feature that allows us to use multiple accounts from a single device. It is very convenient and useful. However, there is one issue: the added accounts are automatically logged out multiple times, and we have to log in again each time. Please fix this issue so that we can use the multiple-account feature smoothly without interruptions. Also, currently the OTP is sent to the registered mobile number. Could you please provide an option to send the OTP",
+    "date": "Sep 24, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "14588715447",
+    "rating": 5,
+    "title": "Friendly and Easy to use",
+    "text": "Groww is a very user-friendly and easy-to-use stock market app. The interface is simple, transactions are smooth, and portfolio tracking is convenient. Overall, a great platform for investors and traders.",
+    "date": "Sep 24, 2026",
+    "source": "App Store",
+    "theme": "Charges & Fees",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "304b66f2-008a-4d58-90cb-b497e08339ae",
+    "rating": 4,
+    "title": null,
+    "text": "I have been using this app since August 2018, from the initial days, i started my investing journey with this app, so im kind of nostalgic, its an amazing app, ever updating itself, ever improving, i wish them all the success for their future",
+    "date": "Sep 24, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "7cd59244-505b-435f-aa36-513ff5c67109",
+    "rating": 4,
+    "title": null,
+    "text": "Please add Directional movement index in groww charts. I contacted the support team they are saying use alternative i.e. trading view charts. But I am convenient to trade by using DMI indicator in groww charts only. I am requesting you to enable DMI indicator in groww charts.",
+    "date": "Sep 24, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "b2d3749f-3e2f-4f2f-b629-3b9eeb9e8bcc",
+    "rating": 4,
+    "title": null,
+    "text": "trading view chart par hi scalper tools add karo or commodity market ke liye bhi scalper tools add karo or better ho jayega app performance please",
+    "date": "Sep 24, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "08fe857a-92cf-434c-9f4f-01d6a70d6c6a",
+    "rating": 1,
+    "title": null,
+    "text": "very very bad service i have downloaded the aap in June I have submitted my documents for kyc there was a spelling mistake from their side from June till now there are just giving the excuse are technical team will call you there are also not deactivating my account i request to all my indian friends pls don't go with groww app it's having very third class service",
+    "date": "Sep 24, 2026",
+    "source": "Play Store",
+    "theme": "KYC & Onboarding",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "14587945381",
+    "rating": 1,
+    "title": "Its not compatible with tab",
+    "text": "Your app why not auto adjust tab screen",
+    "date": "Sep 24, 2026",
+    "source": "App Store",
+    "theme": "General & Usability",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "148b69a8-64b2-47d5-a6d1-be0c6659cff3",
+    "rating": 3,
+    "title": null,
+    "text": "scalping is to slow app developer need to focus on it",
+    "date": "Sep 24, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Neutral",
+    "pii_stripped": true
+  },
+  {
+    "id": "e72f2848-4235-4f20-883f-082fd6c58477",
+    "rating": 3,
+    "title": null,
+    "text": "I am not using upi, how can i verify my bank account?",
+    "date": "Sep 24, 2026",
+    "source": "Play Store",
+    "theme": "Payments",
+    "sentiment": "Neutral",
+    "pii_stripped": true
+  },
+  {
+    "id": "e7f835ec-d787-47ff-b0a2-cef3baab1798",
+    "rating": 1,
+    "title": null,
+    "text": "nowadays they are doing cheating with their customers, I had mutual fund account in groww for many years which is free ,now they are forcing me to open their stock account too so they charged me account opening charges and later on annual maintenance charges. I don't want to do trading or buy or sell any stocks etc then why do you forcing me for that. I am not able to see my mutual funds portfolio status because your inbuilt system is asking for details to open account.",
+    "date": "Sep 24, 2026",
+    "source": "Play Store",
+    "theme": "Charges & Fees",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "8e84c718-1e93-4b80-a87c-f5114c06c613",
+    "rating": 5,
+    "title": null,
+    "text": "it is best platform to trade for beginners all details to trade is provided in it. technical analysis and financial analysis given in this app .so good to go with this platform with proper research on app then you are ready to trade",
+    "date": "Sep 24, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "54212b64-7032-4a6b-a9d9-f7a58caa512b",
+    "rating": 1,
+    "title": null,
+    "text": "Misleading Dashboard Data and Zero Support AccountabilityGroww is showing severe backend lag that directly affects your money. The app misled me by showing my average buy price as \u20b9221 for 50 shares. I sold at \u20b9227 to secure a profit, but the app instantly recalculated my execution background to an average of \u20b9233.5, turning a winning trade into an unfair loss. Their customer service team is highly dismissive and flat out refuses to accept that their system glitched.",
+    "date": "Sep 24, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "50d34d2d-cead-4675-914d-4b5acf2a6e63",
+    "rating": 1,
+    "title": null,
+    "text": "Not allowing me to withdraw my money!",
+    "date": "Sep 24, 2026",
+    "source": "Play Store",
+    "theme": "Withdrawals",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "ad1997d0-5097-49e0-a907-0e0eadb6ccd1",
+    "rating": 5,
+    "title": null,
+    "text": "very good user friendly app and using since 2024",
+    "date": "Sep 24, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "3cd0287a-1a69-4d16-9b0d-93f05b98b4f5",
+    "rating": 1,
+    "title": null,
+    "text": "Extremely disappointing app. If you value your money, think twice before using Groww. Their support is frustrating, charges are poorly explained, and unexpected charges can leave you confused. I\u2019ve been investing/trading for 5+ years and started my investment journey at 16, inspired by Warren Buffett. I have invested \u20b93+ lakh through Groww and am extremely frustrated with their service. I don\u2019t even want to give 1 star because they don\u2019t deserve it. I\u2019d rather pay AMC elsewhere than use Groww",
+    "date": "Sep 24, 2026",
+    "source": "Play Store",
+    "theme": "Charges & Fees",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "0bc7f32b-dc43-4226-9587-6b4388408341",
+    "rating": 1,
+    "title": null,
+    "text": "options chain keep getting stuck in live session! No stability. They change layout at will which affect trading flow. Fno section's layout has been changed which has made it more difficult and cluttered to execute trades on top of it it's glitchy. can't believe an app with do many subscribers can do such a poor job and can be so glitchy especially an app which deals with trading. when their customer care was approached the only answer they had was \"sorry for inconvenience\".",
+    "date": "Sep 24, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "6896113a-eef5-4023-8060-b9140a7809cf",
+    "rating": 1,
+    "title": null,
+    "text": "very disturbing app very irritating app bahut sari information chahie isko bhi faltu ki itni information aur koi trading app nahin mangta hai isko banane Wale bevkuf Hai Shayad is app ko Play Store se hi delete ho jana chahie hamesha ke liye I never recommend this app for anyone",
+    "date": "Sep 24, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "f54a368c-ad65-4f35-ba94-6c08fa86b13d",
+    "rating": 5,
+    "title": null,
+    "text": "awesome app..easy to navigate and user friendly.",
+    "date": "Sep 24, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "896636b1-7145-471e-8117-f31d09dea6ce",
+    "rating": 5,
+    "title": null,
+    "text": "Excellent app for investing and trading. The interface is simple, easy to understand, and beginner-friendly. Account opening, mutual fund investments, and stock purchases are smooth and fast. Portfolio tracking is clear, and the app provides useful information for investors. Overall, a great experience with Groww. Highly recommended!",
+    "date": "Sep 24, 2026",
+    "source": "Play Store",
+    "theme": "Statements",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "ec3931e0-ef03-49ba-9c17-51a5ff3988c4",
+    "rating": 1,
+    "title": null,
+    "text": "horrible customer agent support, app lags and no longer we can trust GROWW",
+    "date": "Sep 24, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "19479737-7452-41cd-81db-9928e03c987b",
+    "rating": 5,
+    "title": null,
+    "text": "1. user friendly 2. trustable trading platform 3. technical and fundamental is good",
+    "date": "Sep 24, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "251742c9-8d21-46eb-97fe-fd9f9df20242",
+    "rating": 5,
+    "title": null,
+    "text": "please update my grow app with all features",
+    "date": "Sep 24, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "ae565a75-9feb-4ace-9803-c7cc9f637545",
+    "rating": 5,
+    "title": null,
+    "text": "markets updates on point .. thanks chart is easy or smooth working..",
+    "date": "Sep 24, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "b1af33f3-1cda-4de0-9aaa-cde8f9bbb48c",
+    "rating": 1,
+    "title": null,
+    "text": "Without informing me and without my consent my high value F&O stock was sold by Groww. Foul play by Groww",
+    "date": "Sep 24, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "b3a68e15-85f6-4ef4-a0c6-eb75cccaa7d3",
+    "rating": 5,
+    "title": null,
+    "text": "the best app super company highest level",
+    "date": "Sep 24, 2026",
+    "source": "Play Store",
+    "theme": "KYC & Onboarding",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "180bea25-af02-475b-b9c9-a98b6b8a1361",
+    "rating": 5,
+    "title": null,
+    "text": "grow mutual fund application open problem please help",
+    "date": "Sep 23, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "2e887092-3124-4be9-95a2-ca0da021bf28",
+    "rating": 5,
+    "title": null,
+    "text": "I have use multiple trading app but groww is best app",
+    "date": "Sep 23, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "d061b038-7719-444f-9711-889fe31f28dc",
+    "rating": 1,
+    "title": null,
+    "text": "pathetic service standard and poor app.. otp for login are sent only on mobile and not e-mail id to change email id it's a horrible task...why not take otp on email and change mobile no. not good for regular traders and market watchers..",
+    "date": "Sep 23, 2026",
+    "source": "Play Store",
+    "theme": "KYC & Onboarding",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "4e6e4aa0-1046-409f-bc4f-41705d8901d5",
+    "rating": 5,
+    "title": null,
+    "text": "aapki service bahut acchi hai thank u so Mach mujhko ek achcha invester banane ki journey mein Mera Sath dene ke liye",
+    "date": "Sep 23, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "14585014126",
+    "rating": 1,
+    "title": "Improve",
+    "text": "Improve fund transfer in our accouny within 2 to 3 hours as we are investing for emergency while emergency need we had to wait for 2 to 3 days so please improve it will invest more fund",
+    "date": "Sep 23, 2026",
+    "source": "App Store",
+    "theme": "General & Usability",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "9595d725-651d-4568-825f-696c0dc7ed6a",
+    "rating": 1,
+    "title": null,
+    "text": "Very addictive in nature and I have to scroll down a lot to refresh external mutual fund. they have very high brokrage",
+    "date": "Sep 23, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "4a181ec6-58c5-40b1-95a0-2e269a81bc8b",
+    "rating": 4,
+    "title": null,
+    "text": "Hi.. Thanks for making this app, it is simple and user friendly. However I request for two thing.. Firstly some advance indicator like opening range breakout, previous day high, low, open close etc may be added. Secondly app is to be build up like that if it is opened in mobile the screen will not go to sleep like zerodha kite. Pls do these updates",
+    "date": "Sep 23, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "a2ad8a58-6e7d-42b2-ae54-2b837672c4b4",
+    "rating": 5,
+    "title": null,
+    "text": "its a simple and easy app for investment and mutual funds. A small suggestion: make feature of note to watchlisted stocks and portfolio stocks to remember why i keep the stock",
+    "date": "Sep 23, 2026",
+    "source": "Play Store",
+    "theme": "Statements",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "c75ac521-442d-4df5-a101-9ededef9380d",
+    "rating": 5,
+    "title": null,
+    "text": "Chart IQ must available why you people closed this facility you should start chart IQ very fast That's why I have given 2 stars otherwise it will be 5 star Watchlist vanished in letest update not good",
+    "date": "Sep 23, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "74b55a5b-ceca-4d75-aecb-8f1e642a9bbf",
+    "rating": 5,
+    "title": null,
+    "text": "Till Date, Groww Is Very Good. Keep Up The Good Work. And Let Us See In Coming Days",
+    "date": "Sep 23, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "bacc29a0-3006-49f0-bed1-57d5724144e9",
+    "rating": 1,
+    "title": null,
+    "text": "worst support......if any trouble no one is helping us...also I shared my concern to team though mail no response till now.....albosoltly pathetic..service.....",
+    "date": "Sep 23, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "a97762e8-723f-408d-83ab-272990914dd1",
+    "rating": 1,
+    "title": null,
+    "text": "edit: your team has incomplete information and I have not gotten dividedends since 6 months now. and since 1 year for another one. it was good when I initially started using this app but since many months the support has not been great",
+    "date": "Sep 23, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "1ad8c2d5-7932-4404-9b79-11eaaff91597",
+    "rating": 1,
+    "title": null,
+    "text": "causing a lot of lag during trade execution leading to loss ...worst experience from past few days",
+    "date": "Sep 23, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "8c48c037-d60d-4bff-bd2f-97885451d79b",
+    "rating": 2,
+    "title": null,
+    "text": "Not Able to see porfolio XIRR in the holding-> portfolio tab.",
+    "date": "Sep 23, 2026",
+    "source": "Play Store",
+    "theme": "Statements",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "44a94e2e-8eab-4410-8153-486af37f39e0",
+    "rating": 5,
+    "title": null,
+    "text": "very user friendly and easy to use",
+    "date": "Sep 23, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "db9db880-fc45-48cb-a708-f8d1d3fc19da",
+    "rating": 4,
+    "title": null,
+    "text": "Pay off graphs are not available for the positions of different expiry. GR-1 AI tool is amazing. But the AI chat history deletion option is not available. Kindly add.",
+    "date": "Sep 23, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "82026d83-e9dd-470f-8601-88e527dd29c2",
+    "rating": 5,
+    "title": null,
+    "text": "Handling a very soft & understandable essay view buy and sell,",
+    "date": "Sep 23, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "40982e82-b87f-4350-a676-e1b82d655242",
+    "rating": 2,
+    "title": null,
+    "text": "No IPO is in favour of us while using grows but users of other applications have IPO in favour of them.",
+    "date": "Sep 23, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "a128420a-e472-4286-8bf5-7741bc3ac1f5",
+    "rating": 1,
+    "title": null,
+    "text": "mera jo anubhav raha he. is app par achha nhi raha. isme loss bada bada kar bata dete he.or profit invisible ho jaata he. 2 baar ho chuka he aisa. complaint karne par koi samadhan nahi niklta. hidden charges itne he ki profit dikhta hi nhi ulta profit hote hue bhi account loss me hi dikhta he.",
+    "date": "Sep 23, 2026",
+    "source": "Play Store",
+    "theme": "Charges & Fees",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "51482f97-3ff7-433c-9860-93294d266ebe",
+    "rating": 1,
+    "title": null,
+    "text": "This broker app demat account close complain customer support team raise after company don't do close my account.",
+    "date": "Sep 23, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "1c640705-75d7-4a91-97f6-5a133bf5fbbe",
+    "rating": 1,
+    "title": null,
+    "text": "I am extremely disappointed with Groww\u2019s order execution. Whenever I set a stop-loss and target, my stop-loss is executed at a much lower price, causing a bigger loss, while my target is booked at a lower price, giving me less profit. For example, I bought a Call option at \u20b910, set the stop-loss at \u20b99, and the target at \u20b912. However, the stop-loss was executed near \u20b98.25, while the target was booked around \u20b911.30. This repeated slippage increases my losses and reduces my profits. Groww should",
+    "date": "Sep 23, 2026",
+    "source": "Play Store",
+    "theme": "Statements",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "fe196096-0901-4ff0-9644-05ac92e198cf",
+    "rating": 5,
+    "title": null,
+    "text": "please also add weightage for each stock in holdings",
+    "date": "Sep 23, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "7d7cf2f4-2fce-483f-90a3-08382359e50c",
+    "rating": 5,
+    "title": null,
+    "text": "very user-friendly as compared to other apps.",
+    "date": "Sep 23, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "af93c7bd-ce6d-4c14-a8e0-8241a8bb7db3",
+    "rating": 1,
+    "title": null,
+    "text": "every week notification update application bad application",
+    "date": "Sep 23, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "51ee6999-b43e-475c-a575-ae330b9cdf01",
+    "rating": 1,
+    "title": null,
+    "text": "app is not working no castamer support",
+    "date": "Sep 23, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "14583001892",
+    "rating": 5,
+    "title": "Great",
+    "text": "Easy to use and experience is great",
+    "date": "Sep 23, 2026",
+    "source": "App Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "19b0d9a2-a0e4-401f-94a9-4f0057997549",
+    "rating": 5,
+    "title": null,
+    "text": "first time apply for ipo, it becomes easy only on account of groww. thanks",
+    "date": "Sep 23, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "5e650265-7462-4158-9d4b-8ed90873ea31",
+    "rating": 5,
+    "title": null,
+    "text": "this is my first experience with Grow",
+    "date": "Sep 23, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "eccff620-a15c-435a-b99a-144afb002314",
+    "rating": 5,
+    "title": null,
+    "text": "even though you're charging \u20b920 per trade,I love to give it because you people are making me to groww and I like your app name groww which make me groww",
+    "date": "Sep 23, 2026",
+    "source": "Play Store",
+    "theme": "Charges & Fees",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "14582628412",
+    "rating": 1,
+    "title": "Not good enough.. If you want to lose your money, download this app.",
+    "text": "I am facing serious issues while trading on the Groww platform. Whenever I place an order at the price currently displayed on the app, or set a specific price at which I want to buy or sell, my order is often not executed at the expected price or within the expected time. I am also experiencing problems with stop-loss orders. Even after setting a specific stop-loss level, my position sometimes gets executed at a different price, resulting in a higher loss than I expected. There also appears to be a delay in order execution. Even when the market reaches the price at which my order should be triggered, the order is not always executed immediately. This has caused me financial losses on multiple occasions. I request you to investigate the following: 1. Why are my orders not being executed promptly when the market reaches my specified price? 2. Why are my stop-loss orders sometimes executed at a price different from the stop-loss level I set? 3. Is there any execution delay, slippage, liquidity issue, or other technical reason responsible for these differences? 4. Please provide the complete order execution details for the affected trades, including the order placement time, trigger time, execution time, requested price, and actual executed price. I request a proper investigation and a clear explanation regarding these issues, as they are directly affecting my trades and causing financial losses. Please resolve this issue at the earliest.",
+    "date": "Sep 23, 2026",
+    "source": "App Store",
+    "theme": "Charges & Fees",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "b1038dfb-8bae-4d08-b083-ac5f937f00a2",
+    "rating": 1,
+    "title": null,
+    "text": "don't install this appp it will reboot your mobile phone data and it takes information from us during sign in and after that reebots all the data of the mobile phone",
+    "date": "Sep 23, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "6b8bc973-442a-4411-b9cf-361175189ebb",
+    "rating": 3,
+    "title": null,
+    "text": "in groww u can add one more option. like gift share to anyone so customer base can be increase",
+    "date": "Sep 23, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Neutral",
+    "pii_stripped": true
+  },
+  {
+    "id": "c3677877-399a-4608-b3a2-067b8f2e6b4e",
+    "rating": 1,
+    "title": null,
+    "text": "I am minor and used to use groww without full setup of pan card and bank details now groww does not let me inn to see my watch list I might have used the app in future but not now. I use to watch stock market for education",
+    "date": "Sep 23, 2026",
+    "source": "Play Store",
+    "theme": "Payments",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "8878c65a-5d9f-40ab-aefc-a9a9c4cd3caa",
+    "rating": 5,
+    "title": null,
+    "text": "great user experience and best for all the investment of stocks and mutual funds, interface of the app is user friendly and great built.",
+    "date": "Sep 22, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "8b24bb73-42d7-4c7c-81c7-9299c7ce5d08",
+    "rating": 3,
+    "title": null,
+    "text": "app is good. but chart and prices especially strike prices take time longer than usual to refresh.... interface is good and simple. pls improve in above addressed issues.. still the app sticks especially in commodities and whenever I set Target it hits less price less than target many times....",
+    "date": "Sep 22, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Neutral",
+    "pii_stripped": true
+  },
+  {
+    "id": "a14ac3a5-2afe-40a6-b695-db220bb5cb72",
+    "rating": 5,
+    "title": null,
+    "text": "Easy to use and operating smooth and fast working",
+    "date": "Sep 22, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "074f317a-6d1c-42a2-b4ab-8752c55445dc",
+    "rating": 3,
+    "title": null,
+    "text": "This app is really the safest option but I am a little disappointed with the KYC system.. the app is showing 'update your KYC' but when I am clicking, there is some error or glitch ... I am unable to update my KYC. this is my ticket number 27904337",
+    "date": "Sep 22, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Neutral",
+    "pii_stripped": true
+  },
+  {
+    "id": "734687dc-f4ec-45b6-8e93-975592133f1a",
+    "rating": 4,
+    "title": null,
+    "text": "comparison option should be available in the app",
+    "date": "Sep 22, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "e58a9b48-6540-4032-a6f3-b23b213810c1",
+    "rating": 1,
+    "title": null,
+    "text": "I am facing issue while declaring nominee and for client support i am unable to add screenshot, I hope my issue gets resolved asap",
+    "date": "Sep 22, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "47149d64-6143-4e9d-bf09-f59b1176f710",
+    "rating": 5,
+    "title": null,
+    "text": "This app is very good, I have given it five stars, you can also download it from here.",
+    "date": "Sep 22, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "a977e472-381d-432a-8595-8e6cad661501",
+    "rating": 4,
+    "title": null,
+    "text": "The main page consisting of indexes at the top is very tiny. Its hard to click and swipe in such a short place. It used to be larger earlier.",
+    "date": "Sep 22, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "07201f08-857c-4508-92ec-d58af1f5b696",
+    "rating": 1,
+    "title": null,
+    "text": "don't use this app their costomer service is worst while doing kyc mismatch photo also they are verified successful,how this possible and this app is lack of security,i don't recommend this app,and for the first time for updating mobile no they are demanding 50 Rs itna bhikari app aage Tak nahi Deka",
+    "date": "Sep 22, 2026",
+    "source": "Play Store",
+    "theme": "Charges & Fees",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "cdab69cb-27dc-44aa-b3f1-5a55a40f1000",
+    "rating": 4,
+    "title": null,
+    "text": "Not able to download mutual funds capital gains downloads. it's showing 'Downloading report but it's not downloading",
+    "date": "Sep 22, 2026",
+    "source": "Play Store",
+    "theme": "Statements",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "7b5d6798-e45d-4c29-9adb-2488f740664f",
+    "rating": 5,
+    "title": null,
+    "text": "very good for trading since 2019....i Am trading with grow",
+    "date": "Sep 22, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "067ae0a2-7d12-4a5b-a619-b5269504fd7c",
+    "rating": 1,
+    "title": null,
+    "text": "I have had the most horrible experience investing through this platform.",
+    "date": "Sep 22, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "a9c9a42b-8dc9-4a22-a194-ea1523fe8f52",
+    "rating": 1,
+    "title": null,
+    "text": "worst app to much brokerage and glitch ,I got 2000 as profit but when I press for exit there was 500 loss.never try this app",
+    "date": "Sep 22, 2026",
+    "source": "Play Store",
+    "theme": "Statements",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "a822e0a7-1994-4e4c-b1cf-fed72cd0d59c",
+    "rating": 5,
+    "title": null,
+    "text": "I am new to grow as an option trader and MTF.application is good but can be further improve for real time data execution.",
+    "date": "Sep 22, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "b4b0ce86-598f-4efc-896b-f300c2d4fa5a",
+    "rating": 1,
+    "title": null,
+    "text": "Very bad app, nifty & sensex chart stop moving and also option chain stop moving on live market. And big thing his customer support was very absurd. Suggest to not use this app",
+    "date": "Sep 22, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "f546dbbb-9044-4aea-879c-b77969c489db",
+    "rating": 1,
+    "title": null,
+    "text": "this app is a scam because whenever i go to watch MCX price here, the price instantly moves against my position. it means this Prostitute groww shares my IP address with market mafia",
+    "date": "Sep 22, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "601c9cf4-03a8-4588-978d-471055ee8dda",
+    "rating": 1,
+    "title": null,
+    "text": "bonds sell at far lower price then invested, how it possible. stay away for bonds",
+    "date": "Sep 22, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "86ca3848-0ca3-4d65-b30b-c688967b9ab9",
+    "rating": 4,
+    "title": null,
+    "text": "Please make your app better, it is hanging a lot now. Creating a lot of problem in trading. If this issue persists I need to switch some other application.",
+    "date": "Sep 22, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "00124d29-243f-4e0e-a8eb-180007ba712c",
+    "rating": 1,
+    "title": null,
+    "text": "not working and not satisfied with setting and management",
+    "date": "Sep 22, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "da1ad4fe-26a4-402d-b5fe-fd27940041ce",
+    "rating": 5,
+    "title": null,
+    "text": "stock market best apps thank you grow app",
+    "date": "Sep 22, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "6dcc86e4-6f5e-4f22-a4ce-b97ac992602a",
+    "rating": 5,
+    "title": null,
+    "text": "I really like the Groww app. Whenever I had a requirement, I emailed the team and my request was updated within a few days. I have emailed them twice so far, and both my needs were fully resolved. Great support and quick response \u2014 highly recommended. 5 stars!",
+    "date": "Sep 22, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "a70a7e7e-e2b7-47ef-8eba-40bad316181c",
+    "rating": 5,
+    "title": null,
+    "text": "If you want to save money, this is the right place. Through this platform, you can invest your money very well and earn money. This is the right platform, it is right for you and there is no cheating or fraud issue here. I too have been doing this for many years. Sometimes out of compulsion, I have to withdraw the amount of SIP but till now I have not seen any fraud or fraud. It is a very good platform, you all can do it too,And customer service is also very good.",
+    "date": "Sep 22, 2026",
+    "source": "Play Store",
+    "theme": "Charges & Fees",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "aa7141d1-8366-4915-9e0c-00d6b83ce77b",
+    "rating": 1,
+    "title": null,
+    "text": "very poor service and saport staff without comunication call ended i am 1 mounth ago requested but no any satisfied reply 2amount is withdraw 24 hrs complete but no any action staff customer care 10 min aftee call receive and after without query solve call ended grow is very poor service and saport staff",
+    "date": "Sep 22, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "14579895356",
+    "rating": 1,
+    "title": "Useless app",
+    "text": "I am trying to execute the order but it excuted i lost 84000 because of this stupid app I want switch thi app I don\u2019t want to use when I\u2019m trying to use stop loss it shows that sl fallied worst app and tgt orders also not executing properly after update there response also worst I don\u2019t want to use app i am very frustrated",
+    "date": "Sep 22, 2026",
+    "source": "App Store",
+    "theme": "App Performance",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "f3a2d3eb-62b6-4183-9218-4c668ae57597",
+    "rating": 1,
+    "title": null,
+    "text": "this app is very cheap jab me stock buy krta hu tab hi candel niche jata hai yelog froud hai",
+    "date": "Sep 22, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "14c0cb70-da01-4f52-9883-9d954e73067c",
+    "rating": 5,
+    "title": null,
+    "text": "Since yesterday evening Groww app is not working for me, not sure for others. tried refreshing the but no use, still i am unable to use it.",
+    "date": "Sep 22, 2026",
+    "source": "Play Store",
+    "theme": "Charges & Fees",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "e970586a-fc55-45e3-ac69-20ee1ae20465",
+    "rating": 1,
+    "title": null,
+    "text": "0 customer support i made withdrawal request from my demat account amount deducted from my demat account but not credited in bank account when I raised ticket no response gave option to chat excutive whenever message excutive change then explain again still no response no status",
+    "date": "Sep 22, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "14579594478",
+    "rating": 5,
+    "title": "weekly sip for mutual funds",
+    "text": "please also add weekly sip options for mutual funds",
+    "date": "Sep 22, 2026",
+    "source": "App Store",
+    "theme": "Payments",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "d569ba19-7bb0-447f-a5cf-f886bd192344",
+    "rating": 1,
+    "title": null,
+    "text": "Withdrawal issue..they don't transfer fund instantly to bank account. my fund is stuck since 2 days..not using it anymore.",
+    "date": "Sep 22, 2026",
+    "source": "Play Store",
+    "theme": "Withdrawals",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "60de93b8-48f7-4846-8e88-9dcc397c0278",
+    "rating": 3,
+    "title": null,
+    "text": "similar fund option revoked in new update, anyone explain why?",
+    "date": "Sep 22, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Neutral",
+    "pii_stripped": true
+  },
+  {
+    "id": "c86e5862-578b-4436-9d09-7ad9ac28299f",
+    "rating": 1,
+    "title": null,
+    "text": "can't even explore the app without giving my personal information, if I don't want to share my aadhar number and pan card number they won't let me use an app after a while which is just absurd",
+    "date": "Sep 22, 2026",
+    "source": "Play Store",
+    "theme": "KYC & Onboarding",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "54f8ee6f-77d2-457f-8bcd-44bab229528d",
+    "rating": 2,
+    "title": null,
+    "text": "Treasury Bill and government bonds are not available, and other government securities are not available, only zerodha gives option for tbill auction",
+    "date": "Sep 22, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "be45963b-4a99-43c8-9090-be3489802190",
+    "rating": 1,
+    "title": null,
+    "text": "its a fraud app when i withdraw my money they showed my bank rejected but also my money is no return to my demat till date",
+    "date": "Sep 22, 2026",
+    "source": "Play Store",
+    "theme": "Payments",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "56fc8cac-85ca-49b2-95e1-da1ac1f2443c",
+    "rating": 5,
+    "title": null,
+    "text": "user friendly interface and make it easy to beginners loved it",
+    "date": "Sep 22, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "94b97bbe-b8d8-41c3-a29d-d03026a939eb",
+    "rating": 4,
+    "title": null,
+    "text": "thanks to all r fine e r u there are a",
+    "date": "Sep 22, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "4e358ed1-9c25-41f1-9d34-ab27e8ab2e87",
+    "rating": 2,
+    "title": null,
+    "text": "this app is not accessible for visually impaired person after update future option tab is not working during exit position. a blind person is unable to exit position in future option tab using TalkBack kindly review this.",
+    "date": "Sep 22, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "e8b6bebd-e412-4859-9037-5d9341416172",
+    "rating": 1,
+    "title": null,
+    "text": "most bogus app...it is forcing me to open acct else app is getting closed...may be lated i would have opened ...but fine I will open in other platform",
+    "date": "Sep 22, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "a9bd12c9-ef6d-498e-80a4-a61440435d3d",
+    "rating": 5,
+    "title": null,
+    "text": "this is perfect app for all .",
+    "date": "Sep 21, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "06d73298-a69a-404c-b2e9-04037f3a702f",
+    "rating": 5,
+    "title": null,
+    "text": "Please add 5,10,15,30,45 sec timing in charts",
+    "date": "Sep 21, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "f5c7a11c-4c70-4922-8c2a-ee6f83b4718e",
+    "rating": 3,
+    "title": null,
+    "text": "good for beginners not for options overall great",
+    "date": "Sep 21, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Neutral",
+    "pii_stripped": true
+  },
+  {
+    "id": "af58dc81-b2ee-4db7-99f4-5282fd98a03d",
+    "rating": 5,
+    "title": null,
+    "text": "spr guidance this app go groww on",
+    "date": "Sep 21, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "8d7ae41e-a812-4014-bf0d-0bef5ecf074b",
+    "rating": 5,
+    "title": null,
+    "text": "Super... Please Add Drag & Drop Target and Stop loss Option On Live Chart.",
+    "date": "Sep 21, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "30fc6cf8-2776-4b89-b27e-78bb96f38d0b",
+    "rating": 1,
+    "title": null,
+    "text": "Worst customer care service, no reply for last few of my complaints till now",
+    "date": "Sep 21, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "14576797115",
+    "rating": 3,
+    "title": "Easy to use UI but few key features missing",
+    "text": "Groww has one of the best user friendly apps for investment. However, key features like stoploss in GTT orders, mutual fund performance against its own benchmark are missing. Also, it\u2019s impossible to update stock alerts after recent updates in mobile app. Kindly rectify these issues.",
+    "date": "Sep 21, 2026",
+    "source": "App Store",
+    "theme": "App Performance",
+    "sentiment": "Neutral",
+    "pii_stripped": true
+  },
+  {
+    "id": "0cce7866-c30c-4567-9aa9-784c2fae877f",
+    "rating": 1,
+    "title": null,
+    "text": "the have no good customer support team",
+    "date": "Sep 21, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "d12d789e-1eba-400e-9601-f5e445c0b0eb",
+    "rating": 5,
+    "title": null,
+    "text": "This Application is a good process but Brokerage amount is very High because My Profit amount is Lossing in brokerage. That's all.",
+    "date": "Sep 21, 2026",
+    "source": "Play Store",
+    "theme": "Statements",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "ea6f5224-5f36-4d87-bcb1-714315d3b97d",
+    "rating": 1,
+    "title": null,
+    "text": "totally use less app accuracy zero stop lose hit before attaining the price costumers support useless hanging error lots of problems in this app kosis kre koi or broker use kre instead of this",
+    "date": "Sep 21, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "ac162103-a219-4a66-92a3-0cb22ad52fbc",
+    "rating": 5,
+    "title": null,
+    "text": "Previously I have given 5 Stars.. Now I will give only two. Since last update I am not able to open the app.. It's my urge to developers please look into this problem.",
+    "date": "Sep 21, 2026",
+    "source": "Play Store",
+    "theme": "Charges & Fees",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "deaeb5f4-5690-4181-98b9-3192d29b3964",
+    "rating": 5,
+    "title": null,
+    "text": "from where can I understand that how should I use this app ... i mean i really want to understand stocks and mutual funds and all but don't know from where can i ??",
+    "date": "Sep 21, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "acce3b12-a018-4efb-ae36-0ab7052d0280",
+    "rating": 1,
+    "title": null,
+    "text": "Groww\u2019s instant withdrawal service is very disappointing. When I initiated the withdrawal, it showed that the processing time would be up to 4 hours. However, when I contacted the Help Center, I was told that it could take up to 24 hours. Because of this delay, I was unable to buy the stocks I had planned to purchase today. This caused me a loss of opportunity, and I am very disappointed with the service.",
+    "date": "Sep 21, 2026",
+    "source": "Play Store",
+    "theme": "Withdrawals",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "ee610761-9e4e-4ed8-b4bc-bf0e9041dd81",
+    "rating": 1,
+    "title": null,
+    "text": "Totally fake app don't use this app for trading USE ANOTHER APP",
+    "date": "Sep 21, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "1a2bc6f4-b868-43e9-afa0-ef03ebb34853",
+    "rating": 1,
+    "title": null,
+    "text": "my money is stuck, and there is no one from customer care who will respond or resolved it",
+    "date": "Sep 21, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "7dcb2c04-dc94-427c-90ca-c9d3a6d650dd",
+    "rating": 1,
+    "title": null,
+    "text": "Very disappointing experience. This is not the first time I\u2019ve faced these issues. Funds keep getting added/displayed incorrectly, Lifetime XIRR is not showing, and redemption requests have also been rejected due to unit availability issues. The issue has been pending since 21 August 2026, yet I repeatedly receive messages saying that the dashboard has been \u201csuccessfully updated\u201d even when the problems remain unresolved.",
+    "date": "Sep 21, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "79d8dc0d-1fb4-4f02-852f-6981f4512303",
+    "rating": 4,
+    "title": null,
+    "text": "App is not working today.Is it my problem?How can I fix it.",
+    "date": "Sep 21, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "d5158336-fed2-4d55-ac73-840b3d27526c",
+    "rating": 5,
+    "title": null,
+    "text": "super good app ...my life my dreem my favourite...",
+    "date": "Sep 21, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "f4220380-36bc-4e3f-9cf4-0b046dcd2b5c",
+    "rating": 5,
+    "title": null,
+    "text": "the best easy to use platform for investing as a student.",
+    "date": "Sep 21, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "cd2594aa-b0c4-4571-ac3e-fd8cb72a8879",
+    "rating": 2,
+    "title": null,
+    "text": "Problem related profile pic not show last 15 days please resolve glich",
+    "date": "Sep 21, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "e2c2233a-75d8-4888-9b6b-ba264f92f86d",
+    "rating": 2,
+    "title": null,
+    "text": "why today grow app is not working it shows error",
+    "date": "Sep 21, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "0728effd-3df3-4eb6-b027-05ff57fa325c",
+    "rating": 1,
+    "title": null,
+    "text": "no customer support plz don't install it ... worst service",
+    "date": "Sep 21, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "ada064f2-1f7d-4aaf-a087-0fa5e31d502f",
+    "rating": 5,
+    "title": null,
+    "text": "one of the reliable trading platform out ther. easy to navigate and I haven't had any kind of problems till now.",
+    "date": "Sep 21, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "45c6e330-6b5c-471b-823f-7a5ae6b7f020",
+    "rating": 5,
+    "title": null,
+    "text": "Great app, Easy to invest and manage in market !",
+    "date": "Sep 21, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "f88c35b5-c55b-4944-9ac9-704a97acffee",
+    "rating": 1,
+    "title": null,
+    "text": "poor customer support. i will get irrelevant automated response and no agent will connect.",
+    "date": "Sep 21, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "d0a4a4b8-4b30-4dfc-b80a-1b0e0fbe9b25",
+    "rating": 1,
+    "title": null,
+    "text": "disgusting app. total fraud. the money doesn't get credited neither to this app wallet nor to the bank. Support executives are also not responding. total loss for me using this app. I DO NOT RECOMMEND THIS TO ANY ONE.",
+    "date": "Sep 21, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "00c1050d-d9a2-435d-833b-0f049887b5f0",
+    "rating": 1,
+    "title": null,
+    "text": "Withdrawal requests take an eternity to get processed. this is happening far too frequently to the point where I felt compelled to give a 1 star rating. the processing time really needs to be improved.",
+    "date": "Sep 21, 2026",
+    "source": "Play Store",
+    "theme": "Withdrawals",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "b209a6f3-031c-40e8-bc9f-628738169953",
+    "rating": 5,
+    "title": null,
+    "text": "groww is not opening something wrong error showing",
+    "date": "Sep 21, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "2c00dafc-68aa-4f82-92ab-762f0b82199e",
+    "rating": 5,
+    "title": null,
+    "text": "very Easy and comfort in this app",
+    "date": "Sep 21, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "76e0899b-4888-45ab-b011-1fcfb818b972",
+    "rating": 1,
+    "title": null,
+    "text": "chat bhi load ho raha he kya he ae",
+    "date": "Sep 21, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "17f45e2f-23e1-49fe-8aa1-16725b1ed9a2",
+    "rating": 2,
+    "title": null,
+    "text": "page keeps breaking. 404 errors all around. also you might see your balance (withdrawals) etc randomly change. unreliable. maintain a sheet with your trades. messed up platform.",
+    "date": "Sep 21, 2026",
+    "source": "Play Store",
+    "theme": "Withdrawals",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "e8bfcc8a-e38c-4282-8661-d6d5f1914bc6",
+    "rating": 1,
+    "title": null,
+    "text": "my watchlists stocks auto deleted today without my interfare. this is very unsafe and bad behavior.",
+    "date": "Sep 21, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "73a66685-7fd0-4f5e-a4e7-7ddc26da0e1f",
+    "rating": 1,
+    "title": null,
+    "text": "useless as watchlisted stocks got removed automatically and now showing there is no watchlisted stocks, truly such a worst app",
+    "date": "Sep 21, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "1a2d1518-563a-4832-a425-e3c59e9b32a4",
+    "rating": 1,
+    "title": null,
+    "text": "Every week update is there why? Still same thing is happening many many update Today I want to add amount so it is showin as temporary service unavailable and customer care number not reachable, not eligible for 1 star also and the steps you'll gave that has been done earlier also it is basic IT person can guide me I am unable to login Application is asking for an update every time and now to connect customer care I have to wait for more than 10 mins. now the nifty number issue occurred.",
+    "date": "Sep 21, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "13ff429d-376f-479d-9a30-c83132c4e41b",
+    "rating": 1,
+    "title": null,
+    "text": "getting graph not available, stock not listed in NSE for the stocks that i trade daily too. This happened on the 21 september. very irritating.",
+    "date": "Sep 21, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "1d3ab2a4-b072-4838-9707-91b19167ccdc",
+    "rating": 4,
+    "title": null,
+    "text": "User friendly, but there is no recent fundamental data for some stocks. Needs to update data frequently.",
+    "date": "Sep 21, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "4134cd51-70e0-4675-aa63-4da9e91d320f",
+    "rating": 1,
+    "title": null,
+    "text": "Hi team ,getting page not found on web on every stock click",
+    "date": "Sep 21, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "e19b7847-13ae-4380-9f4a-8ddbeba78a35",
+    "rating": 5,
+    "title": null,
+    "text": "troubleshooting problem faced please solved problem earlier",
+    "date": "Sep 21, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "ca160538-0d53-4ceb-ab0d-63f6990433ee",
+    "rating": 1,
+    "title": null,
+    "text": "Today Android app is not working properly",
+    "date": "Sep 21, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "9b85afab-a755-4fe9-b6da-d61473671427",
+    "rating": 2,
+    "title": null,
+    "text": "the charts started lagging very badly after update please fix I can't trade my phone is",
+    "date": "Sep 21, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "9d4d6114-25ff-466e-a67d-502c5d9f184b",
+    "rating": 5,
+    "title": null,
+    "text": "Very easy to use this app .. i love it",
+    "date": "Sep 21, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "4095f34e-7868-4242-b9e1-a1d58eac6ba6",
+    "rating": 5,
+    "title": null,
+    "text": "This application is very user-friendly, especially for beginners. Compared to other applications, the brokerage charges are also lower. Whenever we have any doubts or issues, we can simply send a message, and they provide a solution to our problems. Overall, I would say this is a very good and easy-to-use application...",
+    "date": "Sep 21, 2026",
+    "source": "Play Store",
+    "theme": "Charges & Fees",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "93451950-99c0-4882-a2f6-e21c757a3cc0",
+    "rating": 1,
+    "title": null,
+    "text": "Groww is constantly lagging, hanging, and taking too long to load. Charts and chart properties often don\u2019t open properly, and F&O trading/options are also not working smoothly. Because of these issues, I have suffered significant financial losses. This is a completely unacceptable and frustrating experience from such a nonsense app. Please fix these issues urgently.",
+    "date": "Sep 21, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "13477d99-bc2b-4449-8d33-1db0f170f16c",
+    "rating": 5,
+    "title": null,
+    "text": "This is a very very good app and very egy backup now. thanks groww",
+    "date": "Sep 21, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "97160461-89f1-4571-8680-a787bd8e29d1",
+    "rating": 5,
+    "title": null,
+    "text": "I want to give some suggestions and recommendations for the application development, how can I do that??",
+    "date": "Sep 21, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "7400a5d1-a1f0-4125-b552-fc3d654f51c3",
+    "rating": 3,
+    "title": null,
+    "text": "you need to create a assistant ai to teach new starter",
+    "date": "Sep 21, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Neutral",
+    "pii_stripped": true
+  },
+  {
+    "id": "f7034d9b-ac0d-42b8-94cc-0afccb812a9b",
+    "rating": 1,
+    "title": null,
+    "text": "For some reason I cannot set my UPI on Groww",
+    "date": "Sep 21, 2026",
+    "source": "Play Store",
+    "theme": "Payments",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "6791a990-2d09-42a1-9c63-85939912f699",
+    "rating": 5,
+    "title": null,
+    "text": "good app and satisfaction and trassted app",
+    "date": "Sep 21, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "12cb2e86-110a-469e-9715-4ca68e3114db",
+    "rating": 5,
+    "title": null,
+    "text": "yaa. enikke ethe use cheyithe valliya kozhappam onnum undayittilla just for earn money for ente pocket money use cheyiyunnu.. this app is better choice",
+    "date": "Sep 21, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "3e70c990-228e-4b8d-ae3b-1393da029439",
+    "rating": 5,
+    "title": null,
+    "text": "this app is awesome I am using more than 3 years . Now I am facing a small problem for open my baby minor account. minor's DOB document not uploading . I am click every possible words but photo gallery not open for select photo or PNG .",
+    "date": "Sep 20, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "099e4d19-ecc5-4065-a303-4e563914266d",
+    "rating": 5,
+    "title": null,
+    "text": "Fantastic, user friendly investment app. Best in the business",
+    "date": "Sep 20, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "e51a7697-c00b-4245-8e95-057a89d4fa22",
+    "rating": 2,
+    "title": null,
+    "text": "The app was automatically uninstalled from my phone, and now I can't install it again",
+    "date": "Sep 20, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "30d88798-3299-4260-b3b7-999b5edcb77e",
+    "rating": 1,
+    "title": null,
+    "text": "Dear Groww Support Team, I am writing to request urgent assistance regarding an issue with withdrawing my available funds from my Groww account. I have sufficient available balance",
+    "date": "Sep 20, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "b2f6dfe1-b466-4ef2-83cb-3ebb480031e0",
+    "rating": 4,
+    "title": null,
+    "text": "it is simple and easy to use app. everything is placed neatly that makes it easy to understand and navigate. but, the customer support agent has some problems. it replies too late and sometimes unresponsive and closes query in between. sometimes, some key features disappears out of app. hope Groww improves this. Harsh Vardhan",
+    "date": "Sep 20, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "ec74a5f0-aa7c-4623-b74e-0bd8c04cc133",
+    "rating": 1,
+    "title": null,
+    "text": "Worst customer service i am requesting a simple spelling change of my surname 1 month ago and still pending my name correction",
+    "date": "Sep 20, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "3b7a8aed-9b5f-467a-9056-c301d7555dd1",
+    "rating": 3,
+    "title": null,
+    "text": "delay chart, slow chart sometimes stuck. and lots of bugs in this app",
+    "date": "Sep 20, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Neutral",
+    "pii_stripped": true
+  },
+  {
+    "id": "8085a64a-54b2-48e8-a6b7-58d0d2455a96",
+    "rating": 5,
+    "title": null,
+    "text": "I find the Groww app very user-friendly and useful",
+    "date": "Sep 20, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "7a2509be-7abc-4f8f-937f-8a6449d73bf6",
+    "rating": 5,
+    "title": null,
+    "text": "good yes please do the needful at the end of this year I was just kidding don't take tension",
+    "date": "Sep 20, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "975b00f0-6d9a-40b2-8c57-eb082dd0eef0",
+    "rating": 5,
+    "title": null,
+    "text": "very easy and very very good app",
+    "date": "Sep 20, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "14571196112",
+    "rating": 1,
+    "title": "No support for iPad os",
+    "text": "Just the extended version of mobile version . No work has been put for the",
+    "date": "Sep 20, 2026",
+    "source": "App Store",
+    "theme": "General & Usability",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "9d874465-9771-440d-b24b-2bc68af44b9d",
+    "rating": 5,
+    "title": null,
+    "text": "It is very nice and easy to use app",
+    "date": "Sep 20, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "d09ac4e9-18bb-4922-a2c0-f607205dfb4c",
+    "rating": 2,
+    "title": null,
+    "text": "Deteriorating Experience day by day. earlier we were able to tell in a glance how much profit or revenue has increased of a company. now we have to click each bar individually to find out.",
+    "date": "Sep 19, 2026",
+    "source": "Play Store",
+    "theme": "KYC & Onboarding",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "08f74b19-e246-4ad6-ad04-6fb6844b18bc",
+    "rating": 1,
+    "title": null,
+    "text": "pathetic experience. Setting up the account is so bad. It fetched my name from PAN details and auto-filled my father's name instead of my name. But I was not able to correct it. when I raised this query with customer support both through voice and chat, automated answers only thrown which didn't solve my problem. my account is still in my father's name. Pathetic.",
+    "date": "Sep 19, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "75bc4336-54f3-4e19-99d9-df6bc9549cd5",
+    "rating": 4,
+    "title": null,
+    "text": "Need to provide \"last added\" feature to my stock portfolio also, just like \"sort by\" in watchlist",
+    "date": "Sep 19, 2026",
+    "source": "Play Store",
+    "theme": "Statements",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "9989f992-030a-4e68-8522-5585f6930177",
+    "rating": 5,
+    "title": null,
+    "text": "This App is Really Very Good!! UI is So Easy!!!",
+    "date": "Sep 19, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "35c395d6-7f44-4e00-81b3-f0bbf57f9787",
+    "rating": 1,
+    "title": null,
+    "text": "nowadays you guys seems like fraud Beaware guys specially if you are pledging your stocks they suddenly change haircut on a particular stock Even if your pledged stocks are doing great you can be in deep financial trouble if you are doing mtf using pledged balance",
+    "date": "Sep 19, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "59bc79ce-4a07-4614-af1e-c58cbdf08e0f",
+    "rating": 3,
+    "title": null,
+    "text": "update to volume candle in function in treding view application .",
+    "date": "Sep 19, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Neutral",
+    "pii_stripped": true
+  },
+  {
+    "id": "44e920cf-5a36-4105-ad9d-ab81e072bee6",
+    "rating": 4,
+    "title": null,
+    "text": "it's \u00e8asy ,user friendly and it's charges are costly.",
+    "date": "Sep 19, 2026",
+    "source": "Play Store",
+    "theme": "Charges & Fees",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "170b1207-195c-4ab8-b422-8e9133b66aba",
+    "rating": 1,
+    "title": null,
+    "text": "Don't Install ever. Fake Promise.I can't withdraw my money from my wallet and other than how I can say it deserves in mobile space.",
+    "date": "Sep 19, 2026",
+    "source": "Play Store",
+    "theme": "Withdrawals",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "79a5db6d-edcf-4de7-9448-976ba2baa5bf",
+    "rating": 5,
+    "title": null,
+    "text": "very good app. A user friendly app. I like the app very much. One more things should be inducted in the app which is OPEN INTEREST AND CHANGE IN OPEN INTEREST BAR should be available for option trading.",
+    "date": "Sep 19, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "54937f05-0997-4ce6-9df6-a27bbfab9093",
+    "rating": 1,
+    "title": null,
+    "text": "updated 19sep26 latest experience. Incorrect external fund Investment values & useless support \u200bGroww's external fund import is broken. It defaults to displaying the date-of-import value as invested amount, ruining portfolio accuracy. CAS statements show correct data, yet Groww fails to parse it. Support tickets are closed with canned, automated replies without resolving the issue. Basic portfolio filtering and sorting tools are missing. Importing funds is useless if invested values are wrong.",
+    "date": "Sep 19, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "cd40ff58-c114-4208-9fa2-38b56dde2557",
+    "rating": 1,
+    "title": null,
+    "text": "they should improve 1 thing, the account money in groww should be able to transfer in bank account on saturday and sunday!",
+    "date": "Sep 19, 2026",
+    "source": "Play Store",
+    "theme": "Payments",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "c2db32b1-6c93-4043-9f11-768c879b14c7",
+    "rating": 5,
+    "title": null,
+    "text": "Good charts and basic research tools: Useful for someone who wants to manage investments without a complicated interface",
+    "date": "Sep 19, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "e552ef66-4b7a-4b9d-bc8e-4e324206b374",
+    "rating": 1,
+    "title": null,
+    "text": "Big name, small vision 3rd class quality, compare to other",
+    "date": "Sep 19, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "3ce5aad4-4ccf-428a-85aa-764648730033",
+    "rating": 4,
+    "title": null,
+    "text": "not able to change to primary account. Add or Remove are not working",
+    "date": "Sep 19, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "dfb2d248-8afa-4a4e-b76f-32dcc970834c",
+    "rating": 4,
+    "title": null,
+    "text": "The third class customer care services they never received a call .groww automatic execute the orders and put you in minus if have gane profit,guys be careful.",
+    "date": "Sep 19, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "fcb0057c-a76c-492e-b953-eda2273139ef",
+    "rating": 1,
+    "title": null,
+    "text": "Very Disappointing Experience with Groww I bought shares for \u20b9200 and held them for 5\u20136 days. When the share price reached \u20b9220, I sold them expecting to receive my profit. However, after the transaction and deductions, I received only around \u20b9177 in my wallet. I understand that taxes and other charges may apply, but the deductions were very disappointing and were not clear enough to me. I bought at \u20b9200, sold at \u20b9220 after 5\u20136 days, yet the final amount I received was even lower than my origi",
+    "date": "Sep 19, 2026",
+    "source": "Play Store",
+    "theme": "Charges & Fees",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "00405d61-2da4-407c-af7d-837de1c2f852",
+    "rating": 5,
+    "title": null,
+    "text": "I absolutely love the simplicity of the app. way better than other brokers out there. extremely easy to use and navigate.",
+    "date": "Sep 18, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "4d3a8b03-45b9-4dd3-9fd4-3177cfaa2ee7",
+    "rating": 5,
+    "title": null,
+    "text": "grow is not a name it's orginaly grow",
+    "date": "Sep 18, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "3a28b149-284b-4f84-8565-10ebd79c5a05",
+    "rating": 5,
+    "title": null,
+    "text": "I have a suggestion that Mobile number change karne ke liye bina login ke bhi online koi option hona chahiye",
+    "date": "Sep 18, 2026",
+    "source": "Play Store",
+    "theme": "KYC & Onboarding",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "a58f096d-10b3-4e80-b5d5-50b9650c7ee2",
+    "rating": 5,
+    "title": null,
+    "text": "kripya upcoming IPO ke review groww ke narater aleena rais and Nishant Kumar se hi karwaye. resion-very helpful video and language thank you",
+    "date": "Sep 18, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "dd491cad-335a-446d-94c9-8bde9a283553",
+    "rating": 1,
+    "title": null,
+    "text": "your operations in stocks right .If your not assist in time there is no way its useful or helpful. I have tried 3 time through call i have been in hold of 10 - 15 minutes after that also didn't get call back . Then i have started chat option i have sent a message in 4 pm got my reply in 6 pm . If you need screen shots i can provide Great service groww..",
+    "date": "Sep 18, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "8b4e9c54-a918-4564-b48f-6f23068a73a2",
+    "rating": 1,
+    "title": null,
+    "text": "This app should be banned.\" Fraud is always honored in India Fake Trading Platform! This app uses fake charts and manipulated data to make you lose money. They demand extra \"taxes\" or \"fees\" when you ask for a withdrawal and then stop responding. Stay far away! 100% Fraud App! They steal your money under the guise of trading investments. Customer support is useless and only exists to trap more of your money. Save yourself and avoid downloading this Brokerage is also charged on top of that.",
+    "date": "Sep 18, 2026",
+    "source": "Play Store",
+    "theme": "Charges & Fees",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "0000751d-75b8-44eb-9e4d-be124bf4a45b",
+    "rating": 4,
+    "title": null,
+    "text": "There Should be 1. Demat Number portability service and 2. SLBM option like Dhan app",
+    "date": "Sep 18, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "9c4cbc22-ac7c-4980-8db7-e67f91857161",
+    "rating": 1,
+    "title": null,
+    "text": "Doesn't have enough support agent to solve any queries.",
+    "date": "Sep 18, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "c8ea376e-1d05-48c1-a567-731c65e5888d",
+    "rating": 5,
+    "title": null,
+    "text": "one problem ddpi pin free of cost another broker and groww is charge for ddpi pin this is not valid",
+    "date": "Sep 18, 2026",
+    "source": "Play Store",
+    "theme": "Charges & Fees",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "3cb06a31-ebce-4ebd-a982-344fbb999c10",
+    "rating": 1,
+    "title": null,
+    "text": "withdrawal process not instant, app earn many charges but withdrawal process is pending, don't expect this app fast process",
+    "date": "Sep 18, 2026",
+    "source": "Play Store",
+    "theme": "Withdrawals",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "bb351464-0689-48da-b6a6-1200443ba4bc",
+    "rating": 1,
+    "title": null,
+    "text": "Worst for trading or chart reading. Use this only for SIPs. It literally gave me an alert saying that the stock had reached my target, but when I checked the chart on my PC, the price was still 100 points below that target. Can you believe this?",
+    "date": "Sep 18, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "4eb33c96-bfb6-45f0-b652-5e1c94d9d6a9",
+    "rating": 1,
+    "title": null,
+    "text": "This is the worst app.Buying is one price, Buy is another. If you buy, the price falls, if you sell, the price rises. No one should download this app, which is full of fraud and deceit.",
+    "date": "Sep 18, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "1b45bffe-596f-46e7-8034-b0975de38116",
+    "rating": 1,
+    "title": null,
+    "text": "5 4W2 se 3rdth 6+91 95993 18832",
+    "date": "Sep 18, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "e081dcf5-97d1-46b2-9262-3e499f57c072",
+    "rating": 1,
+    "title": null,
+    "text": "provide an option to modify the ipo application.",
+    "date": "Sep 18, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "45b1b8cd-9bae-4547-a2e2-f7ee0dbf53b8",
+    "rating": 3,
+    "title": null,
+    "text": "after the last update it is very very slow. please fix as soon as possible",
+    "date": "Sep 18, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Neutral",
+    "pii_stripped": true
+  },
+  {
+    "id": "2cc15a0a-4f02-463f-9932-0ce754b700e2",
+    "rating": 3,
+    "title": null,
+    "text": "I've been using this App for 3years and I do not have any complain on other things but from yesterday the App start working slow and I thought it was my device but even if I cleared up the space for it there was still hanging and I almost lost from my trading..apart from hanging I do not have any complain,it was beginner friendly and easy to enter and exit.",
+    "date": "Sep 18, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Neutral",
+    "pii_stripped": true
+  },
+  {
+    "id": "5b52c32c-7aed-4205-a6f5-ac4647e56b83",
+    "rating": 1,
+    "title": null,
+    "text": "customer service is terrible they will never receive the call and will never reply you back in chat. I faced this multiple times.",
+    "date": "Sep 18, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "686be681-e168-47b9-85aa-068e656a623e",
+    "rating": 1,
+    "title": null,
+    "text": "this app has the worst agent helpers, it says it will take only 5 mins to connect will agent BUT IT TAKES MORE THAN AN HOUR AND I HATE THIS, IT IS THE MOST USELESS APP",
+    "date": "Sep 18, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "05576dac-98cb-4788-bcf6-086dbc7cc8c4",
+    "rating": 1,
+    "title": null,
+    "text": "Don't have option to provide 0 rating. Such an waste. They provide MTF and didn't show about interest on that.Their platform is complex as I can't sell shares immediately. Going to uninstall and pick Angelone",
+    "date": "Sep 18, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "7a9ad63a-9f23-48fe-afbb-0a93c1fb5aef",
+    "rating": 5,
+    "title": null,
+    "text": "Good app. on treading time instant withdraw. good app.",
+    "date": "Sep 18, 2026",
+    "source": "Play Store",
+    "theme": "Withdrawals",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "14564169993",
+    "rating": 1,
+    "title": "Negative charges are invisible",
+    "text": "I left the account for around 1 month and now my balance is negatives while my holdings are in profits. Not even a reason why its negative. Not even a small notification that it went negatives.",
+    "date": "Sep 18, 2026",
+    "source": "App Store",
+    "theme": "Statements",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "70cb8a38-7127-4f3f-8fc6-91de5df3397b",
+    "rating": 1,
+    "title": null,
+    "text": "Extremely frustrated with Groww. First, my stop-loss order got triggered incorrectly at a higher price (\u20b9148.18) when the actual market price was at \u20b9146.90, causing me a direct financial loss. Second, their customer support is practically non-existent\u2014I have been trying to call them continuously for over 20 minutes and nobody is picking up the call. Highly unreliable platform for active trading. Pathetic service and zero accountability for technical glitches!",
+    "date": "Sep 18, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "2bf77f31-c50d-4e2c-ae4a-77240b4e4a34",
+    "rating": 4,
+    "title": null,
+    "text": "1. view 1 total holding Qty ... total investment/ Current value total profit/ loss % 2. view 2 total holding QTY today's profit/ loss % today's profit/loss (Amount) holding Interface page should view IIFL CAPITAL'S HOLDING INTERFACE IS PERFECT",
+    "date": "Sep 18, 2026",
+    "source": "Play Store",
+    "theme": "Statements",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "989b6881-0527-44a9-93e4-6f9591bc853c",
+    "rating": 1,
+    "title": null,
+    "text": "my money isnt settled from yesterday no email reply no call receive using it from 4 years better to quit",
+    "date": "Sep 18, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "8fcc1330-f92b-4fc1-811e-ed1418cfba52",
+    "rating": 1,
+    "title": null,
+    "text": "groww totally fraud app h....mene mcx option me 16 or 17 sep 2026 ko profit book kiya wo add nhi kiya or na report me show ho rha h.....or jo position active h wo bhi totally galat show kr rha h.... customer care par call lgta nhi h, customer ko pateshan krte h...me FIR krunga groww p..or saare account close krunga mere fmly ke",
+    "date": "Sep 18, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "efd20984-7d14-4ec5-a934-ba2645f240e8",
+    "rating": 1,
+    "title": null,
+    "text": "GFD error coming in commodity because this face losses customer care is not supporting worst experience.",
+    "date": "Sep 18, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "64ac94f3-72bb-4f27-9572-7f9cc9d98c86",
+    "rating": 1,
+    "title": null,
+    "text": "bunch of idiots sitting in customer support..18/9/2026..10:20am 270 natural gas mini f&o mcx system didn't show of my open position that's why.. I got 200 \u20b9 loss in my position.. plz provide notification Mark specific section when updated even every month update in Groww app 3rd class policy.",
+    "date": "Sep 18, 2026",
+    "source": "Play Store",
+    "theme": "Charges & Fees",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "b5ec76a6-2c95-4fd4-a88a-c7fa81c8cb17",
+    "rating": 1,
+    "title": null,
+    "text": "automatic order execute loss today very bad",
+    "date": "Sep 18, 2026",
+    "source": "Play Store",
+    "theme": "Statements",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "14563778072",
+    "rating": 1,
+    "title": "Pathetic Service",
+    "text": "One small issue that I m unable to add money by net banking and even after 7 whole days no resolution. Had call backs from seniors in support team but no action. realistically it\u2019s the worst service they can provide .Kudos to the team for being such a big lair and helpless to do anything .",
+    "date": "Sep 18, 2026",
+    "source": "App Store",
+    "theme": "Payments",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "cbffdcbf-8be0-40d1-8abd-d9cc1805abcb",
+    "rating": 1,
+    "title": null,
+    "text": "morning se natural gas ke liye sell ke liye apply kiya tha 7000 profit tha to ... lekin ye third class application wala sell hi nahi hone diya ..call request bhi kiya nahi uthate busy ...support me chat karo to wait 20 minute ..lekin no response ... Kitna heavy charge leta hai service charge ke naam per aur brokerage ke naam per daily ka 4000 fir bhi itna poor service de raha hai isliye galti se bhi download mat karo aur use mat karo Varna aapka Paisa lutega yah company wala",
+    "date": "Sep 18, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "baca416e-20e8-44cd-b7ab-6df67f5c921d",
+    "rating": 1,
+    "title": null,
+    "text": "the ui is getting clumsy witb each feature and business update.",
+    "date": "Sep 18, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "d478dd5d-67f2-485f-91cc-45dcd1716f85",
+    "rating": 1,
+    "title": null,
+    "text": "this app is not for beginners and a small investor because they charge brokrage more than other broker",
+    "date": "Sep 18, 2026",
+    "source": "Play Store",
+    "theme": "Charges & Fees",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "e98cfca8-037c-439a-bbb4-bba86c278577",
+    "rating": 5,
+    "title": null,
+    "text": "A brokrage pack should hav been introduced",
+    "date": "Sep 18, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "918d661d-76cb-4495-9566-7b5aef25a01d",
+    "rating": 1,
+    "title": null,
+    "text": "sabse bekar customer care service trying to connect for more than half an hour and still waiting to connect to them on calling chatting no one replied",
+    "date": "Sep 18, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "427f556e-ba3a-47e2-888e-6904ee7fa83b",
+    "rating": 1,
+    "title": null,
+    "text": "I am unable to see my FnO position, it has also not been squared off..",
+    "date": "Sep 18, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "034045cd-ef00-435d-9452-eec4542287d8",
+    "rating": 5,
+    "title": null,
+    "text": "when you guys will make it better for ?",
+    "date": "Sep 18, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "3c0cb7c5-3d26-4716-b79c-979a5eb0afa0",
+    "rating": 4,
+    "title": null,
+    "text": "ALL my position s have gone who is responsible for money",
+    "date": "Sep 18, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "bdbab092-fa60-4f0b-884b-cd1f5b621861",
+    "rating": 1,
+    "title": null,
+    "text": "bhot hi ghatiya app hai.jab work karna chahiye tab nhi hota hai.aur kabhi2 postion bhi show ni hoti hai.no active position show hota hai.aur selling krne me sell nhi hota h apne according krte h ye app sell.not working properly??",
+    "date": "Sep 18, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "94dd72c7-4c1e-4e93-b78c-c038fdc993d9",
+    "rating": 1,
+    "title": null,
+    "text": "very disappointed with the customer care service. my f&o positions suddenly showing 13 lakhs negative and even stopped showing current positions. unable contact customer support over call or chat. very worst service. don't trust any more",
+    "date": "Sep 18, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "89a170eb-7e41-4bc3-af26-d59634159570",
+    "rating": 1,
+    "title": null,
+    "text": "app not showing my fno positions of commodities section",
+    "date": "Sep 18, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "7ca82a90-39c3-4572-bc9c-b3b1313c1d11",
+    "rating": 1,
+    "title": null,
+    "text": "never download this application this application is fraud with customer & customer service not response. yesterday I have total amount 49600 I will total loss & charges 12650 now I have -757 why he will not answer or question. I request all Never download this application",
+    "date": "Sep 18, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "bda1c9c9-6f20-4cd8-aacd-64a327e7f159",
+    "rating": 1,
+    "title": null,
+    "text": "this aap not a update realtime price and slow update & process 01 month try coustomer carire continue but 01 hours called but nothing attend call this aap is very poor",
+    "date": "Sep 18, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "46213f42-2b45-46a0-b4ee-e06f7bec05bb",
+    "rating": 1,
+    "title": null,
+    "text": "poor services, order placing gets stuck. many times loss booked due to platform inconvenience. even customer support works poorly. & now also they will write back like to send feedback on email. then what. nothing",
+    "date": "Sep 18, 2026",
+    "source": "Play Store",
+    "theme": "Charges & Fees",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "14563383938",
+    "rating": 1,
+    "title": "Customer support",
+    "text": "Worst customer service, I recently call in the customer service and after hearing my problem/issue the person who was alloted to me goes silent without resolving my problem and doesn\u2019t response to my issue and cut the call",
+    "date": "Sep 18, 2026",
+    "source": "App Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "509c9ebf-fa55-4c0a-b2da-473c890d8108",
+    "rating": 5,
+    "title": null,
+    "text": "I have a suggestion. If someone trades with a single lot or a fix low capital like 10 to 20k in F&O. The brokerage charge should be 10 Rupees. Bcoz there are so many charges other than the brokerage. How much will someone earn in single lot. If you reduce the brokerage for low capital trade. It will help a lot.",
+    "date": "Sep 18, 2026",
+    "source": "Play Store",
+    "theme": "Charges & Fees",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "2a201173-7a0f-4504-84b4-6ff8314d1659",
+    "rating": 5,
+    "title": null,
+    "text": "if you know how to handle wealth, you got it.",
+    "date": "Sep 18, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "14562951072",
+    "rating": 1,
+    "title": "Worst customer support",
+    "text": "Their chat support doesn\u2019t have any real agents and customer care number always busy. I am moving to other app",
+    "date": "Sep 18, 2026",
+    "source": "App Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "14562906366",
+    "rating": 1,
+    "title": "Support issue",
+    "text": "Customer care guys not supporting properly don\u2019t use this app anymore Worst experience from groww",
+    "date": "Sep 18, 2026",
+    "source": "App Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "14562903966",
+    "rating": 1,
+    "title": "Improve your customer support, no one is there to support a transaction issues.",
+    "text": "Even single reply to take time 20-30 min without proper knowledge.they don\u2019t understand the issue. Worst customer support. groww Application also skips my one-day transaction history they didn\u2019t add my profit and also my capital amount is also blocked even not shown in transaction history.",
+    "date": "Sep 18, 2026",
+    "source": "App Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "14562876524",
+    "rating": 1,
+    "title": "3rd CLASS TRADING APP",
+    "text": "Extremely disappointing trading experience. My order was clearly in profit, but when I tried to exit, the order failed or did not execute properly multiple times. I attempted to exit 2\u20133 times, but by the time the order finally went through, the position had moved into a loss. This is a serious issue for a trading platform. In fast-moving markets, even a few seconds can make a huge difference. Traders should not have to repeatedly attempt an exit while their position is already in profit. The overall experience was frustrating and unreliable. Groww seriously needs to improve order execution, stability, and reliability during market hours. I expected much better from a platform used for trading.",
+    "date": "Sep 18, 2026",
+    "source": "App Store",
+    "theme": "Statements",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "14562875557",
+    "rating": 1,
+    "title": "The worst customer service and irresponsibility towards money",
+    "text": "I have traded some options and the next day they disappeared. The money is also not seen in the grow account. I have tried to reach out to customer care for one hour and the call didnt even get through. Please be careful while trying to waste your money on fraud apps like this.",
+    "date": "Sep 18, 2026",
+    "source": "App Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "14562802171",
+    "rating": 1,
+    "title": "Services",
+    "text": "Very very very bad service they even didn\u2019t replied",
+    "date": "Sep 18, 2026",
+    "source": "App Store",
+    "theme": "General & Usability",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "d9e30a72-046a-45fb-86de-a7f681623832",
+    "rating": 5,
+    "title": null,
+    "text": "Smoothest onboarding, it's a financial app with better login and onboarding than notes apps out there",
+    "date": "Sep 18, 2026",
+    "source": "Play Store",
+    "theme": "KYC & Onboarding",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "977ac19c-b8a7-4709-aef3-4c0c059210e9",
+    "rating": 1,
+    "title": null,
+    "text": "too much service charges.......so many hidden charges....customer service wrost...they will respond after after death or mkt hours close....",
+    "date": "Sep 17, 2026",
+    "source": "Play Store",
+    "theme": "Charges & Fees",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "b12179ab-f1a6-43fe-ae83-3960d45af983",
+    "rating": 1,
+    "title": null,
+    "text": "Worst experience I ever had on any demat platform. I brought unlisted shares and Grow support took one month just to reflect in my demat amount, despite providing them the exact data and after that new issue now I am unable to sell those shares and customer support is pathetic, always delay in response.",
+    "date": "Sep 17, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "389771a5-ae15-48e0-a2cd-e1d004f1ee2d",
+    "rating": 5,
+    "title": null,
+    "text": "Great app! Fast, smart, and very helpful. I really enjoy using groww",
+    "date": "Sep 17, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "35dda269-2f1c-4eec-b441-f7481c8c1eea",
+    "rating": 1,
+    "title": null,
+    "text": "I don't have words to describe how pathetic customer care service offers by Groww. When you call them first AI bot will talk to you then it connects to some person, the real game starts here to pick a call you have to wait More than 20 minutes...I don't know how they justify this. Very very Disappointed with it.",
+    "date": "Sep 17, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "f976cf5d-a2cc-4086-99e0-30008e9763ab",
+    "rating": 5,
+    "title": null,
+    "text": "Grow is perfect plotfarm for trading. very user friendly.",
+    "date": "Sep 17, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "eb541733-368c-4cdb-b325-b121c3aad706",
+    "rating": 1,
+    "title": null,
+    "text": "Indroduce drag sl and target while trading",
+    "date": "Sep 17, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "87c6d0e7-05a3-4789-9829-da8016e9fb30",
+    "rating": 1,
+    "title": null,
+    "text": "Risky App!! Pathetic Misguiding Cusomer Support Team. Dont map your precious money with such Apps!!",
+    "date": "Sep 17, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "d59c592a-edf3-4618-9b28-1143224bb356",
+    "rating": 1,
+    "title": null,
+    "text": "Frustrated..No customer support.. Shifting to another platform. Account opening form filled for my minor daughter on 5th September but no response from the GROWW team, followed the process. When tried to contact through given contact waiting was 5 min even after 5 min call disconnected. Tried with chat channel also but no response.. complaint raised thrice through email still no response.. no communication about the status of new account opening.. frustrated",
+    "date": "Sep 17, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "fd046832-8584-4012-b33e-d96958f068f8",
+    "rating": 2,
+    "title": null,
+    "text": "very bad experience you never profit im groww app. last year losse 58000rs and brokrage and other charge 78000rs now think. They cheat public",
+    "date": "Sep 17, 2026",
+    "source": "Play Store",
+    "theme": "Statements",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "eec5fe80-f12c-4356-bc93-47f1f95f595a",
+    "rating": 1,
+    "title": null,
+    "text": "latest figures of P&L not showing in report previously it used to show but after 7th September no updation, how can we do trading without knowing the exact amount",
+    "date": "Sep 17, 2026",
+    "source": "Play Store",
+    "theme": "Statements",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "786edc6f-3ed7-43ec-a26d-b4aa93ec469e",
+    "rating": 5,
+    "title": null,
+    "text": "Very good for all people but cannot be used family money you earn and trade for own his money",
+    "date": "Sep 17, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "572d01a2-c326-4e3c-8ed6-25705534b031",
+    "rating": 1,
+    "title": null,
+    "text": "now app has lag issue app took 3 to 4 second to do any work on it most irritating app is ever use for trading",
+    "date": "Sep 17, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "14561298260",
+    "rating": 5,
+    "title": "Easy",
+    "text": "Useful and Helpful Comfort Trusted Trustworthy& easy",
+    "date": "Sep 17, 2026",
+    "source": "App Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "3cbbfce3-9238-4e7b-a05b-e639fbe67866",
+    "rating": 5,
+    "title": null,
+    "text": "its my pleasure to inform that easy to understand and handle the GROWW app for new customers.",
+    "date": "Sep 17, 2026",
+    "source": "Play Store",
+    "theme": "Charges & Fees",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "cf4bf948-5c83-4f74-a2ab-45cf3a7966c0",
+    "rating": 1,
+    "title": null,
+    "text": "Bahut hidden charges lagate hai... alag alag reason se charges cut karte hai... customer support achcha nahi hai bahut late response karta hai...",
+    "date": "Sep 17, 2026",
+    "source": "Play Store",
+    "theme": "Charges & Fees",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "597da2e1-fd0b-4a88-b4fa-000eccfae4f0",
+    "rating": 5,
+    "title": null,
+    "text": "Right now grow is best app for treding",
+    "date": "Sep 17, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "e700e8eb-91ae-43ae-92cc-9ac86b644c49",
+    "rating": 1,
+    "title": null,
+    "text": "Fraud wasted app GROWW brokerage looters. No new features. Best app is SAHI app low brokerage order execution is easy SL TP is on screen",
+    "date": "Sep 17, 2026",
+    "source": "Play Store",
+    "theme": "Charges & Fees",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "24607b05-ee98-499a-bf09-acbeecdb83a4",
+    "rating": 1,
+    "title": null,
+    "text": "groww app F and O always struck, glitches,slow moments very bad, very worst app always lag",
+    "date": "Sep 17, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "ae4c74e3-af61-4854-a40a-423b890b32ae",
+    "rating": 2,
+    "title": null,
+    "text": "How many times Should I update the app whenever I open it asking for an update even though it is already updated is it an app or something. I'm totally disappointed with this application.",
+    "date": "Sep 17, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "6f807469-67d7-4143-9267-edb65d6c1e6f",
+    "rating": 1,
+    "title": null,
+    "text": "I got losses because stop loss & trilling not working properly it's happened many more time I completed but still no solution the employees only for taking brokerage charges not for costomer services only take brokerage charges & costomer go to hell the sebi must take action against groww they are not able for single star also",
+    "date": "Sep 17, 2026",
+    "source": "Play Store",
+    "theme": "Charges & Fees",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "4257169d-b75d-4303-8882-9c68c68fdb74",
+    "rating": 5,
+    "title": null,
+    "text": "Amazing and it will be amazing for if you use it wisely",
+    "date": "Sep 17, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "14560332283",
+    "rating": 5,
+    "title": "Easy and simple",
+    "text": "Easy to access all options and everything in a one plant-form interesting. overall it a simple steps to get in and understand market.",
+    "date": "Sep 17, 2026",
+    "source": "App Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "acf054a5-c926-439f-91af-f62e18e3048a",
+    "rating": 1,
+    "title": null,
+    "text": "they rollout update 3 times in a week , what the hell, why they do so much keep updated ???. what nonsense",
+    "date": "Sep 17, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "ac19bed4-f048-48dc-8b30-d8f9bf67c529",
+    "rating": 1,
+    "title": null,
+    "text": "I have been using Groww for around 5 years, and based on my overall experience, I believe the app is quite good for investing in shares and market analysis. However, I am giving 1 star because of my recent experience with customer support. Despite being a long-time user, I was disappointed with the way my issue was handled and the support I received. For F&O trading, I also feel Groww is not very suitable due to higher brokerage charges and issues related to auto square-off/auto-sequencing. So,",
+    "date": "Sep 17, 2026",
+    "source": "Play Store",
+    "theme": "Charges & Fees",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "14560193262",
+    "rating": 1,
+    "title": "Patient Customer Service",
+    "text": "This company has the most pathetic customer service where you have to wait for minimum 2 days to get a reply and post waiting also the agents reply\u2019s comes with attitude. As if they are doing a charity by replying to our queries. If the company can\u2019t provide customer service then they should doing business whose primary work is customer service.",
+    "date": "Sep 17, 2026",
+    "source": "App Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "102f7a30-65f2-4eee-b3dd-c67ff66713ef",
+    "rating": 2,
+    "title": null,
+    "text": "this is not good service & not clear it's to charge service's",
+    "date": "Sep 17, 2026",
+    "source": "Play Store",
+    "theme": "Charges & Fees",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "69c1a00c-ab12-453e-8789-07fc89fd908b",
+    "rating": 4,
+    "title": null,
+    "text": "please add Pinescript option for customised Indicator so that we don't depend on other platforms for chart reading groww app is very good app need some improvement in pinescript code for customised indicator hope it will be resolved soon thanks",
+    "date": "Sep 17, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "65271939-cb52-4d97-99b8-1f407ba56ab7",
+    "rating": 1,
+    "title": null,
+    "text": "I m not trying to download the app",
+    "date": "Sep 17, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "a806fccf-4ce1-43a3-b0e7-e034106fce6e",
+    "rating": 5,
+    "title": null,
+    "text": "multiple options are available to all and it is easy to use.",
+    "date": "Sep 17, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "f8dc85df-1e32-4af9-8f34-197fb15f6413",
+    "rating": 4,
+    "title": null,
+    "text": "good but need to improve in coustom care services",
+    "date": "Sep 17, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "359fd132-d3e9-45a5-8d14-5da12981a551",
+    "rating": 2,
+    "title": null,
+    "text": "Absolutely useless update loop I am extremely frustrated with this app. Every single time you push an update, all of my technical indicators and chart setups (RSI, MACD, Moving Averages) are completely wiped out! It is infuriating to have to manually re-configure and re-apply my entire technical analysis layout every couple of weeks just because of a basic app update.",
+    "date": "Sep 17, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "e1f52585-24e3-4b43-90a9-1932c4703aa0",
+    "rating": 5,
+    "title": null,
+    "text": "App is excellent. I have a suggestion. Please give a 'Select all' option in set alert so that deletion of alerts will be easy",
+    "date": "Sep 17, 2026",
+    "source": "Play Store",
+    "theme": "Statements",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "68414fe4-e990-48f4-839e-f49f1dd7172f",
+    "rating": 5,
+    "title": null,
+    "text": "Groww is a simple, user-friendly and convenient investment app. It is easy to use for mutual funds, stocks and tracking investments. The interface is clean and helpful, especially for beginners. Overall, a good experience with Groww.",
+    "date": "Sep 17, 2026",
+    "source": "Play Store",
+    "theme": "Charges & Fees",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "d7483f7d-3a68-4e38-8ecb-76ff6d603445",
+    "rating": 5,
+    "title": null,
+    "text": "superb ,crore times better then ange one , tq growww",
+    "date": "Sep 17, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "dc10c815-9ea9-44ef-abdb-65cc7b5379cd",
+    "rating": 3,
+    "title": null,
+    "text": "easy UI for beginners but high brokerage charges",
+    "date": "Sep 17, 2026",
+    "source": "Play Store",
+    "theme": "Charges & Fees",
+    "sentiment": "Neutral",
+    "pii_stripped": true
+  },
+  {
+    "id": "18e84944-4ead-4696-b545-5d245da9fb8e",
+    "rating": 5,
+    "title": null,
+    "text": "Dear Groww Team,I am a regular user of your platform and appreciate how easy you have made investing. I want to share some feedback to help improve the app:What is great:Simple UI: The app is very easy to navigate, even for beginners.Charges: Zero AMC and commission-free mutual funds are amazing features.All-in-one: Getting stocks, mutual funds, and UPI in one place is very convenient.",
+    "date": "Sep 17, 2026",
+    "source": "Play Store",
+    "theme": "Charges & Fees",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "c71aa6b9-9c30-4ab7-9d9b-5703964c9575",
+    "rating": 4,
+    "title": null,
+    "text": "I am not able to swtich profiles after the recent update.",
+    "date": "Sep 17, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "236b0231-4c2b-495d-bd16-c5a936a96b1f",
+    "rating": 1,
+    "title": null,
+    "text": "I\u2019m not sure what\u2019s going on with the Groww app. My September investment in one of my mutual funds has disappeared, even though the NAV was already credited. Additionally, I\u2019m facing an issue where two folios are being created for my SIP, despite my Demat account having been closed over a year ago. I\u2019ve contacted Groww support multiple times, but the issue is still not resolved. Very disappointing experience.",
+    "date": "Sep 17, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "d9c3cc98-6372-4d92-97ee-04a383628345",
+    "rating": 5,
+    "title": null,
+    "text": "Hello Groww App Team Please Update The App Tradingview Chart Multiple Chart And Drag On Drop Target And Stoploss Option Please Reply My Com.",
+    "date": "Sep 17, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "14559204814",
+    "rating": 1,
+    "title": "Grow is cheating i have evidence their system is not good triggering false prices and making to loss",
+    "text": "I have the proof my trigger price was 195.40 but market didnt go down it went up but my sl order triggered at 192 and gave me loss",
+    "date": "Sep 17, 2026",
+    "source": "App Store",
+    "theme": "App Performance",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "14559129836",
+    "rating": 1,
+    "title": "plz Add Remove option in Targeted price.",
+    "text": "I Put Target price in Nifty and other Options. & After Some Time it\u2019s trigger. And Then i try to remove my Traget price then i see thare is No Option to remove target price. So plz Add this Futures.",
+    "date": "Sep 17, 2026",
+    "source": "App Store",
+    "theme": "General & Usability",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "14559074696",
+    "rating": 5,
+    "title": "Suggestion for become best Investing App",
+    "text": "Great evolution ,If PEG ,Intrinsic value ,Future growth rate provided .Grow will become the best app",
+    "date": "Sep 17, 2026",
+    "source": "App Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "8897f734-e99d-4a92-9fa9-b24643df1f83",
+    "rating": 4,
+    "title": null,
+    "text": "Good app to invest in stocks for beginners",
+    "date": "Sep 17, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "14559043269",
+    "rating": 5,
+    "title": "Best and easiest",
+    "text": "One of the best app ..loved it",
+    "date": "Sep 17, 2026",
+    "source": "App Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "e90a320d-39c3-4cf0-80da-c61e119b1b3d",
+    "rating": 5,
+    "title": null,
+    "text": "Groww App Is Very Simple And Smooth Interface",
+    "date": "Sep 17, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "b2b01650-3c00-4daa-94da-c9b9443e82c8",
+    "rating": 5,
+    "title": null,
+    "text": "Very Friendly Interface I am using it since 2020, You should must explore it, there is many investments and trading options are availabe inside and also a good custommer support here, its make it India's leading Trading and Investing plateform. Choose ''Groww'' to grow your wealth",
+    "date": "Sep 16, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "35081a4e-92d0-4667-8d05-62d62277f4c2",
+    "rating": 1,
+    "title": null,
+    "text": "very bad trading application not use very slowly app",
+    "date": "Sep 16, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "136ca687-77fe-43f5-affc-e81efbcb7aa0",
+    "rating": 5,
+    "title": null,
+    "text": "Verified but still verifying again n again...not moving further bank verification page...",
+    "date": "Sep 16, 2026",
+    "source": "Play Store",
+    "theme": "KYC & Onboarding",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "d97430da-c9ae-4e89-8020-f4b838eb2b3e",
+    "rating": 5,
+    "title": null,
+    "text": "A good app, I have been using it for a long time.",
+    "date": "Sep 16, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "9057b0b3-8197-4302-96f1-ed7cdbdcb6b2",
+    "rating": 1,
+    "title": null,
+    "text": "commodity trading chart price and order price are different why, baised by big bull on trading day. Volume graph doesn't work on tranding day. trading charges are too high also.",
+    "date": "Sep 16, 2026",
+    "source": "Play Store",
+    "theme": "Charges & Fees",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "4b9a15df-0e1d-4104-b236-296344af258b",
+    "rating": 1,
+    "title": null,
+    "text": "My bank account has been blocked due to an unexpected transaction from Groww. I did not initiate or withdraw any money, yet funds were automatically credited to my account. It has been almost a month, and my account is still blocked. As a result, my EMI and SIP payments cannot be processed, and I may not receive my salary. This has caused serious financial stress. Please investigate this issue urgently, clarify why the transaction occurred, and help resolve the matter at the earliest.",
+    "date": "Sep 16, 2026",
+    "source": "Play Store",
+    "theme": "Payments",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "63e586c9-7ee4-43db-9204-17512ef05e18",
+    "rating": 2,
+    "title": null,
+    "text": "great app but you have to update this app every week.. please do something team!",
+    "date": "Sep 16, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "4a850a84-1134-46d0-a262-98042ee69453",
+    "rating": 5,
+    "title": null,
+    "text": "\u201cGroww app is very easy to use and user-friendly. Investment, tracking and transactions are simple and convenient. Overall, a great experience with Groww. Highly recommended!\u201d",
+    "date": "Sep 16, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "3e872dc0-6809-409e-a6a3-66d49ee8f5c9",
+    "rating": 5,
+    "title": null,
+    "text": "thank you very much for your wishes",
+    "date": "Sep 16, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "68b623a7-25df-461a-8e1c-53def789eb6d",
+    "rating": 1,
+    "title": null,
+    "text": "Now this app works like mutual fund agent.. investment doing in this app goes like regular plan... really cheater app..",
+    "date": "Sep 16, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "c1ecafca-afd5-4ef2-b9d3-4498710d2a16",
+    "rating": 1,
+    "title": null,
+    "text": "customer support system to low. my money not withdraw last 20 days but customer says tomorrow 10 am withdrawing funds. West money so cheap sarvice 10 times raised a ticket not solved my problem",
+    "date": "Sep 16, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "f2fc0d61-a88c-4e5d-b0aa-29c24046151c",
+    "rating": 5,
+    "title": null,
+    "text": "name Shyam munduiya the best to you in ahr",
+    "date": "Sep 16, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "4705e73c-01e5-4b68-980c-581b59d2de02",
+    "rating": 4,
+    "title": null,
+    "text": "Thanks for adding the account switch feature. But there is one more thing you should do this this account settings like chart, sorting for share should not reset when account is switched Dear Groww Tea, This is requested to you please ad an option in this app to switch account as of now every time I need to logout and again login this will reset all chart settings. so add a feature that just one click switch account and all settings remaining same for a user if he handle their family account.",
+    "date": "Sep 16, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "8abd2931-8eb6-46b4-99b0-8aabbebee9e9",
+    "rating": 1,
+    "title": null,
+    "text": "money transfer is too low, takes too long irritate",
+    "date": "Sep 16, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "e3a9c848-21ec-4411-88a8-1115ddd35324",
+    "rating": 5,
+    "title": null,
+    "text": "User friendly app. I like more. My favourite app. Thank you. Regards",
+    "date": "Sep 16, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "f05cb393-06e4-4513-8800-bd08b18be3e3",
+    "rating": 1,
+    "title": null,
+    "text": "too lagging problem have taking time for order pl place improvement neede",
+    "date": "Sep 16, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "bd15827e-28d0-4eba-85bc-0ec8b2f84a4f",
+    "rating": 5,
+    "title": null,
+    "text": "but broker charge is n More comparatively other",
+    "date": "Sep 16, 2026",
+    "source": "Play Store",
+    "theme": "Charges & Fees",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "4bf98867-3402-4100-a56a-b7de43e4d13a",
+    "rating": 4,
+    "title": null,
+    "text": "A very good app for beginners to have a deep insight of trading on stocks, mutual funds, IPO etc.",
+    "date": "Sep 16, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "f9170dec-ec08-46aa-a2a7-6f7a9958cd71",
+    "rating": 5,
+    "title": null,
+    "text": "If the name has already been updated on the PAN card, the updated details should ideally be fetched and updated automatically in the system. Why do we have to fill out a separate form and submit documents again? This makes the process unnecessarily lengthy and inconvenient for the user.",
+    "date": "Sep 16, 2026",
+    "source": "Play Store",
+    "theme": "KYC & Onboarding",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "b3e1dc14-a672-48b7-a12c-64d3971a9082",
+    "rating": 1,
+    "title": null,
+    "text": "Don't use this app fraud fellows app",
+    "date": "Sep 16, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "2e8268e8-81a5-47ee-89c4-3b314417b8ca",
+    "rating": 1,
+    "title": null,
+    "text": "lots of bugs. very slow in the mobile chart.",
+    "date": "Sep 16, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "0fbd3e9d-64ae-4f3e-a4af-678ec7c1fdfa",
+    "rating": 5,
+    "title": null,
+    "text": "trade exicution easy for beginners and app speed",
+    "date": "Sep 16, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "09246848-b340-464c-b3c8-ae3df8e023fa",
+    "rating": 1,
+    "title": null,
+    "text": "after update app is hanged, not working at all.",
+    "date": "Sep 16, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "dfb2eda2-86a1-441d-8fe8-e23660d7df0d",
+    "rating": 5,
+    "title": null,
+    "text": "it is good pralfrom of the finance",
+    "date": "Sep 16, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "546060e9-47b5-441e-b25a-044ec4470755",
+    "rating": 1,
+    "title": null,
+    "text": "dont us app is custmuar service is use less my acount balance aotomatkly less",
+    "date": "Sep 16, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "441ab716-7436-408c-9e84-de6002b3ad54",
+    "rating": 5,
+    "title": null,
+    "text": "A very simplified app, does not require a lot of procedures. All processes are very fluent.",
+    "date": "Sep 16, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "91c7666b-4aee-4c8a-afc1-f30edac8258a",
+    "rating": 5,
+    "title": null,
+    "text": "Expiry dates are not visible after update.",
+    "date": "Sep 16, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "14555361844",
+    "rating": 5,
+    "title": "User friendly experience",
+    "text": "Easy to use and monitor the current progress.",
+    "date": "Sep 16, 2026",
+    "source": "App Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "b77fd4ef-86b8-4ab9-996a-61e65a859eff",
+    "rating": 3,
+    "title": null,
+    "text": "Groww is a good trading and investment app for retail investors. The platform is simple and easy to use, and the brokerage charges are relatively low. It is especially helpful for beginners and small retail traders who want to keep their trading costs low. Overall, a user-friendly app with competitive charges.",
+    "date": "Sep 16, 2026",
+    "source": "Play Store",
+    "theme": "Charges & Fees",
+    "sentiment": "Neutral",
+    "pii_stripped": true
+  },
+  {
+    "id": "75daba41-8472-4dd2-95d8-49898c535938",
+    "rating": 1,
+    "title": null,
+    "text": "Please give the option of scalping in commodity trading segment also.",
+    "date": "Sep 16, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "eabc45ac-7944-4173-845f-812188d55f17",
+    "rating": 1,
+    "title": null,
+    "text": "Transaction report total wrong fraud app I have stock is holding transaction is indraday",
+    "date": "Sep 16, 2026",
+    "source": "Play Store",
+    "theme": "Statements",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "85b1b6f0-13ac-47c8-b0eb-4ce2d40cdaf4",
+    "rating": 2,
+    "title": null,
+    "text": "mandat issue many time status not updated",
+    "date": "Sep 15, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "c1bf0bd9-1f2c-4253-a2ca-47c3ed29ebf1",
+    "rating": 3,
+    "title": null,
+    "text": "I would rate you 5 star if you introduce a feature mentioning BE stocks like we get in Kite App. so that we can avoid the T2T stocks effectively I purchased the stock on Friday and Today I was getting 10k profit but the stock being T2T I was not able to sell it",
+    "date": "Sep 15, 2026",
+    "source": "Play Store",
+    "theme": "Statements",
+    "sentiment": "Neutral",
+    "pii_stripped": true
+  },
+  {
+    "id": "e71b52b7-bfc1-4d36-83b4-7cb3920526cf",
+    "rating": 5,
+    "title": null,
+    "text": "oh my god very good experience by its app it is best for beginners I am first don't know about trading and other apps of trade but this app has been very much oh my God this is very useful !",
+    "date": "Sep 15, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "f36802d7-2174-4e20-86a8-03f39827ac7c",
+    "rating": 3,
+    "title": null,
+    "text": "easy interface but sometimes it deducted amount without ur information if u r doing trading.",
+    "date": "Sep 15, 2026",
+    "source": "Play Store",
+    "theme": "Charges & Fees",
+    "sentiment": "Neutral",
+    "pii_stripped": true
+  },
+  {
+    "id": "fb5dd36d-8176-40c0-9770-05d1ce3cecca",
+    "rating": 5,
+    "title": null,
+    "text": "Ye Bohat achhi app hai treds mai bohar easy rehti hai",
+    "date": "Sep 15, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "6235a702-fce6-4c14-ab8e-e879dc238004",
+    "rating": 5,
+    "title": null,
+    "text": "Groww makes investing in the stock market, mutual funds, and IPOs accessible and effortless. The user interface is clean, beginner-friendly, and completely transparent with no hidden brokerage fees. Tracking portfolio performance and placing orders is super smooth. An outstanding platform for building wealth securely.",
+    "date": "Sep 15, 2026",
+    "source": "Play Store",
+    "theme": "Charges & Fees",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "0a571808-f198-4c25-94a6-407d4d501a16",
+    "rating": 3,
+    "title": null,
+    "text": "Turing growth chart is easy but its very complicated to turn form groww chart to normal Trading view chart please make it happen in one tap",
+    "date": "Sep 15, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Neutral",
+    "pii_stripped": true
+  },
+  {
+    "id": "59d9aa1e-2272-4cbc-8dd7-ef1f6adb91b6",
+    "rating": 1,
+    "title": null,
+    "text": "customer service very very poor bad experience",
+    "date": "Sep 15, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "b158d62b-46b2-4ed1-98cf-0c7075cd00c0",
+    "rating": 5,
+    "title": null,
+    "text": "best of world stock market app groww",
+    "date": "Sep 15, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "96cdc715-6ca5-4c1c-aa9e-1c872cf2ba8c",
+    "rating": 4,
+    "title": null,
+    "text": "This app is the best app for beginners who want to invest in stocks and. mutual funds..",
+    "date": "Sep 15, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "e5721ed9-c528-4ac8-bae6-7f139dd8429a",
+    "rating": 5,
+    "title": null,
+    "text": "all good thing this app veri excellent good",
+    "date": "Sep 15, 2026",
+    "source": "Play Store",
+    "theme": "Statements",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "ee1c69f0-cd43-46cb-bf45-ecf3669ce950",
+    "rating": 5,
+    "title": null,
+    "text": "thik pletform is very simple and very good",
+    "date": "Sep 15, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "7b3eb5b7-54a7-4228-88e2-e909966494d9",
+    "rating": 1,
+    "title": null,
+    "text": "worst app for f and o . good for investment",
+    "date": "Sep 15, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "e01f35ba-624b-4421-8332-f62698bca4a8",
+    "rating": 1,
+    "title": null,
+    "text": "Easy to use i like it but very expensive charges",
+    "date": "Sep 15, 2026",
+    "source": "Play Store",
+    "theme": "Charges & Fees",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "a96b4446-c0f2-4bc1-ac84-b20eaf8e4c33",
+    "rating": 3,
+    "title": null,
+    "text": "T-bond feature is not added in this application",
+    "date": "Sep 15, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Neutral",
+    "pii_stripped": true
+  },
+  {
+    "id": "86bd7671-8974-4ee7-bdde-284cb7a6651e",
+    "rating": 1,
+    "title": null,
+    "text": "I have been waiting for 4 days for my account reactivation, How can a person believe this App with their investment and money",
+    "date": "Sep 15, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "3ab80022-89ce-4add-b4aa-8dda0e29e196",
+    "rating": 1,
+    "title": null,
+    "text": "After 8 days Groww is unable to activate my account. Several interactions to customer care department, still same condition.",
+    "date": "Sep 15, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "4be98a9a-6230-412c-92a6-405bb647087d",
+    "rating": 5,
+    "title": null,
+    "text": "Thank you; the Groww app is excellent and very helpful. I have managed to save some money thanks to this app. I actually started my first investment using the Groww app.",
+    "date": "Sep 15, 2026",
+    "source": "Play Store",
+    "theme": "Statements",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "247e62b9-cb30-472b-a0d1-97548bfb187b",
+    "rating": 5,
+    "title": null,
+    "text": "I used many apps but this app is excellent for trading specially mutual funds or sip.",
+    "date": "Sep 15, 2026",
+    "source": "Play Store",
+    "theme": "Payments",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "ac08031a-e7c4-472e-a5b5-9a368f8c6aa4",
+    "rating": 1,
+    "title": null,
+    "text": "Bad Experience. couldn't set up. they show PAN Number is wrong. but I put the correct number. 3rd class app.",
+    "date": "Sep 14, 2026",
+    "source": "Play Store",
+    "theme": "KYC & Onboarding",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "4634235e-4527-4888-8033-045c39754d28",
+    "rating": 1,
+    "title": null,
+    "text": "F U groww Bloody cheaters First they give out MF prime feature as free with hidden charges now they changed to more commission hence TER changed more than 0.6%",
+    "date": "Sep 14, 2026",
+    "source": "Play Store",
+    "theme": "Charges & Fees",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "298db317-1f4a-4d23-b29b-6fd5d025c7c3",
+    "rating": 5,
+    "title": null,
+    "text": "Although Groww is a good app,but now with rising competition in the market ,like lemon ,sahi,flattrade,m.asset etc giving best brokerage free plans or minimal cost plans also to the users by paying minimal joining amount.Its a wonderful for option trading especially.I hope Groww will also look in to this and take quick change for further development",
+    "date": "Sep 14, 2026",
+    "source": "Play Store",
+    "theme": "Charges & Fees",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "aaa25484-b72a-4896-97ae-1b55f473bf0c",
+    "rating": 1,
+    "title": null,
+    "text": "gadhe ki ga#d app hai, bss spam mail p mail bhejte rehte hai, customer executive se call connect nhi hoti, account delete nhi hota,",
+    "date": "Sep 14, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "9f5b56bf-43de-4e69-8b74-613b1fc79ba6",
+    "rating": 1,
+    "title": null,
+    "text": "worst app.. lagging chart and i think they shared our data with big players.. i have been into this market for 4 years but whenever i take any trade in fnO even in my sureshot trade it hits my sl.. though app is good for investing i would not recommend for option trading... worst experience..",
+    "date": "Sep 14, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "57523582-0ea4-4604-9126-8d764ef4b67c",
+    "rating": 5,
+    "title": null,
+    "text": "One of the best broker app, I ever prefer",
+    "date": "Sep 14, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "811f2eeb-ec9b-40a2-90d0-e5f1f918c199",
+    "rating": 3,
+    "title": null,
+    "text": "please allow the options of weekly STP, It will be beneficial for customers. There are lots of bugs that need to be fixed like the order placed not shown when it's done. Ultimately the customer support response is extremely slow.",
+    "date": "Sep 14, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Neutral",
+    "pii_stripped": true
+  },
+  {
+    "id": "7e50569d-1c94-42a4-9fbb-4b08c6a0319f",
+    "rating": 1,
+    "title": null,
+    "text": "The current update made it worst experience. the indicators are not upto the mark, the back button drawer hides constantly, which results in selecting unwanted options. previous version was way better.",
+    "date": "Sep 14, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "b6bbf6dd-f91a-4258-8669-c85101a801b2",
+    "rating": 3,
+    "title": null,
+    "text": "option trading percentage does not shows example.12/-loss",
+    "date": "Sep 14, 2026",
+    "source": "Play Store",
+    "theme": "Statements",
+    "sentiment": "Neutral",
+    "pii_stripped": true
+  },
+  {
+    "id": "921b6cad-8778-4da0-ab7d-fdda9c17b8a7",
+    "rating": 1,
+    "title": null,
+    "text": "i like this app and it's feature only I don't like one thing which is need account reactivate with the document of 12 digit AADHAR. according to my point of view it is not necessary only need active bank account. govt never said that if want do trading or explore with any online trading app u must provide AADHAR. it is not the gud thing it's a privacy concern.",
+    "date": "Sep 14, 2026",
+    "source": "Play Store",
+    "theme": "KYC & Onboarding",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "b0bb985a-3eee-4e4d-8ebe-4f5ed33d329d",
+    "rating": 1,
+    "title": null,
+    "text": "worst app. Application not working in my phone. even after several complaints they didn't resolve my issue",
+    "date": "Sep 14, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "576b8976-d829-404a-914b-345bd3bc8334",
+    "rating": 4,
+    "title": null,
+    "text": "Iam happy with app interface and easy usage. However why my app not Gr1 (AI) option? please clarify",
+    "date": "Sep 14, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "417f346a-174d-44cb-8a47-77e206c7cd4c",
+    "rating": 5,
+    "title": null,
+    "text": "excellent we want to earn money from this app by trading",
+    "date": "Sep 14, 2026",
+    "source": "Play Store",
+    "theme": "Statements",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "c31fc489-1325-4db5-b31e-d6763496138c",
+    "rating": 5,
+    "title": null,
+    "text": "very good but iam always in loss",
+    "date": "Sep 14, 2026",
+    "source": "Play Store",
+    "theme": "Statements",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "e771f11f-9034-44c0-9660-10575064cdc4",
+    "rating": 5,
+    "title": null,
+    "text": "one of the best broker app very useful and easy to understand every stock /ipo details and all .",
+    "date": "Sep 14, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "42bb1fda-48bb-40ca-bbaf-57d6cb99ffb5",
+    "rating": 5,
+    "title": null,
+    "text": "Good app for stock market investment and trading, now you can buy corporate bonds also",
+    "date": "Sep 14, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "042f08c1-a6b2-4a3e-a803-79e6a523aca2",
+    "rating": 5,
+    "title": null,
+    "text": "bahut hi achha hai customer support team is best working all customer happy",
+    "date": "Sep 14, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "b3c64c40-bd7b-40a9-986d-003a4b63c7d5",
+    "rating": 1,
+    "title": null,
+    "text": "3rd class broker, my trading account showing blocked, not able to trade or do anything, all segment showing active i connect multiple time with support but nothing fixed by support, i filled teraform 20 time account still blocked.",
+    "date": "Sep 14, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "9c8df2c5-1c40-42b5-b911-dfc5971ce369",
+    "rating": 5,
+    "title": null,
+    "text": "Good but,agar market holiday hai to agale din information Milana chaiye.",
+    "date": "Sep 14, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "26f00fc7-23cf-4c04-8a23-e4c2b6da3117",
+    "rating": 5,
+    "title": null,
+    "text": "This groww srtocks and IPO apply best way and nice",
+    "date": "Sep 14, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "9093a405-233d-4007-8c80-f72f1e67dfc9",
+    "rating": 5,
+    "title": null,
+    "text": "my sagison big platform but not leverage please add the option",
+    "date": "Sep 14, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "100c774e-3904-4fc3-a742-65be0b5a2c12",
+    "rating": 5,
+    "title": null,
+    "text": "Grow means your wealth grow,this site is secure ,trustable,and easily to use, I m very happy to use it.",
+    "date": "Sep 14, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "06f9ffa5-a7b5-4b1d-8eec-ebdfc4f4918a",
+    "rating": 5,
+    "title": null,
+    "text": "This app is very useful for trading.",
+    "date": "Sep 14, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "75d0ad68-6bfb-4aa0-ae5a-fec851607b34",
+    "rating": 5,
+    "title": null,
+    "text": "when I started share market on Groww app this is easily to do work with Groww",
+    "date": "Sep 14, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "14547543506",
+    "rating": 1,
+    "title": "I hate this app",
+    "text": "This app is very slow in withdrawal and also many charges are applied",
+    "date": "Sep 14, 2026",
+    "source": "App Store",
+    "theme": "Withdrawals",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "39fcdb97-c968-4118-b7b4-9ab9ee0bd8bf",
+    "rating": 5,
+    "title": null,
+    "text": "easy login and faster to create sip in less than 1 minute",
+    "date": "Sep 14, 2026",
+    "source": "Play Store",
+    "theme": "Payments",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "438be5fd-6bf0-4803-85ad-93d004f14fc8",
+    "rating": 2,
+    "title": null,
+    "text": "I am so sad because pehle ka candle dikh hi nahi Raha 5 minutes pe please solve",
+    "date": "Sep 14, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "a3e56614-8779-4dfc-9046-75983f33e063",
+    "rating": 5,
+    "title": null,
+    "text": "I am very happy this app very good",
+    "date": "Sep 13, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "ce54c299-609d-48df-af50-2a519cb810ff",
+    "rating": 1,
+    "title": null,
+    "text": "many charts are not updated regularly for example on date 12/09/2026 check on groww app crude oil charts daily time frame 11/09/2026 not seen often many skript chart not updated regularly it very difficult to use groww",
+    "date": "Sep 13, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "f377a276-d9e8-49cf-9b2b-fbc7f248ddd9",
+    "rating": 5,
+    "title": null,
+    "text": "very fast withdrobal f&O 1 cleck est very nice",
+    "date": "Sep 13, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "124c3187-bb38-438a-a957-e817b026fa5d",
+    "rating": 5,
+    "title": null,
+    "text": "it's great plat farm to investing guid",
+    "date": "Sep 13, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "26c8cd5d-8af4-40b2-85b2-df23bb638147",
+    "rating": 2,
+    "title": null,
+    "text": "worst service one day your money will stuck but they will never reply to your requested support and mails",
+    "date": "Sep 13, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "3cfb3c39-de11-43dd-baf3-ab48b1444dd6",
+    "rating": 1,
+    "title": null,
+    "text": "using it since a year and I can say that it has good interface but it's the highest-charging app. Hidden charges on cancelled/unexecuted orders eat up most of your F&O profit. Withdrawals take 5-7 days and support is unhelpful. Not recommended if you are trading with low profit margin as you will be loser even with profit, grow will eat all your profit through margin and charges.",
+    "date": "Sep 13, 2026",
+    "source": "Play Store",
+    "theme": "Charges & Fees",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "fd690baf-b3c4-4295-b837-3a03a27ee0ca",
+    "rating": 1,
+    "title": null,
+    "text": "support system nahin Hai groww mein Mera account unfridge nahin ho nahin ho raha hai kahin month se TRAI kar raha hai",
+    "date": "Sep 13, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "0f36719b-625c-433b-9b53-cd5bc2c30aef",
+    "rating": 5,
+    "title": null,
+    "text": "Best app, easy to use. Quick deposit and withdrawals available. Customer service support is also very good.",
+    "date": "Sep 13, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "082cc65a-4dca-420e-ab19-f5de449ae6ac",
+    "rating": 5,
+    "title": null,
+    "text": "good app and very easy to use app",
+    "date": "Sep 13, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "5fb63e3e-1794-41d8-ae7a-e7ebdc469101",
+    "rating": 1,
+    "title": null,
+    "text": "I can't proceed to the e sighing please",
+    "date": "Sep 13, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "56f56fc9-aaa3-43e5-8ff3-58dc61b758b2",
+    "rating": 1,
+    "title": null,
+    "text": "FUNDS NOT SAFE..CHECK YOUR FUNDS AND ORDER EVERYDAY..LOOSE LOT OF MONEY N NO HELP BUT GROWW BLAME US. WRONG INFO. GIVEN. BIG CHEAT. Even Mutual Funds, price shows 11% increase and when you Redeem, it shows 11% loss. Check price of LIC MF GOLD ETF( 10/08/25,showing 11% increase but actually it is -11% decrease when you redeem). Agents and Supervisors says computer glitch. Customer's looses heavyly in Groww.",
+    "date": "Sep 13, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "5840f425-4a23-4b30-93f1-e175d6fac6f0",
+    "rating": 4,
+    "title": null,
+    "text": "good but interface of angle one is much better than groww",
+    "date": "Sep 13, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "7ad72eba-8c42-431c-9907-7c16c59a4939",
+    "rating": 1,
+    "title": null,
+    "text": "why can't one sell sme ipo alloted the same day at lower circuit,many people incurred huge losses bcoz of this , other appaa allowed this please do the needful",
+    "date": "Sep 13, 2026",
+    "source": "Play Store",
+    "theme": "Statements",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "0ca74dff-7cf9-4f82-b55d-37bf60a600fd",
+    "rating": 4,
+    "title": null,
+    "text": "all good but redemption payment is long process",
+    "date": "Sep 13, 2026",
+    "source": "Play Store",
+    "theme": "Payments",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "87f75282-bf49-4bc5-9823-67c24ffd9b3b",
+    "rating": 4,
+    "title": null,
+    "text": "Sometimes the app glitches causing trouble in order execution.",
+    "date": "Sep 13, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "7a5b394b-7f19-4160-b191-e84c122251b1",
+    "rating": 1,
+    "title": null,
+    "text": "Very very worst Oi and Oi cheg not show and not support worst update this groww application",
+    "date": "Sep 13, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "97e93ec8-c868-4a0d-b68c-accac9135fb2",
+    "rating": 5,
+    "title": null,
+    "text": "good and best app for tread sip",
+    "date": "Sep 13, 2026",
+    "source": "Play Store",
+    "theme": "Payments",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "10597c27-3987-4440-ae1b-4dbae259e004",
+    "rating": 1,
+    "title": null,
+    "text": "emailed and contacted many times for closure of account but nothing happened",
+    "date": "Sep 13, 2026",
+    "source": "Play Store",
+    "theme": "Customer Support",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
+  {
+    "id": "14544147158",
+    "rating": 5,
+    "title": "GREAT APP",
+    "text": "Best investing app ever don\u2019t know about others but it works for me",
+    "date": "Sep 13, 2026",
+    "source": "App Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "9463ca7e-8ef6-47aa-9ad1-7c39d4b7b403",
+    "rating": 5,
+    "title": null,
+    "text": "very good application. very easy to use",
+    "date": "Sep 13, 2026",
+    "source": "Play Store",
+    "theme": "General & Usability",
+    "sentiment": "Positive",
+    "pii_stripped": true
+  },
+  {
+    "id": "236bce0a-a0fb-4f39-884f-c0731c198cda",
+    "rating": 1,
+    "title": null,
+    "text": "hanging lagging automatic buy and sell triggered geting pathetic day by day specially after latest update",
+    "date": "Sep 13, 2026",
+    "source": "Play Store",
+    "theme": "App Performance",
+    "sentiment": "Negative",
+    "pii_stripped": true
+  },
   {
     "id": "e00116c8-0b66-47ab-a5a3-1f586cf47bd5",
     "rating": 5,
@@ -470,19 +5343,8 @@ export const mockReviewsList: Review[] = [
     "text": "nowadays this app work too slowly everything feels laggy we can't see Even how many stocks we pledged and we can't see our balance properly too many glitches",
     "date": "Sep 12, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "24607b05-ee98-499a-bf09-acbeecdb83a4",
-    "rating": 1,
-    "title": null,
-    "text": "groww app F and O always struck, glitches,slow moments very bad",
-    "date": "Sep 12, 2026",
-    "source": "Play Store",
     "theme": "App Performance",
-    "sentiment": "Negative",
+    "sentiment": "Positive",
     "pii_stripped": true
   },
   {
@@ -492,7 +5354,7 @@ export const mockReviewsList: Review[] = [
     "text": "The letters in the app should be a bit larger; they are very small.",
     "date": "Sep 12, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -514,7 +5376,7 @@ export const mockReviewsList: Review[] = [
     "text": "There are lots of bugs in your app or server, sometimes IPO dates change, Sometimes the pre-apply option appears and disappears. Fix those things.",
     "date": "Sep 12, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -613,7 +5475,7 @@ export const mockReviewsList: Review[] = [
     "text": "Platform is getting worst day by day. Customer service is worst. They don't have any solution for any of the issues being faced by the user. Today I have noticed that they subscription rate of IPOs being shown on Groww is incorrect and is far less than actual subscription rate. As expected from the worst platform.",
     "date": "Sep 11, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -690,7 +5552,7 @@ export const mockReviewsList: Review[] = [
     "text": "I am using Shiprocket Quick for my regular local orders and the experience has been positive so far. The app is easy to understand and delivery progress can be checked quickly. I also find it useful when customers ask about their orders because the latest status is easily accessible.",
     "date": "Sep 11, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -789,7 +5651,7 @@ export const mockReviewsList: Review[] = [
     "text": "you are worst service in loading stocks chart and option chains.",
     "date": "Sep 11, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -822,7 +5684,7 @@ export const mockReviewsList: Review[] = [
     "text": "charts are inaccurate and doesn't show more than 3-4 years old.new update is pathetic as they provide scalpers button just above bach button. it very annoying.",
     "date": "Sep 11, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -844,7 +5706,7 @@ export const mockReviewsList: Review[] = [
     "text": "I\u2019ve been using this app for almost a year and have no complaints about its performance or features. I\u2019d like to suggest one small addition: an optional description field when setting a stock alert. For example, if HAL is at \u20b95,000 and I set an alert at \u20b94,500 to buy shares, I\u2019d like to note that reason in the alert. This would make alerts much more useful. I hope you\u2019ll consider adding this feature!",
     "date": "Sep 11, 2026",
     "source": "Play Store",
-    "theme": "App Performance",
+    "theme": "Charges & Fees",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -866,7 +5728,7 @@ export const mockReviewsList: Review[] = [
     "text": "whrost service last friday submitted all the documents since last friday its showing account opening will take 24 hours i called customer care its AI picking calls no clear answer ticket number 27719447",
     "date": "Sep 11, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -921,19 +5783,8 @@ export const mockReviewsList: Review[] = [
     "text": "Pathetic app for investment and pathetic customer service as well. No update on unit allocation even though the date of allocation has passed. And terrible customer service as nobody comes in to help. Just reassigns to a new person in the same chat and nobody bothers to reply",
     "date": "Sep 11, 2026",
     "source": "App Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "eccff620-a15c-435a-b99a-144afb002314",
-    "rating": 5,
-    "title": null,
-    "text": "even though you're charging \u20b920 per trade,I love to it because you people are making me to groww and I like your app name groww which make me groww",
-    "date": "Sep 11, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Positive",
     "pii_stripped": true
   },
   {
@@ -965,7 +5816,7 @@ export const mockReviewsList: Review[] = [
     "text": "first time use invest aspect good service and good",
     "date": "Sep 11, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -1020,7 +5871,7 @@ export const mockReviewsList: Review[] = [
     "text": "It is good to use I have been using it for 2 years till now I didn't face any issue with this app.",
     "date": "Sep 10, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -1031,7 +5882,7 @@ export const mockReviewsList: Review[] = [
     "text": "This app may be useful for beginners who are just starting out and don\u2019t know much about the process. However, if you are looking for good service, proper support, and a smooth overall experience, I would not recommend downloading this app. The service needs significant improvement, especially in terms of customer support and user experience.",
     "date": "Sep 10, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -1086,7 +5937,7 @@ export const mockReviewsList: Review[] = [
     "text": "On groww when I will do sip it is rejected after 7-8 days dont know why it is happened with 4 different mutual funds, I have raised a ticket but they are not responding worst experience ever, I will not use groww anymore",
     "date": "Sep 10, 2026",
     "source": "App Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -1130,7 +5981,7 @@ export const mockReviewsList: Review[] = [
     "text": "after taking the click also ,trade wasn't executed and I got loss because of your terrible performance, also tried to connect Customer support but instead of understanding my concern they're reverting like AI , disgusting....",
     "date": "Sep 10, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -1141,7 +5992,7 @@ export const mockReviewsList: Review[] = [
     "text": "F&O Trap & Broken UI State As a stocks/funds investor, critical flaws ruin this app: F&O Trap: The F&O section has an \"Activate\" button with zero confirmation popups. One misclick triggers 24hr activation with no cancel option. Broken Segments: After misclicking, all segment checkboxes stayed ticked. Even after calling support to deactivate, the UI never updated, causing confusion. Sync Issues: Backend states fail to sync, hurting trust.",
     "date": "Sep 10, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -1273,7 +6124,7 @@ export const mockReviewsList: Review[] = [
     "text": "worst customer support, no one responds properly. takes 1 hour to reply that they will look into the issue shortly and then provide some trash solution and immediately close the chat",
     "date": "Sep 10, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -1295,7 +6146,7 @@ export const mockReviewsList: Review[] = [
     "text": "previously its a good app. after updates its showing so many errors",
     "date": "Sep 10, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -1328,7 +6179,7 @@ export const mockReviewsList: Review[] = [
     "text": "thank you Groww for supporting struggling traders like us... we have a low capital now a days but one day we must make crores with your technical support.. thanks a lot",
     "date": "Sep 10, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -1350,7 +6201,7 @@ export const mockReviewsList: Review[] = [
     "text": "It's my first experience investing via Groww and expect better opportunities in the future. Let's see what the future holds!",
     "date": "Sep 10, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -1416,7 +6267,7 @@ export const mockReviewsList: Review[] = [
     "text": "this app good working. and and personal easy. all option available for investments",
     "date": "Sep 10, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -1482,7 +6333,7 @@ export const mockReviewsList: Review[] = [
     "text": "If you are a beginner or a long-term investor looking for a clutter-free, hassle-free app to build your wealth, Groww is an exceptional choice. Advanced traders, however, may prefer platforms with heavier charting tools.",
     "date": "Sep 10, 2026",
     "source": "App Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -1504,7 +6355,7 @@ export const mockReviewsList: Review[] = [
     "text": "Worst app, they will breach your security and open f&o segment on there without your consent and bsda yes to no without any consent or intimation to user and if complaint is raise they just make you go round and round with no solution and close ticket without any resolution with a thank you, customer care experience is as equal to Instagram fraud sellers if you face any difficulties or have an issue they have no answer",
     "date": "Sep 10, 2026",
     "source": "App Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -1515,7 +6366,7 @@ export const mockReviewsList: Review[] = [
     "text": "App not user friendly and the dashboard doesn\u2019t display direct total orders",
     "date": "Sep 10, 2026",
     "source": "App Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -1526,7 +6377,7 @@ export const mockReviewsList: Review[] = [
     "text": "I am using Grow app for 3 years and I am fully satisfied.God bless Grow. Tum jug jug jio Maharaja",
     "date": "Sep 10, 2026",
     "source": "App Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -1537,7 +6388,7 @@ export const mockReviewsList: Review[] = [
     "text": "Thank you so much Universe! Thank you God ! Thank you Groww !",
     "date": "Sep 10, 2026",
     "source": "App Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -1603,7 +6454,7 @@ export const mockReviewsList: Review[] = [
     "text": "Needs to work on more filters and UI list to help investors to pick the right stock of their interest like other apps. For muslim to find Sharia Compliant stock , similar to a Jain they need Satvik filter or if we need to pick some stock which have 1.Low Debt to Asset , 2.High Profit margin stock 3.Latest trending AI, Semiconductor, Energy for Data center * Can we Add Debt to Asset for Manufacturing/Infra Company * Debt to 12 Month Avg Market Valuation ratio for Service based companies.",
     "date": "Sep 09, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "KYC & Onboarding",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -1625,7 +6476,7 @@ export const mockReviewsList: Review[] = [
     "text": "It has been half a decade with groww started an investing journey from 2020 a great experience with no technical glitches or any other bad experience I have faced till now I liked the App easy users interface and other features over all 10/10",
     "date": "Sep 09, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -1636,7 +6487,7 @@ export const mockReviewsList: Review[] = [
     "text": "Groww has very poor customer support and always busy customer staff they don't listen so it is better to change your broker I just mailed them today to send me exit formalities I was a member from 4 years and tested it all way",
     "date": "Sep 09, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -1680,7 +6531,7 @@ export const mockReviewsList: Review[] = [
     "text": "Update you language ASK GR1 for hindi language as well it understand only English",
     "date": "Sep 09, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -1735,7 +6586,7 @@ export const mockReviewsList: Review[] = [
     "text": "worst app, i can't even reactive my account after 1 year of investing, now i can't invest more",
     "date": "Sep 09, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -1746,7 +6597,7 @@ export const mockReviewsList: Review[] = [
     "text": "on the special aap for trading investment and mutual funds, SIP and more plan",
     "date": "Sep 09, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Payments",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -1768,7 +6619,7 @@ export const mockReviewsList: Review[] = [
     "text": "I've been using this app for two years. Everything's working fine, but its processing speed is very slow and needs some adjustments. Whenever I want to redeem money, it takes five days for the money to be credited. Change this a bit, Groove! Only then can you increase your customer base. Reduce the redemption time from five days to two days.",
     "date": "Sep 09, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -1779,7 +6630,7 @@ export const mockReviewsList: Review[] = [
     "text": "The UI is user friendly but the functioning of the app is very poor it gets lagged when important trades are taken..........worst app to trade in or invest in.",
     "date": "Sep 09, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -1790,7 +6641,7 @@ export const mockReviewsList: Review[] = [
     "text": "Its not working in . Unable to login through any mail",
     "date": "Sep 09, 2026",
     "source": "App Store",
-    "theme": "General & Usability",
+    "theme": "KYC & Onboarding",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -1845,7 +6696,7 @@ export const mockReviewsList: Review[] = [
     "text": "Grow is very User Friendly Mobile Application for Trading. also its Pre-Apply IPO Feature makes you one step ahead of other Application. Off Trading Hours we can book Order and they are placed easily",
     "date": "Sep 09, 2026",
     "source": "App Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -1966,7 +6817,7 @@ export const mockReviewsList: Review[] = [
     "text": "Trading news analysis became user friendly and easy for understanding for new people and investors",
     "date": "Sep 09, 2026",
     "source": "App Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -2054,7 +6905,7 @@ export const mockReviewsList: Review[] = [
     "text": "Cumulative investing is not easy to track when investors have multiple financial goals. It would be great if the app introduced goal-wise trackers with sub-divisions for goals like retirement, education, wealth creation, etc. This would make portfolio tracking much easier and more convenient. Hope you consider this in the next update!",
     "date": "Sep 09, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Neutral",
     "pii_stripped": true
   },
@@ -2065,7 +6916,7 @@ export const mockReviewsList: Review[] = [
     "text": "In My Life the Biggest Mistake took place 2 years ago and till now because of that, I lost several lakhs to recover that loss and it's all because of groww app was not connecting to the server. In the last two years what I lost is not money, I lost my mom's hope and dreams, she never lost belief in me. But she cried for the first time in my life, not because of money, because I lied her to not hurt. I guarantee you, I will not leave you, this much easily. U will lose bigger than that",
     "date": "Sep 08, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -2087,7 +6938,7 @@ export const mockReviewsList: Review[] = [
     "text": "Groww is a very user friendly trading app for beginners and professionals, both. Works in real time with immediate settlements. Recommended.",
     "date": "Sep 08, 2026",
     "source": "App Store",
-    "theme": "Charges & Fees",
+    "theme": "Withdrawals",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -2098,7 +6949,7 @@ export const mockReviewsList: Review[] = [
     "text": "this app not stop loss working and high profit time exist button not working please don't use this app very very worst app dont installed",
     "date": "Sep 08, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Statements",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -2131,7 +6982,7 @@ export const mockReviewsList: Review[] = [
     "text": "Very worst experience. No support from the customer service. I have sent mail also no reply. I thought of saving in MF's. By this experience I will not invest any. worst app..already mailed no use",
     "date": "Sep 08, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -2164,7 +7015,7 @@ export const mockReviewsList: Review[] = [
     "text": "worst , only grow will grow not ur money",
     "date": "Sep 08, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -2175,7 +7026,7 @@ export const mockReviewsList: Review[] = [
     "text": "Groww is a fraudulent company. It only exploits its customers and takes their money in the name of rules and regulations.",
     "date": "Sep 08, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "KYC & Onboarding",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -2307,7 +7158,7 @@ export const mockReviewsList: Review[] = [
     "text": "loss due to miss click, please place the buy at market price / sell at market price button somewhere else instead of just below the name of stock/share.. many time when someone want to click on name of stock, they click the buy sell button",
     "date": "Sep 07, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Statements",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -2329,7 +7180,7 @@ export const mockReviewsList: Review[] = [
     "text": "pls change for upi please change for the upi method it's very trouble for me why for the changing a wallet recharge method for internet banking",
     "date": "Sep 07, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Payments",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -2428,7 +7279,7 @@ export const mockReviewsList: Review[] = [
     "text": "Groww app user-experience ke maamle me bahut accha hai, lekin isme abhi tak SLBM (Stock Lending and Borrowing Mechanism) ki facility nahi hai. Long-term investors ke liye apne stocks par extra income earn karne ke liye SLBM ek bahut zaroori feature hai. Zerodha aur baaki doosre bade brokers ye service kaafi samay se de rahe hain.Groww team se request hai ki is feature ko jald se jald add karein.",
     "date": "Sep 07, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Neutral",
     "pii_stripped": true
   },
@@ -2461,7 +7312,7 @@ export const mockReviewsList: Review[] = [
     "text": "Very worst experience. I am making calls multiple times to the Customer Support Services of Groww. but they are not responding. I am unable to link my PAN. That's why I am making calls to get the solution and guidance but no response from the team of customer support services of Groww.",
     "date": "Sep 07, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -2472,7 +7323,7 @@ export const mockReviewsList: Review[] = [
     "text": "okay so after using it for 3 years it's best app for trading and smooth ui but sometimes it lags or just keeps buffering when markets are at high volatility so it should be improved and now I'm changing my rating because there IPO and f&O pages keep stucking and showing wrong information.",
     "date": "Sep 07, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Neutral",
     "pii_stripped": true
   },
@@ -2516,7 +7367,7 @@ export const mockReviewsList: Review[] = [
     "text": "This platform is good for those who want to make a little profit and never be greedy.",
     "date": "Sep 07, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Statements",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -2582,7 +7433,7 @@ export const mockReviewsList: Review[] = [
     "text": "The app is simple with neat features and 1 click stock investment. Best for MF for SIP or lump sum and easy withdrawal and redemption . Anyone from 10 to 80 years can navigate",
     "date": "Sep 07, 2026",
     "source": "App Store",
-    "theme": "Charges & Fees",
+    "theme": "Withdrawals",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -2637,7 +7488,7 @@ export const mockReviewsList: Review[] = [
     "text": "News update and technicals of moving averages indicators are helping to understand about stock.",
     "date": "Sep 06, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -2648,7 +7499,7 @@ export const mockReviewsList: Review[] = [
     "text": "this app is my SL orders automatically averaged, not to good, Coustemer support very bad",
     "date": "Sep 06, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -2714,7 +7565,7 @@ export const mockReviewsList: Review[] = [
     "text": "I invested \u20b910.00 Lakhs in SIF of SBI MAGNUM LONG SHORT NFO on 12/08/2026 via Groww however the investment doesn\u2019t reflect in Groww app even till date i.e. 06/09/2026. I have raised the pressing issue with their support team along with sought after documents & statements from CAMS. But no solution provided so far.",
     "date": "Sep 06, 2026",
     "source": "App Store",
-    "theme": "Customer Support",
+    "theme": "Charges & Fees",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -2725,7 +7576,7 @@ export const mockReviewsList: Review[] = [
     "text": "Simple app with ease of work. SIP calculator is very good option.",
     "date": "Sep 06, 2026",
     "source": "App Store",
-    "theme": "General & Usability",
+    "theme": "Payments",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -2736,7 +7587,7 @@ export const mockReviewsList: Review[] = [
     "text": "it's a very good app for SIP... I really appreciate it....",
     "date": "Sep 06, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Payments",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -2747,7 +7598,7 @@ export const mockReviewsList: Review[] = [
     "text": "I am.um happy. makingn cheating and gambling. because of this soany middle class family life loss. even me to . I loss around 8 lacs in this grow. I never recd profit last 3 years. Grow never supported me.",
     "date": "Sep 05, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Statements",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -2923,7 +7774,7 @@ export const mockReviewsList: Review[] = [
     "text": "Worst customer support. never take loans from here specially LAS",
     "date": "Sep 05, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -2945,7 +7796,7 @@ export const mockReviewsList: Review[] = [
     "text": "Glitch in app permissions, even with SMS permission revoked it can read your SMS/OTPs without your consent! violation of privacy and security. Be cautious while using. 2. App interface is not upto the mark as compared to other brokers. You need to dig into to open charts, option chain and vice versa- slow process. 3. For MF SIPs, OTPs fail several times",
     "date": "Sep 05, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -2978,7 +7829,7 @@ export const mockReviewsList: Review[] = [
     "text": "great experience, providing precise information and ver y easy to understand Abt the stock or anything. Overall very good app to explore the stock market.",
     "date": "Sep 05, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -2989,7 +7840,7 @@ export const mockReviewsList: Review[] = [
     "text": "I have a issue with this app - in past i have auto with Yes bank for SIP , i have some issue with bank and i change my primary bank to HDFC and now i have deleted the Old bank from auto pay but how can i check my new auto pay is working or not ??",
     "date": "Sep 05, 2026",
     "source": "App Store",
-    "theme": "General & Usability",
+    "theme": "Payments",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -3000,7 +7851,7 @@ export const mockReviewsList: Review[] = [
     "text": "Clean and intuitive interface. Investing in stocks and mutual funds is smooth, fast, and hassle-free. Great app for both beginners and experienced investors!",
     "date": "Sep 05, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -3077,7 +7928,7 @@ export const mockReviewsList: Review[] = [
     "text": "You are the biggest app of India but service is worst. Chart is not loading on different time frame on app and in PC too. kindly work on thisat the earliest .",
     "date": "Sep 05, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -3088,7 +7939,7 @@ export const mockReviewsList: Review[] = [
     "text": "MASSIVE LOOPHOLE & MISLEADING INTERFACE DESIGN! DON'T TRAP YOUR HARD-EARNED MONEY! I am a retail investor, and I am writing this to alert millions of long-term investors using this platform. The application interface of Groww (downloaded from Google Play Store) is highly deceptive and uses dangerous \"Dark Patterns\" to mislead users, which can instantly destroy your lifetime savings and generational wealth. THE PROBLEM: Inside the app interface, Groww deliberately segregates and shows you",
     "date": "Sep 05, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -3154,7 +8005,7 @@ export const mockReviewsList: Review[] = [
     "text": "Very easy to use, UI standards are pretty good and easy to understand. Keeping going team groww!",
     "date": "Sep 04, 2026",
     "source": "App Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -3176,7 +8027,7 @@ export const mockReviewsList: Review[] = [
     "text": "I am using groww app from last 5years, this is first time, last update is not user friendly. please rollback this as soon as possible.",
     "date": "Sep 04, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Neutral",
     "pii_stripped": true
   },
@@ -3220,7 +8071,7 @@ export const mockReviewsList: Review[] = [
     "text": "The worst trading application ever. there are several glitches in order execution process. the customer service is also not having any idea to resolve the issue.",
     "date": "Sep 04, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -3253,7 +8104,7 @@ export const mockReviewsList: Review[] = [
     "text": "I am using since launch but groww customer support is degrading day by day . you cannot contact by anyways. they will not reply or receive your call while you wait hours",
     "date": "Sep 04, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -3275,7 +8126,7 @@ export const mockReviewsList: Review[] = [
     "text": "I have been using grow for 3 years , very easy to use and withdrawals are too quick beat app for stock market",
     "date": "Sep 04, 2026",
     "source": "App Store",
-    "theme": "Charges & Fees",
+    "theme": "Withdrawals",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -3320,17 +8171,6 @@ export const mockReviewsList: Review[] = [
     "date": "Sep 04, 2026",
     "source": "Play Store",
     "theme": "Charges & Fees",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "db9db880-fc45-48cb-a708-f8d1d3fc19da",
-    "rating": 4,
-    "title": null,
-    "text": "GR-1 AI tool is amazing. The AI chat history deletion option is to be added",
-    "date": "Sep 04, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -3407,7 +8247,7 @@ export const mockReviewsList: Review[] = [
     "text": "real market trailing stoploss and profit adjustment please",
     "date": "Sep 04, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Statements",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -3418,7 +8258,7 @@ export const mockReviewsList: Review[] = [
     "text": "hello Groww team, I wanted to inform you that. I\u2019m using this application from last 3 years for sip management. but now new sip activation is not working properly, I have tried my all possibilities to activate sip please check this issue asap and improve this flow. the issue is: when I click on sip activate autopay - with my phonepe or googlepay upi it shows something went wrong, and inside groww upi it shows no upi is activated please activate - i dont want to activate. suggestion: use less vibe coding and proper feature improvement thanks! previous version was far better than this.",
     "date": "Sep 04, 2026",
     "source": "App Store",
-    "theme": "Charges & Fees",
+    "theme": "Payments",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -3429,7 +8269,7 @@ export const mockReviewsList: Review[] = [
     "text": "pls show daily profit or loss/ profit loss",
     "date": "Sep 04, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Statements",
     "sentiment": "Neutral",
     "pii_stripped": true
   },
@@ -3517,7 +8357,7 @@ export const mockReviewsList: Review[] = [
     "text": "Very Good quality & easy to understand",
     "date": "Sep 04, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -3539,7 +8379,7 @@ export const mockReviewsList: Review[] = [
     "text": "DONT OPEN YOUR ACCOUNT GROWW ARE THE FRAUDSTERS THEY WILL SELL YOUR QUANTITY ON VERY LEAST BASIS PLEASE AVOID GROWW IF YOU ARE GROWW. SHAME ON YOU GROWW PEOPLE",
     "date": "Sep 03, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -3561,7 +8401,7 @@ export const mockReviewsList: Review[] = [
     "text": "can I get the privies version....last version indicators i need...pls help me",
     "date": "Sep 03, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -3605,7 +8445,7 @@ export const mockReviewsList: Review[] = [
     "text": "worst update old version sow good, position fast exit and close option, miss new update is",
     "date": "Sep 03, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -3638,7 +8478,7 @@ export const mockReviewsList: Review[] = [
     "text": "The customer care team is highly unprofessional. Employees like Ansh Agarwal constantly mute and disconnect calls ! Even after sending several emails with proof, the Groww managers/management take absolutely no action. They are clearly biased and protect their staff instead of helping their loyal customers who pay for their services ! Extremely DISAPPOINTING and HUMILIATING experience !! Now they'll immediately respond here asking to write to support@groww.... BUT NOTHING HAPPENS !!",
     "date": "Sep 03, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -3682,7 +8522,7 @@ export const mockReviewsList: Review[] = [
     "text": "Whenever you take trade even if you are correct they will show you in loss. Also when you profit they give you less amount. Soon this app will be a complete loss and shutdown soon.",
     "date": "Sep 03, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Statements",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -3693,7 +8533,7 @@ export const mockReviewsList: Review[] = [
     "text": "Good app but need to improve in indicators",
     "date": "Sep 03, 2026",
     "source": "App Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -3726,7 +8566,7 @@ export const mockReviewsList: Review[] = [
     "text": "The app is super friendly for beginners and MF investment but really needs to work on the customer service please put a real human who can listen and help us properly for any issues.",
     "date": "Sep 03, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Neutral",
     "pii_stripped": true
   },
@@ -3759,7 +8599,7 @@ export const mockReviewsList: Review[] = [
     "text": "if both target and stop loss be available in delivery trading in the same platform then we may get more profit .",
     "date": "Sep 03, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Statements",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -3803,7 +8643,7 @@ export const mockReviewsList: Review[] = [
     "text": "chor hai sale faltu ke paise cut kr lete pta bhi nhi chalta.. please mt download this app",
     "date": "Sep 03, 2026",
     "source": "Play Store",
-    "theme": "Statements",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -3814,7 +8654,7 @@ export const mockReviewsList: Review[] = [
     "text": "mental punda chat...la scalping on off switch edu bro back switch um anga dhan da irukku touch ayuttu Oder vilunthu 10000 loss da thayolli oluinga atha thukku illana vera broker dha pakkanum",
     "date": "Sep 03, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Statements",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -3836,7 +8676,7 @@ export const mockReviewsList: Review[] = [
     "text": "worst customer care that ghosts us if you ask any questions",
     "date": "Sep 03, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -3847,7 +8687,7 @@ export const mockReviewsList: Review[] = [
     "text": "1 star is just to get your attention to this matter, will change it later! 1. SmartExit needs an automatic Trailing Stop Loss Option! Please check Fyers for inspiration! 2. Charts loading in mobile app get stuck frequently, any reason or fix to it? 3. Independent CPR indicator and Previous Day High and Previous Day Low, Previous Day Close marking indicator are required. Again, please check Fyers for inspiration! Please reply, if at all do you have any plans for implementing these ? Thanks",
     "date": "Sep 03, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -3946,7 +8786,7 @@ export const mockReviewsList: Review[] = [
     "text": "Very good app for investment beginners & active investors as well. The emails are also useful for understanding market insights and dynamics",
     "date": "Sep 03, 2026",
     "source": "App Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -3957,7 +8797,7 @@ export const mockReviewsList: Review[] = [
     "text": "order execution takes a lot more time than expected in 2-3 seconds 5 to 6 k loss occurred",
     "date": "Sep 03, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Statements",
     "sentiment": "Neutral",
     "pii_stripped": true
   },
@@ -3990,7 +8830,7 @@ export const mockReviewsList: Review[] = [
     "text": "I requested to change minor correction in Demat opening and Aadhar card and PANCARD. The entire process online. Now all Mutual fund houses are going online demat account opening. CERSAI KYC identifier 14 digit column not inserted backend form designers. It avoids prospective clients the trouble of scanning PAN CARD AND Aadhar CARD uploading. Still insisting physical xerox copies to be sent through courier. They routinely reply.",
     "date": "Sep 03, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "KYC & Onboarding",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -4012,7 +8852,7 @@ export const mockReviewsList: Review[] = [
     "text": "it is a very good broker. groww should start everyday sip. also groww should have their own international Mf.",
     "date": "Sep 03, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Payments",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -4078,7 +8918,7 @@ export const mockReviewsList: Review[] = [
     "text": "Very very easy to understand and easy to place any orders",
     "date": "Sep 03, 2026",
     "source": "App Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -4100,7 +8940,7 @@ export const mockReviewsList: Review[] = [
     "text": "Every time I open Groww app , you app pushes me to the AppStore to download Groww loan app . Stop !! it\u2019s really annoying.",
     "date": "Sep 03, 2026",
     "source": "App Store",
-    "theme": "Statements",
+    "theme": "App Performance",
     "sentiment": "Neutral",
     "pii_stripped": true
   },
@@ -4122,7 +8962,7 @@ export const mockReviewsList: Review[] = [
     "text": "Applications very easy to use and understand",
     "date": "Sep 03, 2026",
     "source": "App Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -4232,7 +9072,7 @@ export const mockReviewsList: Review[] = [
     "text": "worst customer care service most of the time it took more than 15 min to connect to customer care it always say more than 5 min we will connect you pathetic customer care response",
     "date": "Sep 02, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -4254,7 +9094,7 @@ export const mockReviewsList: Review[] = [
     "text": "I'm using from last years ot really good app and customer care service is fantastic",
     "date": "Sep 02, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -4298,7 +9138,7 @@ export const mockReviewsList: Review[] = [
     "text": "Good for a new learners in stock markets.",
     "date": "Sep 02, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -4309,7 +9149,7 @@ export const mockReviewsList: Review[] = [
     "text": "Overall, using grow is an superb experience, specially in terms of easy to understand and every information on finger trip",
     "date": "Sep 02, 2026",
     "source": "App Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -4452,7 +9292,7 @@ export const mockReviewsList: Review[] = [
     "text": "Nice aap easily understood and usage is also a nice experience. Good aap",
     "date": "Sep 02, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -4463,7 +9303,7 @@ export const mockReviewsList: Review[] = [
     "text": "SENDING WRONG PAYMENT AMOUNT TO BHIM! Fix this or else change your Product Managers!!",
     "date": "Sep 02, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Payments",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -4485,7 +9325,7 @@ export const mockReviewsList: Review[] = [
     "text": "ek toh ye groww app pata nhi kaunsi aafat aari inko update ghatiya ghatiya leke aa jaate hai......please give death penalty to the one who brought this update having scalper option in bottom of screen...everytime I try to hit back button it hits scalper option and your panauti groww chart opens up then I again have to turn off scalper option and again have to switch to trading view chart.......worst update",
     "date": "Sep 02, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -4540,7 +9380,7 @@ export const mockReviewsList: Review[] = [
     "text": "it is worst app my inside money gone and I see it shows minus literally if anyone download these app please see the my comments then you download and invest",
     "date": "Sep 02, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -4683,7 +9523,7 @@ export const mockReviewsList: Review[] = [
     "text": "Groww provides a simple and user-friendly platform for investing and trading. The interface is easy to understand, transactions are generally smooth, and the overall experience is good. Customer support and service improvements would make the platform even better.",
     "date": "Sep 02, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -4716,7 +9556,7 @@ export const mockReviewsList: Review[] = [
     "text": "I have been locked out of my own investments due to a \"ReKYC\" process that the app explicitly claims takes \"1-2 days.\" It has now been well over a week, and my account is still completely frozen with a systemic error stating onboarding is not allowed. Because Groww restricted my account, I was prevented from executing a time-sensitive sell order on August 28th. I urgently requested their support chat to manually execute the trade on my behalf to prevent a financial hit, but I was completely ignored. As a direct result of this operational failure and their account lock, my position dropped, and I suffered a direct loss of \u20b94,000 in profits that I was actively trying to book. The customer service is abysmal. The escalation team operates in a continuous loop, closing out my tickets with automated, copy-pasted templates stating the issue is \"prioritized\" and \"forwarded to the concerned team,\" yet the account remains blocked and the issue is never actually resolved. If you want a reliable broker where you can actually access your portfolio and sell your shares during crucial market moments, look elsewhere. Groww's system delays and completely unresponsive support will literally cost you money. Highly disappointing experience.",
     "date": "Sep 02, 2026",
     "source": "App Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -4771,7 +9611,7 @@ export const mockReviewsList: Review[] = [
     "text": "By far the best financial app I have used. Setting up an account took minutes, and managing my portfolio is effortless thanks to the brilliant UI. Highly recommend it to anyone looking for a hassle-free, secure way to invest and track the market.",
     "date": "Sep 02, 2026",
     "source": "App Store",
-    "theme": "General & Usability",
+    "theme": "Statements",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -4826,7 +9666,7 @@ export const mockReviewsList: Review[] = [
     "text": "worst experience... trying to reach the customer care to resolve my issue...but couldn't reach...no reply to email and didn't pick up the customer care call....waiting since friday",
     "date": "Sep 01, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -4837,7 +9677,7 @@ export const mockReviewsList: Review[] = [
     "text": "Very clean and beginner-friendly. This is probably Groww\u2019s biggest strength. Stocks, mutual funds, ETFs, IPOs and other products are available in one app. Groww now offers advanced charts, intraday tools, F&O, MTF and a dedicated terminal, but some users report lag or responsiveness problems, particularly around trading activity.",
     "date": "Sep 01, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -4859,7 +9699,7 @@ export const mockReviewsList: Review[] = [
     "text": "abhi hamne download Kiya hai dekhta hu kitna support milta groww stocks se thanks for guest",
     "date": "Sep 01, 2026",
     "source": "Play Store",
-    "theme": "Customer Support",
+    "theme": "App Performance",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -4870,7 +9710,7 @@ export const mockReviewsList: Review[] = [
     "text": "This app is easy to understand and good for beginners and also for experts.",
     "date": "Sep 01, 2026",
     "source": "App Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -4881,7 +9721,7 @@ export const mockReviewsList: Review[] = [
     "text": "Dear Groww team, I hope, you guys are doing great. I have been using the Groww app since 2020. It's very easy to use. Whereas, I am so disappointed about the decision taken by the Groww team to remove the analyst suggestion about the stocks in the latest version. It was very useful. I hope the Groww team will understand the priority of this section and how helpful for the investors in order to get an expert proposition on a particular stock. So and based on the above, you are requested to get back the analyst suggestion option in the next update.",
     "date": "Sep 01, 2026",
     "source": "App Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -4892,7 +9732,7 @@ export const mockReviewsList: Review[] = [
     "text": "understand very easy for low english know people",
     "date": "Sep 01, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -4903,7 +9743,7 @@ export const mockReviewsList: Review[] = [
     "text": "Hello groww your team cut my money in our mutual fund sell unit \"\"\" your team resolved it my gotal money debit 3700+",
     "date": "Sep 01, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -4947,7 +9787,7 @@ export const mockReviewsList: Review[] = [
     "text": "just now uninstalled the groww app. i though of trading, options through this app. intially, i wanted to observe this app, if conducive wanted to dive into it. Holy cow, the recent update made it worse. unable to explore the features or trying to take the credentials of my account. Not even deserve one star. i wonder how all those 5 stars you guys got !!! GROWW, you really messed up with the recent update.",
     "date": "Sep 01, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -4958,7 +9798,7 @@ export const mockReviewsList: Review[] = [
     "text": "Easy to use and understand good for beginners",
     "date": "Sep 01, 2026",
     "source": "App Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -5002,7 +9842,7 @@ export const mockReviewsList: Review[] = [
     "text": "Worst customer service executives and world of delays",
     "date": "Sep 01, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -5035,7 +9875,7 @@ export const mockReviewsList: Review[] = [
     "text": "While using the Groww app, I found it very user-friendly and easy to navigate. It provides a lot of useful information on IPOs, stocks, FDs, bonds, and various other investment opportunities, which helps users explore and make informed decisions. So far, I haven\u2019t faced any glitches or technical issues, and overall, my experience with the app has been very good.",
     "date": "Sep 01, 2026",
     "source": "App Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -5101,7 +9941,7 @@ export const mockReviewsList: Review[] = [
     "text": "Easy to understand, simple and amazing app",
     "date": "Sep 01, 2026",
     "source": "App Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -5145,7 +9985,7 @@ export const mockReviewsList: Review[] = [
     "text": "Once MF orders are added into cart, No option to access cart and process payment for all orders at once",
     "date": "Sep 01, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Payments",
     "sentiment": "Neutral",
     "pii_stripped": true
   },
@@ -5167,7 +10007,7 @@ export const mockReviewsList: Review[] = [
     "text": "Worst customer service. Neither do they respond properly providing solutions nor do they provide proper services.",
     "date": "Sep 01, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -5277,7 +10117,7 @@ export const mockReviewsList: Review[] = [
     "text": "I loved the lock fno trading feature.. avoids over trading Once u got profit u can lock fno trading for the day n avoid the grid n over trading",
     "date": "Sep 01, 2026",
     "source": "App Store",
-    "theme": "General & Usability",
+    "theme": "Statements",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -5321,7 +10161,7 @@ export const mockReviewsList: Review[] = [
     "text": "Everything is awesome with this app except some important tabs, which are missing. It would have been a full 5 star app if it had the Fixed Deposit Tab and the US stock market Tab included like the Desktop version of Groww",
     "date": "Sep 01, 2026",
     "source": "App Store",
-    "theme": "Charges & Fees",
+    "theme": "Payments",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -5343,7 +10183,7 @@ export const mockReviewsList: Review[] = [
     "text": "i am new user, unable to login with my mobile number. it always gives error - \"something went wrong\". trying for past week, same error. please allow login with emailid alone so that i can try out all features of groww ecosystem. unable to even start/tryout the app. very disappointing.",
     "date": "Sep 01, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -5453,7 +10293,7 @@ export const mockReviewsList: Review[] = [
     "text": "superb one much better than its competitors especially angel one ..,",
     "date": "Aug 31, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -5486,7 +10326,7 @@ export const mockReviewsList: Review[] = [
     "text": "best app for users,very simple and knowledgeable home page",
     "date": "Aug 31, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -5508,7 +10348,7 @@ export const mockReviewsList: Review[] = [
     "text": "the worst broking app , many glitches whilentrading i won't recommend using it",
     "date": "Aug 31, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -5574,7 +10414,7 @@ export const mockReviewsList: Review[] = [
     "text": "I have been a groww customer for the last 5 years. Since last month I have been trying to update my e-mail id but due to reasons unknown it has failed number of times. Everytime I tried changing the email id it shows \"Account Creation is in process.Plz try again once the account is activated''. I contacted the customer care number of times but they failed to resolve the issue. Also the customer support of yours is unable to reach. Many times its not reachable. WORST CUSTOMER CARE.",
     "date": "Aug 31, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -5585,7 +10425,7 @@ export const mockReviewsList: Review[] = [
     "text": "l like this app so much thanks to developers to listen my words may be this change will helpful for everyone",
     "date": "Aug 31, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -5596,7 +10436,7 @@ export const mockReviewsList: Review[] = [
     "text": "i am using last 5 years but I don't get profit so i will give one Star thankyou",
     "date": "Aug 31, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Statements",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -5640,7 +10480,7 @@ export const mockReviewsList: Review[] = [
     "text": "Worst app angel one dhan 5 paisa are better then this broker",
     "date": "Aug 31, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -5662,7 +10502,7 @@ export const mockReviewsList: Review[] = [
     "text": "Super Easy App For Beginners And Investors",
     "date": "Aug 31, 2026",
     "source": "App Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -5684,7 +10524,7 @@ export const mockReviewsList: Review[] = [
     "text": "The customer service is worst. I don't get any reply even though it say 24/7 support",
     "date": "Aug 31, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -5728,7 +10568,7 @@ export const mockReviewsList: Review[] = [
     "text": "Other trading apps provide an OI (Open Interest) profile directly on the live chart. Could you please add this feature to the Groww app as well? It would make it much easier for traders to analyze OI levels, support/resistance, and market positioning directly from the chart.",
     "date": "Aug 31, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Neutral",
     "pii_stripped": true
   },
@@ -5750,7 +10590,7 @@ export const mockReviewsList: Review[] = [
     "text": "Don't install this app its worst the candle timing is not accurate and for past weeks the last candle makes very abruptly confusing all instead go for other brokers like tradingview, dhan, fyers etc",
     "date": "Aug 31, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -5871,7 +10711,7 @@ export const mockReviewsList: Review[] = [
     "text": "very bad application, Customer support system is very very bad, don't download this app if you don't want to loose your money.",
     "date": "Aug 31, 2026",
     "source": "Play Store",
-    "theme": "Customer Support",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -5893,7 +10733,7 @@ export const mockReviewsList: Review[] = [
     "text": "worst app, even after successfully approving the ipo mandate, the status on groww is not updating.",
     "date": "Aug 31, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Payments",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -5904,7 +10744,7 @@ export const mockReviewsList: Review[] = [
     "text": "Really happy with the new F&O Lock feature in the Groww app. It\u2019s a very useful update for traders, especially for managing risk and avoiding accidental F&O trades. The feature is simple, easy to use, and gives better control over trading activities. Great job, Groww team! Keep bringing more useful features like this.",
     "date": "Aug 31, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -5937,7 +10777,7 @@ export const mockReviewsList: Review[] = [
     "text": "Superb app very easy and Supportive I\u2019m very happy. Thank you Groww App Must Download this app and Enjoy",
     "date": "Aug 31, 2026",
     "source": "App Store",
-    "theme": "Customer Support",
+    "theme": "App Performance",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -5948,7 +10788,7 @@ export const mockReviewsList: Review[] = [
     "text": "Today applied for an IPO around 1 PM and no UPI Request received- NO SUPPORT Tried chat - after 10 mts (I think third agent finally responded and says looking into it. EVEN after waiting for more than 30 MINUTES - no update. It is a big guess whether support executive left the chat or not. In the mean time IPO closed.",
     "date": "Aug 31, 2026",
     "source": "App Store",
-    "theme": "App Performance",
+    "theme": "Customer Support",
     "sentiment": "Neutral",
     "pii_stripped": true
   },
@@ -6003,7 +10843,7 @@ export const mockReviewsList: Review[] = [
     "text": "aapka deduction tax one time kaatna chahie sale Karen ya buy one time",
     "date": "Aug 31, 2026",
     "source": "Play Store",
-    "theme": "Statements",
+    "theme": "Charges & Fees",
     "sentiment": "Neutral",
     "pii_stripped": true
   },
@@ -6014,7 +10854,7 @@ export const mockReviewsList: Review[] = [
     "text": "worst experience . This app interface for mobile is designed to rob the option trader with frequently changing interface. every next update makes your buttons different and your habit of previous window buttons make you place orders or exit orders accidentally.",
     "date": "Aug 31, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -6047,7 +10887,7 @@ export const mockReviewsList: Review[] = [
     "text": "After recent update, Back button disappears in the bottom once u Enter into Trading view.",
     "date": "Aug 31, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -6058,7 +10898,7 @@ export const mockReviewsList: Review[] = [
     "text": "totally apko bhkane wali app h koi sip 2 sal se minus m return de rhi h or dikhate h 30 % return",
     "date": "Aug 31, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Payments",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -6069,7 +10909,7 @@ export const mockReviewsList: Review[] = [
     "text": "add advance order feature for allotted ipos.... it's the feature all ur major competitors have just not you... how come ur technical team didn't notice this earlier....",
     "date": "Aug 31, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -6124,7 +10964,7 @@ export const mockReviewsList: Review[] = [
     "text": "New features like screener, volume shockers etc added made easy to filter the stocks. Keep improving......",
     "date": "Aug 31, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -6146,7 +10986,7 @@ export const mockReviewsList: Review[] = [
     "text": "Love the UI and design! It's simple to understand having all functionalities a trader should need! My only Investment app for future",
     "date": "Aug 31, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -6212,7 +11052,7 @@ export const mockReviewsList: Review[] = [
     "text": "my holding is loss 10000 but i will happy",
     "date": "Aug 30, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Statements",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -6245,7 +11085,7 @@ export const mockReviewsList: Review[] = [
     "text": "Groww is very easy to use compared to many apps, which I really like. However, there is no separate category or dedicated section for International Mutual Funds, making it difficult to find all available funds. I\u2019ve also noticed that international funds currently not accepting new SIPs or lump-sum investments don\u2019t even appear when searched in the app. This is very disappointing and frustrating. Because of these issues, I\u2019m giving Groww a 1-star review.",
     "date": "Aug 30, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Payments",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -6267,7 +11107,7 @@ export const mockReviewsList: Review[] = [
     "text": "please don't download this app , because they have worst support system. my experience: I called their support team for email changing problem due to its locked for some reason,they told it's may take 2/3 working days but even after 10 days their is no response from them ,i also raised ticket but nothing changes,still no response, it's time to change app",
     "date": "Aug 30, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -6305,24 +11145,13 @@ export const mockReviewsList: Review[] = [
     "pii_stripped": true
   },
   {
-    "id": "efd20984-7d14-4ec5-a934-ba2645f240e8",
-    "rating": 1,
-    "title": null,
-    "text": "your Instant exit in options not working so many time thats why facing losses you take Responsibility of that sometimes it's lacking too much who take Responsibility incase of Brokerage you charge massive amount what facilities???",
-    "date": "Aug 30, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
     "id": "aa45c583-0670-44aa-9406-23016c5ab79b",
     "rating": 1,
     "title": null,
     "text": "Just like profit transactions indicated by GREEN color. I suggested groww team to indicate loss transactions by RED color. still not updated.",
     "date": "Aug 30, 2026",
     "source": "Play Store",
-    "theme": "App Performance",
+    "theme": "Statements",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -6333,7 +11162,7 @@ export const mockReviewsList: Review[] = [
     "text": "sell money delivery delay for bank account",
     "date": "Aug 30, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Payments",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -6344,7 +11173,7 @@ export const mockReviewsList: Review[] = [
     "text": "can you please add review portfolio facility feature to the app, like ind money and power up aap..this will be great help tp existing user",
     "date": "Aug 30, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Statements",
     "sentiment": "Neutral",
     "pii_stripped": true
   },
@@ -6388,7 +11217,7 @@ export const mockReviewsList: Review[] = [
     "text": "Using Groww since 2018 for both swing trading and long-term investments, including mutual funds. The app is super user-friendly with fast order execution. I really love the clean interface\u2014it doesn't clutter the screen with unnecessary data, making it very easy to understand everything at a glance. Highly recommended.",
     "date": "Aug 30, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -6454,7 +11283,7 @@ export const mockReviewsList: Review[] = [
     "text": "I'm using this app for a year . It is excellent for beginners like me",
     "date": "Aug 30, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Statements",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -6487,7 +11316,7 @@ export const mockReviewsList: Review[] = [
     "text": "Good app , thanks all groww team for continuous improving and new technology features.i want one More feature. When we set alert for Nifty, if the Nifty spot price triggers that alert, the option trade should be executed automatically.",
     "date": "Aug 30, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -6498,7 +11327,7 @@ export const mockReviewsList: Review[] = [
     "text": "nice app, but they may think about their brokkerages.... it's to higher than others",
     "date": "Aug 30, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -6564,7 +11393,7 @@ export const mockReviewsList: Review[] = [
     "text": "I want \"LINE WITH MARKERS\" tool in this app",
     "date": "Aug 30, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -6696,7 +11525,7 @@ export const mockReviewsList: Review[] = [
     "text": "best app for investment, easy to understand and easy transaction options, easy to understand a stock movement from its beginning to right now at glance only. super and thanks to team grow.",
     "date": "Aug 30, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -6740,7 +11569,7 @@ export const mockReviewsList: Review[] = [
     "text": "I have been using this app for last 20 days. As a beginner I'm very satisfied with their service. App is pretty fast. Especially IPO application process happens at lightning speed. They provide tons of information on stock market. I have been using GROWW for 3 years and there is a continuous all round improvement, hence never felt to try to some other app.",
     "date": "Aug 30, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -6762,7 +11591,7 @@ export const mockReviewsList: Review[] = [
     "text": "not live show mutual fund market up down",
     "date": "Aug 30, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -6839,7 +11668,7 @@ export const mockReviewsList: Review[] = [
     "text": "This platform is very good for investor. This platform is better than Bank",
     "date": "Aug 30, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Payments",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -6850,7 +11679,7 @@ export const mockReviewsList: Review[] = [
     "text": "Groww is a great app, but adding Volume Candles (Volume Candles / Volume Profile) directly to the charts would make technical analysis much easier for active traders. Please consider adding this feature in upcoming updates.",
     "date": "Aug 30, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -6872,7 +11701,7 @@ export const mockReviewsList: Review[] = [
     "text": "very nice app my first trading start for the grow",
     "date": "Aug 30, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -6883,7 +11712,7 @@ export const mockReviewsList: Review[] = [
     "text": "Millions of retail investors, including me, have happily connected with Groww and invested their hard-earned money through the platform. It is encouraging to see the platform continuously growing. We sincerely hope that Groww, along with SEBI, will remain vigilant and take all necessary measures to prevent any kind of scam or fraudulent activity, ensuring the safety and protection of investors\u2019 hard-earned money. Thank you Team Groww",
     "date": "Aug 30, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -6905,7 +11734,7 @@ export const mockReviewsList: Review[] = [
     "text": "Very Nice And Easy App Trading For Beginners",
     "date": "Aug 30, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -6938,7 +11767,7 @@ export const mockReviewsList: Review[] = [
     "text": "Too easy to understand its function for trading... thanks",
     "date": "Aug 29, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -6949,7 +11778,7 @@ export const mockReviewsList: Review[] = [
     "text": "Bonds purchased through Groww app are being shown with loss of 99%",
     "date": "Aug 29, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Statements",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -7081,7 +11910,7 @@ export const mockReviewsList: Review[] = [
     "text": "Been using this for 4 years but recent \"advanced features\" made it hectic. 1. Scalper button placement is terrible; whenever I hit back from a chart, it accidentally triggers scalping. Not everyone is a scalper! Give an option to hide it. 2. Severe chart lag: switching charts still shows the old asset first. I have to go back and reload it twice just to refresh. 3. Web version is too complicated and confusing for investing. Frustrated with these bugs, I finally moved to another platform.",
     "date": "Aug 29, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -7147,7 +11976,7 @@ export const mockReviewsList: Review[] = [
     "text": "very good and iam happy to first investment in my life",
     "date": "Aug 29, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -7180,7 +12009,7 @@ export const mockReviewsList: Review[] = [
     "text": "after using 2 years i can say it's good for financial work",
     "date": "Aug 29, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -7191,7 +12020,7 @@ export const mockReviewsList: Review[] = [
     "text": "The new update is really bad. Every time you open the chart then a scalper option appears below instead of an earlier touch screen panel.",
     "date": "Aug 29, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -7213,7 +12042,7 @@ export const mockReviewsList: Review[] = [
     "text": "dear groww, the only reason i am using this app cause of simple interaction, updating the app is good, but if you keep things complicated, i will have to close my account. don't force your new updates on users, keep the interface as clean as possible. e.g. the scalper button you have added near buy/sell, asked whether user need that button or not and also stop forcing groww charts. both are irritating while trading. please solve this issues asap, or i would have to find new broker.",
     "date": "Aug 28, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -7235,7 +12064,7 @@ export const mockReviewsList: Review[] = [
     "text": "The Customer Support process takes too long, even for urgent issues. The withdrawal was also delayed despite sufficient funds being available in the account, which was particularly inconvenient as the funds were urgently needed. They didn't allow me to withdraw even after 10 AM.",
     "date": "Aug 28, 2026",
     "source": "Play Store",
-    "theme": "Customer Support",
+    "theme": "Withdrawals",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -7246,7 +12075,7 @@ export const mockReviewsList: Review[] = [
     "text": "I have been using Groww for a while now, and the overall experience has been fantastic. The app rarely lags, tracking my portfolio is very easy, and the interface is highly intuitive for both beginners and pros. Highly satisfied with the performance and transparency.",
     "date": "Aug 28, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -7257,7 +12086,7 @@ export const mockReviewsList: Review[] = [
     "text": "Apps Is Good But Customers Service Very Disappointed",
     "date": "Aug 28, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -7312,7 +12141,7 @@ export const mockReviewsList: Review[] = [
     "text": "ridiculous new update. When we open the charts the back button on our phone just disappears and we end up clicking the scalper mode or a different chart when not needed. Also the limit order is auto filled every time we click. so annoying to modify. Every second in trading is important but you are just wasting precious time of trades.",
     "date": "Aug 28, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -7345,7 +12174,7 @@ export const mockReviewsList: Review[] = [
     "text": "worst support team ever guys please don't use this application it's so frustrating to talk with the support team when you'll be explaining something they'll leave your call on hold i experienced it when I was saying my problem to the support person he left the call on unattended I waited for like 5 minutes still no response from that guy it's just so annoying how you are taking so much brokarage and still you can't load the volume candles properly on the desktop",
     "date": "Aug 28, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -7389,7 +12218,7 @@ export const mockReviewsList: Review[] = [
     "text": "On viewing the chart, the bottom navigation buttons are hidden automatically even though the navigation buttons are fixed in my phone settings, I have to swipe up each time to get those navigation buttons and click back button. Kindly fix this issue in next update.",
     "date": "Aug 28, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -7411,7 +12240,7 @@ export const mockReviewsList: Review[] = [
     "text": "update of 27 august was worst one ..",
     "date": "Aug 28, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -7499,7 +12328,7 @@ export const mockReviewsList: Review[] = [
     "text": "Too much charges, and slow order execution, target execution is not great, chart interface back button is removed. Ill move out of this app",
     "date": "Aug 28, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -7587,7 +12416,7 @@ export const mockReviewsList: Review[] = [
     "text": "worst app for trading, never use this. I can't close my demat account easily. their team is not respond on time.",
     "date": "Aug 28, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -7609,7 +12438,7 @@ export const mockReviewsList: Review[] = [
     "text": "kabi kabi trade lete tym lack krta h fir loss hota h vese aacha bus thi problem h",
     "date": "Aug 27, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Statements",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -7697,7 +12526,7 @@ export const mockReviewsList: Review[] = [
     "text": "Customer support is too worst...no one will answer your calls they will make us wait for more than 10mins In Chat support no one will respond Just because of app is good do not download and use I am leaving it for worst customer service",
     "date": "Aug 27, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -7708,7 +12537,7 @@ export const mockReviewsList: Review[] = [
     "text": "this gu app is charging extra money in the name of groww charges on buying or selling of stocks and the worst thing is that.. they Even don't follow SEBI rules and hold money for extra time and can be withdrawal able after 10am of next to next days if there is a holiday they gonna hold money for more time extremely worst app doesn't follow SEBI NORMS",
     "date": "Aug 27, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Withdrawals",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -7741,7 +12570,7 @@ export const mockReviewsList: Review[] = [
     "text": "worst experience in my life i request all of donnt install experience with Groww regarding IPO applications. Even after successfully approving the UPI mandate, the IPO application/status was not updated properly or on time. The customer care support was also disappointing, with no clear or satisfactory response. IPO applications are time-sensitive, so timely updates and proper customer support are extremely important. Groww seriously needs to improve its customer service and IPO-related support.",
     "date": "Aug 27, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -7752,7 +12581,7 @@ export const mockReviewsList: Review[] = [
     "text": "This App Is Very Good For Beginners in invest stocks Mutual funds Snd Financial tool And Gain Some Knowledge",
     "date": "Aug 27, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -7840,7 +12669,7 @@ export const mockReviewsList: Review[] = [
     "text": "3 years and still the best app in the market..easy navigation and simple ui. Hopefully we get US stocks soon.",
     "date": "Aug 27, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -7983,7 +12812,7 @@ export const mockReviewsList: Review[] = [
     "text": "structure to understand very easy for beginners too compare to other",
     "date": "Aug 27, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -8082,7 +12911,7 @@ export const mockReviewsList: Review[] = [
     "text": "please offer and update the Groww app & Groww Credit Personal loan offer enabled,this is my urgent request for you.every time and every month I have to pay before EMI and due payment. please update and do the needful urgently. Regards",
     "date": "Aug 26, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -8115,7 +12944,7 @@ export const mockReviewsList: Review[] = [
     "text": "after update app become worst if u trying to back press automatic scalp option touch and trying to open trading view chart and open groww chart and there's no features like trading view chart",
     "date": "Aug 26, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -8137,7 +12966,7 @@ export const mockReviewsList: Review[] = [
     "text": "Day by Day getting worst.Application is cheating users in Entry and exit point.Exit will be performed before your SL point(Great fraud).please dont use their application. Always delayed in Trade Exit . Leads for potential loss.Even their stop loss exits in incorrect value. They have tactics. The worst thing is zero customer support .They will not pick your calls after long long wait time",
     "date": "Aug 26, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -8148,7 +12977,7 @@ export const mockReviewsList: Review[] = [
     "text": "customer service thik nahi hai other app use karo all traders",
     "date": "Aug 26, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -8159,7 +12988,7 @@ export const mockReviewsList: Review[] = [
     "text": "IN TABLET WHY THE APP DOESNT TURN IN HORIZONTAL DIRECTION.. PLEASE RESOLVE THIS.",
     "date": "Aug 26, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Customer Support",
     "sentiment": "Neutral",
     "pii_stripped": true
   },
@@ -8181,7 +13010,7 @@ export const mockReviewsList: Review[] = [
     "text": "Allow us to pause SIPs indefinitely. Currently you can skip 1 installment or cancel completely but I just want to pause for a few months.",
     "date": "Aug 26, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Payments",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -8203,7 +13032,7 @@ export const mockReviewsList: Review[] = [
     "text": "groww is very simple for sip and sheyar market",
     "date": "Aug 26, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Payments",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -8236,7 +13065,7 @@ export const mockReviewsList: Review[] = [
     "text": "worst customer care service.... makes you wait so long that you cut the call yourself",
     "date": "Aug 26, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -8269,7 +13098,7 @@ export const mockReviewsList: Review[] = [
     "text": "app features r good but font size is small to see numbers..not useful for trading.MF r Good but once SIP payment is delayed by evening immediately they charged my bank charged NACH bounce charges of 350 . previously thr was no such charges.y shud i pay extra to Bank for such service.so i immediately closed my demat account. customer service as usual not available in phone or social. longterm it's headache to maintain this app. though good MF recommendation but app service is pathetic",
     "date": "Aug 26, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Payments",
     "sentiment": "Neutral",
     "pii_stripped": true
   },
@@ -8346,7 +13175,7 @@ export const mockReviewsList: Review[] = [
     "text": "It's taking too much to settle an account. Yesterday my trade is over and now I am unable to trade because my account is not settled. Very slow services. it's losses Grow also. I am thinking of changing the broker. There are so many brokers who given immediate trade. Thank you",
     "date": "Aug 26, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -8368,7 +13197,7 @@ export const mockReviewsList: Review[] = [
     "text": "regular days daily they blocked cash amount from grow it s worst experience ,why ,what was reason behind groww and also not withdrawal full amount they blocked money after T+1 one day settlement no one withdrawal full amount no response from customer care service.",
     "date": "Aug 26, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Withdrawals",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -8434,7 +13263,7 @@ export const mockReviewsList: Review[] = [
     "text": "it's good, as I'm new to this broker I can invest easily but still a little inconvenience while trying to make Intraday orders",
     "date": "Aug 26, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -8467,7 +13296,7 @@ export const mockReviewsList: Review[] = [
     "text": "Fast execution smooth interface and charts brokerage same as industry standard mutual funds all one place good for scalper no lag even on pc Free amc customer service a bit slow.and miss the on chart trading, and little indepth analysis of stocks recommendation for swings based on internal data. Been with them last one year , Go for it guys.",
     "date": "Aug 26, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -8489,7 +13318,7 @@ export const mockReviewsList: Review[] = [
     "text": "Hi Team, Could you confirm if you have visibility into our stop-loss and target orders, and whether this data is ever shared with third parties?",
     "date": "Aug 26, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Statements",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -8500,7 +13329,7 @@ export const mockReviewsList: Review[] = [
     "text": "Recommendation- option to sort sip by amount or custom arrange it",
     "date": "Aug 25, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Payments",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -8555,7 +13384,7 @@ export const mockReviewsList: Review[] = [
     "text": "i can't login to my primary account",
     "date": "Aug 25, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "KYC & Onboarding",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -8566,7 +13395,7 @@ export const mockReviewsList: Review[] = [
     "text": "Frustrating payment loop\u2014money stays blocked but app says failed. Zero stars for payment reliability. Whether I use bank net banking, third-party UPI, or Groww UPI, it always shows a technical error/failure screen. However, my money gets blocked or deducted every time. What is the point of low brokerage if your payment service is this poor? Please fix this sync issue between the bank and your app.",
     "date": "Aug 25, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Payments",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -8588,7 +13417,7 @@ export const mockReviewsList: Review[] = [
     "text": "Awosome groww had lots of problems *Main issues people are facing:* - App not opening / login failed during market hours - showed \"We are facing temporary problem, please try again later\" - Orders getting rejected even with balance, Demat balance not showing.",
     "date": "Aug 25, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "KYC & Onboarding",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -8643,7 +13472,7 @@ export const mockReviewsList: Review[] = [
     "text": "worst customer support ever!!!! gives fake assurance, but never delievers!!",
     "date": "Aug 25, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -8676,7 +13505,7 @@ export const mockReviewsList: Review[] = [
     "text": "very worst service because after taking trade the premium is not getting updated as charts getting updated and very worst customer support",
     "date": "Aug 25, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -8709,7 +13538,7 @@ export const mockReviewsList: Review[] = [
     "text": "This app is getting worse day by day when I got few minor issues so I tried to contact customer care through chat but but even after waiting 15 minutes no one replied it keeps assigning to different different agents. will move my portfolio to other brokerage.",
     "date": "Aug 25, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -8753,7 +13582,7 @@ export const mockReviewsList: Review[] = [
     "text": "UI is simple and clutter free. Good one for the new investors",
     "date": "Aug 25, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -8797,7 +13626,7 @@ export const mockReviewsList: Review[] = [
     "text": "When I trade in stocks (intraday) chart doesn't show current position (p&l) and haven't given option to set stoploss and target on the chart, like other broker apps (except f&o). This is the worst thing I felt. Please provide the feature set target, stoploss and current position(p&l) on chart (both groww chart and tradingview chart).",
     "date": "Aug 25, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Statements",
     "sentiment": "Neutral",
     "pii_stripped": true
   },
@@ -8874,7 +13703,7 @@ export const mockReviewsList: Review[] = [
     "text": "Being a 5+ year user, I think it\u2019s finally time to uninstall Groww. The customer support experience has become really disappointing. I\u2019ve faced multiple issues with F&O, and whenever I try to contact support, getting connected over a call is almost impossible. Even with emails and chats, tickets are being closed without proper acknowledgement or resolution. And please don\u2019t reply here asking me for my ticket details. Please check my portfolio and account history first. Anyone else facing the",
     "date": "Aug 24, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -8907,7 +13736,7 @@ export const mockReviewsList: Review[] = [
     "text": "The reason behind giving it one star is today for intra day trade i purchased muthoot finance shares I was in good profit and market closes at 3:20 the rate i purchased was 3187.50 and I was on profit it squared it off automatically at 3189 and lowered my profit and the actual price of stock while it closed was 3199.80 so who is responsible for my loss u should give extra time to sell and why will u execute square off i appeal to all take out your investment from this app charges is high also.",
     "date": "Aug 24, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Statements",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -8940,7 +13769,7 @@ export const mockReviewsList: Review[] = [
     "text": "it's a good platform for beginners and its easy to understand",
     "date": "Aug 24, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -8951,7 +13780,7 @@ export const mockReviewsList: Review[] = [
     "text": "I am extremely disappointed with this app. An amount of \u20b9100 was deducted from my account and shows up in my Demat wallet balance, but when I try to withdraw it, the withdrawable balance shows \u20b90. To make matters worse, customer support has been completely unresponsive\u2014I have been trying to reach an agent on call for over 30 minutes without success. Please fix these wallet and support issues immediately.",
     "date": "Aug 24, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -8973,7 +13802,7 @@ export const mockReviewsList: Review[] = [
     "text": "3rd class app, crazy and mad developers updating app unnecessarily in ever few days. I use other brokers also but they have better app and also they don't give updates like hell like this stupid app. I will definitely change and delete my account with this broker and will use another one. don't deserve even 1 star 0 star for groww",
     "date": "Aug 24, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -8984,7 +13813,7 @@ export const mockReviewsList: Review[] = [
     "text": "Hi, Don't believe this kind of stock brokers, I have faced worst experience with this grow app. Actually I did not placed one order, but the order was executed today (24-08-2026). Here I don't have option to upload any files, Otherwise I will show you, what kind of game these brokers are playing.",
     "date": "Aug 24, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -8995,7 +13824,7 @@ export const mockReviewsList: Review[] = [
     "text": "I can't log in the app. it's struck in allow permission page. I gave all permission but it didn't went through. worst customer AI service",
     "date": "Aug 24, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -9017,7 +13846,7 @@ export const mockReviewsList: Review[] = [
     "text": "worst thing that you guys did was to remove the search history now you guys display only the last 5 stocks i searched for also to find the watchlist is hell lot of steps how will I remember was I last searched for like 10-15 stocks ago. PLEASE BRING BACK SEARCH HISTORY",
     "date": "Aug 24, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -9039,7 +13868,7 @@ export const mockReviewsList: Review[] = [
     "text": "The Broker eats all F&O profits not suitable for Retail F&O.",
     "date": "Aug 24, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Statements",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -9061,7 +13890,7 @@ export const mockReviewsList: Review[] = [
     "text": "I can't log in the app. it's stuck in the allow permission page. I contacted a customer service representative. he is a waste fellow. he didn't help and he didn't know about the app. time waste. now installing zerodha app",
     "date": "Aug 24, 2026",
     "source": "Play Store",
-    "theme": "App Performance",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -9072,7 +13901,7 @@ export const mockReviewsList: Review[] = [
     "text": "ticket ID is 27417551. pathetic after support. They will not help you when your transaction is stuck. The amount has been debited and not blocked from my bank and IPO is still not reflecting as allotted. However in UPI mandates it shows as completed. IPO name Shankesh Jewellers. Never install this app. There are better after support than these people. I am still struggling to find the IPO as amount has been debited.",
     "date": "Aug 24, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Payments",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -9094,7 +13923,7 @@ export const mockReviewsList: Review[] = [
     "text": "customer care survice is too much worst. they can't help a little to customer",
     "date": "Aug 24, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -9105,7 +13934,7 @@ export const mockReviewsList: Review[] = [
     "text": "This is a completely useless application. If you apply for IPO, the status does not get updated and if you trade, you cannot get entry first and then if you take entry, you cannot exit the trade, And gives time for OFS only till 2 o'clock.",
     "date": "Aug 24, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -9127,7 +13956,7 @@ export const mockReviewsList: Review[] = [
     "text": "customer support is worst long waiting time and no resolution i found",
     "date": "Aug 24, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -9226,7 +14055,7 @@ export const mockReviewsList: Review[] = [
     "text": "Worst App, The Kyc takes lot of days worst experience",
     "date": "Aug 23, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "KYC & Onboarding",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -9292,7 +14121,7 @@ export const mockReviewsList: Review[] = [
     "text": "Feedback: Groww app ka interface simple aur user-friendly hai, lekin trading experience ko aur better banaya ja sakta hai. Intraday traders ke liye order execution speed, real-time price updates aur chart performance ko aur improve karna chahiye. Brokerage aur other charges ka complete breakup order place karne se pehle clearly dikhaya jaye to users ke liye transparency aur badhegi. Saath hi, stop-loss, target aur advanced order options ko aur easy aur fast banaya jaye. Overall Groww ek achha",
     "date": "Aug 23, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -9369,7 +14198,7 @@ export const mockReviewsList: Review[] = [
     "text": "great app so far. I've been using it for the past few years and it's the best investment app for me till now. the only thing where I waste my time in the app is that everytime I have to see my notifications of target price reached, I have to go out of the app and come back again to chect the next notification. earlier it was very convenient to see all the notifications consecutively without going out from the app. so it would be good if you can kindly bring back that option again.",
     "date": "Aug 22, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -9446,7 +14275,7 @@ export const mockReviewsList: Review[] = [
     "text": "Great app for investing! The interface is simple, smooth, and easy to understand. Very convenient for managing investments.",
     "date": "Aug 22, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -9457,7 +14286,7 @@ export const mockReviewsList: Review[] = [
     "text": "nice experience with this app very nice app, very smooth to use,very fast processing.orders so fast process.",
     "date": "Aug 22, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -9468,7 +14297,7 @@ export const mockReviewsList: Review[] = [
     "text": "Really nice, Using this app from last 5 years",
     "date": "Aug 21, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -9479,7 +14308,7 @@ export const mockReviewsList: Review[] = [
     "text": "It's froud aps u can't fund transfer to other bank SBI security is best aps.....",
     "date": "Aug 21, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Payments",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -9567,7 +14396,7 @@ export const mockReviewsList: Review[] = [
     "text": "Great platform even for beginners to invest in stock market",
     "date": "Aug 21, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -9578,7 +14407,7 @@ export const mockReviewsList: Review[] = [
     "text": "Redeemed portfolio still showing after 1 month. Worst response from Groww support team. Not fixing it.",
     "date": "Aug 21, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -9589,7 +14418,7 @@ export const mockReviewsList: Review[] = [
     "text": "hi. I am facing some kind of techonical Error in adding money to GROWW from my saving account. ... Facing problem from last 8/9 days.",
     "date": "Aug 21, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "App Performance",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -9611,7 +14440,7 @@ export const mockReviewsList: Review[] = [
     "text": "in 4 years its gud experience with this app",
     "date": "Aug 21, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -9644,7 +14473,7 @@ export const mockReviewsList: Review[] = [
     "text": "pathentic customer service. on chat no reply/ no resolution/ no response. if you call some agent delete call and not callback. few persons answer call.",
     "date": "Aug 21, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -9688,7 +14517,7 @@ export const mockReviewsList: Review[] = [
     "text": "friendly and good for first time trading",
     "date": "Aug 21, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -9776,7 +14605,7 @@ export const mockReviewsList: Review[] = [
     "text": "Very worst app, i joined via Attapoll app. This app devoloper offered joining reward, but they did not credited promised reward. I submitted proof in Adscend Media form. They said me Groww team not approved your reward. it's mean Groww team is cheated me. Really disappointed, very very shame on you Groww team.",
     "date": "Aug 21, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -9787,7 +14616,7 @@ export const mockReviewsList: Review[] = [
     "text": "Worst ever experience, you guys are thieves i mistakenly chose the MF prime plan, now I can't revert back to Classic plan. no OTP is coming, either in sms or mail",
     "date": "Aug 21, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "KYC & Onboarding",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -9853,7 +14682,7 @@ export const mockReviewsList: Review[] = [
     "text": "it's very easy to use and understand the all trading details and you can easily invest, sale & purchase your share as well as mutual funds. and most important thing is to pay your SIP without skipping",
     "date": "Aug 20, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Payments",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -9897,7 +14726,7 @@ export const mockReviewsList: Review[] = [
     "text": "useless app. web portal and customer care sont access the same database. new user onboarding experience is pathetic. even after successful kyc completion, their systems don't reflect what was done on website. a platform that can't even handle new customer onboarding right, not sure has the capability to handle trading and financial transactions right",
     "date": "Aug 20, 2026",
     "source": "Play Store",
-    "theme": "Customer Support",
+    "theme": "KYC & Onboarding",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -9930,7 +14759,7 @@ export const mockReviewsList: Review[] = [
     "text": "Overall a Good experience, it's has improved alot now. But should add \"Return Value - Total & Days change\" just as it's available in Moneycontrol portfolio section alongwith %change. thanks",
     "date": "Aug 20, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Statements",
     "sentiment": "Neutral",
     "pii_stripped": true
   },
@@ -9941,7 +14770,7 @@ export const mockReviewsList: Review[] = [
     "text": "nice user friendly. but in mf break down investment needs.",
     "date": "Aug 20, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "App Performance",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -9974,7 +14803,7 @@ export const mockReviewsList: Review[] = [
     "text": "chor company hai,,, worse app,,swip your hard earned money",
     "date": "Aug 20, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "KYC & Onboarding",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -9985,7 +14814,7 @@ export const mockReviewsList: Review[] = [
     "text": "worst aap for trading, when buying it always busy higher and while selling it always sells lower than market. it has happened with me like 8-10 times.",
     "date": "Aug 20, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -10029,7 +14858,7 @@ export const mockReviewsList: Review[] = [
     "text": "is forex trading available on Groww? I tried for Dow but it's asking me to login again through email/google. Is this how it was intended to be?",
     "date": "Aug 20, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "KYC & Onboarding",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -10073,7 +14902,7 @@ export const mockReviewsList: Review[] = [
     "text": "I modified the order 3-4 times , but it didn't work.Finally I placed at market price , which usually place at more high price, need to fix this issue.Prop firm get benefit by this, small margin, and we retail trader loss money , because of this kind of issues.",
     "date": "Aug 20, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Statements",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -10095,7 +14924,7 @@ export const mockReviewsList: Review[] = [
     "text": "Giving 1 star just because I tried a lot to skip my sips for a month and it shows it can be done 2 days before sip date, but even before 2 days it doesn't work. I recently got operated on my knee and I'm not able to go for work due to which I'm facing financial issues and just need one month to get back on track and so tried to skip one installment but the useless feature doesn't work. So I urge users to think before you install this app, as in emergency groww won't help you at all.",
     "date": "Aug 20, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Payments",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -10144,24 +14973,13 @@ export const mockReviewsList: Review[] = [
     "pii_stripped": true
   },
   {
-    "id": "cd8d7769-54fa-43c7-8ef3-aacc75ceffe0",
-    "rating": 1,
-    "title": null,
-    "text": "Enable Login Otp option - via Email also @ not only via mobile otp . Most sims ( networks) are not allowing otp if recharge expired and we are forced to recharge - and such times we are facing problem to login to groww on new devices. Other Apps like Dhann, Upstox etc providing both Mobile + Gmail Login otps too. Only Groww is troubling without any customer friendly improvement. If this continues - will close all groww accounts. #Enable_Emailid_Login_Otp's_On_Groww read again",
-    "date": "Aug 20, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
     "id": "ac0c8df1-3c08-4ec2-b976-a8f200df5d6e",
     "rating": 5,
     "title": null,
     "text": "need more filters or ai tools in built",
     "date": "Aug 20, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -10183,7 +15001,7 @@ export const mockReviewsList: Review[] = [
     "text": "I m lay man,67years old,retired \u0921\u093e\u092f\u0930\u0947\u0915\u094d\u091f\u0930 from Ministry,Govt of India, Very satisfied to the services provided by Groww Team, I don't know anything about stock, share etc, a very little amount from pension,I'm investing through this honest platform,",
     "date": "Aug 19, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -10194,7 +15012,7 @@ export const mockReviewsList: Review[] = [
     "text": "its very useful and helpful to save and increase your personal pocket money and feature investment plane",
     "date": "Aug 19, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -10227,7 +15045,7 @@ export const mockReviewsList: Review[] = [
     "text": "Dear groww, Worst app always i have profit for 2500 but app was automatically refreshing get stuck my loss happen due to groww app I want to raise complain groww",
     "date": "Aug 19, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Statements",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -10249,7 +15067,7 @@ export const mockReviewsList: Review[] = [
     "text": "very fast and easy to use for beginners and so many options are available for advanced people",
     "date": "Aug 19, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -10260,7 +15078,7 @@ export const mockReviewsList: Review[] = [
     "text": "New version getting stuck after a few scrolls.",
     "date": "Aug 19, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -10304,7 +15122,7 @@ export const mockReviewsList: Review[] = [
     "text": "your customer support is such a waste a single conversation of three lines is being continued for one hour with four person reassigning each other to solve the problem ..you guys are a waste of time people should not trust you with money , with such a customer support.",
     "date": "Aug 19, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -10315,7 +15133,7 @@ export const mockReviewsList: Review[] = [
     "text": "Bonds interface is too difficult to understand . I can't even view my portfolio",
     "date": "Aug 19, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Statements",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -10359,7 +15177,7 @@ export const mockReviewsList: Review[] = [
     "text": "please provide daily and weekly sip option..also swp and stp options are missing",
     "date": "Aug 19, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Payments",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -10403,7 +15221,7 @@ export const mockReviewsList: Review[] = [
     "text": "groww is tha best performers india today",
     "date": "Aug 19, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -10414,7 +15232,7 @@ export const mockReviewsList: Review[] = [
     "text": "Every 2 days the app needs to be updated. what happened with the app? I don't understand why so many times the app needs to be updated.",
     "date": "Aug 18, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -10436,7 +15254,7 @@ export const mockReviewsList: Review[] = [
     "text": "what a worst customer service in grow I tried to call and tried in chat. Nobody solved my issues",
     "date": "Aug 18, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -10458,7 +15276,7 @@ export const mockReviewsList: Review[] = [
     "text": "please add a detailed view in the portfolio.",
     "date": "Aug 18, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Statements",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -10480,7 +15298,7 @@ export const mockReviewsList: Review[] = [
     "text": "Easy for beginners , good ui , very responsive great experience",
     "date": "Aug 18, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -10502,7 +15320,7 @@ export const mockReviewsList: Review[] = [
     "text": "ye app download hi nhi ho rha Or phn m se automatic ht gya",
     "date": "Aug 18, 2026",
     "source": "Play Store",
-    "theme": "Statements",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -10535,7 +15353,7 @@ export const mockReviewsList: Review[] = [
     "text": "I don't like the loan app segment. Anyone who wants to enter the stock market doesn't need to take a loan, so I think this loan segment is useless.This icon is lying there like a useless wart, it is of no use, please remove it from here.For those who need a loan, there is a separate app for them, they can download it from there.",
     "date": "Aug 18, 2026",
     "source": "Play Store",
-    "theme": "Statements",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -10546,7 +15364,7 @@ export const mockReviewsList: Review[] = [
     "text": "Excellent app for makin investment... if 10 stars available . I give 10/10 stars to this app... thank you groww & your team for making investment simple .",
     "date": "Aug 18, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Statements",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -10568,7 +15386,7 @@ export const mockReviewsList: Review[] = [
     "text": "fix problems likha aa raha hai not download this app",
     "date": "Aug 18, 2026",
     "source": "Play Store",
-    "theme": "Statements",
+    "theme": "App Performance",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -10579,7 +15397,7 @@ export const mockReviewsList: Review[] = [
     "text": "Your app gets stuck far too often at the time of trade execution, and even after setting a profit/loss limit, the order does not get executed automatically. I have incurred losses so many times because of this issue, especially while trying to book profits, that I am extremely frustrated. At this point, I honestly feel like approaching the Consumer court.",
     "date": "Aug 18, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Statements",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -10634,7 +15452,7 @@ export const mockReviewsList: Review[] = [
     "text": "Grow is best platform for Stocks and SIP, mutual funds.",
     "date": "Aug 18, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Payments",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -10667,7 +15485,7 @@ export const mockReviewsList: Review[] = [
     "text": "why Goldbees and SilverBees Chart not Open .....Worst app.... Zerodha Best.",
     "date": "Aug 18, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -10678,7 +15496,7 @@ export const mockReviewsList: Review[] = [
     "text": "worst experience with this... I'll stop using it soon.",
     "date": "Aug 18, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -10700,7 +15518,7 @@ export const mockReviewsList: Review[] = [
     "text": "excellent, but seems like little bit glitches or late refresh in the daily changes of prices in portfolio",
     "date": "Aug 18, 2026",
     "source": "Play Store",
-    "theme": "App Performance",
+    "theme": "Statements",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -10810,7 +15628,7 @@ export const mockReviewsList: Review[] = [
     "text": "ai asking not showing also in ai query rsi is showing 1 day old data it should be live data",
     "date": "Aug 17, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Neutral",
     "pii_stripped": true
   },
@@ -10821,7 +15639,7 @@ export const mockReviewsList: Review[] = [
     "text": "Nowadays there are more flaw happening in the app. no proper response over phone. the person who is attending the phone call is telling the same thing without any solutions. If the margin is less, auto square off should be informed atleast 12 to 24 hours. when we are in loss the autosquare pulls all the premium. when I called the support team, it is like that only. no one replies properly in emails or over calls. i have been using this platform for more than 5 years. I never recommend this app.",
     "date": "Aug 17, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -10931,7 +15749,7 @@ export const mockReviewsList: Review[] = [
     "text": "firstly lookes all good and profitable but going on get looses every time. when u invest it get Down and when u sell after it get raised . Don't trust .",
     "date": "Aug 17, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -10942,7 +15760,7 @@ export const mockReviewsList: Review[] = [
     "text": "They will give people a lot of profit at first and then they will rob people of all their money by giving wrong signals.",
     "date": "Aug 17, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Statements",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -10953,7 +15771,7 @@ export const mockReviewsList: Review[] = [
     "text": "app me multi account login krne par switch account work nhi kr rha hai.",
     "date": "Aug 17, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "KYC & Onboarding",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -10997,7 +15815,7 @@ export const mockReviewsList: Review[] = [
     "text": "how to execute algo trading is not made understood in a layman language. In the application itself there must be good ideas for buy and sell both for cash as well as FNO market.",
     "date": "Aug 17, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -11030,7 +15848,7 @@ export const mockReviewsList: Review[] = [
     "text": "i have added a few mf in the cart but I don't see the cart icon anywhere. Now, I don't know how to open cart page and proceed with investment. It seems like major UI glitch in new version if the app.",
     "date": "Aug 16, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Neutral",
     "pii_stripped": true
   },
@@ -11074,7 +15892,7 @@ export const mockReviewsList: Review[] = [
     "text": "It is 5th day after the app install, KYC is pending is showing, when i click submit documents, it is showing please try again later always, since angel one order processing takes time, i thought to try grow application, but it is far behind. Ticket number is 27308487",
     "date": "Aug 16, 2026",
     "source": "Play Store",
-    "theme": "Customer Support",
+    "theme": "KYC & Onboarding",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -11096,7 +15914,7 @@ export const mockReviewsList: Review[] = [
     "text": "don't install very bad show app loss 70000 this intraday",
     "date": "Aug 16, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Statements",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -11129,7 +15947,7 @@ export const mockReviewsList: Review[] = [
     "text": "The user interface is so simplified , I'm in love with this app .Most importantly the Groww app gives instant withdrawal within seconds money gets deposited into your accounts. Their servers are also top , never had a glitch while trading .The icons of stock are so unique and specific .But the groww app needs to work on the charts section",
     "date": "Aug 16, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -11140,7 +15958,7 @@ export const mockReviewsList: Review[] = [
     "text": "uss less app I stop use but they also increases money in negative and told pay right now use very bad don't download this app. this app only make money in your pocket",
     "date": "Aug 16, 2026",
     "source": "Play Store",
-    "theme": "Statements",
+    "theme": "App Performance",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -11162,7 +15980,7 @@ export const mockReviewsList: Review[] = [
     "text": "kyc process takes longer than usual time, now sent closure request before 2days,again on waiting, no reply of msg,mail and when call, IVR keeps you on waiting and after5 minutes call ends,and also no follow up for my request from their side, i just UNINSTALLED the APP, worst experience...",
     "date": "Aug 16, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -11184,7 +16002,7 @@ export const mockReviewsList: Review[] = [
     "text": "Many important changes reqired, User friendly not there. , There should be add and remove settings for the Option Greeks as per user desides set on the page and also which is occupied full of space and data is not updated in time that shows same numbers always Another PCR value must be visible on the upside of the each page each sector. Speed needs to be improve lot. Data not updating time to time. Most of the time Change in OI stucks with sams data for long time. etc, etc,.",
     "date": "Aug 16, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -11217,7 +16035,7 @@ export const mockReviewsList: Review[] = [
     "text": "my stock portfolio is showing wrong information and i shared screenshots multiple time with customer care representatives both from pc login and mobile app screenshot, yet customer care is unable to fix my problem, all they do is they forward the complaint and forget about it. a person named rohit closed my complaint twice without even saying something, he sent me pre typed messages that i have to clear the cache of app and reinstall it. ticket id 27281436",
     "date": "Aug 15, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -11294,7 +16112,7 @@ export const mockReviewsList: Review[] = [
     "text": "groww app used to give platform for fixed deposit. I invested in fixed deposit through it and now it is not showing in groww app ....and they are not even responding ....they are saying to go to bank ..bank is saying go to groww app. nor their customer support is knowledgeable enough to answer questions. my money is stuck. not expected from such big name app. my ticket is 27208454. I have already sent email and they have generated ticket but no action taken nor they have replied",
     "date": "Aug 15, 2026",
     "source": "Play Store",
-    "theme": "App Performance",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -11360,7 +16178,7 @@ export const mockReviewsList: Review[] = [
     "text": "Data protection is absolutely worst with this Broker. They will sell your personal information to scammer. I have been Using Zerodha for the past two year. there is no single event of Spam calls regarding trading advice. But After I installed and opened account with Groww I constantly getting spam calls. This is very disturbing behavior from this broker.",
     "date": "Aug 14, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -11393,7 +16211,7 @@ export const mockReviewsList: Review[] = [
     "text": "Irresponsible customer care response. Why I'm not getting UPI mandate notification, I missed my IPO allotments because of your worst UPI service. No notification no information on where to approve atleast.",
     "date": "Aug 14, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Neutral",
     "pii_stripped": true
   },
@@ -11415,7 +16233,7 @@ export const mockReviewsList: Review[] = [
     "text": "Brokrage high , worst application. Don't use this application.",
     "date": "Aug 14, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -11470,7 +16288,7 @@ export const mockReviewsList: Review[] = [
     "text": "best trading app for beginners thank you",
     "date": "Aug 14, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -11525,7 +16343,7 @@ export const mockReviewsList: Review[] = [
     "text": "Please add the SWP option in the app. and provide a daily sip option.",
     "date": "Aug 14, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Payments",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -11558,7 +16376,7 @@ export const mockReviewsList: Review[] = [
     "text": "this is a worst app. I was in daily market where I put order and then after it is not showing in my account.",
     "date": "Aug 14, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -11613,7 +16431,7 @@ export const mockReviewsList: Review[] = [
     "text": "one of the worst app is have never seen ... cause of saying is that just froba simple add of my name there is no option wtfing app is it even a app like this should now that option should be given but no even my all the documents are completely verified then to and not only that for that thing I wasted my all over 1hr just for searching that there is a some options over there but no there's it so iam uninstall this app thank you",
     "date": "Aug 13, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "KYC & Onboarding",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -11646,7 +16464,7 @@ export const mockReviewsList: Review[] = [
     "text": "Customer care is not easy to reach nor is able to solve the issues properly. Secondly, the transparency of this app has been decreasing a lot, a lot of details related to orders are no longer being provided like they used to.",
     "date": "Aug 13, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -11701,7 +16519,7 @@ export const mockReviewsList: Review[] = [
     "text": "some people keep on calling and spam message to buy call or put option get more profit these are all happens when I invest on groww only how my number get to these scammers .",
     "date": "Aug 13, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Neutral",
     "pii_stripped": true
   },
@@ -11756,7 +16574,7 @@ export const mockReviewsList: Review[] = [
     "text": "I'm unable to pay/approve UPI mandate. worst experience",
     "date": "Aug 13, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Payments",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -11866,7 +16684,7 @@ export const mockReviewsList: Review[] = [
     "text": "very very very poor customer care service 15 minutes tak koi champion call par nahi aata hai bahut baar feed back diya hai but same to same jabki call par customer care se immediately baat honi chahiye because koi bhi call most urgent ho sakti hai",
     "date": "Aug 13, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -11921,7 +16739,7 @@ export const mockReviewsList: Review[] = [
     "text": "unable to login. after allowing permission it's taking ages but not moving to next page",
     "date": "Aug 12, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "KYC & Onboarding",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -11943,7 +16761,7 @@ export const mockReviewsList: Review[] = [
     "text": "portfolio gainers/losers and watchlist gainers/losers was good in previous version of app. don't know why removed",
     "date": "Aug 12, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Statements",
     "sentiment": "Neutral",
     "pii_stripped": true
   },
@@ -11965,7 +16783,7 @@ export const mockReviewsList: Review[] = [
     "text": "why you guys not showing percentage gain or loss in intraday position in list earlier it was great to see instantly about managing win loss ratio",
     "date": "Aug 12, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Statements",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -12020,7 +16838,7 @@ export const mockReviewsList: Review[] = [
     "text": "worst customer service. Took more than 2.5 hrs for one response and for next response it took around 30 mins",
     "date": "Aug 12, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -12042,7 +16860,7 @@ export const mockReviewsList: Review[] = [
     "text": "Good app to invest lumpsum amount or Sip amount",
     "date": "Aug 12, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Payments",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -12053,7 +16871,7 @@ export const mockReviewsList: Review[] = [
     "text": "position and p&l sown before , and now it's not sown in bottom it's penic to save profit or loss old virsion is best rather then new",
     "date": "Aug 12, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Statements",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -12075,7 +16893,7 @@ export const mockReviewsList: Review[] = [
     "text": "very good interface, and easy to understand for beginners, and it runs smoothly even on my 5yrs old snapdragon 695 processor. the best app for beginners who are just starting to learn share market and mutual funds",
     "date": "Aug 12, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -12108,7 +16926,7 @@ export const mockReviewsList: Review[] = [
     "text": "can you add Sort By category under dashboard of mutual fund bottom nav menu. it would help to undersand the investors how different funds of same category is currently performing.",
     "date": "Aug 12, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -12119,7 +16937,7 @@ export const mockReviewsList: Review[] = [
     "text": "If you want to loss your money and mind set download groww 4 years experience sharing free",
     "date": "Aug 12, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Statements",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -12251,7 +17069,7 @@ export const mockReviewsList: Review[] = [
     "text": "Best app ever, and then you introduced select portfolio option it's much needed function for me, Thank You , one request please introduce same Function also for mutual fund portfolio.",
     "date": "Aug 11, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Statements",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -12262,7 +17080,7 @@ export const mockReviewsList: Review[] = [
     "text": "Very Good app. most features we need is all inbuilt. Only thing I found is little lag. most notifications are delayed. From opening bell to my watchlist stocks performance notifications. Whenever it touches all time high or low notifications are coming only after 15 minutes. The new update with technical section is too good. new feature \"your top movers\" is too good",
     "date": "Aug 11, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -12289,17 +17107,6 @@ export const mockReviewsList: Review[] = [
     "pii_stripped": true
   },
   {
-    "id": "54937f05-0997-4ce6-9df6-a27bbfab9093",
-    "rating": 1,
-    "title": null,
-    "text": "I don't have an option to select less than this feedback. 1.Lack of commitment what they are promoting recently I referred one of friend or colleague to Groww and expected referral ...nothing observed raised ticket...team mentioned that Now Groww stopped referral ? I am not sure is this ethical and transparency where as still referral and invite section active and not displayed any message such as offer is discontinued... 2. Customer care is pathetic and they respond whenever they feel 2respond",
-    "date": "Aug 11, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
     "id": "4056b3fe-7db0-4e99-a2d7-eaed716e04a2",
     "rating": 1,
     "title": null,
@@ -12317,7 +17124,7 @@ export const mockReviewsList: Review[] = [
     "text": "Groww is good platform for share & personal loan",
     "date": "Aug 11, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -12328,7 +17135,7 @@ export const mockReviewsList: Review[] = [
     "text": "App is fast, but difficult to understand. Watch list is for quick view but getting is difficult, 3 taps. Default tab option is not present",
     "date": "Aug 11, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -12383,7 +17190,7 @@ export const mockReviewsList: Review[] = [
     "text": "The UI offers an excellent balance of ease of use and robust security. Customer support is highly responsive, and the detailed company analysis is extremely helpful in making informed investment decisions and choosing the right level of risk.",
     "date": "Aug 11, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -12427,7 +17234,7 @@ export const mockReviewsList: Review[] = [
     "text": "good to use and easy to understand",
     "date": "Aug 11, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -12460,7 +17267,7 @@ export const mockReviewsList: Review[] = [
     "text": "worst assistance my problem not at all resolved my account details are not showing raised query but still prolonging to day after day",
     "date": "Aug 11, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -12504,7 +17311,7 @@ export const mockReviewsList: Review[] = [
     "text": "i don't want to give a single Star this is dump app for trading never use because so many problems server jam late action and legging",
     "date": "Aug 11, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -12537,7 +17344,7 @@ export const mockReviewsList: Review[] = [
     "text": "worst experience not working properly and many times leg the application",
     "date": "Aug 11, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -12625,7 +17432,7 @@ export const mockReviewsList: Review[] = [
     "text": "worst application just buffering how to take trade",
     "date": "Aug 11, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -12790,7 +17597,7 @@ export const mockReviewsList: Review[] = [
     "text": "The overall experience was very good. One request from my side: kindly add features for Investment Tracker, such as Realised P&L and Portfolio Trend, Comparison of the portfolio performance with the broader market trend for mutual funds.",
     "date": "Aug 10, 2026",
     "source": "Play Store",
-    "theme": "App Performance",
+    "theme": "Statements",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -12878,7 +17685,7 @@ export const mockReviewsList: Review[] = [
     "text": "In the financial industry, especially in stockbroking, clear and reliable communication between a broker and its customers is essential. Unfortunately, Groww\u2019s customer support has been extremely poor in my experience. When an investor asks a simple and important question about their money, the support team should provide a clear and direct answer\u2014not vague or repetitive responses. This lack of proper communication seriously damages customer trust.",
     "date": "Aug 10, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -12933,7 +17740,7 @@ export const mockReviewsList: Review[] = [
     "text": "worst app to invest your mutual funds, I am not getting a proper response from groww customer care regarding my 2nd SIP due date(not able to pay manually) they have created 2 ticket with same query but resolution is not provided yet it's been more than 48 hour If anyone hoping for long term investment don't try groww because whenever you got stuck their customer service is unable to provide any proper resolution so don't invest your hard earned money through this broker go for direct amc site",
     "date": "Aug 10, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -13010,7 +17817,7 @@ export const mockReviewsList: Review[] = [
     "text": "fraud app, my sip is not processed since over a month now. more than a month now your team unable to help, providing dumb solutions which dont even exist to waste my time. your company cant get on sip processed since 24 june neither giving my money back. updating this review today i.e. 10th august",
     "date": "Aug 10, 2026",
     "source": "Play Store",
-    "theme": "KYC & Onboarding",
+    "theme": "Payments",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -13065,7 +17872,7 @@ export const mockReviewsList: Review[] = [
     "text": "App and it's features are amazing. The only thing missing is other brokers allow to clone app like angel one, zerodha benefit is one doesn't have to log out and log in everytime.I request you to plz allow clone of groww app so one track investment and trading without multiple log in and log out",
     "date": "Aug 09, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -13098,7 +17905,7 @@ export const mockReviewsList: Review[] = [
     "text": "I just wanna say that you can make it more better by adding more Bank and banking app like fampay app because many people want to use it by fampay",
     "date": "Aug 09, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Payments",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -13153,7 +17960,7 @@ export const mockReviewsList: Review[] = [
     "text": "For two days this app has been showing an error while opening the chart and they want you to buy and sell without watching the chart..I have done every possible thing from my side and am still showing an error..even dabba trading broker apps are better than this cheap groww and this is not for the first time something wrong happened with this app.. highly recommend to uninstall this as soon as possible and use some standard broker instead of this.",
     "date": "Aug 08, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -13230,7 +18037,7 @@ export const mockReviewsList: Review[] = [
     "text": "easy to invest in mf and stocks and user friendly UI. best for beginners",
     "date": "Aug 08, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -13263,7 +18070,7 @@ export const mockReviewsList: Review[] = [
     "text": "this is really a genuine app very good trading results I have done from here all should have download this",
     "date": "Aug 08, 2026",
     "source": "Play Store",
-    "theme": "Statements",
+    "theme": "App Performance",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -13285,7 +18092,7 @@ export const mockReviewsList: Review[] = [
     "text": "facing new problem .1. All stocks In The money options order rejected by groww. Delta 65 from 85 . Others app from placing orders no problem. Like Dhan ,zrodha, Angel one etc . Stocks like Reliance,Airtel,Voltas,Cipla,Bajaj fin,Bluestar,. Liqdity available but rejected order . 2. Withdrawal amount deposit time 1 day . Others app from deposit time 5 secend s from 1 hours only.",
     "date": "Aug 08, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Withdrawals",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -13296,7 +18103,7 @@ export const mockReviewsList: Review[] = [
     "text": "There should be a review section for mutual funds with categories like 'In-form', 'On-track', and 'Out-of-form'; this would make it easier to understand where to invest, where to stop an SIP, and where to exit.",
     "date": "Aug 08, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Payments",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -13307,7 +18114,7 @@ export const mockReviewsList: Review[] = [
     "text": "I have been a Groww user since my first investment journey. I have seen Groww improve tremendously while maintaining the simplicity it started with. The way it makes stocks, mutual funds, F&O, bonds and IPOs easy to understand is really impressive. It\u2019s great to see this journey getting better with regular improvements, while remaining simple enough even for someone with very little knowledge of the financial market.",
     "date": "Aug 08, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -13395,7 +18202,7 @@ export const mockReviewsList: Review[] = [
     "text": "My experience tells me that Groww should have been my first MF app. I thank profusely that they have made India's best investment app.",
     "date": "Aug 08, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -13428,7 +18235,7 @@ export const mockReviewsList: Review[] = [
     "text": "just downloaded it it's not even working uninstalling this app right away",
     "date": "Aug 08, 2026",
     "source": "Play Store",
-    "theme": "Statements",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -13538,7 +18345,7 @@ export const mockReviewsList: Review[] = [
     "text": "i am learning on it and its very nice very easy. and much profitable.",
     "date": "Aug 07, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Statements",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -13615,7 +18422,7 @@ export const mockReviewsList: Review[] = [
     "text": "The stop-loss gets triggered unpredictably. Sometimes it hits even before the price reaches the stop-loss level, and other times it triggers only after the price has moved well beyond the stop-loss. In both cases, traders end up facing unnecessary losses. This is a very poor application. I would request everyone not to use it.",
     "date": "Aug 07, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Statements",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -13637,7 +18444,7 @@ export const mockReviewsList: Review[] = [
     "text": "I'm using last 10 years ...simply understand and operating",
     "date": "Aug 07, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -13703,7 +18510,7 @@ export const mockReviewsList: Review[] = [
     "text": "After a new update ! the first candle shows opposite colour of the direction! on every timeframe which is confusing the direction and trade plans . planning to switch trading app !",
     "date": "Aug 07, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -13747,7 +18554,7 @@ export const mockReviewsList: Review[] = [
     "text": "app doesn't stay active in the background even after giving unrestricted battery usage , always goes to lock screen after latest updates... problem for options traders",
     "date": "Aug 07, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -13769,7 +18576,7 @@ export const mockReviewsList: Review[] = [
     "text": "Best and Easiest App for entire investment portfolio.",
     "date": "Aug 07, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Statements",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -13780,7 +18587,7 @@ export const mockReviewsList: Review[] = [
     "text": "I'm using past one year Groww is really great application compares with others stock application",
     "date": "Aug 07, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -13857,7 +18664,7 @@ export const mockReviewsList: Review[] = [
     "text": "choice is urs it's help purley to survive future no stress",
     "date": "Aug 07, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -13879,7 +18686,7 @@ export const mockReviewsList: Review[] = [
     "text": "Best and simplest app for investment! The user interface is very clean and easy to understand. There is no complicated financial language, which makes it perfect for common people. Anyone can start investing in Mutual Funds or Stocks without any confusion. Highly recommended",
     "date": "Aug 07, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -13945,7 +18752,7 @@ export const mockReviewsList: Review[] = [
     "text": "it is best for beginners believe me it has a better ui and clean setup",
     "date": "Aug 06, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -13967,7 +18774,7 @@ export const mockReviewsList: Review[] = [
     "text": "very disappointed! Platform and internal changes is too high. Always deduct balance every time you buy or sell, even after a minute...",
     "date": "Aug 06, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Charges & Fees",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -13978,7 +18785,7 @@ export const mockReviewsList: Review[] = [
     "text": "order not place rs520 mv stock today",
     "date": "Aug 06, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -13989,7 +18796,7 @@ export const mockReviewsList: Review[] = [
     "text": "Some SIPs for the month of Aug have been failed, rest one of the best app.",
     "date": "Aug 06, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Payments",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -14011,7 +18818,7 @@ export const mockReviewsList: Review[] = [
     "text": "no costumer support I have called more than 10 times but no reply from their side",
     "date": "Aug 06, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -14022,7 +18829,7 @@ export const mockReviewsList: Review[] = [
     "text": "Great app for investing and all about market news. Daily mover or losers stocks and other. Excellent for investing, Market news. They give Daily bases E-mails for news stocks. That's great . Very Very usefull and smooth. Thanks Groww giving this type of masterpiece App.",
     "date": "Aug 06, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Statements",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -14055,7 +18862,7 @@ export const mockReviewsList: Review[] = [
     "text": "my information is shared without my consent to open market i am getting random calls from 3rd party brokers platforms. I never gave any consent to share me information. The day i opened groww app i get calls from open market. please check on this.",
     "date": "Aug 06, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -14088,7 +18895,7 @@ export const mockReviewsList: Review[] = [
     "text": "bad app .. fraud app dont download app.. 1 tap exit me seedha 10 point kams meyexit krte h..chart me.manupulate karte hae.. they will automatically reduce your buying price and make huge loss in next day.. I don't know how they did it with retailers... I have facing many losses due to app glitch issue.. they don't give me any refund.. so I deleted this app... worst experience.. they vanish my 1 lakh rupees although I have screenshot of my payment but they didn't gave me refund..",
     "date": "Aug 06, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -14132,7 +18939,7 @@ export const mockReviewsList: Review[] = [
     "text": "import of external funds not working properly. it's pop-up to mfcentral and sends an OTP option then no otp will be received at the registered mobile. kindly look into issue",
     "date": "Aug 06, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "KYC & Onboarding",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -14176,7 +18983,7 @@ export const mockReviewsList: Review[] = [
     "text": "I would say the worst broker for trading",
     "date": "Aug 06, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -14198,7 +19005,7 @@ export const mockReviewsList: Review[] = [
     "text": "Withdrawal unsuccessful trying to get connect with an expert since last 24 hours no any response received from groww worst service ever i just want my money back as early as possible then i am going to uninstall this app",
     "date": "Aug 06, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Withdrawals",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -14209,7 +19016,7 @@ export const mockReviewsList: Review[] = [
     "text": "best combo demat plateform. Using Groww since 2018. but slight improvement is required in indicators",
     "date": "Aug 06, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -14220,7 +19027,7 @@ export const mockReviewsList: Review[] = [
     "text": "onething question why u guys doing like this every new vision update will be come most then taking the storage MB pls make sure stop taking like this it's request not order pls understand",
     "date": "Aug 06, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Neutral",
     "pii_stripped": true
   },
@@ -14253,7 +19060,7 @@ export const mockReviewsList: Review[] = [
     "text": "When i updated the app to version 18.14.1, the most important feature of Scalper Mode disappered and i am not able to do scalping from the new version now. What type of update is this ?? Please make the \"Scalper Mode\" available again",
     "date": "Aug 06, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Neutral",
     "pii_stripped": true
   },
@@ -14286,7 +19093,7 @@ export const mockReviewsList: Review[] = [
     "text": "Excellent app! Very easy to use with a clean interface Investing is simple and smooth The only improvement I would suggest is making the app a bit faster especially while loading the portfolio Overall a fantastic experience Highly recommended!",
     "date": "Aug 05, 2026",
     "source": "Play Store",
-    "theme": "App Performance",
+    "theme": "Statements",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -14319,7 +19126,7 @@ export const mockReviewsList: Review[] = [
     "text": "Groww is becoming the worst day by day. My hdfc dividend did not come in the bank and my bond payment did not come. The support team is not always answering. I've been using groww for a long time but now it's performing worst day by day and increasing its charges. Zerodha is better option",
     "date": "Aug 05, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Payments",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -14330,7 +19137,7 @@ export const mockReviewsList: Review[] = [
     "text": "Not new indicator not templet for indicator save not brokrej scheme for scalper bad stop loss system over all groww not for option trading",
     "date": "Aug 05, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Statements",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -14407,7 +19214,7 @@ export const mockReviewsList: Review[] = [
     "text": "this app is literally fake app I was deposited 500 rupees and now I want to withdraw but my withdrawal money showing zero",
     "date": "Aug 05, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Withdrawals",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -14418,7 +19225,7 @@ export const mockReviewsList: Review[] = [
     "text": "Other brokers allow OFS applications until 3:25\u20133:30 PM but Groww's cutoff is only 2:00 PM. This is too early and can make investors miss the OFS opportunity while the actual market window is still open. Groww should extend the OFS cutoff to match the official bidding time.",
     "date": "Aug 05, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -14429,7 +19236,7 @@ export const mockReviewsList: Review[] = [
     "text": "Dear Groww kindly add VWAP on chart, as other brokers provide VWAP directly over chart. it will help to improve our trading experience.",
     "date": "Aug 05, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Neutral",
     "pii_stripped": true
   },
@@ -14440,7 +19247,7 @@ export const mockReviewsList: Review[] = [
     "text": "very smooth experience, very easy to understand",
     "date": "Aug 05, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -14451,7 +19258,7 @@ export const mockReviewsList: Review[] = [
     "text": "then better but my f&o segment on nhi ho pa rha bank account bhi select nhi ho rha",
     "date": "Aug 05, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Payments",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -14462,7 +19269,7 @@ export const mockReviewsList: Review[] = [
     "text": "Excellent tool. To add, for a first time investor in the stock market this tool is very simple to understand, gives a lot of metrics to make decisions as well as post purchase real time tracking is definitely well designed. Hope to see an expansion to purchasing more into the international market, and not having to sign up for other tools outside GROWW. this should be a one stop shop for all markets.",
     "date": "Aug 05, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "KYC & Onboarding",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -14539,7 +19346,7 @@ export const mockReviewsList: Review[] = [
     "text": "My Groww account is F&O enabled and I have previously used the old Scalper Mode. I'm on app version 18.14.1 (Android 16), but the Scalper Mode is no longer visible in the F&O Explore tab. Please confirm whether it has been disabled for my account or removed permanently?",
     "date": "Aug 05, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -14550,7 +19357,7 @@ export const mockReviewsList: Review[] = [
     "text": "When selling stocks, a network issue appears even after entering the OTP, and the shares do not get sold.",
     "date": "Aug 05, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "KYC & Onboarding",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -14572,7 +19379,7 @@ export const mockReviewsList: Review[] = [
     "text": "Best app with the third class website in the market. worst website in the segment for trading and analysis.",
     "date": "Aug 05, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -14594,7 +19401,7 @@ export const mockReviewsList: Review[] = [
     "text": "it's the best platform i have used to invest in stock. better user friendly dashboard and easy interface to understand the things.",
     "date": "Aug 05, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -14605,7 +19412,7 @@ export const mockReviewsList: Review[] = [
     "text": "No OI details are showing under Nifty50 but it's present under Sensex. Users need PE RATIO details, Please fix this ASAP.",
     "date": "Aug 05, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -14660,7 +19467,7 @@ export const mockReviewsList: Review[] = [
     "text": "I have been using the Groww app for four years, and it is very user-friendly; however, I have been facing some issues recently. The app isn't displaying the full charts\u2014for instance, the monthly chart for Nifty only shows data up to 2022, and the 15-minute or 5-minute timeframe charts only show data up to January 2026 . additionally I am unable to use any indicator on the Nifty chart and the volume data isn't showing up either.Please fix this, Groww.",
     "date": "Aug 05, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Neutral",
     "pii_stripped": true
   },
@@ -14671,7 +19478,7 @@ export const mockReviewsList: Review[] = [
     "text": "if grow take Rs-10/exit order then this full cmpleted app for stock app must be faster runing time",
     "date": "Aug 04, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -14737,7 +19544,7 @@ export const mockReviewsList: Review[] = [
     "text": "I really love using the Groww app. The interface is simple, smooth, and one of the best investing platforms I've used. I have one request: if possible, please add support for investing in international stocks, especially U.S., Japanese, and other global markets. At the moment, I have to use other brokers to buy foreign stocks. It would be amazing if I could manage both Indian and international investments in a single app thank u",
     "date": "Aug 04, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Neutral",
     "pii_stripped": true
   },
@@ -14748,7 +19555,7 @@ export const mockReviewsList: Review[] = [
     "text": "lots of glitches. money disappears often leading to massive stress and headache. happened to both my account and my mother's account. My mother's money came back but mine is yet to tally.",
     "date": "Aug 04, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -14770,7 +19577,7 @@ export const mockReviewsList: Review[] = [
     "text": "I like this app and very useful for our career",
     "date": "Aug 04, 2026",
     "source": "Play Store",
-    "theme": "Customer Support",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -14792,7 +19599,7 @@ export const mockReviewsList: Review[] = [
     "text": "Whenever I invest, the market hits my stop-loss and then falls.",
     "date": "Aug 04, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Statements",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -14814,7 +19621,7 @@ export const mockReviewsList: Review[] = [
     "text": "Groww is a very good app. It's simple to use, easy to understand, and great for beginners to start investing.",
     "date": "Aug 04, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -14924,7 +19731,7 @@ export const mockReviewsList: Review[] = [
     "text": "The withdrawal process is very slow and also very worst customer service. The period of withdrawal took nearly 7-8 days. This is very disappointing.",
     "date": "Aug 04, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Withdrawals",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -15100,7 +19907,7 @@ export const mockReviewsList: Review[] = [
     "text": "very nice app. very easy to understand. in the app there is very clear information about our investment. I like this app very much.",
     "date": "Aug 03, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -15133,7 +19940,7 @@ export const mockReviewsList: Review[] = [
     "text": "groww is good in mutual fund , other wise it isa BAKWAS app , I am using if since 2021 , they cannot correct my share price , which got transfer from unlisted to listed in share market , every time I am talking to c care and telling my problem , but a big disappointed answer is coming from their side \u0964 zerodha is best",
     "date": "Aug 03, 2026",
     "source": "Play Store",
-    "theme": "Customer Support",
+    "theme": "General & Usability",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -15144,7 +19951,7 @@ export const mockReviewsList: Review[] = [
     "text": "I guess it's one of the best app for treading. Very easy to handle as a first time user in stock market. Everything is very easy to understand and segmented on different portions. One problem is I can't increase Sip money instantly. It has to be wait for 6 months to 1 year. That's a problematic part i guess.",
     "date": "Aug 03, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Payments",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -15160,24 +19967,13 @@ export const mockReviewsList: Review[] = [
     "pii_stripped": true
   },
   {
-    "id": "93451950-99c0-4882-a2f6-e21c757a3cc0",
-    "rating": 1,
-    "title": null,
-    "text": "Loading problem always in groww app and Hanging problem & more problems in groww app,intraday charge very costly",
-    "date": "Aug 03, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
     "id": "807cfc05-9464-4406-810e-61d6863544e0",
     "rating": 4,
     "title": null,
     "text": "USER FRIENDLY , Good trading Application for Beginners, Keep going",
     "date": "Aug 03, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -15221,7 +20017,7 @@ export const mockReviewsList: Review[] = [
     "text": "Customer service is very poor they don't pick up the phone or cancel the sip has also taken penalty or you should extend the app time is also not getting updated",
     "date": "Aug 03, 2026",
     "source": "Play Store",
-    "theme": "App Performance",
+    "theme": "Charges & Fees",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -15265,7 +20061,7 @@ export const mockReviewsList: Review[] = [
     "text": "REMEMBER THAT GROWW IS THE WORST APP FOR TRADING SINCE IT HAS A LOT OF DELAYS ON ITS ORDER PLACING AND CHART UPDATION ACTIVITIES , I WOULD HIGHLY RECOMMEND DHAN FOR TRADING ACTIVITIES GROWW WON'T LET YOU GROWW..",
     "date": "Aug 03, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -15309,7 +20105,7 @@ export const mockReviewsList: Review[] = [
     "text": "Till now no problem in trading or anything. smoothly working sometimes it lags but no major issues. easy execution and easy withdrawal and deposit system",
     "date": "Aug 03, 2026",
     "source": "Play Store",
-    "theme": "App Performance",
+    "theme": "Withdrawals",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -15331,7 +20127,7 @@ export const mockReviewsList: Review[] = [
     "text": "An app which takes care of everything there is related to investing",
     "date": "Aug 03, 2026",
     "source": "Play Store",
-    "theme": "Customer Support",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -15353,7 +20149,7 @@ export const mockReviewsList: Review[] = [
     "text": "for every 2 or 3 months always asking plz plz update to latest version.Like this how many times will repeat,it's getting irritating and there is no storage also so plz think about this.ur app service is so good,but the above what I mentioned is not good",
     "date": "Aug 03, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -15397,7 +20193,7 @@ export const mockReviewsList: Review[] = [
     "text": "Either you guys are doing it by choice, or maybe the decision-makers aren't aware and some mid-level guy is selling your data. So, today I downloaded the app to check the status of my investment, but guess what? I have received a message on my WhatsApp from Momentum Trader. I won't explain the message, but you get the idea. Now, it's either you don't want my business and want me to use Momentum, or there is a leak.",
     "date": "Aug 02, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -15441,7 +20237,7 @@ export const mockReviewsList: Review[] = [
     "text": "its very good trading app for beginners to understand about stock market",
     "date": "Aug 02, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -15452,7 +20248,7 @@ export const mockReviewsList: Review[] = [
     "text": "There should be option to group SIPs just like we have for stocks ! Groww PLEASEEE consider this !!",
     "date": "Aug 02, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Payments",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -15474,7 +20270,7 @@ export const mockReviewsList: Review[] = [
     "text": "good apps for the working. i use since 2 years",
     "date": "Aug 02, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -15496,7 +20292,7 @@ export const mockReviewsList: Review[] = [
     "text": "very easy investment app specially for beginners, I'm using all categories like Bonds, mutual fund, IPOs and stock",
     "date": "Aug 02, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -15518,7 +20314,7 @@ export const mockReviewsList: Review[] = [
     "text": "Worst customer service. At the beginning of groww 2 3 years back it was nice. now it is the worst. I am thinking to switch to other apps.",
     "date": "Aug 02, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -15562,7 +20358,7 @@ export const mockReviewsList: Review[] = [
     "text": "bahut hi achcha app Hai beginners ke liye banaa hai easy to use un comfortable",
     "date": "Aug 02, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -15584,7 +20380,7 @@ export const mockReviewsList: Review[] = [
     "text": "best software for long term investment of all mutual fund and stock I am using more than 6 years",
     "date": "Aug 02, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -15595,7 +20391,7 @@ export const mockReviewsList: Review[] = [
     "text": "The strength of this platform lies in its versatility and precision. It's rare to find a service that handles equities, futures, options, and commodities all at on...",
     "date": "Aug 02, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -15617,7 +20413,7 @@ export const mockReviewsList: Review[] = [
     "text": "Best Application for investors Easy Ui and it improving after every Update",
     "date": "Aug 01, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -15628,7 +20424,7 @@ export const mockReviewsList: Review[] = [
     "text": "Worst experience...... Couldn't start trading as my KYC was not verified by the Groww team even after 5weeks from opening the account and despite of all the necessary documents...... helpline is also useless.....at the end they sent an account freezed email.......no senior officel contact me",
     "date": "Aug 01, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Neutral",
     "pii_stripped": true
   },
@@ -15727,7 +20523,7 @@ export const mockReviewsList: Review[] = [
     "text": "this app has the worst customer service. infact zero service and support. the call never connects. they keep you on hold for more than 10 mins and never connect. what kind of service is this? in today's era when customers are used to exceptional service, this kind of pathetic service will pull down any company. high time to switch to some other app",
     "date": "Aug 01, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -15804,7 +20600,7 @@ export const mockReviewsList: Review[] = [
     "text": "Love the user exp and support is good as well. I have 2 feature requests for the devs - a. Please add 5Y toggle in mutual fund watchlist, b. Please allow persistent reorder or sorting option. Thank you very much.",
     "date": "Jul 31, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Neutral",
     "pii_stripped": true
   },
@@ -15815,7 +20611,7 @@ export const mockReviewsList: Review[] = [
     "text": "You can use and navigate the app even if you have Lil knowledge about Sips and stock market. The interface is so beginner friendly, it's so easy to sell, buy and manage your holdings.",
     "date": "Jul 31, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Payments",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -15826,7 +20622,7 @@ export const mockReviewsList: Review[] = [
     "text": "I am unable to open my profile section after updating the app, worst version of the application",
     "date": "Jul 31, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -15848,7 +20644,7 @@ export const mockReviewsList: Review[] = [
     "text": "custom support is not at all good, if you have an issue they won't be able to help you and they have a weird AI chatbot that will give you wrong answers to your question and if you ask a customer support person he will say sir that is just an AI",
     "date": "Jul 31, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -15859,7 +20655,7 @@ export const mockReviewsList: Review[] = [
     "text": "HATED, I need profit revenue net worth increasing bars of each stock as seen in previous version.",
     "date": "Jul 31, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Statements",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -15870,7 +20666,7 @@ export const mockReviewsList: Review[] = [
     "text": "why u guys change scalping template, i have only single device to trade in option, currently difficult to trade in option with single device no hope left to recover my loss",
     "date": "Jul 31, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Statements",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -15881,7 +20677,7 @@ export const mockReviewsList: Review[] = [
     "text": "worst app tbh it freezes every single time whenever I open it and even after reinstalling",
     "date": "Jul 31, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -15892,7 +20688,7 @@ export const mockReviewsList: Review[] = [
     "text": "Worst broker, always gives wrong trade on short/long. just want to trap the customer",
     "date": "Jul 31, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -15903,7 +20699,7 @@ export const mockReviewsList: Review[] = [
     "text": "very easy to use I most like new features for tax file that is excellent for investor's, trader's, no hassle for tax payments.",
     "date": "Jul 31, 2026",
     "source": "Play Store",
-    "theme": "Payments",
+    "theme": "Statements",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -15936,7 +20732,7 @@ export const mockReviewsList: Review[] = [
     "text": "if you really want to grow then download grow app.. it's very helpful and very good to grow.",
     "date": "Jul 31, 2026",
     "source": "Play Store",
-    "theme": "Statements",
+    "theme": "App Performance",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -16046,7 +20842,7 @@ export const mockReviewsList: Review[] = [
     "text": "There KYC process is bad let me share my recent experience I requested them to add last name in my groww account I have provided all the supporting documents to them which I provided in all my banks and other investment companies and they have accepted it and added my last name in their records but in groww case they ask me extra documents publish ad in newspapers or gazette I provided them news paper ad now they are required merriage certificate and gazette also see their hypocrisy",
     "date": "Jul 31, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "KYC & Onboarding",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -16068,7 +20864,7 @@ export const mockReviewsList: Review[] = [
     "text": "worst experience while redeeming my mutual units taking longer and longer than expected or promised time they won't share the reason for the delay that is the reason I discontinued investing in mutual funds on Groww app",
     "date": "Jul 31, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -16101,7 +20897,7 @@ export const mockReviewsList: Review[] = [
     "text": "2,3 months old chats show nahi ho raha hai ..main bahut bar customer care call kiye & email bhi kiye but groww team problem ko solve nahi kiye , aise chota charts mai trading karna risky hai ..plz fix the problem ...",
     "date": "Jul 30, 2026",
     "source": "Play Store",
-    "theme": "App Performance",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -16112,7 +20908,7 @@ export const mockReviewsList: Review[] = [
     "text": "please add oi profile,smart money concept,and ut bot alerts in the indicator section...even newer apps have these indicators .and I unable to change index in scalper mood.why groww please grow up....",
     "date": "Jul 30, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Neutral",
     "pii_stripped": true
   },
@@ -16128,24 +20924,13 @@ export const mockReviewsList: Review[] = [
     "pii_stripped": true
   },
   {
-    "id": "b5f0db30-1bc0-4f21-9ed2-9db2c0d03cbf",
-    "rating": 5,
-    "title": null,
-    "text": "best app for stock market best broker no doubt. simple UI. improving day by day...",
-    "date": "Jul 30, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
     "id": "fb8655a6-edbd-48a6-8d34-590451f94ada",
     "rating": 1,
     "title": null,
     "text": "change back the colours cuh. the red and green gave a better idea about profit and losses, change it back RN, it's too confusing, when everything is white",
     "date": "Jul 30, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Statements",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -16156,7 +20941,7 @@ export const mockReviewsList: Review[] = [
     "text": "very easy too navigate and place trading orders",
     "date": "Jul 30, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -16189,7 +20974,7 @@ export const mockReviewsList: Review[] = [
     "text": "overall a good experience, Suggestion - Grow is not Approved App for Union bank of Switzerland UBS, like other Zerodha,Sharekhan and Angel broking are approved please initiate procedure for it's globally recognised and Approved.",
     "date": "Jul 30, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Payments",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -16222,7 +21007,7 @@ export const mockReviewsList: Review[] = [
     "text": "hello groww! Can you please add healthcare, Textiles, oil & gas, cement, agriculture and chemical sector in the all indices please, and that's kind of irritating that I've to open another application to see the sectors",
     "date": "Jul 30, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -16233,7 +21018,7 @@ export const mockReviewsList: Review[] = [
     "text": "Please give dividend stock exdate earlier, so traders can adjust and buy stock in timelimit.",
     "date": "Jul 30, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -16288,7 +21073,7 @@ export const mockReviewsList: Review[] = [
     "text": "Old version was better than this new version.",
     "date": "Jul 30, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -16332,7 +21117,7 @@ export const mockReviewsList: Review[] = [
     "text": "worst app...issue in loading, particularly when selling stocks.",
     "date": "Jul 30, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -16365,7 +21150,7 @@ export const mockReviewsList: Review[] = [
     "text": "Sometimes it takes so much time to open our portfolio. It's a bit concerning.",
     "date": "Jul 30, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Statements",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -16409,7 +21194,7 @@ export const mockReviewsList: Review[] = [
     "text": "worst than anything...took my 20000 in seconds",
     "date": "Jul 29, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -16420,7 +21205,7 @@ export const mockReviewsList: Review[] = [
     "text": "the app and the ui is absolutely good and the friendly help me to short and easy to handle but some concerns here sometime ui feel little bit lagy and slow to update price and chart overall I rate this 9.3 / 10",
     "date": "Jul 29, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -16431,7 +21216,7 @@ export const mockReviewsList: Review[] = [
     "text": "it would be better, if we create a watchlist for ourselves and add a few stocks in that, if there any option to comment out a note and if we can rate the stock inside our watchlist.. it would be great...so at the time of market correction, we can directly go to buy stocks from our watchlist which we have rated top..",
     "date": "Jul 29, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Neutral",
     "pii_stripped": true
   },
@@ -16453,7 +21238,7 @@ export const mockReviewsList: Review[] = [
     "text": "Seriously Groww Prime for MFs? You guys started selling Regular MFs in the name of prime. I mean it's a shame. First introduce features like Daily, Weekly, Fortnightly SIPs and get rid of these regular options. Make the money flowing process easy. it's currently the worst. I get my money instantly in Zerodha, Angel one and ICICI direct... Groww just sucks. Focus on one thing at a time.",
     "date": "Jul 29, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Payments",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -16464,7 +21249,7 @@ export const mockReviewsList: Review[] = [
     "text": "Nice Easy To Understand Everything Stock Details in Depth",
     "date": "Jul 29, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -16541,7 +21326,7 @@ export const mockReviewsList: Review[] = [
     "text": "withdrawal process very worst not a given 24 hours payment",
     "date": "Jul 29, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Withdrawals",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -16640,7 +21425,7 @@ export const mockReviewsList: Review[] = [
     "text": "Groww app is simple and best for investment.... Like: SIP, stock etc...",
     "date": "Jul 29, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Payments",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -16662,7 +21447,7 @@ export const mockReviewsList: Review[] = [
     "text": "Very disappointing experience. Some brokers asked for my Groww login password, saying they would manage my account and show profits. I trusted them and shared my credentials, after which I suffered losses of around \u20b97 lakh. I request Groww to investigate the account activity, check whether these people were authorised, and provide a proper explanation. I have evidence and details regarding this issue. Please take this complaint seriously and contact me.",
     "date": "Jul 29, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -16706,7 +21491,7 @@ export const mockReviewsList: Review[] = [
     "text": "Very convenient app even for new users it's very easy to check whatever we wanna check",
     "date": "Jul 28, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -16739,7 +21524,7 @@ export const mockReviewsList: Review[] = [
     "text": "I'm using this app for along 6 months and this is worst application for traders with nonsense prediction better you choose other one then this",
     "date": "Jul 28, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -16772,7 +21557,7 @@ export const mockReviewsList: Review[] = [
     "text": "The dashboard is not attractive like other apps. We can't see the mutual funds allocation and can't add the family portfolio.",
     "date": "Jul 28, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Statements",
     "sentiment": "Neutral",
     "pii_stripped": true
   },
@@ -16783,7 +21568,7 @@ export const mockReviewsList: Review[] = [
     "text": "They make it unnecessarily hard to transfer and close your demat account. The way they process queries tests your patience. The customer care ends conversation abruptly when it is related to closure. They make it unnecessarily expensive to transfer your holdings, hoping you will give up. Edit: Don't be fooled by their response here. Their respond so slowly, that I get faster response from official complaints with CDSL or SEBI",
     "date": "Jul 28, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -16794,7 +21579,7 @@ export const mockReviewsList: Review[] = [
     "text": "Badass , too much hang , pause while trading, I'm using this, app since 4 years, never give bad reviews, thought it will work better in future, but no it's get lagging more , no help , no support.",
     "date": "Jul 28, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -16805,7 +21590,7 @@ export const mockReviewsList: Review[] = [
     "text": "This app is really good for traders and innovation for our future it's mutual fund,F&O, Nifty 50 is good",
     "date": "Jul 28, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -16816,7 +21601,7 @@ export const mockReviewsList: Review[] = [
     "text": "App is very good , if possible please mention portfolios number of in front schemes",
     "date": "Jul 28, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Statements",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -16849,7 +21634,7 @@ export const mockReviewsList: Review[] = [
     "text": "I am unable to to use 1 tap scalping mode in groww please take some step......In the scalping button there is always stays Add money options I don't know why ......15.07.2026...app version is disgusting please repair this....... ...28.07.2026...excellent version.... thank you grow to give us such a good system...,",
     "date": "Jul 28, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Payments",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -16860,7 +21645,7 @@ export const mockReviewsList: Review[] = [
     "text": "worst service ever... i placed a redemption order a week ago .. but did not receive any amount",
     "date": "Jul 28, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -16871,7 +21656,7 @@ export const mockReviewsList: Review[] = [
     "text": "good and easy for beginners in stock market",
     "date": "Jul 28, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -16882,7 +21667,7 @@ export const mockReviewsList: Review[] = [
     "text": "Very disappointing experience. I have been trying to transfer stocks from my Groww account for a long time, but the process is unnecessarily complicated and confusing. Even after completing CDSL Easiest registration and all required steps, the transfer still doesn't work smoothly. In contrast, Angel One offers a simple in-app stock transfer process. Groww should improve this feature and provide a more user-friendly experience.",
     "date": "Jul 28, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -16926,7 +21711,7 @@ export const mockReviewsList: Review[] = [
     "text": "whenever I want to login message showing Sterlite and something went wrong! I can't even invest or see my portfolio.",
     "date": "Jul 28, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "KYC & Onboarding",
     "sentiment": "Neutral",
     "pii_stripped": true
   },
@@ -16937,7 +21722,7 @@ export const mockReviewsList: Review[] = [
     "text": "I've been using the Groww app for the last two years, and it's been an amazing experience. The app is fast, user-friendly, and packed with great features. I especially love the new split-screen feature for scalping in the latest update\u2014it makes trading much more convenient. One suggestion: please add a stop-loss feature for scalping. That would make the trading experience even better, and in my opinion, no other trading app would be able to compete with Groww.",
     "date": "Jul 27, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -17003,7 +21788,7 @@ export const mockReviewsList: Review[] = [
     "text": "one of the very worst experience of setting up account its nothing but a waste of time and efforts even after complaining to customer care regarding the issue of not being able to set up the account its of no use . I have got zero support from the groww team it just tests your patience. pathetic experience",
     "date": "Jul 27, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -17014,7 +21799,7 @@ export const mockReviewsList: Review[] = [
     "text": "UI preference for me . it's great and very easy for a beginner. I understand it's not that helpful in F&O but I have been using this app for the last 5 years and I am very optimistic that they will enhance their product.",
     "date": "Jul 27, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -17025,7 +21810,7 @@ export const mockReviewsList: Review[] = [
     "text": "I try to withdraw money from groww account to my bank account it's failing since jul 21",
     "date": "Jul 27, 2026",
     "source": "Play Store",
-    "theme": "Withdrawals",
+    "theme": "Payments",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -17113,7 +21898,7 @@ export const mockReviewsList: Review[] = [
     "text": "it is a very bad experience with Groww App, I have sell shares on dated 24.07.2026. as per SEBI guidelines and my past 10 years experience as I have using the 4-5 brokers like Angel one, tradeswift etc all the brokers will provide the amount on the next of selling date. but now I came to know that Grow will not allow the amount on the next day of selling and informed me that you will withdraw the amount on 28.07.26 in place of 27.07.26. it is a very bad experience with this repeated broker",
     "date": "Jul 27, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Withdrawals",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -17256,7 +22041,7 @@ export const mockReviewsList: Review[] = [
     "text": "During testing, I found a bug in the newly introduced Lock F&O Trading feature. If I enable this feature, I'm unable to place any F&O trades for the rest of the day through the main app, which is expected. However, I can still place F&O orders through the 915 app's Option Chain, which should not be possible. This needs to be resolved as soon as possible so that once a trader enables this feature for the day, they should not be able to place F&O trades from any platform or entry point.",
     "date": "Jul 26, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -17322,7 +22107,7 @@ export const mockReviewsList: Review[] = [
     "text": "I can't download fromplay store in my new mobile . please resolve the issue.",
     "date": "Jul 25, 2026",
     "source": "Play Store",
-    "theme": "Statements",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -17366,7 +22151,7 @@ export const mockReviewsList: Review[] = [
     "text": "I think Very Good trading app for Beginners or Students",
     "date": "Jul 24, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -17399,7 +22184,7 @@ export const mockReviewsList: Review[] = [
     "text": "worst customer service.. always says busy...and didn't call back again....very very poor service",
     "date": "Jul 24, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -17432,7 +22217,7 @@ export const mockReviewsList: Review[] = [
     "text": "Why does DDPI activation directly create a negative balance when there are insufficient funds? If the account has \u20b90 balance, the payment should fail or the user should receive a reminder to add funds. An OTP/confirmation before charging for optional services like DDPI would prevent accidental activation and unexpected negative balances.",
     "date": "Jul 24, 2026",
     "source": "Play Store",
-    "theme": "Payments",
+    "theme": "Charges & Fees",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -17443,7 +22228,7 @@ export const mockReviewsList: Review[] = [
     "text": "At first vwap present in grow index chart.This feature got removed why ?",
     "date": "Jul 24, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Neutral",
     "pii_stripped": true
   },
@@ -17476,7 +22261,7 @@ export const mockReviewsList: Review[] = [
     "text": "This application lag a lot. You always book loss without any delay but when it comes to profit, application will not work, untill your profit are gone. not good platform for scaplers.",
     "date": "Jul 24, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Statements",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -17498,7 +22283,7 @@ export const mockReviewsList: Review[] = [
     "text": "secure your self towards yours families & friends at any times with Groww stocks,Mutual funds,IPO",
     "date": "Jul 23, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -17542,7 +22327,7 @@ export const mockReviewsList: Review[] = [
     "text": "I had reported a bug but no response literally by so called No.1. Very Sad state of affairs at Groww",
     "date": "Jul 23, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -17564,7 +22349,7 @@ export const mockReviewsList: Review[] = [
     "text": "hey team recently I was able to see my total portfolio which was combination of stock and mf but that feature is gone can you bring that back",
     "date": "Jul 23, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Statements",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -17608,7 +22393,7 @@ export const mockReviewsList: Review[] = [
     "text": "sir create easy processes for buying IPO by using sell share amount and through demat account and not necessary to connect bank account for buy slot of ipo",
     "date": "Jul 23, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Payments",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -17707,7 +22492,7 @@ export const mockReviewsList: Review[] = [
     "text": "withdraw money cheater don't believe this app please please please 22July ultra tech cement price \u20b91500up why show down price",
     "date": "Jul 23, 2026",
     "source": "Play Store",
-    "theme": "Withdrawals",
+    "theme": "Charges & Fees",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -17718,7 +22503,7 @@ export const mockReviewsList: Review[] = [
     "text": "excellent service providers by stock market learners . good app but stock market investments is your own risk.",
     "date": "Jul 23, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Statements",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -17729,7 +22514,7 @@ export const mockReviewsList: Review[] = [
     "text": "The interface is simple and starting a conversation does not take much time",
     "date": "Jul 23, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -17762,7 +22547,7 @@ export const mockReviewsList: Review[] = [
     "text": "Overall, Groww is an excellent trading platform with a clean, easy-to-use interface. The 915 is occasional loading issue is manageable, and I hope it will be fixed soon. My only requests are- 1) Please enable Commodity Trading in the 9:15 app, and 2) Add a Trailing Stop Loss feature for Commodity Trading. These features would greatly improve the trading experience. Thank you, Groww team, and keep up the great work!",
     "date": "Jul 22, 2026",
     "source": "Play Store",
-    "theme": "App Performance",
+    "theme": "Statements",
     "sentiment": "Positive",
     "pii_stripped": true
   },
@@ -17828,7 +22613,7 @@ export const mockReviewsList: Review[] = [
     "text": "this app is India favourite and most downloaded app I start SIP and stock invest in everything",
     "date": "Jul 22, 2026",
     "source": "Play Store",
-    "theme": "Statements",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -17916,7 +22701,7 @@ export const mockReviewsList: Review[] = [
     "text": "please update save indicator template..... and same time to indicators using after chrt lag and not working please update",
     "date": "Jul 22, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -18026,7 +22811,7 @@ export const mockReviewsList: Review[] = [
     "text": "The app is super buggy at times, with painstakingly slow loading times for the market data, and this sometimes happen during the peak trading hours. When you reach out to support they keep saying same thing, that this is internet issue on your end, and that is despite the fact that I am in a 5G connectivity area,also having a high speed broadband connection at home, with every other site and app loading properly.",
     "date": "Jul 21, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "App Performance",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -18070,7 +22855,7 @@ export const mockReviewsList: Review[] = [
     "text": "worst app, worst support. have balance added in my account while it is showing to add funds again and again",
     "date": "Jul 21, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "Customer Support",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -18081,7 +22866,7 @@ export const mockReviewsList: Review[] = [
     "text": "Real-time profit and loss is not showing for my futures and options trades. Because of this, I am facing losses.",
     "date": "Jul 21, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Statements",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -18092,7 +22877,7 @@ export const mockReviewsList: Review[] = [
     "text": "for prime with no option for direct mf plan, forcing for regular more expense ratio daily which trains profit.",
     "date": "Jul 21, 2026",
     "source": "Play Store",
-    "theme": "General & Usability",
+    "theme": "Statements",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -18103,7 +22888,7 @@ export const mockReviewsList: Review[] = [
     "text": "worst app to trade, fake reviews, worst backend. hire me I'll design a better system.",
     "date": "Jul 21, 2026",
     "source": "Play Store",
-    "theme": "Charges & Fees",
+    "theme": "General & Usability",
     "sentiment": "Negative",
     "pii_stripped": true
   },
@@ -18113,2239 +22898,6 @@ export const mockReviewsList: Review[] = [
     "title": null,
     "text": "this is best for beginner and I am comfort this app no any problem seen in this app",
     "date": "Jul 21, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "ca731a60-931d-42f5-ae5a-21875e0c1985",
-    "rating": 5,
-    "title": null,
-    "text": "very good Apps for invester go for download",
-    "date": "Jul 21, 2026",
-    "source": "Play Store",
-    "theme": "Statements",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "0d8a5828-65a6-4ca0-994b-133b514037ac",
-    "rating": 4,
-    "title": null,
-    "text": "every time i am downloading report to view data instead give option to view in app for other report also.",
-    "date": "Jul 21, 2026",
-    "source": "Play Store",
-    "theme": "App Performance",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "7ea46cb4-7962-452b-af61-9f060685353e",
-    "rating": 1,
-    "title": null,
-    "text": "very bad don use anyone only charge 100% money gst 12% return 80%",
-    "date": "Jul 21, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "7b0ce4da-5229-49d6-9f58-9f787bc679ff",
-    "rating": 3,
-    "title": null,
-    "text": "good app but need to see hidden charges",
-    "date": "Jul 21, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Neutral",
-    "pii_stripped": true
-  },
-  {
-    "id": "06f1be67-8856-4d0a-8ffc-00ef865439fd",
-    "rating": 5,
-    "title": null,
-    "text": "good app for stock market and intraday trading",
-    "date": "Jul 21, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "b41dd41b-8d88-4bad-b3ad-c2d26e0f1c76",
-    "rating": 5,
-    "title": null,
-    "text": "good smooth and every month new updates... thnks to grow staff",
-    "date": "Jul 21, 2026",
-    "source": "Play Store",
-    "theme": "App Performance",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "7cd4327e-8f60-462d-8a45-156b3c1f3473",
-    "rating": 1,
-    "title": null,
-    "text": "very high cost, don't use this app, and customer care service is very poor poor poor",
-    "date": "Jul 21, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "026ef800-e811-4269-9480-924c684c0311",
-    "rating": 1,
-    "title": null,
-    "text": "they steal, through commissions, through Stoploss executions, they literally modify your orders without your consent. careful with your money !",
-    "date": "Jul 21, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "842326d0-2fe5-4fce-8bb0-b780d73af751",
-    "rating": 1,
-    "title": null,
-    "text": "I had placed my order at 120 and after my order got executed, it disappeared from the chart and I was not able to find it in positions section or order sections. when my trade caused a net loss of 3000 then my postion appeared. who will be responsible for my loss. it was not my fault. after placing order i place tgt and SL on chart. but if I won't get to see my position then how I could manage my trade. I will put complaint on nse website. why I should take losses due to broker.",
-    "date": "Jul 21, 2026",
-    "source": "Play Store",
-    "theme": "App Performance",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "a8cffc0f-b65b-4961-a938-dbe9e05be56f",
-    "rating": 1,
-    "title": null,
-    "text": "very bad for intraday. it buys at the price set by me but sells at price far lower than trigger price. doesn't happen in zerodha",
-    "date": "Jul 21, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "582e8f4e-1fda-436a-a48c-a1366075c33d",
-    "rating": 1,
-    "title": null,
-    "text": "it's worst service ever seen from Groww company",
-    "date": "Jul 21, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "08e61f70-7bb3-4d82-957c-235c08a15a4d",
-    "rating": 5,
-    "title": null,
-    "text": "customer service is best...don't use ai...human touch is important when you serve your customer...if you take ai more seriously in customer service your downfall will start",
-    "date": "Jul 21, 2026",
-    "source": "Play Store",
-    "theme": "Customer Support",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "116f04a7-accb-405a-9b53-c1df2a3be3fc",
-    "rating": 5,
-    "title": null,
-    "text": "this is the best app for SIP. Anyone can easily understand the interface of the app and invest in the any company",
-    "date": "Jul 21, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "97034add-b363-4382-87f7-07990bcd4154",
-    "rating": 5,
-    "title": null,
-    "text": "I have amazing experience with groww you should experience",
-    "date": "Jul 21, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "400eff36-e9b5-4fe8-8c04-4a9026593fe1",
-    "rating": 2,
-    "title": null,
-    "text": "\"Could you introduce a one-screen Buy/Sell system for options trading in Groww to make trading faster and easier?\"",
-    "date": "Jul 20, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "fbbe75fa-ea54-4838-a6ff-0a8ea0f5a3de",
-    "rating": 1,
-    "title": null,
-    "text": "I can't even login to another account, this might be the worst broking app ever made.",
-    "date": "Jul 20, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "cf98fd26-04a0-44a1-868f-fa9d21c7cfcf",
-    "rating": 5,
-    "title": null,
-    "text": "Reliable app that doesn't crash or lag.",
-    "date": "Jul 20, 2026",
-    "source": "Play Store",
-    "theme": "App Performance",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "7b4285c2-0c14-40c4-ac02-3fe857560934",
-    "rating": 5,
-    "title": null,
-    "text": "its a user friendly app , other broking apps looks complex , its very good for beginners.",
-    "date": "Jul 20, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "5277cb27-a1e6-42e9-b4bd-0bb3fd7737d0",
-    "rating": 1,
-    "title": null,
-    "text": "worst app for anything you do related to stock market while trading app will lag you position will not exit at the price you want go ahead with other options",
-    "date": "Jul 20, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "a7c7f926-e8bf-4ab9-b6ad-ce9458d43e9d",
-    "rating": 5,
-    "title": null,
-    "text": "chart me multiple chart view add kyo nhi kar rhe h ?????",
-    "date": "Jul 20, 2026",
-    "source": "Play Store",
-    "theme": "App Performance",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "cad6b02a-0617-4024-aafb-f43bfbc84f1e",
-    "rating": 3,
-    "title": null,
-    "text": "I found on my app that in profit and loss section my profit was added in charges and a share purchased by me was not shown in profit and loss section in reports . after contacting to the customer care, till now it has not changed.",
-    "date": "Jul 20, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Neutral",
-    "pii_stripped": true
-  },
-  {
-    "id": "00955617-3cb9-465f-a327-12ce141c68f8",
-    "rating": 5,
-    "title": null,
-    "text": "very great easily buying and sale very comfort brokerage is very low overall 5 star",
-    "date": "Jul 20, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "729ff042-80d3-4909-9d9e-1608b24680f9",
-    "rating": 2,
-    "title": null,
-    "text": "Just started need to know more to rate it well",
-    "date": "Jul 20, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "d51a5132-348d-45d6-b298-3230b722232c",
-    "rating": 5,
-    "title": null,
-    "text": "this is really a good financial app . this is simple and good app interface",
-    "date": "Jul 20, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "915dc0ea-51b2-4626-a5bf-aecf7277e9b1",
-    "rating": 3,
-    "title": null,
-    "text": "I'm your customer.. the trader.. so it's my wish for how I would like to manage my risk. I don't want groww to restrict my SL.. so groww is like . I want u to make a minimum of this loss..",
-    "date": "Jul 20, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Neutral",
-    "pii_stripped": true
-  },
-  {
-    "id": "06aec959-43b2-46f5-8be3-48868ea3f36b",
-    "rating": 1,
-    "title": null,
-    "text": "Earlier it was good because it has some smart features that I liked that were growth % of the stocks from which date you have added in your watchlist. but all the features have been removed. And groww app appearance size is not fitting in my mobile and I can't see the full details.",
-    "date": "Jul 20, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "e58fa0d6-eb50-42ec-87ae-d6758a5bc5f9",
-    "rating": 1,
-    "title": null,
-    "text": "I don't know what is wrong with you guys One week you can't solve a simple problem regarding the KYC. Do i have to leave every important and crucial work just to call you and not get any solution.",
-    "date": "Jul 20, 2026",
-    "source": "Play Store",
-    "theme": "Customer Support",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "b0b6d9b6-b27c-425f-860c-8efd78fab754",
-    "rating": 2,
-    "title": null,
-    "text": "not able to download reports at all and once touch on screen download goes away not able to see progress. no option to send reports to email",
-    "date": "Jul 20, 2026",
-    "source": "Play Store",
-    "theme": "Statements",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "b1032a11-3e4d-4d0a-a345-9b8979a87705",
-    "rating": 1,
-    "title": null,
-    "text": "I use groww last 4 years but I face a problem last 15-18 days.my problem is I switch my pgim mid cap fund to White ock mid cap fund. but they redeem my amount in my freeze account.i call customer care they ask me your amount not transferred in your bank. only unit's transfar in your white ock mid cap fund. but my amount transferred to my account.and then my all money useless. now I call again and again but my problem not solve yet. I am really disappointed in groww app really very bad experience",
-    "date": "Jul 20, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "607eac3f-f6b9-447e-9166-fa4595ba0a57",
-    "rating": 4,
-    "title": null,
-    "text": "not zero charge demat account every sell and buy cut tread charges",
-    "date": "Jul 20, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "b297ebdb-b1b0-4d4d-bf7f-f9d21ddb0f44",
-    "rating": 1,
-    "title": null,
-    "text": "Why nowadays it requires a selfie if i am logging into my other family member account is OTP is not enough?",
-    "date": "Jul 19, 2026",
-    "source": "Play Store",
-    "theme": "KYC & Onboarding",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "c8a93729-a838-4d26-85e9-0242dc19e3ee",
-    "rating": 2,
-    "title": null,
-    "text": "why MF prime is available for new users and not for old users .",
-    "date": "Jul 19, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "16cdd2fd-017e-4f6c-8c10-0d35bb8fc7ae",
-    "rating": 1,
-    "title": null,
-    "text": "just got update twice within a week.!!! fed up with this update notifications N Make difficult to trade with it.. Will recommend to try out other option if your trading in FnO",
-    "date": "Jul 19, 2026",
-    "source": "Play Store",
-    "theme": "App Performance",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "6ba0586e-c94f-415d-a40c-3efeefaf2966",
-    "rating": 5,
-    "title": null,
-    "text": "very best app.plz provide some options in groww app. examples BOS , resistance, support, FAV. and some more options.",
-    "date": "Jul 19, 2026",
-    "source": "Play Store",
-    "theme": "Customer Support",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "8a44c45c-96ab-436b-ad08-53e7c123c82e",
-    "rating": 1,
-    "title": null,
-    "text": "They are fine till you dont need them . The moment you need a resolution it is impossible to connect to their agent and even if by God's grace that happens that agent would not be competent enough to resolve your issue. very annoying.",
-    "date": "Jul 19, 2026",
-    "source": "Play Store",
-    "theme": "Customer Support",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "7079e03f-c47c-4ddb-83fe-d1b770aa3b38",
-    "rating": 1,
-    "title": null,
-    "text": "when ever I try to open a app but app is not working or not opening",
-    "date": "Jul 19, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "b2977609-999c-40f1-b4f0-fb467a22def6",
-    "rating": 4,
-    "title": null,
-    "text": "There's an exit load while switching funds as well",
-    "date": "Jul 19, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "4e2f9b61-0251-454a-8a45-d765b9268adb",
-    "rating": 4,
-    "title": null,
-    "text": "good but tenchincal glitch problem plz resolve it",
-    "date": "Jul 19, 2026",
-    "source": "Play Store",
-    "theme": "App Performance",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "5d1ad01c-f408-406d-ac11-c3adaf6bc45c",
-    "rating": 4,
-    "title": null,
-    "text": "Great App for Mutual Fund investment but not that great for Stocks and Trading as there are no technicals available.",
-    "date": "Jul 19, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "9048b432-5676-4340-8ec2-0456502f0917",
-    "rating": 5,
-    "title": null,
-    "text": "Groww has been a great experience for me. The app is simple, easy to navigate, and perfect for beginners. Investing in stocks and mutual funds is quick, SIP management is smooth, and portfolio tracking is clear. Overall, it's a reliable platform for anyone starting their investment journey.",
-    "date": "Jul 19, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "6a36ab23-dade-4a9c-b56e-5f5db7e937b7",
-    "rating": 4,
-    "title": null,
-    "text": "Overall the job designation and work, is good. Its complete work",
-    "date": "Jul 19, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "7b718afb-31e4-40e5-8cc8-697c66866d22",
-    "rating": 4,
-    "title": null,
-    "text": "Groww app is good, but for F&O, it could be even better, they should add new features so that everything is available directly on the chart. pls add new-new latest features groww...",
-    "date": "Jul 19, 2026",
-    "source": "Play Store",
-    "theme": "App Performance",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "b13a1a0f-8140-4744-b190-e0e74c815b01",
-    "rating": 5,
-    "title": null,
-    "text": "best app for trading , investment, demat, for all in one app that is groww thanks for so much grow",
-    "date": "Jul 18, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "4c7edb62-8a50-4a95-bf4c-5b3c9c9185d1",
-    "rating": 5,
-    "title": null,
-    "text": "the smilplicity of the app is the best and the features are very easy to use and investing makes very much reliable",
-    "date": "Jul 18, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "64842eb0-22e1-4899-bdb8-f28e517fb3d0",
-    "rating": 5,
-    "title": null,
-    "text": "Nice app. lakho logo ka vrosa isi app se hai aap our hai .pr groww jaysa koi nahi Nice work fast widrawal trsted ..approved amazing..5 star",
-    "date": "Jul 18, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "38262adb-15de-4d74-aa17-94788a93283a",
-    "rating": 5,
-    "title": null,
-    "text": "smoth and easy to use and understand",
-    "date": "Jul 18, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "c2b3824b-2504-49b2-853c-0e0f1f964b90",
-    "rating": 5,
-    "title": null,
-    "text": "Groww is the best plateform to watch equity & mutual fund etc.",
-    "date": "Jul 18, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "a5752de2-bc6c-4201-9798-b947ad02378f",
-    "rating": 1,
-    "title": null,
-    "text": "customer car se bat nahi hoti or hidden charges bhi boht zyada h brokerage charges to or bhi zyada h 100rs se bhi zyada charges leta h dusre stock m entry se",
-    "date": "Jul 18, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "f7e31377-8d9a-49bc-ab7c-42595856a003",
-    "rating": 1,
-    "title": null,
-    "text": "whitdral process let and application was very lack interface",
-    "date": "Jul 18, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "19312f84-efef-49a7-8385-635dee3c9c2a",
-    "rating": 5,
-    "title": null,
-    "text": "it is very grateful app for india",
-    "date": "Jul 18, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "d04d521d-74a8-4cab-bcf9-e55df4418bf1",
-    "rating": 4,
-    "title": null,
-    "text": "what app i don't know what iam but it make me loss but iam very with this app",
-    "date": "Jul 18, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "f6e707bd-9de6-4316-b84e-7b629e304d83",
-    "rating": 5,
-    "title": null,
-    "text": "Great App for everyone,easy to invest in all types of Assets",
-    "date": "Jul 18, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "d5447e37-f1b8-4de0-890a-0957dc59a696",
-    "rating": 5,
-    "title": null,
-    "text": "very good app and excellent service beautiful",
-    "date": "Jul 18, 2026",
-    "source": "Play Store",
-    "theme": "Statements",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "23435af4-d19e-4b22-8d47-d22a222c50d8",
-    "rating": 1,
-    "title": null,
-    "text": "please don't take pledge amount. for active and deactivate they charge 700 +700 total 1400 and not mentioned any where. please beware of this fraud. they will take hidden charges illigally and i try to talk custmoer care they didnt answer my query and disconnected call. Because they cheat custmoer intessionaly that is the reason they are not aswering",
-    "date": "Jul 18, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "e961c7e7-0f61-43e4-9d2d-f4a58ec915ad",
-    "rating": 1,
-    "title": null,
-    "text": "I have been using Groww for several years and have invested several lakhs in stocks, mutual funds, and MTF. During a Crude Oil trade, I couldn't exit my position due to a technical issue. Groww acknowledged the order failed because of an exchange connectivity issue but refused any compensation for my financial loss. Very disappointing support for a loyal customer. I'm now considering moving my investments to another platform.",
-    "date": "Jul 18, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "3ab9ba35-ff2e-4606-a9d4-9930162202ff",
-    "rating": 1,
-    "title": null,
-    "text": "If there is an option of giving zero stars for it I would have given it. The customer care service is very poor i have asked for a status update on the IPO I had no reply and all is automated. Very bad service very disappointed definitely going to uninstall this app",
-    "date": "Jul 18, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "8aa8b2da-0ead-418b-a715-b105d9bdbef8",
-    "rating": 1,
-    "title": null,
-    "text": "very bad trading app because it has some glitch which can change the btst prpfit section yesterday i set a btst then it show 260+ profit but today on saturaday whem the market is closed it shows -300+ loss on my demat so please if anyone seeing from groww company please help me with this issue",
-    "date": "Jul 18, 2026",
-    "source": "Play Store",
-    "theme": "App Performance",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "f7f1863e-fda8-4b0c-a8ba-7579b900a568",
-    "rating": 3,
-    "title": null,
-    "text": "I AM VERY HAPPY But Now Charts Not Opening",
-    "date": "Jul 18, 2026",
-    "source": "Play Store",
-    "theme": "App Performance",
-    "sentiment": "Neutral",
-    "pii_stripped": true
-  },
-  {
-    "id": "86968ed3-8f27-4073-84fd-7fd15e89f70f",
-    "rating": 5,
-    "title": null,
-    "text": "great app very easy to beginner also thank you groww",
-    "date": "Jul 18, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "42b2dce2-966a-4615-a4d3-3f9197cf0931",
-    "rating": 5,
-    "title": null,
-    "text": "excellent app and too easy of using",
-    "date": "Jul 18, 2026",
-    "source": "Play Store",
-    "theme": "Statements",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "1d87f90a-0149-4443-a1ef-b903626a1aa6",
-    "rating": 5,
-    "title": null,
-    "text": "question? is there an option where funds transferred to groww can be used for daily transactions travel, food, etc.. and get interests as well... I just saw an app called curie app which has this . can you tell me?",
-    "date": "Jul 18, 2026",
-    "source": "Play Store",
-    "theme": "Customer Support",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "f5f14c22-ab29-4ca9-a73f-a5fc558fa1cb",
-    "rating": 1,
-    "title": null,
-    "text": "Grow is showing the wrong strike price for the nifty 50 index strike price 24450 call showing Rs. 58.10 but the original price is Rs.69.30 in Upstox and other app so don't trust grow they are doing fraud with everyone if anyone have doubt drop me your mail id in comment i will share you the screenshot with the proof",
-    "date": "Jul 17, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "cc35f6ac-0f22-4b94-aab6-a292069e602f",
-    "rating": 5,
-    "title": null,
-    "text": "all features at one place.. easy to track all our financial reports..",
-    "date": "Jul 17, 2026",
-    "source": "Play Store",
-    "theme": "Statements",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "851bb698-615e-4dfc-9324-ea439f6c1bd1",
-    "rating": 1,
-    "title": null,
-    "text": "bad, it have many charges... you need to pay,...................",
-    "date": "Jul 17, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "923cb319-a451-4cb6-944b-c5ee4dca0928",
-    "rating": 5,
-    "title": null,
-    "text": "This app is a very good app.",
-    "date": "Jul 17, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "f6889869-623f-4870-ac4c-f481aeb8ceca",
-    "rating": 5,
-    "title": null,
-    "text": "Easy UI. More than enough for an average investor.",
-    "date": "Jul 17, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "bbdd029e-0b47-4b64-927b-29b293cde2fb",
-    "rating": 5,
-    "title": null,
-    "text": "Groww in trading is very good app in trading app,s use Groww.",
-    "date": "Jul 17, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "46da23ad-86b2-4699-b846-a2f27132918c",
-    "rating": 5,
-    "title": null,
-    "text": "Amazing app! Clean interface, smooth performance, and easy investing experience. It makes stock market investing simple for beginners while offering all the features needed by experienced investors. Highly recommended!",
-    "date": "Jul 17, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "93e8c6b6-e7d2-4e9d-83da-7d533e231c3f",
-    "rating": 1,
-    "title": null,
-    "text": "most third class app never open chart timely....bad for fno trading",
-    "date": "Jul 17, 2026",
-    "source": "Play Store",
-    "theme": "App Performance",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "babc59a7-741e-4628-ae23-0c7f60614d99",
-    "rating": 3,
-    "title": null,
-    "text": "I am disappointed with the Groww app's referral program. I referred the app to others expecting to receive the promised rewards, but I did not receive any. This has been a frustrating experience and has reduced my trust in the referral system. I hope Groww improves the transparency of its referral program and ensures that eligible users receive their rewards on time.",
-    "date": "Jul 17, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Neutral",
-    "pii_stripped": true
-  },
-  {
-    "id": "cbe21521-3321-459f-a376-c26f43826654",
-    "rating": 1,
-    "title": null,
-    "text": "application Mein upi auto auto update Nahin Hota bar-bar hat Jata Hai IPO allotment Nahin Hota service Sahi Nahin Hai",
-    "date": "Jul 17, 2026",
-    "source": "Play Store",
-    "theme": "App Performance",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "abc3b0b0-9241-4cfb-ab8c-0318de256c91",
-    "rating": 1,
-    "title": null,
-    "text": "groww chitting in auto sqare position after 3.20 every time cut in different rate and loss of customer.",
-    "date": "Jul 17, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "d4e14f84-1b25-498e-98ca-642a538a1537",
-    "rating": 1,
-    "title": null,
-    "text": "Full technical glitches unlike other apps resulted in 20k loss",
-    "date": "Jul 17, 2026",
-    "source": "Play Store",
-    "theme": "App Performance",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "e72a842f-64f6-470e-a177-00e247a44cb6",
-    "rating": 2,
-    "title": null,
-    "text": "very high brokerage and stop loss triling is not available chart par hi stop loss lagane ka system do please",
-    "date": "Jul 17, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "97442005-005b-4afc-9a21-fa3a97701af3",
-    "rating": 5,
-    "title": null,
-    "text": "transparent and clear trading platform easy and quick money transfer in account",
-    "date": "Jul 17, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "737a0447-5ca6-45e3-9311-ea9a75c6acfd",
-    "rating": 1,
-    "title": null,
-    "text": "In latest updates the UPI tab has been hidden inside profile. pls bring back the option. When the option comes back i will revert my rating to 5 stars.",
-    "date": "Jul 17, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "48fbc308-d641-44c1-99a2-c42e9284cb93",
-    "rating": 5,
-    "title": null,
-    "text": "groww app is good, it protects it's customers from losses. I was about to take a crazy trade on the end of expiry in crude oil. it warned me and stopped me from doing so. i saved my money. because I later on checked in angel one app which was allowing me to take the trade. Groww app was an Angel, Angel one was the devil.",
-    "date": "Jul 17, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "cecee942-16e3-4a30-9bd6-3b75ea60ad84",
-    "rating": 4,
-    "title": null,
-    "text": "lower time frame chart are not shown.. please provide all the time frame",
-    "date": "Jul 17, 2026",
-    "source": "Play Store",
-    "theme": "App Performance",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "defad2a8-a62a-4194-8656-274934496f70",
-    "rating": 1,
-    "title": null,
-    "text": "worst app. can't even just login due to error. even try again didn't work. how we r supposed to use it when it's experience is very poor. not even able to login so what expect next",
-    "date": "Jul 17, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "0b94e582-b7e2-4876-b3a3-27f5bb9883bd",
-    "rating": 1,
-    "title": null,
-    "text": "This application bluffing with customer. The application hang when price movement is more or not able to see the correct price some times it's shows like it's not executed but actuall it's executed today HCL movement is 1.51 / but in grow it's showing 2.66 percent ...",
-    "date": "Jul 17, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "0da5f6f2-6f20-4fc4-aa5b-8d3c0f75291d",
-    "rating": 5,
-    "title": null,
-    "text": "good for trading but brokrage rate is high amount",
-    "date": "Jul 17, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "b437f8fd-24bb-45a9-a1d0-d2ff5d811965",
-    "rating": 5,
-    "title": null,
-    "text": "A real experience of swift online investment and trading app unique in all aspects. Great going",
-    "date": "Jul 17, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "8a11623f-8658-4056-ba34-aa4d272c4d61",
-    "rating": 5,
-    "title": null,
-    "text": "good business opportunity app in a short period of time to improve ur economic conditions",
-    "date": "Jul 17, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "743a36d3-d3e5-46b5-96fa-a93bdf086f62",
-    "rating": 5,
-    "title": null,
-    "text": "this app are very good brokerage app and good skill development platform",
-    "date": "Jul 17, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "d3e1cc49-b242-4090-b191-023a9401ad2b",
-    "rating": 2,
-    "title": null,
-    "text": "they charge very high brokerage on dilivery shares nd very high other charges dp or intra day",
-    "date": "Jul 17, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "eddb345f-65c1-4d3e-a073-c150030a321d",
-    "rating": 3,
-    "title": null,
-    "text": "Kindly add MF IDCW fund against dividend reinvestment option & dividend payout option",
-    "date": "Jul 16, 2026",
-    "source": "Play Store",
-    "theme": "Withdrawals",
-    "sentiment": "Neutral",
-    "pii_stripped": true
-  },
-  {
-    "id": "3d81aa09-4d85-403b-83d8-a6e7d36982c2",
-    "rating": 5,
-    "title": null,
-    "text": "this app is best..... but it order brokerage is RS 20 per order buy or sell that means RS 40+ charges... in F&O options.. and stocks per order RS 5 brokerage + all charge (STT, GST,and more other) buy or sell... and stop loss is before hits without reaching on the price...",
-    "date": "Jul 16, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "8fae7569-a27e-43ef-af86-8753228dcf8b",
-    "rating": 5,
-    "title": null,
-    "text": "love the new udate specially the rating for mutual funds & details about each fund , very thoughtful & helpful.",
-    "date": "Jul 16, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "7522fb63-96ad-45d1-862a-83cee68e5f80",
-    "rating": 1,
-    "title": null,
-    "text": "It's a most worst application now a days. Today morning tried to sell a stock but failed and refreshing refreshing and refreshing.....when it is done the stock's profit value turned to loss. tried to call to the customer care but they are always like press 1, 2 , 3 ..... worst service. That's why rating changed to one star.",
-    "date": "Jul 16, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "f02ae66d-3acd-4958-a17b-3335b1e216ca",
-    "rating": 4,
-    "title": null,
-    "text": "F&O also should have a trailing stoploss facility.",
-    "date": "Jul 16, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "3b94c0fe-ee35-4d53-ab31-c957699fda37",
-    "rating": 1,
-    "title": null,
-    "text": "I have downloaded stocks app not the loan app,but if you install this unwantedly they give suggestions to take loans,and message you through WhatsApp for taking loan,if I want I will ask,why you guys will send message and app is good if you seperate loan related part seperately, otherwise your coustomer will see for alternative options,like me who are not irritating,that loan related option in app is like irritating",
-    "date": "Jul 16, 2026",
-    "source": "Play Store",
-    "theme": "Statements",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "6fcf0d6a-462b-4531-895c-a17171f34f55",
-    "rating": 1,
-    "title": null,
-    "text": "very waste app and service charge is very high",
-    "date": "Jul 16, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "54af148a-e5db-46bb-ae87-295aa470e200",
-    "rating": 1,
-    "title": null,
-    "text": "if you have any open positions that is the hell in this grow some times if you your wallet positive also i will take 24 to 48 hours to unblock pledge. some time errors in order placing mismatch amount. some times it is slow and unable to refresh properly",
-    "date": "Jul 16, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "f54f46e1-196a-4760-89ed-3e5c419197c4",
-    "rating": 1,
-    "title": null,
-    "text": "worst app for trading. worst ui , most of the reviews are fake. fedup with groww. any broking app cant get worse then it",
-    "date": "Jul 16, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "3face42a-1a75-4436-bc7c-731ce59cbc66",
-    "rating": 5,
-    "title": null,
-    "text": "Awesome platform for all kind of traders.",
-    "date": "Jul 16, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "1fb14d5e-056f-40e9-bcae-9676ba793622",
-    "rating": 5,
-    "title": null,
-    "text": "Thanks for splitting the Stocks and Bonds into 2 separate categories.",
-    "date": "Jul 16, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "56381601-c414-40db-90ed-5ee9f460c4f0",
-    "rating": 1,
-    "title": null,
-    "text": "very poor very poor kabhi use mat karna maine experience kiya tha bhari nokshan hoa use less app",
-    "date": "Jul 16, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "f8b77548-9c86-42f0-9c21-3252f7b4e5f1",
-    "rating": 1,
-    "title": null,
-    "text": "There is no customer support really very worst",
-    "date": "Jul 16, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "e0819458-998e-4466-bf63-bc3069dc490d",
-    "rating": 1,
-    "title": null,
-    "text": "There are many hidden charges involved in this, and its terms and conditions are such that this app is just a money swindle.",
-    "date": "Jul 16, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "83ec220f-e7d8-49a0-908e-a37d3aaa802c",
-    "rating": 3,
-    "title": null,
-    "text": "3 stars because it often shows wrong amount invested in individual mutual funds,so the whole portfolio shows incorrect amount.i have to double check on kuvera or tickertape...my entire portfolio.Every time you complain,there's no proper reply or solution,even though I refresh my portfolio daily,it will continue showing incorrect amount.",
-    "date": "Jul 16, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Neutral",
-    "pii_stripped": true
-  },
-  {
-    "id": "74ec5cbc-f34f-481f-8aac-eb5c40d97784",
-    "rating": 1,
-    "title": null,
-    "text": "no proper support from Groww, nowadays AI taking calls but not receiving proper solutions from AI worst customer service",
-    "date": "Jul 16, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "a3269493-8b1e-4849-bcdf-63869878f60d",
-    "rating": 1,
-    "title": null,
-    "text": "groww is changed now. they quietly change my BSDA status from YES to NO. and my investment was nowhere near 2 lac mark. and no support on customer service. hence I close the account.",
-    "date": "Jul 16, 2026",
-    "source": "Play Store",
-    "theme": "Customer Support",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "1dec369f-33c5-4ac7-80a1-dce310e94942",
-    "rating": 5,
-    "title": null,
-    "text": "great UI and No account maintainance charges and user friendly App.",
-    "date": "Jul 16, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "85886ee2-7bce-4a76-bb10-95dcb2036ff1",
-    "rating": 1,
-    "title": null,
-    "text": "Once I had transferred money it doesn't withdrawal",
-    "date": "Jul 16, 2026",
-    "source": "Play Store",
-    "theme": "Withdrawals",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "0fd86e5f-a1bb-4329-9723-9d7cc1c74fe0",
-    "rating": 1,
-    "title": null,
-    "text": "No support at all... worst support services, better to go for old and established platform, got reply like wait for few days.... Don't be shy on playstore,i already contacted your customer service but no response, worst service, don't go for this platform,go for old established platform though they take charge...",
-    "date": "Jul 16, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "ae0315f8-de44-4175-8c89-217b5657d9b3",
-    "rating": 1,
-    "title": null,
-    "text": "Pathetic, I am unable to withdraw my money from last 1 week ,raised my complaint also,then also no resolution till date",
-    "date": "Jul 16, 2026",
-    "source": "Play Store",
-    "theme": "Withdrawals",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "a405f139-2675-4c77-b223-eff2441cf6d9",
-    "rating": 1,
-    "title": null,
-    "text": "apply ipo madrate request take too much time and not showing in groww",
-    "date": "Jul 16, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "da878ae9-65a1-4b45-a667-b4a602d6cbb4",
-    "rating": 4,
-    "title": null,
-    "text": "feature request: please bring a watchlist widget for android",
-    "date": "Jul 16, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "b5fe10c5-7625-43d1-af81-ccb0fa01cb66",
-    "rating": 5,
-    "title": null,
-    "text": "Jo pahli bar investing mein interested hai bahut hi achcha experience milega aapko",
-    "date": "Jul 16, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "fdb0e396-fdc4-4293-b834-4ec81f1994db",
-    "rating": 1,
-    "title": null,
-    "text": "because of your server today i loose my money",
-    "date": "Jul 16, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "d80d4d87-e4bd-4e88-b811-f3369981c9c0",
-    "rating": 1,
-    "title": null,
-    "text": "this is the worst app to do trading. order placed before 9:15 never gets executed even if price when below bid price. App places intraday order instead of delivery as it resets intraday randomly and when u dont pay attention you are bound to make mistakes. there is no easy access to customer care. worst app",
-    "date": "Jul 16, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "d35d39f3-e86a-4d5c-baaa-f7ce48fe8660",
-    "rating": 1,
-    "title": null,
-    "text": "The app is not working at morning time , we are unable to place an order",
-    "date": "Jul 16, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "7d64c394-a0a8-4d50-b2a6-377612a0f37a",
-    "rating": 1,
-    "title": null,
-    "text": "this is the worst application for traders. I had some shares to sell. It didn't let me that happen when the price was in my target level. so i immediately called the customer care and there was also no response then after sometime I checked my entire holding was not showing due to server issue, when the price crashed after that it was showing and allowing me to sell out my stocks. for investment purpose it is fine but it is not definitely for traders because the server is too slow.",
-    "date": "Jul 16, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "63c099f9-eab6-49f4-848c-3b7142dbfe8c",
-    "rating": 1,
-    "title": null,
-    "text": "The app is good for SIP and current market status but the charts are not very great.",
-    "date": "Jul 16, 2026",
-    "source": "Play Store",
-    "theme": "App Performance",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "ff314b8b-344e-4dd3-9bed-2cea3e2d8b6f",
-    "rating": 1,
-    "title": null,
-    "text": "The app crashed when the market started. I had Vodafone share of avarage 13.83 and wanted to sell @14.05 but groww app was unable to fetch share details that I hold. Share fallen to 13.77rs which ruined my profit.",
-    "date": "Jul 16, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "703268a4-2296-4bca-84bb-7a53816c6fa9",
-    "rating": 1,
-    "title": null,
-    "text": "fake app online money losing app and strategies to how to costomer money",
-    "date": "Jul 16, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "e27e0a13-89d4-44ed-babb-76313d063a95",
-    "rating": 4,
-    "title": null,
-    "text": "after the recent update can't able to buy sell stocks,even stocks holding are not showing groww team please fix this",
-    "date": "Jul 16, 2026",
-    "source": "Play Store",
-    "theme": "App Performance",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "c35d9704-7cf7-41df-a44d-dc33710946ad",
-    "rating": 1,
-    "title": null,
-    "text": "one of baddest application ever used for trading. orders can't be placed or modify on exchange.",
-    "date": "Jul 16, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "f9441a21-82a7-440a-b3f1-aacf948adc2a",
-    "rating": 3,
-    "title": null,
-    "text": "after this current update, app is restarting again and again.... pls solve this issue",
-    "date": "Jul 16, 2026",
-    "source": "Play Store",
-    "theme": "App Performance",
-    "sentiment": "Neutral",
-    "pii_stripped": true
-  },
-  {
-    "id": "7df94831-53a7-425e-bfd1-e727144c4c7d",
-    "rating": 1,
-    "title": null,
-    "text": "I DON'T WHAT THE TECHNICAL TEAM IS DOING IN BACKEND, DAY BY DAY IT IS GOING WORST",
-    "date": "Jul 16, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "8b0c5013-6de2-4c41-a27d-11c8b96af94f",
-    "rating": 1,
-    "title": null,
-    "text": "this trading side is more badd. this side is very dengar. this app is gold digger. a blady app.",
-    "date": "Jul 16, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "de7b945b-9015-4b87-89f7-951e67fd0ebf",
-    "rating": 1,
-    "title": null,
-    "text": "The tax is too much than your actual profit.",
-    "date": "Jul 16, 2026",
-    "source": "Play Store",
-    "theme": "Statements",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "8fbdb57a-ea61-4c06-bf4c-6975ede2b434",
-    "rating": 1,
-    "title": null,
-    "text": "waited 5 working days for my redeemed money from sip",
-    "date": "Jul 16, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "f12a62b3-e392-45d2-81da-99c64af6b1d7",
-    "rating": 1,
-    "title": null,
-    "text": "slowly groww will on the way to become zerodha where they just wanted to earn money they don't care about their customer. I have enough money still groww don't allow me to take trade in f&0 very pathetic service.i am on groww from many years but I am thinking of to change my broker. please don't trust groww . very disappointing",
-    "date": "Jul 16, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "aa2cfa59-0d76-4648-8e4a-efdf551171ce",
-    "rating": 1,
-    "title": null,
-    "text": "shareholding pattern mutual fund not showing. New version kiya update diya",
-    "date": "Jul 16, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "3a79cdce-70a3-4467-b89e-7d2a29d82dcc",
-    "rating": 3,
-    "title": null,
-    "text": "Re-Review after 02/05/2024 I am doing this review after 02/05/2026. Groww has still not added a live profit loss feature on F&O trades on the live charts. Dhan given an option of viewing live profit loss on the respective derivative chart of calls or puts, but groww has still not done that yet. Its very difficult to toggle between screens when I trade in F&O Nifty Sensex etc, and that makes me lose points and money respectively. You have added that option in 915 window its not helpful.",
-    "date": "Jul 15, 2026",
-    "source": "Play Store",
-    "theme": "App Performance",
-    "sentiment": "Neutral",
-    "pii_stripped": true
-  },
-  {
-    "id": "a7198fa0-404c-4a06-9f28-6aac4bbe1348",
-    "rating": 5,
-    "title": null,
-    "text": "Rating: Investing Made Effortless Groww has completely transformed the way I manage my investments. The user interface is incredibly clean, intuitive, and clutter-free, making it perfect for both beginners and seasoned investors. Setting up an account takes just a few minutes with their seamless paperless onboarding. What I love most is the absolute transparency\u2014there are zero hidden charges, and investing in direct mutual funds is completely free.",
-    "date": "Jul 15, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "23a0326e-2c7f-4a64-92e9-9dad125282cb",
-    "rating": 2,
-    "title": null,
-    "text": "Not that bad. may be need some more improvement",
-    "date": "Jul 15, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "f3dda2b7-0ca5-451d-abd3-eda747ca7c10",
-    "rating": 5,
-    "title": null,
-    "text": "very nice app but I don't trade now",
-    "date": "Jul 15, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "1ab5e018-b8fe-4f06-b958-de112d7f089d",
-    "rating": 1,
-    "title": null,
-    "text": "such a waste user experience can't find 4hr chart data waste of time and energy snowing symbol error for a long time.",
-    "date": "Jul 15, 2026",
-    "source": "Play Store",
-    "theme": "App Performance",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "7e891f59-511b-4d8b-b1f4-ab05aba08994",
-    "rating": 1,
-    "title": null,
-    "text": "Dhan and other brokers are better than Groww broker, if I purchase 1 Penny (or any Share) share of price 3 , we should be paid brokrage charge RS. 5+",
-    "date": "Jul 15, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "b70960a4-d7eb-4cf6-af87-83409cc93f58",
-    "rating": 5,
-    "title": null,
-    "text": "Trustyfied apps I am rate the five star",
-    "date": "Jul 15, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "85ec3695-06a4-4849-a2f5-1ec6e98fc127",
-    "rating": 3,
-    "title": null,
-    "text": "It's overall function is not good as others. withwral of some M.fund taking so much time to credit into the bank account. recently i faced in Nippon India Taiwan Fund process.",
-    "date": "Jul 15, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Neutral",
-    "pii_stripped": true
-  },
-  {
-    "id": "4335320e-adbd-4a16-bb26-abf674de2765",
-    "rating": 1,
-    "title": null,
-    "text": "What a useless app, I tried to link my bank account through Google Pay but it is not happening, later I tried to fill it manually but the IFSC code is not showing, I have been sending the message in Grove for the last 3 days but it is still there.",
-    "date": "Jul 15, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "1e2bdb23-d9ef-4f56-80c5-4b64fc640ffa",
-    "rating": 5,
-    "title": null,
-    "text": "It's good app with great UI/UX - one feature as a user i want and should be useful for others also that in the Mutual Fund section in the dashboard tab - Against all the MFs should be tagging/purpose/goal - Most of the people invest in SIP for specific purpose like Trip,Child Marriage, Child Education and many more I think this feature helps a lot.",
-    "date": "Jul 15, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "cb77e1b2-cdd6-4696-88f3-5be3f59df63e",
-    "rating": 5,
-    "title": null,
-    "text": "just my trading journey start with grow LFG",
-    "date": "Jul 15, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "affe8e17-c1d1-4bd8-867f-3f326e604345",
-    "rating": 1,
-    "title": null,
-    "text": "neither stoploss working nor target and so much glitch in app while opening",
-    "date": "Jul 15, 2026",
-    "source": "Play Store",
-    "theme": "App Performance",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "d63eeed9-6ca2-438e-b3ba-54edb85a48ca",
-    "rating": 1,
-    "title": null,
-    "text": "Worst support team I've ever seen. Replying too late and flood of response once reply then suddenly close the ticket. No one is listening to customers properly. Asking for something and they are replying to other things.",
-    "date": "Jul 15, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "e66380d4-7c47-4cb7-92da-281a962b96b6",
-    "rating": 1,
-    "title": null,
-    "text": "full of bugs update comes every day but still lagging.",
-    "date": "Jul 15, 2026",
-    "source": "Play Store",
-    "theme": "App Performance",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "e3e03885-3624-4d6b-888f-b26eb681505c",
-    "rating": 1,
-    "title": null,
-    "text": "Prime sneakily disallowing direct growth plans is a very trashy feature.",
-    "date": "Jul 15, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "66d5e1f2-9a36-428a-b5d3-ba8bf7283afa",
-    "rating": 5,
-    "title": null,
-    "text": "it's so easy and useful application I am so happy",
-    "date": "Jul 15, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "29b32a7e-1e29-46e0-9a5f-4fa6a6afcbee",
-    "rating": 2,
-    "title": null,
-    "text": "1.SID need Direct access with one click, if I press mutual fund sid doc it open whole fund site not sid need improvement in that. need immediate improvement 2.add all nse. bse indices in markets section",
-    "date": "Jul 15, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "b3813116-448c-473d-8947-13fa835d094a",
-    "rating": 5,
-    "title": null,
-    "text": "this is trading platform best and my explain super , my friend download in play store app, Groww",
-    "date": "Jul 15, 2026",
-    "source": "Play Store",
-    "theme": "Statements",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "ef090ee6-f45d-4c8c-8232-7fa71319f2aa",
-    "rating": 4,
-    "title": null,
-    "text": "provide feature of filing income tax through this app directly",
-    "date": "Jul 15, 2026",
-    "source": "Play Store",
-    "theme": "Statements",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "0988ee5e-ec8e-403d-b672-4567b957a6e0",
-    "rating": 2,
-    "title": null,
-    "text": "the app is getting slower and slower day by day. just making the experience painful. time to switch.",
-    "date": "Jul 15, 2026",
-    "source": "Play Store",
-    "theme": "App Performance",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "e817d60a-5435-488f-9002-dba52df6d788",
-    "rating": 4,
-    "title": null,
-    "text": "best service and simple operat, best wishes groww",
-    "date": "Jul 15, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "3a110c6c-130a-4ce5-b47b-cf2e29626efd",
-    "rating": 4,
-    "title": null,
-    "text": "Sir I have a opinion, why are you not showing share average price including brokerage and government charges like Zerodha given. please sir this update will change this type of average price .",
-    "date": "Jul 15, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "712d3e08-ee2a-49d1-8fc6-2b1266f17db3",
-    "rating": 1,
-    "title": null,
-    "text": "Application is too slow when market opens. When market is closed the app works smoothly. It fails to load charts and after taking postion it barely works properly. I think GROWW is here to loot the public.",
-    "date": "Jul 15, 2026",
-    "source": "Play Store",
-    "theme": "App Performance",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "904e6caa-32c4-4ccc-a707-7eb6598e5b31",
-    "rating": 5,
-    "title": null,
-    "text": "I like this app very comfortably work",
-    "date": "Jul 15, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "758a02aa-7b09-44d6-b714-4815a8502e26",
-    "rating": 3,
-    "title": null,
-    "text": "Why there is no option to change index in one tap trading/scalper? Tomorrow is the expiry of Sensex and this scalper is showing NIFTY 50 Enough of this installing alternative now",
-    "date": "Jul 15, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Neutral",
-    "pii_stripped": true
-  },
-  {
-    "id": "3091b8c1-c2eb-4c91-8595-a36a057179f3",
-    "rating": 5,
-    "title": null,
-    "text": "This app has a very user-friendly interface, making it quite easy and safe to use. It is the perfect, simple, and all-in-one solution for investments.",
-    "date": "Jul 15, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "a96d71a4-07a9-4567-8083-aeb17e99907b",
-    "rating": 1,
-    "title": null,
-    "text": "this aap has lot of charges they charged me 120rs for only one trade",
-    "date": "Jul 15, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "2f461088-f16c-46c3-b75b-e322d5c04d75",
-    "rating": 5,
-    "title": null,
-    "text": "bahut badhiya apps secure investment good application very very good aplication good courier",
-    "date": "Jul 15, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "c1af2cd7-a7af-45ae-8a92-4dd6e0c80f3e",
-    "rating": 1,
-    "title": null,
-    "text": "Fraud hai,per lot rs50 brokerage charge buy rs50 sell rs50 total rs100",
-    "date": "Jul 15, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "51d70d43-54cb-480b-bb51-3ad015224661",
-    "rating": 5,
-    "title": null,
-    "text": "my experience with groww is outstanding, I have full faith in it",
-    "date": "Jul 15, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "b8829a43-998f-41f8-9352-d47b1a145a3d",
-    "rating": 3,
-    "title": null,
-    "text": "I want Marathi or local State language options in trading application.",
-    "date": "Jul 15, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Neutral",
-    "pii_stripped": true
-  },
-  {
-    "id": "462b8a2b-80b6-46cf-9716-e87172f628a1",
-    "rating": 1,
-    "title": null,
-    "text": "Unfortunately I selected prime Verdict option in mutual fund. With this option we have to pay additional commission of 1% to groww, it will reduce the return. I don't have option go back to direct. I am planning to reedem from grow and put in coin.",
-    "date": "Jul 15, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "344d82dc-9226-428d-827d-f2ef4f116675",
-    "rating": 3,
-    "title": null,
-    "text": "Feature Request: Spot-based trigger for option trading. I trade NIFTY options based on spot levels. During fast market moves, option prices change quickly and I miss entries. Please add a feature where orders are triggered using NIFTY spot price and automatically execute in selected option contracts (CE/PE). Also allow stop loss and target based on spot price instead of option price. This will improve execution and trading accuracy. Will give 5 star then thanks.",
-    "date": "Jul 14, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Neutral",
-    "pii_stripped": true
-  },
-  {
-    "id": "41077cb6-ec3f-4933-8adb-de74a5d070fb",
-    "rating": 5,
-    "title": null,
-    "text": "\"One of the best investment apps with a clean and easy-to-understand design.\"",
-    "date": "Jul 14, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "95990321-4b21-47c5-bfcd-f306cca27292",
-    "rating": 5,
-    "title": null,
-    "text": "Finally found a trusted app for my investments",
-    "date": "Jul 14, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "ed8ac46a-10a1-4cd4-9388-f0a40e862d59",
-    "rating": 5,
-    "title": null,
-    "text": "use is very easy and very good service this app",
-    "date": "Jul 14, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "42e6aa1a-37b6-45fa-8bd7-80af13faf85c",
-    "rating": 5,
-    "title": null,
-    "text": "This is a good option for trading.",
-    "date": "Jul 14, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "3a718fdc-0b60-4b34-b36a-1096d5dd7e0d",
-    "rating": 5,
-    "title": null,
-    "text": "Most user friendly interface for share market application as per trading is concerned. Also we can view the most detailed review of mutual funds form all the Asset management firms and can compare it with similar funds from other AMC.",
-    "date": "Jul 14, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "6798563d-5217-4dc5-8914-dab7566bc356",
-    "rating": 1,
-    "title": null,
-    "text": "one of the very very very worst app.The customer care don't know any thing they ask for screen recorded video again again but they won't sort out the problem..",
-    "date": "Jul 14, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "bb9bfceb-6160-4da8-82f9-7aca44c37daf",
-    "rating": 1,
-    "title": null,
-    "text": "not installing in my new",
-    "date": "Jul 14, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "037d80b2-7f24-403f-b8f1-9080bd286340",
-    "rating": 2,
-    "title": null,
-    "text": "inconsistency - I noticed an inconsistency in the Shareholding Pattern section. For RR Kabel, the quarter tabs are displayed in reverse chronological order (Mar '26 \u2192 Dec '25 \u2192 Sep '25 \u2192 Jun '25 \u2192 Mar '25), whereas for Kalyan Jewellers, they are displayed in chronological order (Mar '25 \u2192 Jun '25 \u2192 Sep '25 \u2192 Dec '25 \u2192 Mar '26). This may confuse users when comparing companies, as the timeline direction is not consistent across stocks.",
-    "date": "Jul 14, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "46c9786f-56d9-40d3-ba92-2394da89e74f",
-    "rating": 5,
-    "title": null,
-    "text": "poor. Update F&o Stock Direct Buying Without Comfirm Why ?",
-    "date": "Jul 14, 2026",
-    "source": "Play Store",
-    "theme": "App Performance",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "489505ff-70fe-428b-a639-173ed6e4340a",
-    "rating": 5,
-    "title": null,
-    "text": "best app for investment purposes with all stocks, mfs at once place with easy analysis and its also convenient to debit and credit the amount.",
-    "date": "Jul 14, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "7b27695a-8f12-4e6c-92de-a9ac4a9bf009",
-    "rating": 2,
-    "title": null,
-    "text": "brokerage charges are high as 5 rupees if we are buying a single ITC stock also.",
-    "date": "Jul 14, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "e02747f0-b41e-45ec-9176-4b87662074cd",
-    "rating": 4,
-    "title": null,
-    "text": "Widget stopped working after update I guess.",
-    "date": "Jul 14, 2026",
-    "source": "Play Store",
-    "theme": "App Performance",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "66fb8519-336e-46cb-80ed-208b1b48f8f7",
-    "rating": 5,
-    "title": null,
-    "text": "good, index chart lo volume display aithey baguntundi",
-    "date": "Jul 14, 2026",
-    "source": "Play Store",
-    "theme": "App Performance",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "a783402a-48f7-4909-9e43-d77fc3e98683",
-    "rating": 4,
-    "title": null,
-    "text": "please show financial in datas form not by diagrams",
-    "date": "Jul 14, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "32d531ce-3410-44dc-862e-7f1dbd913edd",
-    "rating": 1,
-    "title": null,
-    "text": "Very disappointing experience from groww! I activated DDPI but the Activate using Aadhar option was separated it didn't show the fee that was applicable, Now 118 rupees are deducted from my funds and when I raised a request and emailed them to cancel my request for activation of Ddpi and refund my money They said it's not refundable even when the ddpi has not been activated yet. Worst experience.",
-    "date": "Jul 14, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "e97a4596-2021-4aea-805e-b5fb1f6fe2e2",
-    "rating": 1,
-    "title": null,
-    "text": "It has been trading for 5 years, but the Loss I have msd yesterday was a huge, I never had this kind of loss earlier just beacuse i could not able to sell the stock, I got stuck and it's hitted boom .... I will never recomand grow to anyone..... never ever . They should pay the panelty for this.... Spam alerts guys don't ever trade with grow they might say that issue has been resolved by the customer is worst then any thing I lost around 25 lakh for grow I recover buy use zerodha. GO FOR ZERODHA",
-    "date": "Jul 14, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "02d756db-bd06-45ad-9575-499892aa93f6",
-    "rating": 1,
-    "title": null,
-    "text": "I have been investing in mutual funds through Groww, but my experience has been disappointing. When I tried to withdraw my money, I never received the OTP required for verification. Despite multiple follow-ups, the issue was not resolved, and customer support was not helpful. Please ensure your registered mobile number and email are updated before investing. I hope Groww improves its support for customers facing such critical issues.",
-    "date": "Jul 14, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "281871d8-6424-4ea3-9722-2506341d722c",
-    "rating": 5,
-    "title": null,
-    "text": "Groww is the best option for investment plans.",
-    "date": "Jul 14, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "6e2be9e7-81c7-4fdf-b6ae-015c9905304d",
-    "rating": 1,
-    "title": null,
-    "text": "very worst update, very slow app after recent update",
-    "date": "Jul 14, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "d3a63e95-4ad4-43fc-91b2-7ddea2a8fa13",
-    "rating": 1,
-    "title": null,
-    "text": "very poor this app high brokerage charges please safe money hisab se koi bhi trade karna totally waste of money this app",
-    "date": "Jul 14, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "561d052f-0c42-4704-bf85-4fa033c5ab54",
-    "rating": 5,
-    "title": null,
-    "text": "Groww is a good app for beginners and long-term investors who want a simple way to invest in the stock market. Always research before investing, as investments can go up or down in value.",
-    "date": "Jul 14, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "444e65b7-f545-4bb3-a544-d8039003615e",
-    "rating": 3,
-    "title": null,
-    "text": "very simple app.But but but major problem is their chart.Magnificently slow,it takes lots of time to load and sometimes just can't load.They are trying to fix it but it gets worse.Otherwise great app.",
-    "date": "Jul 14, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Neutral",
-    "pii_stripped": true
-  },
-  {
-    "id": "ffe74afb-b5e0-4f0a-84ec-692e90e5c486",
-    "rating": 5,
-    "title": null,
-    "text": "Order placing is easy, Target/SL. For tax purpose account mentain is helpful, as emails receive for each transaction. Egr (eGold) should be started. Satisfied.",
-    "date": "Jul 14, 2026",
-    "source": "Play Store",
-    "theme": "Statements",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "4636f7c2-ddb9-4a44-a642-043635eac860",
-    "rating": 1,
-    "title": null,
-    "text": "I sold stock at 214 but yesterday's balance was 183 and now I have only 153 and I don't have any negative balance",
-    "date": "Jul 14, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "fc194abc-484a-4eda-a7c2-da69a283b17b",
-    "rating": 5,
-    "title": null,
-    "text": "Its easy to use this app as compared to others.",
-    "date": "Jul 14, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "745525f2-3b56-4857-a381-664c84665b54",
-    "rating": 5,
-    "title": null,
-    "text": "app is good but insert more candles of time frames like dhan, angel one.",
-    "date": "Jul 14, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "866711de-1b5b-4e1a-80f0-9d5be62c6144",
-    "rating": 5,
-    "title": null,
-    "text": "after app updation, i am unable to see Cart during MF buy & not receiving OTP through sms only receiving OTP through email. pl check.",
-    "date": "Jul 14, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "a1a00662-002d-49b4-9f3a-39d9868f3461",
-    "rating": 5,
-    "title": null,
-    "text": "The grow app is the best for investments...",
-    "date": "Jul 14, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "2c44b31b-2966-4a14-be78-484cf7533759",
-    "rating": 3,
-    "title": null,
-    "text": "None of my last ten IPO applications were allotted. Not even a single IPO was allotted to me.",
-    "date": "Jul 14, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Neutral",
-    "pii_stripped": true
-  },
-  {
-    "id": "d6976e1a-ec67-4eac-9a6e-e5207db47f23",
-    "rating": 3,
-    "title": null,
-    "text": "Please use 1 lot as the default value. Currently, I noticed that if I buy 3 lots, then the next time I buy any Nifty option, it sets the lot size to 3 lots. Suggestions - A) Setting up multiple SL & TGT on the same trade is very non-intuitive. Hope the developer is simplifying it. B) Why can't we have a drag SL and TGT option when trading intraday stocks, like in NIFTY option trading? Edit: Badly need a single page where multiple SL and TGT can be set for a position at once like lemonn app.",
-    "date": "Jul 14, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Neutral",
-    "pii_stripped": true
-  },
-  {
-    "id": "41f45aec-8760-444d-bf04-355124610b44",
-    "rating": 5,
-    "title": null,
-    "text": "very nice and quick to enter add target stop loss and moreever very much user-friendly includes information about IPOs and other trading platforms.",
-    "date": "Jul 13, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "8bd8eeda-3d26-419b-9771-1e85c42ad234",
-    "rating": 5,
-    "title": null,
-    "text": "user friendly. very easy to operate both in equity and mutual funds. we can track our outside MF portfolios.",
-    "date": "Jul 13, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "89c67ae0-b26b-4ce9-a11f-52df2a8cac42",
-    "rating": 5,
-    "title": null,
-    "text": "very best for all things about marketing.",
-    "date": "Jul 13, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "bc18ba21-fe58-4cd3-beb7-ec27377eee4e",
-    "rating": 1,
-    "title": null,
-    "text": "Withdrawal has been pending for too long. This is unacceptable. Please resolve this immediately.\" \"Very disappointing experience. Depositing money is instant, but withdrawals don't work. Fix this issue ASAP.\" \"Unable to withdraw my own money. This is extremely frustrating and unacceptable. Please resolve it immediately.\" \"Worst experience. My withdrawal is stuck without any proper explanation. Customers deserve better service.\" \"If you can accept deposits instantly, you should process withdrawal",
-    "date": "Jul 13, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "a8e3681d-b405-463b-8fcf-103bdd91e94d",
-    "rating": 1,
-    "title": null,
-    "text": "consumes a lot of storage and battery power",
-    "date": "Jul 13, 2026",
-    "source": "Play Store",
-    "theme": "App Performance",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "01dd6120-0796-442e-a84f-678a54b0a6c2",
-    "rating": 5,
-    "title": null,
-    "text": "Exceptional app interface and services offered. Great experience.",
-    "date": "Jul 13, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "cc496555-7b56-4e7b-acee-9187f5303022",
-    "rating": 1,
-    "title": null,
-    "text": "worst app. Totally fake app. Do not install. I added 2 leads and completed both leads with full procedure but no leads approve for payment. Fake customer support. As I shared my review on google play store so that no other one mislead with this app, I received a call from developer for remove my review from play store but not getting any resolution from developer. So this is totally fake app, Don't waste your time and energy for doing task because there is no payment procedure in this app.",
-    "date": "Jul 13, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "ee46ef52-aeab-4748-b0b0-77ebb879dd0b",
-    "rating": 4,
-    "title": null,
-    "text": "Over all nice app. but please give feature like Market map, Nifty 500 screener based on various conditions",
-    "date": "Jul 13, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "946828ac-cfac-44a1-beb8-28e9aed037ce",
-    "rating": 2,
-    "title": null,
-    "text": "It lags sometimes during entry and exit, leading to more loss than expected. Please fix this issue.",
-    "date": "Jul 13, 2026",
-    "source": "Play Store",
-    "theme": "App Performance",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "a7fd6855-9549-4076-a9e1-b6425ccd06d5",
-    "rating": 3,
-    "title": null,
-    "text": "I request to make the company's voting process held in the app easily accessible.",
-    "date": "Jul 13, 2026",
-    "source": "Play Store",
-    "theme": "KYC & Onboarding",
-    "sentiment": "Neutral",
-    "pii_stripped": true
-  },
-  {
-    "id": "137f033c-a60c-4490-93d3-5ec465994dca",
-    "rating": 1,
-    "title": null,
-    "text": "Very bad application high brokerage you waste your money in brokerage",
-    "date": "Jul 13, 2026",
-    "source": "Play Store",
-    "theme": "Charges & Fees",
-    "sentiment": "Negative",
-    "pii_stripped": true
-  },
-  {
-    "id": "ae2b0556-6029-493c-8f81-f21293866e8a",
-    "rating": 5,
-    "title": null,
-    "text": "This platform very easy to use for investment in individual and mutual funds so I suggested to you for achieving a great revenue use it and invested your money for safely groww.",
-    "date": "Jul 13, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "dba63c86-36f8-43c5-80bf-01a154b067c7",
-    "rating": 4,
-    "title": null,
-    "text": "Groww was great, can't generate capital gain reports, many bugs visible as we trade. like: OFS(offer for sale )option is not there only!!, and many MF are missing, and many financial ratios are missing,",
-    "date": "Jul 13, 2026",
-    "source": "Play Store",
-    "theme": "App Performance",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "38c38e58-0116-46df-8e18-0c0673db7a5f",
-    "rating": 5,
-    "title": null,
-    "text": "it's a very good free digital platform to operate in different financial instruments",
-    "date": "Jul 13, 2026",
-    "source": "Play Store",
-    "theme": "General & Usability",
-    "sentiment": "Positive",
-    "pii_stripped": true
-  },
-  {
-    "id": "9dbe2015-0d63-4cae-97e6-6926783b48dc",
-    "rating": 5,
-    "title": null,
-    "text": "It's very good and I like their service",
-    "date": "Jul 13, 2026",
     "source": "Play Store",
     "theme": "General & Usability",
     "sentiment": "Positive",

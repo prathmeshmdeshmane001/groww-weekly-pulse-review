@@ -1,34 +1,64 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { Sparkles, CheckCircle2, Loader2, ArrowRight } from 'lucide-react';
 import { Modal } from '../ui/Modal';
 import { Button } from '../ui/Button';
-import { generateNewPulse } from '../../services/pulseService';
-import type { GenerationProgress } from '../../services/pulseService';
-import type { Pulse } from '../../types';
+import { generateNewPulse, resolveWindowBounds } from '../../services/pulseService';
+import type { GenerationProgress, PulseWindowOption } from '../../services/pulseService';
+import type { Pulse, Review } from '../../types';
+import { mockReviewsList } from '../../data/mockData';
 
 interface GeneratePulseModalProps {
   isOpen: boolean;
   onClose: () => void;
   onPulseGenerated: (pulse: Pulse) => void;
+  reviews?: Review[];
 }
+
+const WINDOW_OPTIONS: { id: PulseWindowOption; title: string; subtitle: string }[] = [
+  { id: 'current_week', title: 'Current Week', subtitle: 'Latest 7 days of reviews' },
+  { id: 'prev_week', title: 'Previous Week', subtitle: '7–14 days ago' },
+  { id: '14d', title: 'Last 14 Days', subtitle: 'Bi-weekly rolling window' },
+  { id: '30d', title: 'Last 30 Days', subtitle: 'Monthly rolling window' },
+  { id: '60d', title: 'Last 60 Days', subtitle: '2-month rolling window' },
+  { id: 'all', title: 'All Ingested Reviews', subtitle: 'Complete 10-week dataset' },
+];
 
 export const GeneratePulseModal: React.FC<GeneratePulseModalProps> = ({
   isOpen,
   onClose,
   onPulseGenerated,
+  reviews = mockReviewsList,
 }) => {
+  const [selectedWindow, setSelectedWindow] = useState<PulseWindowOption>('current_week');
   const [isGenerating, setIsGenerating] = useState(false);
   const [progress, setProgress] = useState<GenerationProgress | null>(null);
   const [generatedPulse, setGeneratedPulse] = useState<Pulse | null>(null);
+
+  useEffect(() => {
+    if (isOpen) {
+      setIsGenerating(false);
+      setProgress(null);
+      setGeneratedPulse(null);
+    }
+  }, [isOpen]);
+
+  const previewWindow = useMemo(
+    () => resolveWindowBounds(reviews, selectedWindow),
+    [reviews, selectedWindow]
+  );
 
   const handleStartGeneration = async () => {
     setIsGenerating(true);
     setGeneratedPulse(null);
 
     try {
-      const pulse = await generateNewPulse((p) => {
-        setProgress(p);
-      });
+      const pulse = await generateNewPulse(
+        (p) => {
+          setProgress(p);
+        },
+        reviews,
+        selectedWindow
+      );
       setGeneratedPulse(pulse);
     } catch (err) {
       console.error(err);
@@ -56,15 +86,49 @@ export const GeneratePulseModal: React.FC<GeneratePulseModalProps> = ({
       isOpen={isOpen}
       onClose={isGenerating ? () => {} : onClose}
       title="Generate Weekly Pulse"
-      subtitle="Analyze the latest 8-12 weeks of Play Store & App Store reviews"
+      subtitle="Select a review window to cluster themes, extract quotes, and generate an executive pulse"
       maxWidth="lg"
     >
       <div className="space-y-6">
         {!isGenerating && !generatedPulse && (
           <div className="space-y-4 text-xs sm:text-sm text-slate-600">
             <p className="leading-relaxed">
-              This pipeline will load recent reviews, strip PII, cluster top themes using Gemini AI, select representative customer quotes, generate actionable product ideas, and enforce the 250-word delivery constraint.
+              This pipeline loads reviews from the selected period, strips PII, clusters top themes using Gemini AI, selects representative verbatim quotes, and enforces the 250-word delivery constraint.
             </p>
+
+            <div className="space-y-2">
+              <label className="text-xs font-bold text-slate-800 uppercase tracking-wider block">
+                Select Analysis Period
+              </label>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                {WINDOW_OPTIONS.map((opt) => {
+                  const isSelected = selectedWindow === opt.id;
+                  const bounds = resolveWindowBounds(reviews, opt.id);
+                  return (
+                    <button
+                      key={opt.id}
+                      type="button"
+                      onClick={() => setSelectedWindow(opt.id)}
+                      className={`p-3 rounded-xl border text-left transition-all flex items-start justify-between gap-2 ${
+                        isSelected
+                          ? 'border-emerald-600 bg-emerald-50/70 text-emerald-950 ring-2 ring-emerald-500/20'
+                          : 'border-slate-200 bg-white text-slate-700 hover:border-slate-300 hover:bg-slate-50'
+                      }`}
+                    >
+                      <div>
+                        <div className="text-xs font-bold">{opt.title}</div>
+                        <div className="text-[11px] text-slate-500 mt-0.5">
+                          {bounds.filtered.length.toLocaleString()} reviews • {bounds.label.split(' (')[0]}
+                        </div>
+                      </div>
+                      {isSelected && (
+                        <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                      )}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
 
             <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2.5">
               <h4 className="font-bold text-slate-900 text-xs uppercase tracking-wider">
@@ -76,12 +140,14 @@ export const GeneratePulseModal: React.FC<GeneratePulseModalProps> = ({
                   <span className="font-semibold text-slate-800">Play Store, App Store</span>
                 </div>
                 <div>
-                  <span className="text-slate-400">Lookback window:</span>{' '}
-                  <span className="font-semibold text-slate-800">10 weeks</span>
+                  <span className="text-slate-400">Selected window:</span>{' '}
+                  <span className="font-semibold text-slate-800">
+                    {previewWindow.filtered.length.toLocaleString()} reviews
+                  </span>
                 </div>
                 <div>
                   <span className="text-slate-400">AI Model:</span>{' '}
-                  <span className="font-semibold text-emerald-700">Gemini 3.6 Flash</span>
+                  <span className="font-semibold text-emerald-700">Gemini 2.5 Flash</span>
                 </div>
                 <div>
                   <span className="text-slate-400">Constraint:</span>{' '}
@@ -168,10 +234,10 @@ export const GeneratePulseModal: React.FC<GeneratePulseModalProps> = ({
               <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
               <div>
                 <h4 className="text-sm font-bold text-emerald-900">
-                  Weekly Pulse Generated Successfully!
+                  Weekly Pulse Generated Successfully! ({generatedPulse.weekLabel})
                 </h4>
                 <p className="text-xs text-emerald-700 mt-1">
-                  1,284 reviews analyzed. Top 3 themes identified, 3 verbatim quotes verified, and 3 action ideas generated. Total word count: {generatedPulse.wordCount} / 250 words.
+                  {generatedPulse.reviewCount.toLocaleString()} reviews analyzed ({generatedPulse.weekStart} to {generatedPulse.weekEnd}). Top theme: <strong>{generatedPulse.themes[0]?.name}</strong>. Total word count: {generatedPulse.wordCount} / 250 words.
                 </p>
               </div>
             </div>

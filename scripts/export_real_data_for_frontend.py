@@ -14,22 +14,19 @@ from ingestion.review_loader import load_reviews
 
 
 def detect_theme(text: str) -> str:
-    t = text.lower()
-    if any(k in t for k in ['charge', 'fee', 'brokerage', 'hidden', 'cost', 'rs', 'rupee', 'maintenance', 'gst', 'cut money', 'deducting money']):
-        return 'Charges & Fees'
-    if any(k in t for k in ['lag', 'slow', 'crash', 'freeze', 'bug', 'glitch', 'chart', 'update', 'stuck', 'performance', 'loading', 'speed', 'battery', 'hanging', 'black screen']):
-        return 'App Performance'
-    if any(k in t for k in ['support', 'customer service', 'helpdesk', 'agent', 'ticket', 'care', 'contact', 'call', 'response', 'email support', 'phone number']):
-        return 'Customer Support'
-    if any(k in t for k in ['payment', 'upi', 'gpay', 'phonepe', 'autopay', 'mandate', 'deposit', 'add money', 'net banking', 'sip deduction', 'failed payment']):
-        return 'Payments'
-    if any(k in t for k in ['kyc', 'aadhaar', 'aadhar', 'pan', 'onboarding', 'document', 'verify', 'verification', 'digilocker', 'selfie', 'account opening', 'sign up']):
-        return 'KYC & Onboarding'
-    if any(k in t for k in ['withdraw', 'withdrawal', 'payout', 'bank transfer', 'uncredited', 'settlement', 'credit in bank', 'funds transfer']):
-        return 'Withdrawals'
-    if any(k in t for k in ['statement', 'p&l', 'tax', 'report', 'contract note', 'capital gain', 'download', 'pdf', 'excel', 'ledger', 'invoice']):
-        return 'Statements'
-    return 'General & Usability'
+    t = f" {text.lower()} "
+    scores = {
+        'Charges & Fees': sum(1 for k in ['charge', 'fee', 'brokerage', 'hidden', 'cost', ' rs ', 'rs.', '₹', 'rupee', 'maintenance', 'gst', 'cut money', 'deduct', 'dp charge', 'penalty', 'auto square'] if k in t),
+        'App Performance': sum(1 for k in ['lag', 'slow', 'crash', 'freeze', 'bug', 'glitch', 'chart', 'update', 'stuck', 'performance', 'loading', 'speed', 'battery', 'hanging', 'black screen', 'server', 'down', 'error'] if k in t),
+        'Customer Support': sum(1 for k in ['support', 'customer service', 'customer care', 'helpdesk', 'agent', 'ticket', 'helpline', 'contact', 'call', 'response', 'email support', 'phone number', 'complaint', 'resolve'] if k in t),
+        'Payments': sum(1 for k in ['payment', 'upi', 'gpay', 'phonepe', 'autopay', 'mandate', 'deposit', 'add money', 'net banking', 'sip', 'deduction', 'failed payment', 'bank'] if k in t),
+        'KYC & Onboarding': sum(1 for k in ['kyc', 'aadhaar', 'aadhar', 'pan', 'onboarding', 'document', 'verify', 'verification', 'digilocker', 'selfie', 'account open', 'sign up', 'login', 'otp'] if k in t),
+        'Withdrawals': sum(1 for k in ['withdraw', 'withdrawal', 'payout', 'bank transfer', 'uncredited', 'settlement', 'credit in bank', 'funds transfer'] if k in t),
+        'Statements': sum(1 for k in ['statement', 'p&l', 'profit', 'loss', 'tax', 'report', 'contract note', 'capital gain', 'download', 'pdf', 'excel', 'ledger', 'invoice', 'portfolio'] if k in t),
+    }
+    best_theme, best_score = max(scores.items(), key=lambda item: item[1])
+    return best_theme if best_score > 0 else 'General & Usability'
+
 
 
 def main():
@@ -208,8 +205,12 @@ def main():
         }
     }
 
-    # Select top 5 specific themes
-    specific_themes = ["Charges & Fees", "App Performance", "Customer Support", "Statements", "Payments", "KYC & Onboarding", "Withdrawals"]
+    # Select top 5 specific themes sorted by empirical frequency
+    specific_themes = sorted(
+        ["Charges & Fees", "App Performance", "Customer Support", "Statements", "Payments", "KYC & Onboarding", "Withdrawals"],
+        key=lambda th: len(theme_reviews[th]),
+        reverse=True,
+    )
     theme_objects = []
     for rank, th in enumerate(specific_themes[:5], 1):
         count = len(theme_reviews[th])
@@ -272,26 +273,28 @@ def main():
         "Implement automated 5-minute payment auto-reconciliation hook for pending UPI and mutual fund orders."
     ]
 
-    # Calculate real weekly trend buckets (last 6 weeks)
-    # Group reviews by week
-    weekly_buckets = defaultdict(list)
-    for r in reviews:
-        # Format as week label
-        cal = r.date.isocalendar()
-        week_key = f"W{cal[1]}"
-        weekly_buckets[week_key].append(r)
+    # Calculate real 7-day weekly buckets anchored to the latest review date
+    from datetime import timedelta
+    max_date = reviews[0].date
+    min_date = reviews[-1].date
 
-    # Sort weeks
-    sorted_weeks = sorted(weekly_buckets.keys())[-6:]
+    # Build 6 consecutive 7-day windows ending at max_date
+    weekly_windows = []
+    for w_idx in range(6):
+        w_end = max_date - timedelta(days=w_idx * 7)
+        w_start = w_end - timedelta(days=6)
+        w_revs = [
+            r for r in reviews
+            if w_start.date() <= r.date.date() <= w_end.date()
+        ]
+        weekly_windows.append((w_start, w_end, w_revs))
+
     weekly_trends = []
-    week_names = ["Jul 27", "Aug 3", "Aug 10", "Aug 17", "Aug 24", "Aug 31", "Sep 7"]
-    for idx, wk in enumerate(sorted_weeks):
-        wk_revs = weekly_buckets[wk]
+    for w_start, w_end, wk_revs in reversed(weekly_windows):
         wk_neg = sum(1 for r in wk_revs if r.rating <= 2)
-        wk_neg_pct = round(wk_neg / len(wk_revs) * 100, 1) if wk_revs else 0
-        w_label = week_names[idx] if idx < len(week_names) else wk
+        wk_neg_pct = round(wk_neg / len(wk_revs) * 100, 1) if wk_revs else 0.0
         weekly_trends.append({
-            "week": w_label,
+            "week": w_start.strftime("%b %-d"),
             "totalReviews": len(wk_revs),
             "negativePct": wk_neg_pct,
         })
@@ -340,11 +343,12 @@ def main():
         },
     ]
 
+    latest_start, latest_end, latest_revs = weekly_windows[0]
     current_pulse = {
-        "id": "pulse-2026-w37-real",
-        "weekStart": "2026-09-06",
-        "weekEnd": "2026-09-12",
-        "weekLabel": "Sep 6 – Sep 12, 2026",
+        "id": f"pulse-{latest_end.strftime('%Y-%m-%d')}-real",
+        "weekStart": latest_start.strftime("%Y-%m-%d"),
+        "weekEnd": latest_end.strftime("%Y-%m-%d"),
+        "weekLabel": f"{latest_start.strftime('%b %-d')} – {latest_end.strftime('%b %-d, %Y')}",
         "status": "Ready to publish",
         "themes": theme_objects[:3],
         "quotes": quotes,
@@ -358,63 +362,35 @@ def main():
         "draftId": "draft-real-190b2984ac32e70",
     }
 
-    historical_pulses = [
-        {
-            "id": "pulse-2026-w37-real",
-            "week": "Sep 6 – Sep 12",
-            "dateRange": "2026-09-06 to 2026-09-12",
-            "reviews": total_count,
-            "topTheme": theme_objects[0]["name"],
-            "sentiment": "Mixed",
-            "status": "Ready to publish",
-            "publishedDate": "Sep 13, 2026",
+    historical_pulses = []
+    for idx, (w_start, w_end, wk_revs) in enumerate(weekly_windows):
+        if not wk_revs:
+            continue
+        wk_theme_counts = Counter(
+            detect_theme(r.text) for r in wk_revs if detect_theme(r.text) != "General & Usability"
+        )
+        top_th = wk_theme_counts.most_common(1)[0][0] if wk_theme_counts else "Charges & Fees"
+        wk_neg_pct = sum(1 for r in wk_revs if r.rating <= 2) / len(wk_revs) * 100
+        wk_pos_pct = sum(1 for r in wk_revs if r.rating >= 4) / len(wk_revs) * 100
+        if wk_neg_pct >= 42:
+            wk_sentiment = "Negative"
+        elif wk_pos_pct >= 52 and wk_neg_pct < 35:
+            wk_sentiment = "Positive"
+        else:
+            wk_sentiment = "Mixed"
+
+        pub_date = w_end + timedelta(days=1)
+        historical_pulses.append({
+            "id": f"pulse-{w_start.strftime('%Y-%m-%d')}-to-{w_end.strftime('%Y-%m-%d')}",
+            "week": f"{w_start.strftime('%b %-d')} – {w_end.strftime('%b %-d')}",
+            "dateRange": f"{w_start.strftime('%Y-%m-%d')} to {w_end.strftime('%Y-%m-%d')}",
+            "reviews": len(wk_revs),
+            "topTheme": top_th,
+            "sentiment": wk_sentiment,
+            "status": "Ready to publish" if idx == 0 else "Published",
+            "publishedDate": pub_date.strftime("%b %-d, %Y"),
             "docUrl": "https://docs.google.com/document/d/1EBODRQUvYK5oBVDrdKmIhqGB9EOwIz0qCFLQNdpPh3s/edit",
-        },
-        {
-            "id": "pulse-2026-w36",
-            "week": "Aug 30 – Sep 5",
-            "dateRange": "2026-08-30 to 2026-09-05",
-            "reviews": 320,
-            "topTheme": "Charges & Fees",
-            "sentiment": "Mixed",
-            "status": "Published",
-            "publishedDate": "Sep 6, 2026",
-            "docUrl": "https://docs.google.com/document/d/1EBODRQUvYK5oBVDrdKmIhqGB9EOwIz0qCFLQNdpPh3s/edit",
-        },
-        {
-            "id": "pulse-2026-w35",
-            "week": "Aug 23 – Aug 29",
-            "dateRange": "2026-08-23 to 2026-08-29",
-            "reviews": 345,
-            "topTheme": "App Performance",
-            "sentiment": "Negative",
-            "status": "Published",
-            "publishedDate": "Aug 30, 2026",
-            "docUrl": "https://docs.google.com/document/d/1EBODRQUvYK5oBVDrdKmIhqGB9EOwIz0qCFLQNdpPh3s/edit",
-        },
-        {
-            "id": "pulse-2026-w34",
-            "week": "Aug 16 – Aug 22",
-            "dateRange": "2026-08-16 to 2026-08-22",
-            "reviews": 290,
-            "topTheme": "Payments",
-            "sentiment": "Mixed",
-            "status": "Published",
-            "publishedDate": "Aug 23, 2026",
-            "docUrl": "https://docs.google.com/document/d/1EBODRQUvYK5oBVDrdKmIhqGB9EOwIz0qCFLQNdpPh3s/edit",
-        },
-        {
-            "id": "pulse-2026-w33",
-            "week": "Aug 9 – Aug 15",
-            "dateRange": "2026-08-09 to 2026-08-15",
-            "reviews": 310,
-            "topTheme": "Statements",
-            "sentiment": "Positive",
-            "status": "Published",
-            "publishedDate": "Aug 16, 2026",
-            "docUrl": "https://docs.google.com/document/d/1EBODRQUvYK5oBVDrdKmIhqGB9EOwIz0qCFLQNdpPh3s/edit",
-        }
-    ]
+        })
 
     # Generate TypeScript file
     ts_content = f"""import type {{
@@ -431,7 +407,7 @@ def main():
 // ==========================================
 // REAL INGESTED DATA FROM APP STORE & PLAY STORE
 // Total reviews loaded: {total_count:,}
-// Date range: 2026-07-13 to 2026-09-12 (Last 8-10 weeks)
+// Date range: {min_date.strftime('%Y-%m-%d')} to {max_date.strftime('%Y-%m-%d')}
 // ==========================================
 
 export const mockMetrics: Metric[] = {json.dumps(metrics, indent=2)};

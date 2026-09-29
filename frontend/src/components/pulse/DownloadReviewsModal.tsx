@@ -59,19 +59,19 @@ export const DownloadReviewsModal: React.FC<DownloadReviewsModalProps> = ({
       setFetchStats({ playCount: playNew, appCount: appNew });
 
       const sampleNewReviews: Review[] = Array.from({ length: Math.min(100, generatedCount) }).map((_, i) => {
-        const themes = ['Charges & Fees', 'App Performance', 'Customer Support', 'Payments', 'Statements', 'KYC & Onboarding', 'Withdrawals'];
+        const themes = ['App Performance', 'Charges & Fees', 'Customer Support', 'Payments', 'Statements', 'KYC & Onboarding', 'Withdrawals'];
         const ratings = [1, 1, 2, 3, 4, 5, 1, 2];
         const rating = ratings[i % ratings.length];
         const theme = themes[i % themes.length];
-        const daysAgo = Math.floor(Math.random() * (lookbackWeeks * 7)) + 1;
+        const daysAgo = i < 35 ? i % 7 : Math.floor(Math.random() * (lookbackWeeks * 7));
         const d = new Date(Date.now() - daysAgo * 86400000);
-        const dateStr = d.toISOString().split('T')[0];
+        const dateStr = d.toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: 'numeric' });
 
         return {
           id: `dl-review-${Date.now()}-${i}`,
           rating,
           title: rating <= 2 ? `Issue with ${theme}` : `Feedback on ${theme}`,
-          text: rating <= 2 
+          text: rating <= 2
             ? `Encountered friction in ${theme.toLowerCase()} while placing transactions during market hours.`
             : `Great experience with investment tracking, but please keep optimizing ${theme.toLowerCase()}.`,
           date: dateStr,

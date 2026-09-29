@@ -73,7 +73,49 @@ export function App() {
 
   const currentPulse: Pulse = analytics.pulse || mockCurrentPulse;
   const [historicalPulses, setHistoricalPulses] = useState<HistoricalPulseItem[]>(mockHistoricalPulses);
+  const [customPulsesById, setCustomPulsesById] = useState<Record<string, Pulse>>({});
   const [selectedPulseId, setSelectedPulseId] = useState<string | null>(null);
+
+  const selectedPulse: Pulse = useMemo(() => {
+    if (!selectedPulseId) return currentPulse;
+    if (customPulsesById[selectedPulseId]) {
+      return customPulsesById[selectedPulseId];
+    }
+    if (selectedPulseId === currentPulse.id) {
+      return currentPulse;
+    }
+    const hist = historicalPulses.find((p) => p.id === selectedPulseId);
+    if (hist) {
+      const [startStr, endStr] = hist.dateRange.split(' to ');
+      if (startStr && endStr) {
+        const startDate = new Date(`${startStr}T00:00:00`);
+        const endDate = new Date(`${endStr}T23:59:59`);
+        const wkReviews = filterReviews(
+          reviewsList,
+          { type: 'custom', label: hist.week, startDate, endDate },
+          'All Sources'
+        );
+        const wkAnalytics = computeFilteredAnalytics(wkReviews, reviewsList, {
+          type: 'custom',
+          label: `${hist.week}, 2026`,
+          startDate,
+          endDate,
+        });
+        if (wkAnalytics.pulse) {
+          return {
+            ...wkAnalytics.pulse,
+            id: hist.id,
+            weekStart: startStr,
+            weekEnd: endStr,
+            weekLabel: `${hist.week}, 2026`,
+            status: hist.status,
+            docUrl: hist.docUrl,
+          };
+        }
+      }
+    }
+    return currentPulse;
+  }, [selectedPulseId, customPulsesById, currentPulse, historicalPulses, reviewsList]);
 
   // Drawers & Modals
   const [activeReviewId, setActiveReviewId] = useState<string | null>(null);
@@ -150,22 +192,37 @@ export function App() {
   };
 
   const handlePulseGenerated = (newPulse: Pulse) => {
+    const dateRange = `${newPulse.weekStart} to ${newPulse.weekEnd}`;
+    const sentiment: 'Positive' | 'Mixed' | 'Negative' =
+      newPulse.negativePercentage >= 42
+        ? 'Negative'
+        : newPulse.averageRating >= 3.6 && newPulse.negativePercentage < 35
+        ? 'Positive'
+        : 'Mixed';
+
     const newHistItem: HistoricalPulseItem = {
       id: newPulse.id,
-      week: newPulse.weekLabel.split(',')[0],
-      dateRange: `${newPulse.weekStart} to ${newPulse.weekEnd}`,
+      week: newPulse.weekLabel,
+      dateRange,
       reviews: newPulse.reviewCount,
-      topTheme: newPulse.themes[0]?.name || 'Top Themes',
-      sentiment: 'Mixed',
+      topTheme: newPulse.themes[0]?.name || 'App Performance',
+      sentiment,
       status: 'Ready to publish',
       publishedDate: 'Just now',
-      docUrl: newPulse.docUrl || '#'
+      docUrl: newPulse.docUrl || 'https://docs.google.com/document/d/1EBODRQUvYK5oBVDrdKmIhqGB9EOwIz0qCFLQNdpPh3s/edit',
     };
-    setHistoricalPulses((prev) => [newHistItem, ...prev]);
+
+    setCustomPulsesById((prev) => ({ ...prev, [newPulse.id]: newPulse }));
+    setHistoricalPulses((prev) => [
+      newHistItem,
+      ...prev.filter((item) => item.id !== newPulse.id && item.dateRange !== dateRange),
+    ]);
+    setSelectedPulseId(newPulse.id);
+
     addToast({
       type: 'success',
       title: 'New Pulse Created',
-      message: `${newPulse.weekLabel} is ready to publish to Google Docs & Gmail.`
+      message: `${newPulse.weekLabel} (${newPulse.reviewCount.toLocaleString()} reviews) is ready to publish to Google Docs & Gmail.`,
     });
   };
 
@@ -208,7 +265,7 @@ export function App() {
           {/* If a pulse is selected for detail view */}
           {selectedPulseId ? (
             <PulseDetailPage
-              pulse={currentPulse}
+              pulse={selectedPulse}
               onBack={() => setSelectedPulseId(null)}
               onShowToast={addToast}
             />
@@ -299,6 +356,7 @@ export function App() {
         isOpen={isGenerateModalOpen}
         onClose={() => setIsGenerateModalOpen(false)}
         onPulseGenerated={handlePulseGenerated}
+        reviews={reviewsList}
       />
 
       <DownloadReviewsModal
