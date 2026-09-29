@@ -378,7 +378,7 @@ export const mockCurrentPulse: Pulse = {
   "reviewCount": 1810,
   "averageRating": 3.2,
   "negativePercentage": 40.4,
-  "docUrl": "https://docs.google.com/document/d/1GrOwW-Real-Ingested-Pulse-2026-W37/edit",
+  "docUrl": "https://docs.google.com/document/d/1EBODRQUvYK5oBVDrdKmIhqGB9EOwIz0qCFLQNdpPh3s/edit",
   "draftId": "draft-real-190b2984ac32e70"
 };
 
@@ -392,7 +392,7 @@ export const mockHistoricalPulses: HistoricalPulseItem[] = [
     "sentiment": "Mixed",
     "status": "Ready to publish",
     "publishedDate": "Sep 13, 2026",
-    "docUrl": "https://docs.google.com/document/d/1GrOwW-Real-Ingested-Pulse-2026-W37/edit"
+    "docUrl": "https://docs.google.com/document/d/1EBODRQUvYK5oBVDrdKmIhqGB9EOwIz0qCFLQNdpPh3s/edit"
   },
   {
     "id": "pulse-2026-w36",
@@ -403,7 +403,7 @@ export const mockHistoricalPulses: HistoricalPulseItem[] = [
     "sentiment": "Mixed",
     "status": "Published",
     "publishedDate": "Sep 6, 2026",
-    "docUrl": "https://docs.google.com/document/d/1GrOwW-Pulse-Review-2026-W36/edit"
+    "docUrl": "https://docs.google.com/document/d/1EBODRQUvYK5oBVDrdKmIhqGB9EOwIz0qCFLQNdpPh3s/edit"
   },
   {
     "id": "pulse-2026-w35",
@@ -414,7 +414,7 @@ export const mockHistoricalPulses: HistoricalPulseItem[] = [
     "sentiment": "Negative",
     "status": "Published",
     "publishedDate": "Aug 30, 2026",
-    "docUrl": "https://docs.google.com/document/d/1GrOwW-Pulse-Review-2026-W35/edit"
+    "docUrl": "https://docs.google.com/document/d/1EBODRQUvYK5oBVDrdKmIhqGB9EOwIz0qCFLQNdpPh3s/edit"
   },
   {
     "id": "pulse-2026-w34",
@@ -425,7 +425,7 @@ export const mockHistoricalPulses: HistoricalPulseItem[] = [
     "sentiment": "Mixed",
     "status": "Published",
     "publishedDate": "Aug 23, 2026",
-    "docUrl": "https://docs.google.com/document/d/1GrOwW-Pulse-Review-2026-W34/edit"
+    "docUrl": "https://docs.google.com/document/d/1EBODRQUvYK5oBVDrdKmIhqGB9EOwIz0qCFLQNdpPh3s/edit"
   },
   {
     "id": "pulse-2026-w33",
@@ -436,7 +436,7 @@ export const mockHistoricalPulses: HistoricalPulseItem[] = [
     "sentiment": "Positive",
     "status": "Published",
     "publishedDate": "Aug 16, 2026",
-    "docUrl": "https://docs.google.com/document/d/1GrOwW-Pulse-Review-2026-W33/edit"
+    "docUrl": "https://docs.google.com/document/d/1EBODRQUvYK5oBVDrdKmIhqGB9EOwIz0qCFLQNdpPh3s/edit"
   }
 ];
 

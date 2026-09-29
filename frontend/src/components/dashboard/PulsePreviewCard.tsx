@@ -18,6 +18,7 @@ export const PulsePreviewCard: React.FC<PulsePreviewCardProps> = ({
   const [docsState, setDocsState] = useState<'idle' | 'loading' | 'success'>('idle');
   const [gmailState, setGmailState] = useState<'idle' | 'loading' | 'success'>('idle');
   const [docUrl, setDocUrl] = useState<string>(pulse.docUrl || '');
+  const [gmailUrl, setGmailUrl] = useState<string>('https://mail.google.com');
 
   const wordPercent = Math.min(100, Math.round((pulse.wordCount / pulse.maxWords) * 100));
 
@@ -31,7 +32,7 @@ export const PulsePreviewCard: React.FC<PulsePreviewCardProps> = ({
         onShowToast({
           type: 'success',
           title: 'Published to Google Docs',
-          message: 'Weekly Pulse document has been created and synced with latest themes.',
+          message: 'Weekly Pulse document is synced (Markdown also copied to clipboard).',
           actionText: 'Open Google Doc',
           actionUrl: res.docUrl,
         });
@@ -51,13 +52,14 @@ export const PulsePreviewCard: React.FC<PulsePreviewCardProps> = ({
       setGmailState('loading');
       const res = await createGmailDraft(pulse, docUrl || pulse.docUrl || '');
       if (res.success && res.draftId) {
+        if (res.gmailUrl) setGmailUrl(res.gmailUrl);
         setGmailState('success');
         onShowToast({
           type: 'success',
           title: 'Gmail Draft Created',
-          message: 'Executive summary draft ready in your Gmail Drafts folder.',
+          message: 'Executive summary draft ready in your Gmail compose window.',
           actionText: 'Open Gmail',
-          actionUrl: 'https://mail.google.com',
+          actionUrl: res.gmailUrl || 'https://mail.google.com',
         });
       }
     } catch {
@@ -118,7 +120,7 @@ export const PulsePreviewCard: React.FC<PulsePreviewCardProps> = ({
 
           {gmailState === 'success' ? (
             <a
-              href="https://mail.google.com"
+              href={gmailUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full flex items-center justify-center gap-2 text-xs font-semibold py-2.5 px-4 rounded-xl bg-slate-50 text-slate-800 border border-slate-300 hover:bg-slate-100 transition-colors"

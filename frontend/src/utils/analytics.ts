@@ -329,7 +329,7 @@ export function computeFilteredAnalytics(
     reviewCount: totalCount,
     averageRating: avgRating,
     negativePercentage: negPct,
-    docUrl: 'https://docs.google.com/document/d/1GrOwW-Pulse-Review-Live/edit',
+    docUrl: 'https://docs.google.com/document/d/1EBODRQUvYK5oBVDrdKmIhqGB9EOwIz0qCFLQNdpPh3s/edit',
     draftId: 'draft-live-190b2984',
   };
 

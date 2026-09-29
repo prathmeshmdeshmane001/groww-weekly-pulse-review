@@ -354,7 +354,7 @@ def main():
         "reviewCount": total_count,
         "averageRating": avg_rating,
         "negativePercentage": negative_pct,
-        "docUrl": "https://docs.google.com/document/d/1GrOwW-Real-Ingested-Pulse-2026-W37/edit",
+        "docUrl": "https://docs.google.com/document/d/1EBODRQUvYK5oBVDrdKmIhqGB9EOwIz0qCFLQNdpPh3s/edit",
         "draftId": "draft-real-190b2984ac32e70",
     }
 
@@ -368,7 +368,7 @@ def main():
             "sentiment": "Mixed",
             "status": "Ready to publish",
             "publishedDate": "Sep 13, 2026",
-            "docUrl": "https://docs.google.com/document/d/1GrOwW-Real-Ingested-Pulse-2026-W37/edit",
+            "docUrl": "https://docs.google.com/document/d/1EBODRQUvYK5oBVDrdKmIhqGB9EOwIz0qCFLQNdpPh3s/edit",
         },
         {
             "id": "pulse-2026-w36",
@@ -379,7 +379,7 @@ def main():
             "sentiment": "Mixed",
             "status": "Published",
             "publishedDate": "Sep 6, 2026",
-            "docUrl": "https://docs.google.com/document/d/1GrOwW-Pulse-Review-2026-W36/edit",
+            "docUrl": "https://docs.google.com/document/d/1EBODRQUvYK5oBVDrdKmIhqGB9EOwIz0qCFLQNdpPh3s/edit",
         },
         {
             "id": "pulse-2026-w35",
@@ -390,7 +390,7 @@ def main():
             "sentiment": "Negative",
             "status": "Published",
             "publishedDate": "Aug 30, 2026",
-            "docUrl": "https://docs.google.com/document/d/1GrOwW-Pulse-Review-2026-W35/edit",
+            "docUrl": "https://docs.google.com/document/d/1EBODRQUvYK5oBVDrdKmIhqGB9EOwIz0qCFLQNdpPh3s/edit",
         },
         {
             "id": "pulse-2026-w34",
@@ -401,7 +401,7 @@ def main():
             "sentiment": "Mixed",
             "status": "Published",
             "publishedDate": "Aug 23, 2026",
-            "docUrl": "https://docs.google.com/document/d/1GrOwW-Pulse-Review-2026-W34/edit",
+            "docUrl": "https://docs.google.com/document/d/1EBODRQUvYK5oBVDrdKmIhqGB9EOwIz0qCFLQNdpPh3s/edit",
         },
         {
             "id": "pulse-2026-w33",
@@ -412,7 +412,7 @@ def main():
             "sentiment": "Positive",
             "status": "Published",
             "publishedDate": "Aug 16, 2026",
-            "docUrl": "https://docs.google.com/document/d/1GrOwW-Pulse-Review-2026-W33/edit",
+            "docUrl": "https://docs.google.com/document/d/1EBODRQUvYK5oBVDrdKmIhqGB9EOwIz0qCFLQNdpPh3s/edit",
         }
     ]
 

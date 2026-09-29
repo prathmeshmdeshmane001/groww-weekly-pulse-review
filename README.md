@@ -9,7 +9,7 @@ An automated AI customer feedback intelligence engine and executive dashboard fo
 | Resource | URL |
 | :--- | :--- |
 | **🌐 Live Production Application (Vercel)** | **[https://groww-weekly-pulse-review.vercel.app](https://groww-weekly-pulse-review.vercel.app)** |
-| **🚀 Latest Vercel Deployment** | [https://groww-weekly-pulse-review-3hrwt2ecj.vercel.app](https://groww-weekly-pulse-review-3hrwt2ecj.vercel.app) |
+| **📝 Live Google Doc Deliverable** | **[https://docs.google.com/document/d/1EBODRQUvYK5oBVDrdKmIhqGB9EOwIz0qCFLQNdpPh3s/edit](https://docs.google.com/document/d/1EBODRQUvYK5oBVDrdKmIhqGB9EOwIz0qCFLQNdpPh3s/edit)** |
 | **💻 GitHub Repository** | **[https://github.com/prathmeshmdeshmane001/groww-weekly-pulse-review](https://github.com/prathmeshmdeshmane001/groww-weekly-pulse-review)** |
 | **📄 Problem Statement** | [docs/ProblemStatement.md](./docs/ProblemStatement.md) |
 | **🏗️ System Architecture** | [docs/architecture.md](./docs/architecture.md) |

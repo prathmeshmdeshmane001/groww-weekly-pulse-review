@@ -41,7 +41,7 @@ export const PulseDetailPage: React.FC<PulseDetailPageProps> = ({
         onShowToast({
           type: 'success',
           title: 'Published to Google Docs',
-          message: 'Weekly Pulse deliverable document is live.',
+          message: 'Weekly Pulse deliverable document is live (Markdown copied to clipboard).',
           actionText: 'Open Document',
           actionUrl: res.docUrl,
         });
@@ -59,9 +59,9 @@ export const PulseDetailPage: React.FC<PulseDetailPageProps> = ({
         onShowToast({
           type: 'success',
           title: 'Gmail Draft Created',
-          message: 'Weekly Pulse ready in your Gmail drafts folder.',
+          message: 'Weekly Pulse ready in your Gmail compose window.',
           actionText: 'Open Gmail',
-          actionUrl: 'https://mail.google.com',
+          actionUrl: res.gmailUrl || 'https://mail.google.com',
         });
       }
     } finally {
