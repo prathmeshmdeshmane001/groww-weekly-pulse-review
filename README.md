@@ -9,6 +9,8 @@ An automated AI customer feedback intelligence engine and executive dashboard fo
 | Resource | URL |
 | :--- | :--- |
 | **🌐 Live Production Application (Vercel)** | **[https://groww-weekly-pulse-review.vercel.app](https://groww-weekly-pulse-review.vercel.app)** |
+| **⚡ Live Serverless Review API (Vercel)** | **[https://groww-weekly-pulse-review.vercel.app/api/live-reviews](https://groww-weekly-pulse-review.vercel.app/api/live-reviews)** |
+| **🚀 1-Click Render Backend Deploy (`render.yaml`)** | **[https://dashboard.render.com/blueprint/new?repo=https://github.com/prathmeshmdeshmane001/groww-weekly-pulse-review](https://dashboard.render.com/blueprint/new?repo=https://github.com/prathmeshmdeshmane001/groww-weekly-pulse-review)** |
 | **📝 Live Google Doc Deliverable** | **[https://docs.google.com/document/d/1EBODRQUvYK5oBVDrdKmIhqGB9EOwIz0qCFLQNdpPh3s/edit](https://docs.google.com/document/d/1EBODRQUvYK5oBVDrdKmIhqGB9EOwIz0qCFLQNdpPh3s/edit)** |
 | **💻 GitHub Repository** | **[https://github.com/prathmeshmdeshmane001/groww-weekly-pulse-review](https://github.com/prathmeshmdeshmane001/groww-weekly-pulse-review)** |
 | **📄 Problem Statement** | [docs/ProblemStatement.md](./docs/ProblemStatement.md) |
@@ -113,6 +115,8 @@ flowchart LR
 
 ```text
 groww-weekly-pulse-review/
+├── api/
+│   └── live-reviews.js                     # Vercel Serverless API for real-time App/Play Store ingestion
 ├── assets/
 │   └── frontend.png                        # Dashboard UI preview screenshot
 ├── config/
@@ -134,7 +138,7 @@ groww-weekly-pulse-review/
 │   ├── src/
 │   │   ├── components/                     # Dashboard cards, modals, drawers, layout, UI primitives
 │   │   ├── data/
-│   │   │   └── mockData.ts                 # 1,810 real ingested reviews exported from pipeline
+│   │   │   └── mockData.ts                 # 2,041 real ingested reviews exported from pipeline
 │   │   ├── pages/                          # Overview, Pulses, PulseDetail, Reviews, Themes, Insights, DataSources, Settings
 │   │   ├── services/                       # Client services (pulse, review, theme, publishing)
 │   │   ├── types/                          # TypeScript interfaces
@@ -157,7 +161,8 @@ groww-weekly-pulse-review/
 │   ├── delivery/                           # MCP JSON-RPC client, Google Docs & Gmail connectors
 │   ├── config.py                           # Pydantic settings loader
 │   ├── exceptions.py                       # Custom pipeline exceptions
-│   └── main.py                             # CLI phase orchestrator (--phase 1..4)
+│   ├── main.py                             # CLI phase orchestrator (--phase 1..4)
+│   └── server.py                           # Production HTTP API Server for Render (/health, /api/live-reviews)
 ├── tests/                                  # 57 unit & integration tests (pytest)
 │   ├── fixtures/
 │   ├── test_ingestion.py
@@ -166,6 +171,7 @@ groww-weekly-pulse-review/
 │   └── test_delivery.py
 ├── .env.example                            # Template for local CLI environment variables
 ├── pyproject.toml                          # Python project metadata & pytest config
+├── render.yaml                             # Render Blueprint config for Python Backend Web Service
 ├── requirements.txt                        # Python dependencies
 └── vercel.json                             # Vercel production build & SPA routing config
 ```
@@ -177,22 +183,25 @@ groww-weekly-pulse-review/
 | Layer | Technology |
 | :--- | :--- |
 | **Frontend** | React 19, TypeScript ~6.0, Vite 8, Tailwind CSS 3.4, Lucide Icons |
-| **Backend / AI Pipeline** | Python 3.11+, Google GenAI SDK (`google-genai`), Pydantic v2, PyYAML |
+| **Backend / AI Pipeline** | Python 3.11+, `src/server.py` (`ThreadingHTTPServer` REST API), Google GenAI SDK (`google-genai`), Pydantic v2, PyYAML |
+| **Serverless API** | Vercel Serverless Functions (`api/live-reviews.js`) + Render Python Web Service (`render.yaml`) |
 | **Data Ingestion** | `google-play-scraper`, Apple iTunes RSS JSON Feed, `langdetect` |
 | **External Delivery** | Model Context Protocol (MCP) JSON-RPC 2.0 (`Google Docs MCP`, `Gmail MCP`) |
-| **Database / Data Store** | File-based CSV/JSON (`data/raw/*.csv`, `data/processed/reviews.json`) exported to static TypeScript bundle (`frontend/src/data/mockData.ts`) + Browser `localStorage` |
+| **Database / Data Store** | Live Store APIs + File-based CSV/JSON (`data/raw/*.csv`, `data/processed/reviews.json`) + Browser `localStorage` |
 | **Testing** | `pytest` (57 unit and integration tests across all 4 phases) |
-| **Deployment** | Vercel (`vercel.json` configured for automated Git builds) |
+| **Deployment** | **Vercel** (Frontend + Serverless API) & **Render** (`render.yaml` Python Backend Service) |
 
 ---
 
 ## ⚙️ Environment Variables
 
 ### 1. Frontend (Vercel Production)
-* **No environment variables are required** on Vercel. The React dashboard runs out-of-the-box using the pre-exported dataset in `frontend/src/data/mockData.ts`.
+* **Zero configuration required by default**: If `VITE_API_BASE_URL` is not set, the frontend automatically queries the built-in Vercel Serverless endpoint (`/api/live-reviews`).
+* **Optional Render Backend Connection**:
+  * `VITE_API_BASE_URL`: Set this to your deployed Render service URL (e.g. `https://groww-weekly-pulse-api.onrender.com`). The frontend will query Render first and automatically fall back to `/api/live-reviews` on Vercel if the Render free instance is cold-starting.
 
-### 2. Local Python CLI Pipeline (`.env` — Optional)
-To run Phases 2–4 of the Python CLI pipeline (`src/main.py`) locally with live Gemini LLM calls and local MCP servers, copy `.env.example` to `.env`:
+### 2. Backend Server (Render / Local Python CLI)
+To run `src/server.py` or Phases 2–4 of the Python CLI pipeline (`src/main.py`) locally with live Gemini LLM calls and local MCP servers, copy `.env.example` to `.env`:
 
 ```bash
 cp .env.example .env
@@ -200,6 +209,7 @@ cp .env.example .env
 
 | Variable | Description | Required For |
 | :--- | :--- | :--- |
+| `PORT` | HTTP port for `src/server.py` (defaults to `8000`; Render sets `10000`) | `src/server.py` (Render Web Service) |
 | `GEMINI_API_KEY` / `GOOGLE_API_KEY` | Google Gemini API key for theme clustering & action generation | Phase 2 (`src/pipeline/llm_client.py`) |
 | `MCP_GOOGLE_DOCS_CMD` | Executable path/command for the Google Docs MCP server | Phase 4 (`src/delivery/docs_client.py`) |
 | `MCP_GMAIL_CMD` | Executable path/command for the Gmail MCP server | Phase 4 (`src/delivery/gmail_client.py`) |
@@ -226,7 +236,7 @@ cd frontend
 npm run build
 ```
 
-### 2. Run the Python Backend Pipeline & Tests
+### 2. Run the Python Backend API Server (`src/server.py`) & Tests
 ```bash
 # Create and activate virtual environment
 python3 -m venv .venv
@@ -234,6 +244,9 @@ source .venv/bin/activate
 
 # Install dependencies
 pip install -r requirements.txt
+
+# Start the live Python API server on http://localhost:8000
+python src/server.py
 
 # Run the full 57-test suite
 pytest tests/ -v
@@ -262,15 +275,24 @@ python scripts/export_real_data_for_frontend.py
 
 ---
 
-## 🌐 Deployment (Vercel)
+## 🌐 Deployment (Vercel + Render)
 
-This project is deployed on **Vercel** and connected to GitHub for automatic deployments on every push to `main`:
-
-* **Production URL**: [https://groww-weekly-pulse-review.vercel.app](https://groww-weekly-pulse-review.vercel.app)
+### 1. Frontend & Serverless API on Vercel
+Deployed on **Vercel** and connected to GitHub for automatic deployments on every push to `main`:
+* **Production Frontend**: [https://groww-weekly-pulse-review.vercel.app](https://groww-weekly-pulse-review.vercel.app)
+* **Live Serverless Review API**: [https://groww-weekly-pulse-review.vercel.app/api/live-reviews](https://groww-weekly-pulse-review.vercel.app/api/live-reviews)
 * **Install Command**: `cd frontend && npm install`
 * **Build Command**: `cd frontend && npm run build`
 * **Output Directory**: `frontend/dist`
-* **Framework Preset**: `vite`
+
+### 2. Dedicated Python Backend Server on Render (`render.yaml`)
+The repository includes a complete **Render Blueprint (`render.yaml`)** that deploys `src/server.py` as a Python Web Service:
+* **1-Click Render Blueprint Deploy**: [**Deploy to Render**](https://dashboard.render.com/blueprint/new?repo=https://github.com/prathmeshmdeshmane001/groww-weekly-pulse-review)
+* **Service Name**: `groww-weekly-pulse-api`
+* **Build Command**: `pip install -r requirements.txt`
+* **Start Command**: `python src/server.py`
+* **Health Check Endpoint**: `GET /health`
+* **Live Reviews Endpoint**: `GET /api/live-reviews?weeks=10&batches=2`
 
 ---
 

@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: groww-weekly-pulse-api
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python src/server.py
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: PYTHONPATH
+        value: src
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: PULSE_RECIPIENT_EMAIL
+        sync: false

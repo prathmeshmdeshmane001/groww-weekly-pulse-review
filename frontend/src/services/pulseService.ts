@@ -119,24 +119,35 @@ export function resolveWindowBounds(
   };
 }
 
+const CONFIGURED_API_BASE_URL = (
+  import.meta.env.VITE_API_BASE_URL || ''
+).replace(/\/$/, '');
+
 export async function fetchLiveReviewsFromStores(
   batches = 3
 ): Promise<{ reviews: Review[]; playCount: number; appCount: number }> {
-  try {
-    const resp = await fetch(`/api/live-reviews?batches=${batches}`);
-    if (!resp.ok) {
-      return { reviews: [], playCount: 0, appCount: 0 };
+  const endpoints = CONFIGURED_API_BASE_URL
+    ? [
+        `${CONFIGURED_API_BASE_URL}/api/live-reviews?batches=${batches}`,
+        `/api/live-reviews?batches=${batches}`,
+      ]
+    : [`/api/live-reviews?batches=${batches}`];
+
+  for (const endpoint of endpoints) {
+    try {
+      const resp = await fetch(endpoint);
+      if (!resp.ok) continue;
+      const data = await resp.json();
+      if (data?.success && Array.isArray(data.reviews)) {
+        return {
+          reviews: data.reviews as Review[],
+          playCount: Number(data.playCount || 0),
+          appCount: Number(data.appCount || 0),
+        };
+      }
+    } catch {
+      // Try next endpoint in fallback chain
     }
-    const data = await resp.json();
-    if (data?.success && Array.isArray(data.reviews)) {
-      return {
-        reviews: data.reviews as Review[],
-        playCount: Number(data.playCount || 0),
-        appCount: Number(data.appCount || 0),
-      };
-    }
-  } catch {
-    // Fallback to existing dataset if offline or running without serverless API
   }
   return { reviews: [], playCount: 0, appCount: 0 };
 }
