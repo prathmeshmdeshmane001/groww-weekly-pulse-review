@@ -1,13 +1,11 @@
 # Groww Weekly Pulse Review 📈
 
 <div align="center">
-  <video src="brag-output/brag.mp4" poster="brag-output/brag.jpg" controls="controls" width="100%" style="max-width: 960px; border-radius: 16px; box-shadow: 0 20px 40px rgba(0,0,0,0.3);"></video>
+  <a href="brag-output/brag.mp4">
+    <img src="brag-output/brag.gif" alt="Groww Weekly Pulse Review Launch Video" width="100%" style="max-width: 900px; border-radius: 16px; box-shadow: 0 20px 40px rgba(0,0,0,0.35);" />
+  </a>
   <p align="center">
-    <a href="brag-output/brag.mp4">
-      <img src="brag-output/brag.jpg" alt="Groww Weekly Pulse Review Launch Video" width="100%" style="max-width: 960px; border-radius: 16px; display: none;" />
-    </a>
-    <br />
-    <em>▶️ <strong><a href="brag-output/brag.mp4">Watch the Product Launch Video (1080p · 18.5s)</a></strong> — Autonomous store feedback intelligence delivered to Google Docs & Gmail via MCP.</em>
+    <em>▶️ <strong><a href="brag-output/brag.mp4">Click to watch full 1080p video with Music & Sound (MP4 · 18.5s)</a></strong> — Autonomous store feedback intelligence delivered to Google Docs & Gmail via MCP.</em>
   </p>
 </div>
 
