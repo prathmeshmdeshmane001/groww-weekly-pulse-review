@@ -4,9 +4,6 @@
   <a href="brag-output/brag.mp4">
     <img src="brag-output/brag.gif" alt="Groww Weekly Pulse Review Launch Video" width="100%" style="max-width: 900px; border-radius: 16px; box-shadow: 0 20px 40px rgba(0,0,0,0.35);" />
   </a>
-  <p align="center">
-    <em>▶️ <strong><a href="brag-output/brag.mp4">Click to watch full 1080p video with Music & Sound (MP4 · 18.5s)</a></strong> — Autonomous store feedback intelligence delivered to Google Docs & Gmail via MCP.</em>
-  </p>
 </div>
 
 An end-to-end **AI Customer Feedback Intelligence Engine**, **MCP-Driven Executive Reporting Pipeline**, and **Interactive React 19 Analytics Dashboard** built for **Groww**.
