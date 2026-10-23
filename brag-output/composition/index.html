@@ -1,0 +1,625 @@
+<!doctype html>
+<html lang="en" data-resolution="landscape">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Groww Weekly Pulse Review - Launch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      :root {
+        --ground: #0b0f17;
+        --card: #131b2e;
+        --card-border: #1e293b;
+        --ink: #ffffff;
+        --ink-sub: #cbd5e1;
+        --ink-muted: #94a3b8;
+        --emerald: #00d09c;
+        --emerald-glow: rgba(0, 208, 156, 0.25);
+        --rose: #f43f5e;
+        --amber: #f59e0b;
+        --font-display: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background-color: var(--ground);
+        font-family: var(--font-display);
+        color: var(--ink);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      #root {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: radial-gradient(circle at 50% 20%, #162035 0%, #0b0f17 70%);
+      }
+
+      /* Base Scene Full Frame */
+      .scene {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1920px;
+        height: 1080px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 80px;
+        text-align: center;
+      }
+
+      /* Ambient Glow */
+      .ambient-glow {
+        position: absolute;
+        width: 800px;
+        height: 800px;
+        border-radius: 50%;
+        background: radial-gradient(circle, var(--emerald-glow) 0%, rgba(0, 208, 156, 0) 70%);
+        pointer-events: none;
+        z-index: 1;
+        opacity: 0.6;
+      }
+
+      /* Glassmorphism Card Style */
+      .glass-card {
+        background: rgba(19, 27, 46, 0.88);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5), 0 0 30px var(--emerald-glow);
+        border-radius: 24px;
+        backdrop-filter: blur(16px);
+      }
+
+      /* Badges */
+      .badge-emerald {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 20px;
+        border-radius: 9999px;
+        background: rgba(0, 208, 156, 0.14);
+        border: 1px solid rgba(0, 208, 156, 0.4);
+        color: var(--emerald);
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+
+      .badge-rose {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 12px;
+        border-radius: 9999px;
+        background: rgba(244, 63, 94, 0.15);
+        border: 1px solid rgba(244, 63, 94, 0.4);
+        color: #fda4af;
+        font-size: 13px;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="18.5"
+      data-width="1920"
+      data-height="1080"
+    >
+      <!-- Background Ambient Glow -->
+      <div id="ambient-light" class="ambient-glow" style="top: 140px; left: 560px;"></div>
+
+      <!-- ================= SCENE 1: THE HOOK (0.00s - 3.70s) ================= -->
+      <div
+        id="scene-1"
+        class="clip scene"
+        data-start="0"
+        data-duration="3.7"
+        data-track-index="0"
+      >
+        <!-- Floating simulated reviews in background -->
+        <div
+          id="s1-card-1"
+          class="glass-card"
+          data-layout-ignore
+          style="position: absolute; top: 120px; left: 160px; padding: 20px 28px; width: 380px; text-align: left; opacity: 0;"
+        >
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <span style="color: #fbbf24; font-size: 16px;">★☆☆☆☆</span>
+            <span class="badge-rose">Play Store</span>
+          </div>
+          <p style="font-size: 15px; color: var(--ink-sub); line-height: 1.4;">
+            "UPI SIP payment failed but money deducted from bank!"
+          </p>
+        </div>
+
+        <div
+          id="s1-card-2"
+          class="glass-card"
+          data-layout-ignore
+          style="position: absolute; bottom: 140px; right: 180px; padding: 20px 28px; width: 400px; text-align: left; opacity: 0;"
+        >
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <span style="color: #fbbf24; font-size: 16px;">★☆☆☆☆</span>
+            <span class="badge-rose">App Store</span>
+          </div>
+          <p style="font-size: 15px; color: var(--ink-sub); line-height: 1.4;">
+            "Charts froze during 9:15 AM market opening volatility."
+          </p>
+        </div>
+
+        <div style="z-index: 10; max-width: 1200px;">
+          <div id="s1-badge" class="badge-emerald" data-layout-ignore style="margin-bottom: 24px;">
+            <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--emerald);"></span>
+            Groww App Store & Play Store Ingestion
+          </div>
+          <h1
+            id="s1-heading"
+            style="font-size: 78px; font-weight: 900; line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 24px;"
+          >
+            2,041 mobile app reviews<br />
+            <span style="color: var(--emerald);">dropped this week.</span>
+          </h1>
+          <p
+            id="s1-sub"
+            style="font-size: 34px; font-weight: 600; color: var(--ink-sub);"
+          >
+            Who on your product team is reading all of them?
+          </p>
+        </div>
+      </div>
+
+      <!-- ================= SCENE 2: AUTONOMOUS INGESTION & PRIVACY (3.70s - 8.96s) ================= -->
+      <div
+        id="scene-2"
+        class="clip scene"
+        data-start="3.7"
+        data-duration="5.26"
+        data-track-index="0"
+        style="opacity: 0;"
+      >
+        <div style="z-index: 10; width: 100%; max-width: 1400px;">
+          <!-- Header -->
+          <div id="s2-header" style="opacity: 0; margin-bottom: 32px;">
+            <div class="badge-emerald" data-layout-ignore style="margin-bottom: 16px;">
+              Autonomous Customer Intelligence Engine
+            </div>
+            <h2 style="font-size: 64px; font-weight: 900; letter-spacing: -0.03em;">
+              Groww Weekly Pulse Review
+            </h2>
+          </div>
+
+          <!-- Main Dashboard Preview Card -->
+          <div
+            id="s2-dashboard"
+            class="glass-card"
+            style="padding: 40px 48px; width: 100%; text-align: left; opacity: 0;"
+          >
+            <!-- Top Telemetry Row -->
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-bottom: 32px;">
+              <div style="background: rgba(15, 23, 42, 0.6); padding: 20px 24px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.08);">
+                <div data-layout-ignore style="font-size: 14px; color: var(--ink-muted); text-transform: uppercase; font-weight: 600;">Reviews Analyzed</div>
+                <div style="font-size: 44px; font-weight: 900; color: var(--emerald); margin-top: 4px;">2,041</div>
+                <div data-layout-ignore style="font-size: 13px; color: #34d399; margin-top: 2px;">↑ Live Store Feeds</div>
+              </div>
+              <div style="background: rgba(15, 23, 42, 0.6); padding: 20px 24px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.08);">
+                <div data-layout-ignore style="font-size: 14px; color: var(--ink-muted); text-transform: uppercase; font-weight: 600;">Average Rating</div>
+                <div style="font-size: 44px; font-weight: 900; color: #ffffff; margin-top: 4px;">4.1★</div>
+                <div data-layout-ignore style="font-size: 13px; color: var(--ink-muted); margin-top: 2px;">Across 10 weeks</div>
+              </div>
+              <div style="background: rgba(15, 23, 42, 0.6); padding: 20px 24px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.08);">
+                <div data-layout-ignore style="font-size: 14px; color: var(--ink-muted); text-transform: uppercase; font-weight: 600;">Critical Friction</div>
+                <div style="font-size: 44px; font-weight: 900; color: #f43f5e; margin-top: 4px;">18.7%</div>
+                <div data-layout-ignore style="font-size: 13px; color: #fda4af; margin-top: 2px;">1★ & 2★ proportion</div>
+              </div>
+              <div style="background: rgba(15, 23, 42, 0.6); padding: 20px 24px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.08);">
+                <div data-layout-ignore style="font-size: 14px; color: var(--ink-muted); text-transform: uppercase; font-weight: 600;">Executive Brevity</div>
+                <div style="font-size: 44px; font-weight: 900; color: #38bdf8; margin-top: 4px;">≤ 250</div>
+                <div data-layout-ignore style="font-size: 13px; color: #7dd3fc; margin-top: 2px;">Words per Pulse</div>
+              </div>
+            </div>
+
+            <!-- Ingestion and Privacy Pills -->
+            <div id="s2-pills" style="display: flex; gap: 16px; align-items: center; justify-content: space-between; background: rgba(0, 0, 0, 0.35); padding: 18px 24px; border-radius: 16px; border: 1px solid rgba(0, 208, 156, 0.2);">
+              <div style="display: flex; gap: 12px; align-items: center;">
+                <span data-layout-ignore style="font-size: 14px; font-weight: 600; color: var(--emerald);">Ingestion Sources:</span>
+                <span data-layout-ignore style="background: #1e293b; color: #f8fafc; padding: 6px 14px; border-radius: 8px; font-size: 13px; font-weight: 600;">Google Play (com.nextbillion.groww)</span>
+                <span data-layout-ignore style="background: #1e293b; color: #f8fafc; padding: 6px 14px; border-radius: 8px; font-size: 13px; font-weight: 600;">App Store (ID 1404871703)</span>
+              </div>
+              <div style="display: flex; gap: 8px; align-items: center;">
+                <span style="color: #34d399; font-size: 16px;">🛡️</span>
+                <span data-layout-ignore style="color: #cbd5e1; font-size: 14px; font-weight: 600;">Two-Pass Privacy: Zero PII Leakage</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= SCENE 3: GEMINI AI & 250-WORD GATE (8.96s - 14.22s) ================= -->
+      <div
+        id="scene-3"
+        class="clip scene"
+        data-start="8.96"
+        data-duration="5.26"
+        data-track-index="0"
+        style="opacity: 0;"
+      >
+        <div style="z-index: 10; width: 100%; max-width: 1440px;">
+          <div id="s3-header" style="opacity: 0; margin-bottom: 32px;">
+            <div class="badge-emerald" data-layout-ignore style="margin-bottom: 14px;">
+              Gemini AI Theme Clustering & Severity Ranking
+            </div>
+            <h2 style="font-size: 56px; font-weight: 900; letter-spacing: -0.02em;">
+              Synthesizing 2,000+ Reviews into High-Impact Priorities
+            </h2>
+          </div>
+
+          <!-- 3 Theme Cards Grid -->
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 32px;">
+            <!-- Theme 1 -->
+            <div id="s3-card-1" class="glass-card" style="padding: 28px; text-align: left; opacity: 0;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+                <span data-layout-ignore style="font-size: 14px; font-weight: 800; color: #94a3b8;">RANK 1 · 28% SHARE</span>
+                <span class="badge-rose" data-layout-ignore>High Severity</span>
+              </div>
+              <h3 style="font-size: 28px; font-weight: 800; margin-bottom: 10px; color: #ffffff;">Charges & Fees</h3>
+              <p style="font-size: 16px; color: var(--ink-sub); line-height: 1.5; margin-bottom: 16px;">
+                "Unannounced ₹5 platform fees on stock buys and auto square-off penalties without proactive alert."
+              </p>
+              <div data-layout-ignore style="font-size: 13px; font-weight: 600; color: var(--emerald);">
+                → Action: Add clear fee breakdown tooltip on order screen
+              </div>
+            </div>
+
+            <!-- Theme 2 -->
+            <div id="s3-card-2" class="glass-card" style="padding: 28px; text-align: left; opacity: 0;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+                <span data-layout-ignore style="font-size: 14px; font-weight: 800; color: #94a3b8;">RANK 2 · 24% SHARE</span>
+                <span class="badge-rose" data-layout-ignore>High Severity</span>
+              </div>
+              <h3 style="font-size: 28px; font-weight: 800; margin-bottom: 10px; color: #ffffff;">App Performance</h3>
+              <p style="font-size: 16px; color: var(--ink-sub); line-height: 1.5; margin-bottom: 16px;">
+                "Candlestick charts freeze during 9:15 AM market open; daily update prompts interrupt trading."
+              </p>
+              <div data-layout-ignore style="font-size: 13px; font-weight: 600; color: var(--emerald);">
+                → Action: Profile WebSocket feed canvas renderer & reduce update cadence
+              </div>
+            </div>
+
+            <!-- Theme 3 -->
+            <div id="s3-card-3" class="glass-card" style="padding: 28px; text-align: left; opacity: 0;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+                <span data-layout-ignore style="font-size: 14px; font-weight: 800; color: #94a3b8;">RANK 3 · 19% SHARE</span>
+                <span data-layout-ignore style="background: rgba(245, 158, 11, 0.15); border: 1px solid rgba(245, 158, 11, 0.4); color: #fde68a; padding: 4px 12px; border-radius: 9999px; font-size: 13px; font-weight: 700;">Medium Severity</span>
+              </div>
+              <h3 style="font-size: 28px; font-weight: 800; margin-bottom: 10px; color: #ffffff;">Payments & KYC</h3>
+              <p style="font-size: 16px; color: var(--ink-sub); line-height: 1.5; margin-bottom: 16px;">
+                "UPI mandate auto-deductions failing during morning surges; Aadhaar OTP gateway timeouts."
+              </p>
+              <div data-layout-ignore style="font-size: 13px; font-weight: 600; color: var(--emerald);">
+                → Action: Deploy automated 5-minute payment auto-reconciliation hook
+              </div>
+            </div>
+          </div>
+
+          <!-- Strict 250-Word Gate Seal -->
+          <div
+            id="s3-validator"
+            style="display: inline-flex; align-items: center; gap: 14px; background: rgba(0, 208, 156, 0.15); border: 1.5px solid var(--emerald); padding: 14px 28px; border-radius: 9999px; opacity: 0;"
+          >
+            <span style="font-size: 22px; color: var(--emerald); font-weight: 900;">✓</span>
+            <span style="font-size: 18px; font-weight: 700; color: #ffffff; letter-spacing: 0.02em;">
+              Hard Validation Gate Passed: Strict ≤ 250 words · 3 Themes · 3 Verbatim Quotes · 3 Action Items
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= SCENE 4: MCP DELIVERY & OUTRO (14.22s - 18.50s) ================= -->
+      <div
+        id="scene-4"
+        class="clip scene"
+        data-start="14.22"
+        data-duration="4.28"
+        data-track-index="0"
+        style="opacity: 0;"
+      >
+        <div style="z-index: 10; width: 100%; max-width: 1200px;">
+          <!-- Top Tagline -->
+          <div id="s4-delivery-label" style="opacity: 0; margin-bottom: 36px;">
+            <div class="badge-emerald" data-layout-ignore style="margin-bottom: 16px;">
+              Model Context Protocol (MCP) Delivery
+            </div>
+            <h2 style="font-size: 58px; font-weight: 900; letter-spacing: -0.03em;">
+              Delivered Directly Where Leadership Works
+            </h2>
+          </div>
+
+          <!-- Two Delivery Cards -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 40px;">
+            <div
+              id="s4-card-docs"
+              class="glass-card"
+              style="padding: 32px; display: flex; align-items: center; gap: 24px; text-align: left; opacity: 0;"
+            >
+              <div style="width: 64px; height: 64px; border-radius: 16px; background: rgba(59, 130, 246, 0.2); border: 1px solid rgba(59, 130, 246, 0.5); display: flex; align-items: center; justify-content: center; font-size: 32px;">
+                📄
+              </div>
+              <div>
+                <div style="font-size: 24px; font-weight: 800; color: #ffffff;">Google Docs MCP</div>
+                <div style="font-size: 16px; color: var(--ink-sub); margin-top: 4px;">
+                  Idempotent document creation & live weekly updates
+                </div>
+              </div>
+            </div>
+
+            <div
+              id="s4-card-gmail"
+              class="glass-card"
+              style="padding: 32px; display: flex; align-items: center; gap: 24px; text-align: left; opacity: 0;"
+            >
+              <div style="width: 64px; height: 64px; border-radius: 16px; background: rgba(239, 68, 68, 0.2); border: 1px solid rgba(239, 68, 68, 0.5); display: flex; align-items: center; justify-content: center; font-size: 32px;">
+                ✉️
+              </div>
+              <div>
+                <div style="font-size: 24px; font-weight: 800; color: #ffffff;">Gmail Drafts MCP</div>
+                <div style="font-size: 16px; color: var(--ink-sub); margin-top: 4px;">
+                  Ready-to-send draft pre-populated with document URL
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Final Brand & Punchline Lockup -->
+          <div id="s4-outro" style="opacity: 0;">
+            <div style="font-size: 38px; font-weight: 900; color: var(--emerald); letter-spacing: -0.02em; margin-bottom: 8px;">
+              Signal extracted. Noise deleted.
+            </div>
+            <div style="font-size: 22px; font-weight: 600; color: var(--ink-sub);">
+              Groww Weekly Pulse Review · Live on Vercel & Render
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= AUDIO LAYER ================= -->
+      <!-- Background Music Track -->
+      <audio
+        id="bg-music"
+        src="assets/music/happy-beats-business-moves-vol-11-by-ende-dot-app.mp3"
+        data-start="0"
+        data-duration="18.5"
+        data-volume="0.75"
+        data-fade-out="1.2"
+      ></audio>
+
+      <!-- Sound Effects -->
+      <audio
+        id="sfx-hook"
+        src="assets/sfx/interface/switch_001.ogg"
+        data-start="0.6"
+        data-duration="0.62"
+        data-volume="0.6"
+      ></audio>
+      <audio
+        id="sfx-reveal"
+        src="assets/sfx/interface/click_002.ogg"
+        data-start="3.7"
+        data-duration="0.05"
+        data-volume="0.6"
+      ></audio>
+      <audio
+        id="sfx-theme1"
+        src="assets/sfx/interface/click_002.ogg"
+        data-start="8.96"
+        data-duration="0.05"
+        data-volume="0.5"
+      ></audio>
+      <audio
+        id="sfx-theme2"
+        src="assets/sfx/interface/click_002.ogg"
+        data-start="9.5"
+        data-duration="0.05"
+        data-volume="0.5"
+      ></audio>
+      <audio
+        id="sfx-theme3"
+        src="assets/sfx/interface/click_002.ogg"
+        data-start="10.54"
+        data-duration="0.05"
+        data-volume="0.5"
+      ></audio>
+      <audio
+        id="sfx-validate"
+        src="assets/sfx/impact/impactBell_heavy_000.ogg"
+        data-start="12.65"
+        data-duration="1.48"
+        data-volume="0.75"
+      ></audio>
+      <audio
+        id="sfx-outro"
+        src="assets/sfx/impact/impactBell_heavy_000.ogg"
+        data-start="17.0"
+        data-duration="1.48"
+        data-volume="0.8"
+      ></audio>
+    </div>
+
+    <!-- GSAP TIMELINE SCRIPT -->
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+
+      // Ambient breathing glow (finite loop within 18.5s)
+      tl.to(
+        "#ambient-light",
+        {
+          scale: 1.25,
+          opacity: 0.9,
+          duration: 3.5,
+          yoyo: true,
+          repeat: 4,
+          ease: "sine.inOut"
+        },
+        0
+      );
+
+      // ===== SCENE 1 TIMELINE (0.00s - 3.70s) =====
+      tl.fromTo(
+        "#s1-card-1",
+        { opacity: 0, x: -60, rotate: -3 },
+        { opacity: 1, x: 0, rotate: -2, duration: 0.6, ease: "power3.out" },
+        0.3
+      );
+      tl.fromTo(
+        "#s1-card-2",
+        { opacity: 0, x: 60, rotate: 3 },
+        { opacity: 1, x: 0, rotate: 2, duration: 0.6, ease: "power3.out" },
+        0.5
+      );
+      tl.fromTo(
+        "#s1-sub",
+        { opacity: 0, y: 15 },
+        { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
+        0.6
+      );
+
+      // Scene 1 Exit (Crossfade into Scene 2 at 3.70s)
+      tl.to(
+        "#scene-1",
+        { opacity: 0, scale: 0.96, duration: 0.45, ease: "power2.in" },
+        3.35
+      );
+
+      // ===== SCENE 2 TIMELINE (3.70s - 8.96s) =====
+      // Hero reveal at 3.70s (beat-locked)
+      tl.to("#scene-2", { opacity: 1, duration: 0.2 }, 3.70);
+      tl.fromTo(
+        "#s2-header",
+        { opacity: 0, y: -25 },
+        { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" },
+        3.70
+      );
+      tl.fromTo(
+        "#s2-dashboard",
+        { opacity: 0, y: 40, scale: 0.96 },
+        { opacity: 1, y: 0, scale: 1, duration: 0.7, ease: "power3.out" },
+        4.10
+      );
+      // Ingestion and privacy pills pop in at 5.80s (beat-locked)
+      tl.fromTo(
+        "#s2-pills",
+        { opacity: 0, scale: 0.97 },
+        { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.4)" },
+        5.80
+      );
+
+      // Scene 2 Exit
+      tl.to(
+        "#scene-2",
+        { opacity: 0, y: -30, duration: 0.45, ease: "power2.in" },
+        8.60
+      );
+
+      // ===== SCENE 3 TIMELINE (8.96s - 14.22s) =====
+      // Scene 3 entrance at 8.96s (beat-locked)
+      tl.to("#scene-3", { opacity: 1, duration: 0.2 }, 8.96);
+      tl.fromTo(
+        "#s3-header",
+        { opacity: 0, y: -20 },
+        { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" },
+        8.96
+      );
+
+      // Sequential theme card reveals (beat-grid: 8.96s, 9.50s, 10.54s)
+      tl.fromTo(
+        "#s3-card-1",
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.45, ease: "back.out(1.5)" },
+        8.96
+      );
+      tl.fromTo(
+        "#s3-card-2",
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.45, ease: "back.out(1.5)" },
+        9.50
+      );
+      tl.fromTo(
+        "#s3-card-3",
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.45, ease: "back.out(1.5)" },
+        10.54
+      );
+
+      // Validation Gate Seal lands at 12.65s (beat-locked)
+      tl.fromTo(
+        "#s3-validator",
+        { opacity: 0, scale: 0.85 },
+        { opacity: 1, scale: 1, duration: 0.6, ease: "back.out(2)" },
+        12.65
+      );
+
+      // Scene 3 Exit
+      tl.to(
+        "#scene-3",
+        { opacity: 0, scale: 0.95, duration: 0.45, ease: "power2.in" },
+        13.85
+      );
+
+      // ===== SCENE 4 TIMELINE (14.22s - 18.50s) =====
+      tl.to("#scene-4", { opacity: 1, duration: 0.2 }, 14.22);
+      tl.fromTo(
+        "#s4-delivery-label",
+        { opacity: 0, y: -20 },
+        { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" },
+        14.22
+      );
+
+      // Delivery cards slide in side by side
+      tl.fromTo(
+        "#s4-card-docs",
+        { opacity: 0, x: -30 },
+        { opacity: 1, x: 0, duration: 0.55, ease: "power3.out" },
+        14.76
+      );
+      tl.fromTo(
+        "#s4-card-gmail",
+        { opacity: 0, x: 30 },
+        { opacity: 1, x: 0, duration: 0.55, ease: "power3.out" },
+        14.90
+      );
+
+      // Final brand resolve at 15.60s (holds for 2.9s) with outro chime at 17.0s
+      tl.fromTo(
+        "#s4-outro",
+        { opacity: 0, scale: 0.9, y: 20 },
+        { opacity: 1, scale: 1, y: 0, duration: 0.6, ease: "back.out(1.8)" },
+        15.60
+      );
+
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

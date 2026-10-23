@@ -17,5 +17,6 @@ node_modules/
 .DS_Store
 *.log
 .vercel
+.hyperframes/
 .env*
 !.env.example

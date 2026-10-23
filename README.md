@@ -1,5 +1,16 @@
 # Groww Weekly Pulse Review 📈
 
+<div align="center">
+  <video src="brag-output/brag.mp4" poster="brag-output/brag.jpg" controls="controls" width="100%" style="max-width: 960px; border-radius: 16px; box-shadow: 0 20px 40px rgba(0,0,0,0.3);"></video>
+  <p align="center">
+    <a href="brag-output/brag.mp4">
+      <img src="brag-output/brag.jpg" alt="Groww Weekly Pulse Review Launch Video" width="100%" style="max-width: 960px; border-radius: 16px; display: none;" />
+    </a>
+    <br />
+    <em>▶️ <strong><a href="brag-output/brag.mp4">Watch the Product Launch Video (1080p · 18.5s)</a></strong> — Autonomous store feedback intelligence delivered to Google Docs & Gmail via MCP.</em>
+  </p>
+</div>
+
 An end-to-end **AI Customer Feedback Intelligence Engine**, **MCP-Driven Executive Reporting Pipeline**, and **Interactive React 19 Analytics Dashboard** built for **Groww**.
 
 The system automatically ingests live public reviews from the **Google Play Store** (`com.nextbillion.groww`) and **Apple App Store** (`1404871703`), enforces **Privacy-by-Design** through two-pass PII scrubbing at ingestion, clusters and ranks user friction themes using **Google Gemini (`google-genai`)**, selects verbatim user quotes, generates grounded engineering action items, validates a strict **`≤ 250` word executive readability constraint**, and delivers weekly pulses to **Google Docs** and **Gmail** via **Model Context Protocol (MCP)** servers alongside a live production web application.
@@ -10,6 +21,7 @@ The system automatically ingests live public reviews from the **Google Play Stor
 
 | Resource | Live URL |
 | :--- | :--- |
+| **🎥 Product Launch Video** | **[brag-output/brag.mp4](./brag-output/brag.mp4)** |
 | **🌐 Live Production Dashboard (Vercel)** | **[https://groww-weekly-pulse-review.vercel.app](https://groww-weekly-pulse-review.vercel.app)** |
 | **🐍 Live Python Backend API (Render)** | **[https://groww-weekly-pulse-api.onrender.com/api/live-reviews](https://groww-weekly-pulse-api.onrender.com/api/live-reviews)** |
 | **🩺 Render Backend Health Check** | **[https://groww-weekly-pulse-api.onrender.com/health](https://groww-weekly-pulse-api.onrender.com/health)** |

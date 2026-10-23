@@ -1,0 +1,1 @@
+Built an autonomous customer feedback intelligence engine for Groww that ingests 2,000+ store reviews, strips PII, and ships a validated ≤250-word pulse straight to Google Docs & Gmail via MCP. 📈✨
